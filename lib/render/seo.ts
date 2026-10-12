@@ -22,6 +22,7 @@ export type Seo = {
   ogImageType?: string;
   author?: string;
   twitterCard?: string;
+  twitterTitle?: string;
   twitterMisc?: { _key?: string; label?: string; data?: string }[];
   /** JSON-LD graph (Yoast schema), printed as is. */
   schema?: string;
@@ -76,6 +77,7 @@ export function renderSeo(seo: Seo | undefined, origin?: string, business?: stri
     prop("og:image:type", s.ogImageType),
     name("author", s.author),
     name("twitter:card", s.twitterCard),
+    name("twitter:title", s.twitterTitle),
     ...(s.twitterMisc || []).flatMap((m, i) => [name(`twitter:label${i + 1}`, m.label), name(`twitter:data${i + 1}`, m.data)]),
     s.schema ? `<script type="application/ld+json" class="yoast-schema-graph">${s.schema.replace(/<\/script/gi, "<\\/script")}</script>` : "",
   ];

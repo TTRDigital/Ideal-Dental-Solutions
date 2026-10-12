@@ -152,6 +152,14 @@ for (const d of docs.filter((x) => ["page", "archivePage", "notFoundPage"].inclu
   seo.ogTitle = title;
   seo.ogSiteName = BRAND;
 }
+// Search results: "You searched for {q} | Ideal Dental Solutions".
+{
+  const seo = byId.get("searchPage")?.seo;
+  if (seo) {
+    for (const k of ["title", "ogTitle", "twitterTitle"]) if (typeof seo[k] === "string") seo[k] = (seo[k] as string).replace(/ - idealdental$/, ` | ${BRAND}`);
+    seo.ogSiteName = BRAND;
+  }
+}
 // Author archives keep their (noindex) titles, with the practice name.
 for (const d of docs.filter((x) => x._type === "archivePage" && x.kind === "author")) {
   const seo = d.seo!;
@@ -349,7 +357,7 @@ for (const d of docs) {
     }
     if (node["@type"] === "Organization") node.name = BRAND;
     // WebPage/CollectionPage name follows the title tag.
-    if (/WebPage|CollectionPage|ProfilePage|SearchResultsPage/.test(String(node["@type"])) && seo.title) {
+    if (/WebPage|CollectionPage|ProfilePage|SearchResultsPage/.test(String(node["@type"])) && seo.title && d._type !== "searchPage") {
       node.name = seo.title;
       if (seo.description) node.description = seo.description;
     }

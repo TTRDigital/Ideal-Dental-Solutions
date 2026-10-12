@@ -1111,14 +1111,18 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-207\" class=\"post-207 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"207\" class=\"elementor elementor-207\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "de2dbd41e1",
+  "shell": "5f581f3118",
   "_id": "page-207",
   "_type": "page",
   "title": "About us draft",
   "path": "/about-us-client-draft-2/",
   "wpId": 207,
   "ancestorPaths": [],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-05-18T13:31:55Z",
+  "excerpt": "Northern Virginia’s Most Trusted Dental Team With 50+ years of combined expertise, our doctors craft personalized treatment plans that blend exceptional aesthetics with the care your smile deserves. Northern Virginia’s Premier Dental Experts Welcome to Ideal Dental Solutions, where your smile is our top priority. With over 50 years of combined experience, our dedicated team",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -1822,14 +1826,18 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-3246\" class=\"post-3246 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"3246\" class=\"elementor elementor-3246\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "1827440eb6",
+  "shell": "a179c00569",
   "_id": "page-3246",
   "_type": "page",
   "title": "About Us",
   "path": "/about-us/",
   "wpId": 3246,
   "ancestorPaths": [],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-07-30T16:40:38Z",
+  "excerpt": "Northern Virginia’s Most Trusted Dental Team With 50+ years of combined expertise, our doctors craft personalized treatment plans that blend exceptional aesthetics with the care your smile deserves. Northern Virginia’s Premier Dental Experts Welcome to Ideal Dental Solutions, where your smile is our top priority. With over 50 years of combined experience, our dedicated team",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -2004,14 +2012,18 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-314\" class=\"post-314 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"314\" class=\"elementor elementor-314\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "e44296e873",
+  "shell": "7ec3b24d40",
   "_id": "page-314",
   "_type": "page",
   "title": "Appointment",
   "path": "/appointment/",
   "wpId": 314,
   "ancestorPaths": [],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T11:12:56Z",
+  "excerpt": "Call to schedule an appointment ☎ (703) 442-0442 📍8280 Greensboro Drive, Unit 105, McLean, VA 22102 Office Hours Mon: 9:00 – 5:00Tue: 9:00 – 5:00Wed: 9:00 – 5:00Thu: 9:00 – 5:00Fri: 8:30 – 3:00Sat: 8:00 – 2:00Sun: Closed Call to schedule an appointment Request an Appointment",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -2241,14 +2253,18 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-197\" class=\"post-197 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"197\" class=\"elementor elementor-197\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "e685be566c",
+  "shell": "1b1c168686",
   "_id": "page-197",
   "_type": "page",
   "title": "Before & After",
   "path": "/before-after/",
   "wpId": 197,
   "ancestorPaths": [],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-05-18T12:54:08Z",
+  "excerpt": "A Gentle, Conservative Approach We focus on preserving as much of your natural tooth structure as possible, helping minimize discomfort and shorten recovery time. Using advanced techniques and precise care, we create beautiful, natural-looking results while protecting the long-term health and strength of your teeth. Before and After Photos More than transforming teeth, we help",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -3797,14 +3813,18 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-994\" class=\"post-994 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"994\" class=\"elementor elementor-994\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "1ee677f58d",
+  "shell": "895db465a0",
   "_id": "page-994",
   "_type": "page",
   "title": "Dental Bridges in McLean, VA",
   "path": "/dental-bridges-in-mclean-va/",
   "wpId": 994,
   "ancestorPaths": [],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T17:49:05Z",
+  "excerpt": "Quality Dental Bridges in McLean, Virginia Dental Bridges Missing teeth can do more than alter your smile—they can affect your ability to eat, speak, and maintain oral health. At Ideal Dental Solutions, we specialize in creating custom dental bridges in McLean, VA designed to restore function and confidence with natural-looking, long-lasting results. Your Trusted Dental",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -5295,14 +5315,18 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-992\" class=\"post-992 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"992\" class=\"elementor elementor-992\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "55d7bd8494",
+  "shell": "f51ae6e484",
   "_id": "page-992",
   "_type": "page",
   "title": "Dental Fillings in McLean, VA",
   "path": "/dental-fillings-in-mclean-va-2/",
   "wpId": 992,
   "ancestorPaths": [],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T17:43:14Z",
+  "excerpt": "Expert Dental Fillings in McLean, Virginia Dental Fillings Are you dealing with tooth sensitivity or cavities? Ideal Dental Solutions is here to help! Our expert dental filling services in McLean, VA are designed to restore your teeth’s health and appearance while preventing further damage. Located conveniently in McLean, VA, we’re committed to providing personalized dental",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -6557,14 +6581,18 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-929\" class=\"post-929 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"929\" class=\"elementor elementor-929\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "a542108600",
+  "shell": "b6d2b32ada",
   "_id": "page-929",
   "_type": "page",
   "title": "Dental Fillings in McLean, VA",
   "path": "/dental-fillings-in-mclean-va/",
   "wpId": 929,
   "ancestorPaths": [],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T16:32:25Z",
+  "excerpt": "Expert Dental Fillings in McLean, Virginia Dental Fillings in McLean, VA Are you dealing with tooth sensitivity or cavities? Ideal Dental Solutions is here to help! Our expert dental filling services in McLean, VA are designed to restore your teeth’s health and appearance while preventing further damage. Your Trusted Partner for Dental Fillings in McLean,",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -6692,14 +6720,18 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-3718\" class=\"post-3718 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\n<script type=\"application/ld+json\">\n{\n  \"@context\": \"https://schema.org\",\n  \"@type\": \"Dentist\",\n  \"name\": \"Mehdi S. Adili, DDS\",\n  \"jobTitle\": \"Prosthodontist\",\n  \"alumniOf\": [\n    { \"@type\": \"CollegeOrUniversity\", \"name\": \"Georgetown University\" },\n    { \"@type\": \"CollegeOrUniversity\", \"name\": \"Virginia Commonwealth University\" }\n  ],\n  \"identifier\": { \"@type\": \"PropertyValue\", \"name\": \"NPI\", \"value\": \"1245310747\" },\n  \"knowsAbout\": [\"Prosthodontics\", \"Dental Bridges\", \"Dentures\", \"Dental Implants\", \"Crowns\"],\n  \"knowsLanguage\": [\"English\", \"Farsi\"],\n  \"worksFor\": {\n    \"@type\": \"Dentist\",\n    \"name\": \"Ideal Dental Solutions\",\n    \"url\": \"/\",\n    \"telephone\": \"+1-703-442-0442\"\n  },\n  \"address\": {\n    \"@type\": \"PostalAddress\",\n    \"streetAddress\": \"8280 Greensboro Drive, Unit 105\",\n    \"addressLocality\": \"Tysons Corner\",\n    \"addressRegion\": \"VA\",\n    \"postalCode\": \"22102\",\n    \"addressCountry\": \"US\"\n  }\n}\n</script>\n\n\n\n[[@rich:body]]\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "aa0d594b3e",
+  "shell": "6c7da4a2d3",
   "_id": "page-3718",
   "_type": "page",
   "title": "Dr. Mehdi S. Adili, DDS | Prosthodontist at Ideal Dental Solutions",
   "path": "/dr-mehdi-adili/",
   "wpId": 3718,
   "ancestorPaths": [],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-10-04T09:56:53Z",
+  "excerpt": "Dr. Mehdi S. Adili, DDS, is a prosthodontist at Ideal Dental Solutions in Northern Virginia. Dr. Adili earned his Doctor of Dental Surgery degree from Georgetown University and completed his specialty training in Prosthodontics at Virginia Commonwealth University. He cares for patients at Ideal Dental Solutions in Tysons Corner (8280 Greensboro Drive, Unit 105) and",
+  "authorName": "ryan",
+  "authorSlug": "ryan"
  },
  {
   "seo": {
@@ -7308,14 +7340,18 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-38\" class=\"post-38 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"38\" class=\"elementor elementor-38\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "8a1f77ad14",
+  "shell": "80cc984d78",
   "_id": "page-38",
   "_type": "page",
   "title": "Home",
   "path": "/",
   "wpId": 38,
   "ancestorPaths": [],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-05-15T15:54:18Z",
+  "excerpt": "The Art of Exceptional Smiles Designed for the life you’re meant to live. Schedule Appointment Exceptional Smiles. Only at Ideal Dental Solutions. Dr. Adili and the team at Ideal Dental Solutions are here to give you a smile you’re genuinely proud of, done right the first time. Dentistry as Artistry Dr. Adili treats every smile",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -7337,14 +7373,18 @@
   },
   "bodyClass": "wp-singular page-template-default page page-id-868 page-parent wp-custom-logo wp-embed-responsive wp-theme-blocksy elementor-default elementor-kit-5 ct-elementor-default-template",
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-868\" class=\"post-868 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "2d4d49a83d",
+  "shell": "0c92f6d65a",
   "_id": "page-868",
   "_type": "page",
   "title": "Locations",
   "path": "/locations/",
   "wpId": 868,
   "ancestorPaths": [],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T15:58:42Z",
+  "excerpt": "",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -7366,7 +7406,7 @@
   },
   "bodyClass": "wp-singular page-template-default page page-id-931 page-parent page-child parent-pageid-868 wp-custom-logo wp-embed-responsive wp-theme-blocksy elementor-default elementor-kit-5 ct-elementor-default-template",
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-931\" class=\"post-931 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "2d4d49a83d",
+  "shell": "0c92f6d65a",
   "_id": "page-931",
   "_type": "page",
   "title": "McLean",
@@ -7380,7 +7420,11 @@
   "ancestorPaths": [
    "/locations/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T16:55:29Z",
+  "excerpt": "",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -8749,7 +8793,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-925\" class=\"post-925 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"925\" class=\"elementor elementor-925\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "c4373a5cd2",
+  "shell": "cb251c84df",
   "_id": "page-925",
   "_type": "page",
   "title": "Dental Implant Dentistry",
@@ -8764,7 +8808,11 @@
    "/locations/mclean/",
    "/locations/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T17:21:14Z",
+  "excerpt": "Dental Implants in Mclean, Virginia Get Your Ideal Smile at Ideal Dental Solutions At Ideal Dental Solutions, we specialize in top-quality dental implants in Mclean, Virginia to restore your smile and dental health. Our durable, natural-looking implants offer long-term benefits for function and aesthetics, delivered with expert care and the latest technology. Why Dental Implants?",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -10094,7 +10142,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-921\" class=\"post-921 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"921\" class=\"elementor elementor-921\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "8b1bada0e6",
+  "shell": "3536f1796d",
   "_id": "page-921",
   "_type": "page",
   "title": "Full Arch Implants",
@@ -10109,7 +10157,11 @@
    "/locations/mclean/",
    "/locations/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T17:20:18Z",
+  "excerpt": "Full Arch Dental Implants in Mclean, Virginia Restore Your Smile with Full Arch Dental Implants Struggling with missing teeth or uncomfortable dentures? Full arch dental implants offer a permanent, natural-looking solution for a complete upper or lower arch. At Ideal Dental Solutions, Dr. Adili and our team are dedicated to restoring your smile, comfort, and",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -11478,7 +11530,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-917\" class=\"post-917 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"917\" class=\"elementor elementor-917\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "9e1c13e21f",
+  "shell": "998f87ac97",
   "_id": "page-917",
   "_type": "page",
   "title": "Gum Disease Treatment",
@@ -11493,7 +11545,11 @@
    "/locations/mclean/",
    "/locations/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T17:19:14Z",
+  "excerpt": "Expert Gum Disease Treatment in Mclean, VA Advanced Periodontal Disease Treatment for Healthier Gums Gum disease is a common yet serious condition that can impact your overall oral health if left untreated. At Ideal Dental Solutions, we specialize in comprehensive Gum Disease Treatment in Mclean VA, offering personalized care to restore your gums to optimal",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -12853,7 +12909,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-913\" class=\"post-913 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"913\" class=\"elementor elementor-913\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "4fa291ac7b",
+  "shell": "3aca04dd54",
   "_id": "page-913",
   "_type": "page",
   "title": "Gum Graft Surgery",
@@ -12868,7 +12924,11 @@
    "/locations/mclean/",
    "/locations/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T17:17:20Z",
+  "excerpt": "The Gum Graft Surgery Experts of Mclean, VA Restore Your Smile and Protect Your Gums Gum recession can lead to tooth sensitivity, increased vulnerability to decay, and aesthetic concerns. At Ideal Dental Solutions, our expert gum graft surgery in Mclean Virginia restores your gumline, protects your teeth, and renews your confidence in your smile. What",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -14204,7 +14264,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-909\" class=\"post-909 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"909\" class=\"elementor elementor-909\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "76eb81e693",
+  "shell": "fd2cc43841",
   "_id": "page-909",
   "_type": "page",
   "title": "Invisalign",
@@ -14219,7 +14279,11 @@
    "/locations/mclean/",
    "/locations/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T17:16:38Z",
+  "excerpt": "Invisalign® in Mclean, VA Achieve Your Ideal Smile With Invisalign Clear Aligners Looking for a discreet and comfortable way to straighten your teeth? Ideal Dental Solutions offers expert Invisalign treatment in Mclean, Virginia. Using custom-made clear aligners, Invisalign allows you to achieve a beautiful smile without the hassle of traditional braces. What is Invisalign? Invisalign",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -15555,7 +15619,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-853\" class=\"post-853 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"853\" class=\"elementor elementor-853\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "d0110de6d2",
+  "shell": "2e6aacc57b",
   "_id": "page-853",
   "_type": "page",
   "title": "Periodontal Dentistry",
@@ -15570,7 +15634,11 @@
    "/locations/mclean/",
    "/locations/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T17:15:43Z",
+  "excerpt": "Periodontic Dentistry in Mclean, Virginia 50 Years of Dental Health Expertise At Ideal Dental Solutions, we prioritize your gum health as the foundation of a radiant smile. Our expert periodontal dentistry services focus on preventing and treating gum disease with over 50 years of combined experience. Trust our team for exceptional periodontal care. What is",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -16906,7 +16974,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-802\" class=\"post-802 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"802\" class=\"elementor elementor-802\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "6c417fa460",
+  "shell": "6957bf9ea8",
   "_id": "page-802",
   "_type": "page",
   "title": "Porcelain Dental Veneers",
@@ -16921,7 +16989,11 @@
    "/locations/mclean/",
    "/locations/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T17:14:34Z",
+  "excerpt": "Porcelain Dental Veneers in Mclean, VA Customize the Smile of Your Dreams Porcelain veneers are made from thin, medical-grade ceramic designed to mimic the translucency and strength of natural enamel. The biocompatible material ensures safety for your gums and is durable enough for daily wear. What Are Porcelain Dental Veneers? Porcelain veneers are thin, custom-made",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -18305,7 +18377,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-730\" class=\"post-730 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"730\" class=\"elementor elementor-730\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "5a0a6b4010",
+  "shell": "7375cc8af9",
   "_id": "page-730",
   "_type": "page",
   "title": "Preventive Dentistry",
@@ -18320,7 +18392,11 @@
    "/locations/mclean/",
    "/locations/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T17:14:03Z",
+  "excerpt": "Preventive Dentistry Services in McLean, VA Preventive Dentistry Preventive dentistry helps keep your teeth and gums healthy through regular care and early detection of dental problems. Prevent Oral Health Problems Before They Start At Ideal Dental Solutions, our dentists are dedicated to providing exceptional preventive dental care to the Northern Virginia community. Preventive dentistry focuses",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -19736,7 +19812,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-692\" class=\"post-692 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"692\" class=\"elementor elementor-692\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "2137dfd84a",
+  "shell": "7aeaae084b",
   "_id": "page-692",
   "_type": "page",
   "title": "Restorative Dentistry",
@@ -19751,7 +19827,11 @@
    "/locations/mclean/",
    "/locations/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T17:13:18Z",
+  "excerpt": "Restorative Dentistry in McLean, VA Restorative Dentistry At Ideal Dental Solutions, we offer comprehensive restorative dentistry in McLean, VA to repair and enhance your smile. With over 50 years of combined experience and cutting-edge technology, our team is dedicated to providing personalized care that meets your unique dental needs. Restore Your Smile with Expert Care",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -21183,7 +21263,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-620\" class=\"post-620 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"620\" class=\"elementor elementor-620\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "ef0b3277f2",
+  "shell": "fc2b2011ff",
   "_id": "page-620",
   "_type": "page",
   "title": "Root Canal Therapy",
@@ -21198,7 +21278,11 @@
    "/locations/mclean/",
    "/locations/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T16:58:46Z",
+  "excerpt": "Pain-Free Root Canal Treatment in McLean, VA Achieve Dental Pain Relief Are you experiencing persistent tooth pain or sensitivity? At Ideal Dental Solutions, we offer expert root canal treatment in McLean, VA to save your natural tooth and provide lasting relief. Using advanced technology and a gentle approach, our team ensures a stress-free, pain-free experience",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -22591,7 +22675,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-597\" class=\"post-597 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"597\" class=\"elementor elementor-597\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "2aa0842fc8",
+  "shell": "050b433557",
   "_id": "page-597",
   "_type": "page",
   "title": "Single Tooth Implants",
@@ -22606,7 +22690,11 @@
    "/locations/mclean/",
    "/locations/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T16:58:15Z",
+  "excerpt": "Single Tooth Implants in McLean, Virginia Restore Your Smile Missing teeth affects more than just your smile—it can impact your oral health, too. Ideal Dental Solutions offers single tooth dental implants in McLean VA, a lasting solution that looks natural and helps protect your jaw and surrounding teeth. Let our experienced team guide you toward",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -23879,7 +23967,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-566\" class=\"post-566 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"566\" class=\"elementor elementor-566\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "1c976627db",
+  "shell": "0ffb0f49d9",
   "_id": "page-566",
   "_type": "page",
   "title": "Teeth Whitening",
@@ -23894,7 +23982,11 @@
    "/locations/mclean/",
    "/locations/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T16:57:31Z",
+  "excerpt": "Teeth Whitening in McLean, VA Professional Teeth Whitening At Ideal Dental Solutions, we offer professional teeth whitening in McLean, Virginia to help you achieve a brighter, more confident smile quickly and safely. Our advanced whitening techniques deliver noticeable, lasting results. Why Choose Ideal Dental Solutions for Professional Teeth Whitening? At Ideal Dental Solutions, our experienced",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -25294,7 +25386,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-547\" class=\"post-547 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"547\" class=\"elementor elementor-547\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "9f47fec348",
+  "shell": "6bee0af571",
   "_id": "page-547",
   "_type": "page",
   "title": "TMJ/TMD Treatments",
@@ -25309,7 +25401,11 @@
    "/locations/mclean/",
    "/locations/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T16:56:41Z",
+  "excerpt": "Effective TMJ Treatment in McLean, VA TMJ/TMD Treatments Living with the discomfort of jaw pain, headaches, or difficulty chewing can be frustrating and impact your daily life. These symptoms are often signs of temporomandibular joint (TMJ) disorder. At Ideal Dental Solutions, we specialize in providing effective TMJ treatment in McLean, VA. Your Trusted Partner for",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -26606,7 +26702,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-524\" class=\"post-524 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"524\" class=\"elementor elementor-524\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "3edbdef99f",
+  "shell": "303b6aff5b",
   "_id": "page-524",
   "_type": "page",
   "title": "Night Guards",
@@ -26620,7 +26716,11 @@
   "ancestorPaths": [
    "/locations/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T15:59:13Z",
+  "excerpt": "Custom Night Guards in Northern Virginia Protect Your Smile While You Sleep At Ideal Dental Solutions, we offer professionally crafted night guards in Northern Virginia to help patients protect their teeth from nighttime grinding and clenching—also known as bruxism. Whether you’re dealing with jaw or neck pain, worn enamel, or interrupted sleep, our custom mouth",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -27956,14 +28056,18 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-435\" class=\"post-435 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"435\" class=\"elementor elementor-435\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "3dbebc2e3a",
+  "shell": "480ba1cf98",
   "_id": "page-435",
   "_type": "page",
   "title": "Preventive Dentistry in Northern Virginia",
   "path": "/preventive-dentistry-in-northern-virginia/",
   "wpId": 435,
   "ancestorPaths": [],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T11:12:55Z",
+  "excerpt": "Preventive Dentistry Services in Northern Virginia Preventive Dentistry Prevent oral health problems before they start with our comprehensive preventive dentistry services. Proactive care keeps your teeth, gums, and mouth in optimal condition. Prevent Oral Health Problems Before They Start Preventive dentistry focuses on maintaining your oral health by preventing dental problems before they start. This",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -29243,14 +29347,18 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-295\" class=\"post-295 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"295\" class=\"elementor elementor-295\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "4565f1295c",
+  "shell": "0f18defd6a",
   "_id": "page-295",
   "_type": "page",
   "title": "Services",
   "path": "/services/",
   "wpId": 295,
   "ancestorPaths": [],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-05-31T13:00:18Z",
+  "excerpt": "Comprehensive Dental Care for All Your Needs Preventive Dentistry Preventive dentistry helps keep your teeth and gums healthy through regular care and early detection of dental problems. Your Trusted Partner in Oral Health in Northern VA At Ideal Dental Solutions, our dentists are dedicated to providing exceptional dental care to the Northern Virginia community. Our",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -30177,7 +30285,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-497\" class=\"post-497 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"497\" class=\"elementor elementor-497\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "5d627d79cd",
+  "shell": "ecd7d84f3a",
   "_id": "page-497",
   "_type": "page",
   "title": "Cosmetic Dentistry",
@@ -30191,7 +30299,11 @@
   "ancestorPaths": [
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T15:39:33Z",
+  "excerpt": "Cosmetic Dentistry Services in Northern Virginia Cosmetic Dentistry Get the beautiful, confident smile you’ve always wanted. At Ideal Dental Solutions, we provide personalized cosmetic dentistry treatments designed to improve the appearance, function, and confidence of your smile. What Is Cosmetic Dentistry? Cosmetic dentistry focuses on improving the appearance, symmetry, color, alignment, and overall aesthetics of",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -31104,7 +31216,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-517\" class=\"post-517 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"517\" class=\"elementor elementor-517\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "03e356e0fb",
+  "shell": "80b4b8219b",
   "_id": "page-517",
   "_type": "page",
   "title": "Dental Bonding",
@@ -31119,7 +31231,11 @@
    "/services/cosmetic-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T15:44:01Z",
+  "excerpt": "Dental Bonding in Northern VA Cosmetic Dentistry | Ideal Dental Solutions Dental bonding is a fast, minimally invasive cosmetic dentistry treatment designed to repair chipped, cracked, uneven, or discolored teeth using durable tooth-colored composite resin. At Ideal Dental Solutions, our personalized approach helps patients achieve beautiful, confident smiles with results that blend seamlessly with natural",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -32060,7 +32176,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-507\" class=\"post-507 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"507\" class=\"elementor elementor-507\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "40f7a82116",
+  "shell": "3d68e2ae68",
   "_id": "page-507",
   "_type": "page",
   "title": "Invisalign",
@@ -32075,7 +32191,11 @@
    "/services/cosmetic-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T15:41:27Z",
+  "excerpt": "Invisalign® in Northern VA Cosmetic Dentistry Achieve your ideal smile with Invisalign clear aligners. Ideal Dental Solutions offers expert Invisalign treatment in Northern Virginia — a discreet, comfortable way to straighten your teeth without traditional braces. What is Invisalign? Invisalign uses custom-made clear aligners crafted from smooth, transparent plastic to gradually shift your teeth into",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -32974,7 +33094,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-512\" class=\"post-512 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"512\" class=\"elementor elementor-512\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "9c39f8d1d3",
+  "shell": "d45da726cd",
   "_id": "page-512",
   "_type": "page",
   "title": "Porcelain Veneers",
@@ -32989,7 +33109,11 @@
    "/services/cosmetic-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T15:43:33Z",
+  "excerpt": "Transform Your Smile With Porcelain Dental Veneers in Northern Virginia Cosmetic Dentistry | Ideal Dental Solutions At Ideal Dental Solutions, we offer premium porcelain dental veneers to help you achieve the smile of your dreams. Our expert team crafts custom, natural-looking veneers that enhance your appearance while protecting your teeth for lasting confidence. What Are",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -33940,7 +34064,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-502\" class=\"post-502 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"502\" class=\"elementor elementor-502\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "49ee63e5ab",
+  "shell": "78e497c7fc",
   "_id": "page-502",
   "_type": "page",
   "title": "Teeth Whitening",
@@ -33955,7 +34079,11 @@
    "/services/cosmetic-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T15:40:26Z",
+  "excerpt": "Teeth Whitening in Northern VA Cosmetic Dentistry Achieve your ideal smile with professional teeth whitening at Ideal Dental Solutions. Advanced whitening techniques deliver noticeable, lasting results whether you choose in-office treatment or a convenient take-home kit. Why Choose Ideal Dental Solutions for Professional Teeth Whitening? At Ideal Dental Solutions, we offer professional teeth whitening services",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -34936,7 +35064,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-482\" class=\"post-482 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"482\" class=\"elementor elementor-482\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "d03ce6443b",
+  "shell": "84ef21c5d2",
   "_id": "page-482",
   "_type": "page",
   "title": "Dental Implants Dentistry",
@@ -34950,7 +35078,11 @@
   "ancestorPaths": [
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T15:34:18Z",
+  "excerpt": "Dental Implants in Northern Virginia Dental Implant Dentistry At Ideal Dental Solutions, we specialize in top-quality dental implants in Northern Virginia to restore your smile and dental health. Our durable, natural-looking implants offer long-term benefits for function and aesthetics. Get Your Ideal Smile at Ideal Dental Solutions Dental implants are a revolutionary solution to replace",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -35877,7 +36009,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-492\" class=\"post-492 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"492\" class=\"elementor elementor-492\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "6abc1381be",
+  "shell": "637c4ab33e",
   "_id": "page-492",
   "_type": "page",
   "title": "Full Arch Implants",
@@ -35892,7 +36024,11 @@
    "/services/dental-implants-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T15:36:25Z",
+  "excerpt": "Full Arch Dental Implants: Northern VA’s Best Dental Implant Dentistry Struggling with missing teeth or uncomfortable dentures? Full arch dental implants offer a permanent, natural-looking solution for a complete upper or lower arch at Ideal Dental Solutions. What Are Full Arch Dental Implants? Full arch dental implants are a complete tooth replacement solution that uses",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -36819,7 +36955,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-487\" class=\"post-487 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"487\" class=\"elementor elementor-487\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "e4600dd59e",
+  "shell": "c8e3232b60",
   "_id": "page-487",
   "_type": "page",
   "title": "Single Tooth Implants",
@@ -36834,7 +36970,11 @@
    "/services/dental-implants-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T15:35:38Z",
+  "excerpt": "Your Trusted Source for Single Tooth Implants in Northern VA Dental Implant Dentistry Restore your smile with a single tooth implant in Northern VA at Ideal Dental Solutions. Our durable, natural-looking implants offer a permanent solution for missing teeth with advanced technology and personalized care. What is a Single Tooth Dental Implant? A single tooth",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -37733,7 +37873,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-449\" class=\"post-449 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"449\" class=\"elementor elementor-449\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "08cd29b533",
+  "shell": "ec76842d66",
   "_id": "page-449",
   "_type": "page",
   "title": "Periodontic Dentistry",
@@ -37747,7 +37887,11 @@
   "ancestorPaths": [
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T11:13:11Z",
+  "excerpt": "Periodontic Dentistry in Northern Virginia Expert Periodontal Care At Ideal Dental Solutions, we prioritize your gum health as the foundation of a radiant smile. Our expert periodontal dentistry services focus on preventing and treating gum disease with over 50 years of combined experience. Trust our team for exceptional periodontal care. What is Periodontic Dentistry? Periodontal",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -38688,7 +38832,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-477\" class=\"post-477 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"477\" class=\"elementor elementor-477\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "8ee8b4f549",
+  "shell": "ef0c9d785e",
   "_id": "page-477",
   "_type": "page",
   "title": "Crown Lengthening",
@@ -38703,7 +38847,11 @@
    "/services/periodontic-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T15:23:11Z",
+  "excerpt": "Revealing Your Best Smile: Crown Lengthening in Northern VA Periodontal Dentistry Transform your smile with expert crown-lengthening services in Northern VA at Ideal Dental Solutions. We specialize in gum reshaping to enhance both oral health and aesthetics. Expert Solutions for Gum and Dental Health At Ideal Dental Solutions, whether you’re preparing for a restorative crown",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -39554,7 +39702,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-456\" class=\"post-456 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"456\" class=\"elementor elementor-456\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "51e70b9d46",
+  "shell": "10c7ee267e",
   "_id": "page-456",
   "_type": "page",
   "title": "Gum Disease Treatment",
@@ -39569,7 +39717,11 @@
    "/services/periodontic-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T11:10:03Z",
+  "excerpt": "Expert Gum Disease Treatment in Northern VA Periodontal Dentistry Advanced periodontal disease treatment for healthier gums. At Ideal Dental Solutions, we offer expert gum disease treatment in Northern Virginia with personalized care for every stage of periodontal disease. Understanding Periodontal Disease Gum disease, or periodontal disease, ranges from early-stage gingivitis to advanced periodontitis. Gingivitis presents",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -40372,7 +40524,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-454\" class=\"post-454 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"454\" class=\"elementor elementor-454\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "54ea66437d",
+  "shell": "3e7d48d5b7",
   "_id": "page-454",
   "_type": "page",
   "title": "Gum Graft Surgery",
@@ -40387,7 +40539,11 @@
    "/services/periodontic-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T11:10:08Z",
+  "excerpt": "The Gum Graft Surgery Experts of Northern VA Periodontal Dentistry Restore your smile and protect your gums with expert gum graft surgery in Northern Virginia, proudly offered by Ideal Dental Solutions. Our team provides advanced periodontal treatment to reverse gum recession and restore long-term oral health. What is a Gum Grafting Procedure? Gum grafting, also",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -41328,7 +41484,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-438\" class=\"post-438 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"438\" class=\"elementor elementor-438\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "6274e6df33",
+  "shell": "72c804b05f",
   "_id": "page-438",
   "_type": "page",
   "title": "Preventive Dentistry",
@@ -41342,7 +41498,11 @@
   "ancestorPaths": [
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T11:12:55Z",
+  "excerpt": "Preventive Dentistry Services in Northern Virginia Preventive Dentistry Preventive dentistry focuses on maintaining your oral health by preventing dental problems before they start. Our proactive approach includes regular checkups, cleanings, and treatments designed to keep your smile healthy for life. Prevent Oral Health Problems Before They Start At Ideal Dental Solutions, our preventive care team",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -42241,7 +42401,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-446\" class=\"post-446 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"446\" class=\"elementor elementor-446\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "c432131524",
+  "shell": "880e31b445",
   "_id": "page-446",
   "_type": "page",
   "title": "Dental Checkups & Exams",
@@ -42256,7 +42416,11 @@
    "/services/preventive-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T11:12:28Z",
+  "excerpt": "Comprehensive Dental Exams and Checkups in Northern Virginia Preventive Dentistry At Ideal Dental Solutions, we make your oral health our top priority. Our comprehensive dental exams and checkups in Northern Virginia are designed to do more than just check for cavities — they give you a full picture of your oral and overall health. Thorough",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -43155,7 +43319,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-443\" class=\"post-443 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"443\" class=\"elementor elementor-443\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "8e163ae525",
+  "shell": "4c5d83f743",
   "_id": "page-443",
   "_type": "page",
   "title": "Dental Sealants",
@@ -43170,7 +43334,11 @@
    "/services/preventive-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T11:12:55Z",
+  "excerpt": "Protect Your Smile with Dental Sealants in Northern Virginia Preventive Dentistry When it comes to preventing cavities, brushing and flossing are important, but they’re not always enough — especially for back teeth with deep grooves. At Ideal Dental Solutions, we offer dental sealants in Northern Virginia as a simple, non-invasive way to protect teeth from",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -44069,7 +44237,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-440\" class=\"post-440 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"440\" class=\"elementor elementor-440\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "267d83f9b2",
+  "shell": "7fa44aa5c6",
   "_id": "page-440",
   "_type": "page",
   "title": "Teeth Cleaning",
@@ -44084,7 +44252,11 @@
    "/services/preventive-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T11:12:55Z",
+  "excerpt": "Professional Teeth Cleaning in Northern Virginia Healthier Smiles Start Here At Ideal Dental Solutions, your oral health is not just our priority, it’s our passion. We proudly provide expert teeth cleaning in Northern Virginia, serving communities across McLean, Tysons Corner, Vienna, and neighboring areas. With over 50 years of combined experience and dental expertise, our",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -44983,7 +45155,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-413\" class=\"post-413 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"413\" class=\"elementor elementor-413\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "68454ded33",
+  "shell": "c2d9e166bb",
   "_id": "page-413",
   "_type": "page",
   "title": "Restorative Dentistry",
@@ -44997,7 +45169,11 @@
   "ancestorPaths": [
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T11:12:55Z",
+  "excerpt": "Restorative Dentistry in Northern Virginia Restorative Dentistry Restorative dentistry helps repair and rebuild damaged or missing teeth, restoring both function and aesthetics for a healthy, confident smile. Restore Your Smile with Expert Care in Northern Virginia At Ideal Dental Solutions, our dentists are dedicated to providing exceptional restorative dental care to the Northern Virginia community.",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -45896,7 +46072,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-432\" class=\"post-432 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"432\" class=\"elementor elementor-432\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "36694fc31c",
+  "shell": "99814edfb9",
   "_id": "page-432",
   "_type": "page",
   "title": "Dental Bridges",
@@ -45911,7 +46087,11 @@
    "/services/restorative-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T11:12:55Z",
+  "excerpt": "Quality Dental Bridges in Northern Virginia Dental Bridges Bridging the gap for a healthier, more confident smile. Our custom dental bridges restore missing teeth with natural-looking, durable results tailored to your unique needs. Bridging the Gap for a Healthier, More Confident Smile Dental bridges replace one or more missing teeth using crowns on adjacent teeth",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -46810,7 +46990,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-429\" class=\"post-429 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"429\" class=\"elementor elementor-429\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "dde75598b4",
+  "shell": "de208b136f",
   "_id": "page-429",
   "_type": "page",
   "title": "Dental Fillings",
@@ -46825,7 +47005,11 @@
    "/services/restorative-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T11:12:55Z",
+  "excerpt": "Expert Dental Fillings in Northern Virginia Dental Fillings Restore your teeth’s health and appearance with expert dental filling services. We use advanced techniques and high-quality materials to ensure long-lasting, natural-looking results. Experience Dental Health With Tooth Fillings in Northern VA Dental fillings restore teeth affected by decay, fractures, or general wear, ensuring your oral health",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -47724,7 +47908,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-426\" class=\"post-426 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"426\" class=\"elementor elementor-426\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "96ef25f12b",
+  "shell": "9d683e55eb",
   "_id": "page-426",
   "_type": "page",
   "title": "Dentures in Northern Virginia",
@@ -47739,7 +47923,11 @@
    "/services/restorative-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T11:12:55Z",
+  "excerpt": "Comfortable, Natural-Looking Dentures in Northern Virginia Full & Partial Dentures At Ideal Dental Solutions, we offer premium-quality full and partial dentures designed to look natural, feel comfortable, and help you enjoy life with confidence again. Your Trusted Experts for Northern Virginia Dentures Whether you need a full set of dentures, partials, implant-supported options, or denture",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -49075,7 +49263,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-423\" class=\"post-423 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"423\" class=\"elementor elementor-423\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "d49377a077",
+  "shell": "0041b01fe1",
   "_id": "page-423",
   "_type": "page",
   "title": "Root Canal Therapy",
@@ -49090,7 +49278,11 @@
    "/services/restorative-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T11:12:55Z",
+  "excerpt": "Pain-Free Root Canal Treatment in Northern Virginia Root Canal Therapy Achieve dental pain relief with expert root canal therapy. Our gentle, precision-focused approach saves your natural tooth while eliminating infection and discomfort. Achieve Dental Pain Relief With Root Canal Therapy Root canal treatment removes infected pulp from inside your tooth, alleviating pain and preventing further",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -49989,7 +50181,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-420\" class=\"post-420 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"420\" class=\"elementor elementor-420\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "dd0391683d",
+  "shell": "02d107434c",
   "_id": "page-420",
   "_type": "page",
   "title": "TMJ/TMD Treatments",
@@ -50004,7 +50196,11 @@
    "/services/restorative-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T11:12:55Z",
+  "excerpt": "Effective TMJ Treatment in Northern Virginia TMJ/TMD Treatments Your path to lasting relief from TMJ pain starts here. At Ideal Dental Solutions, we provide comprehensive, personalized TMJ treatment to help you regain comfort and function. Your Path to Lasting Relief from TMJ Pain Starts Here TMJ (temporomandibular joint) disorders affect the joint connecting your jaw",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -50796,7 +50992,7 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-417\" class=\"post-417 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"417\" class=\"elementor elementor-417\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "c369d52bb3",
+  "shell": "7757b4156e",
   "_id": "page-417",
   "_type": "page",
   "title": "Tooth Extractions",
@@ -50811,7 +51007,11 @@
    "/services/restorative-dentistry/",
    "/services/"
   ],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-06-01T11:12:55Z",
+  "excerpt": "Painless Tooth Extraction in Northern Virginia Tooth Extractions If you need a tooth extraction in Northern Virginia, you’re in good hands with Ideal Dental Solutions in McLean. Our caring team makes the process as easy and comfortable as possible. The Tooth Removal Experts of Northern Virginia Our state-of-the-art dental office in McLean, Virginia, is fully",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {
@@ -51123,14 +51323,18 @@
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-3688\" class=\"post-3688 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"3688\" class=\"elementor elementor-3688\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "77765a4c14",
+  "shell": "d1b71d28d0",
   "_id": "page-3688",
   "_type": "page",
   "title": "Thank You",
   "path": "/thank-you/",
   "wpId": 3688,
   "ancestorPaths": [],
-  "wpTemplate": "default"
+  "wpTemplate": "default",
+  "published": "2026-09-04T15:40:31Z",
+  "excerpt": "Thank you for your submission Someone on our team will reach out to you. Before and After Photos Dr. Adili and the team at Ideal Dental Solutions are here to give you a smile you’re genuinely proud of, done right the first time. View Transformation View Transformation View Transformation View Transformation View Transformation View Transformation",
+  "authorName": "Subhan M",
+  "authorSlug": "subhan"
  },
  {
   "seo": {
@@ -51150,7 +51354,7 @@
   "bodyClass": "archive author author-admin author-1 wp-custom-logo wp-embed-responsive wp-theme-blocksy elementor-default elementor-kit-5 ct-elementor-default-template",
   "headingHtml": "admin",
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\" itemscope=\"itemscope\" itemtype=\"https://schema.org/CreativeWork\">\n\n\t\t\n<div class=\"hero-section\" data-type=\"type-2\">\n\t\n\t\t\t<header class=\"entry-header ct-container-narrow\">\n\t\t\t<div class=\"ct-author-name\"><span class=\"ct-media-container-static\"><img src=\"https://secure.gravatar.com/avatar/33e54dec0cd79fc4b5e911c15f836c46ec8d0e452ecd3ca5f707bce0a3540a3b?s=120&amp;d=mm&amp;r=g\" width=\"60\" height=\"60\" style=\"height:60px\" alt=\"admin\"></span><h1 class=\"page-title\" itemprop=\"headline\">[[@html:headingHtml]]</h1></div>\n\t\t<ul class=\"entry-meta\" data-type=\"simple:slash\">\n\t\t\t\t\t\t\t<li class=\"meta-date\">Joined:&nbsp;May 15, 2026</li>\n\t\t\t\n\t\t\t\t\t\t\t<li class=\"meta-articles\">Articles:&nbsp;0</li>\n\t\t\t\n\t\t\t\t\t</ul>\n\n\t<div class=\"author-box-socials\"><span><a href=\"http://wordpress-b2hazofwsarxa2217qe0fotj.156.67.217.52.sslip.io\" aria-label=\"Website icon\"><svg class=\"ct-icon\" width=\"12\" height=\"12\" viewBox=\"0 0 20 20\"><path d=\"M10 0C4.5 0 0 4.5 0 10s4.5 10 10 10 10-4.5 10-10S15.5 0 10 0zm6.9 6H14c-.4-1.8-1.4-3.6-1.4-3.6s2.8.8 4.3 3.6zM10 2s1.2 1.7 1.9 4H8.1C8.8 3.6 10 2 10 2zM2.2 12s-.6-1.8 0-4h3.4c-.3 1.8 0 4 0 4H2.2zm.9 2H6c.6 2.3 1.4 3.6 1.4 3.6C4.3 16.5 3.1 14 3.1 14zM6 6H3.1c1.6-2.8 4.3-3.6 4.3-3.6S6.4 4.2 6 6zm4 12s-1.3-1.9-1.9-4h3.8c-.6 2.1-1.9 4-1.9 4zm2.3-6H7.7s-.3-2 0-4h4.7c.3 1.8-.1 4-.1 4zm.3 5.6s1-1.8 1.4-3.6h2.9c-1.6 2.7-4.3 3.6-4.3 3.6zm1.7-5.6s.3-2.1 0-4h3.4c.6 2.2 0 4 0 4h-3.4z\"></path></svg></a></span></div>\t\t</header>\n\t</div>\n\n\n\n<div class=\"ct-container\" data-vertical-spacing=\"top:bottom\">\n\t<section class=\"ct-no-results\">\n\t\t<div class=\"entry-content is-layout-flow\">\n\n<form role=\"search\" method=\"get\" class=\"ct-search-form\" data-form-controls=\"inside\" data-taxonomy-filter=\"false\" data-submit-button=\"minimal:icon\" action=\"/\" data-live-results=\"thumbs\">\n\n\t<div class=\"ct-search-form-inner ct-pseudo-input\">\n\t\t\n\t\t\t<input type=\"search\" placeholder=\"Search\" value=\"\" name=\"s\" autocomplete=\"off\" title=\"Search for...\" aria-label=\"Search for...\" role=\"combobox\" aria-autocomplete=\"list\" aria-controls=\"ct-search-results-9b9\" aria-describedby=\"ct-search-status-9b9\" aria-expanded=\"false\">\n\n\t\t\t\n\t\t\n\t\t<button type=\"submit\" class=\"wp-element-button\" aria-label=\"Search button\">\n\t\t\t<svg class=\"ct-icon ct-search-button-content\" aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 15 15\"><path d=\"M14.8,13.7L12,11c0.9-1.2,1.5-2.6,1.5-4.2c0-3.7-3-6.8-6.8-6.8S0,3,0,6.8s3,6.8,6.8,6.8c1.6,0,3.1-0.6,4.2-1.5l2.8,2.8c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2C15.1,14.5,15.1,14,14.8,13.7z M1.5,6.8c0-2.9,2.4-5.2,5.2-5.2S12,3.9,12,6.8S9.6,12,6.8,12S1.5,9.6,1.5,6.8z\"></path></svg>\n\t\t\t<span class=\"ct-ajax-loader\">\n\t\t\t\t<svg viewBox=\"0 0 24 24\">\n\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"10\" opacity=\"0.2\" fill=\"none\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\"></circle>\n\n\t\t\t\t\t<path d=\"m12,2c5.52,0,10,4.48,10,10\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-miterlimit=\"10\" stroke-width=\"2\">\n\t\t\t\t\t\t<animateTransform attributeName=\"transform\" attributeType=\"XML\" type=\"rotate\" dur=\"0.6s\" from=\"0 12 12\" to=\"360 12 12\" repeatCount=\"indefinite\" begin=\"indefinite\"></animateTransform>\n\t\t\t\t\t</path>\n\t\t\t\t</svg>\n\t\t\t</span>\n\t\t</button>\n\n\t\t\n\t\t\n\t\t\n\n\t\t\t</div>\n\n\t\t\t<div class=\"screen-reader-text\" id=\"ct-search-status-9b9\" aria-live=\"polite\" role=\"status\">\n\t\t\tNo results\t\t</div>\n\t\n</form>\n</div>\t</section>\n\n\t</div>\n\t</main>",
-  "shell": "14c2e5662a",
+  "shell": "c4a74d0bb2",
   "_id": "archive-author-admin",
   "_type": "archivePage",
   "title": "Author: admin",
@@ -51175,7 +51379,7 @@
   "bodyClass": "archive author author-ryan author-3 wp-custom-logo wp-embed-responsive wp-theme-blocksy elementor-default elementor-kit-5 ct-elementor-default-template",
   "headingHtml": "ryan",
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\" itemscope=\"itemscope\" itemtype=\"https://schema.org/CreativeWork\">\n\n\t\t\n<div class=\"hero-section\" data-type=\"type-2\">\n\t\n\t\t\t<header class=\"entry-header ct-container-narrow\">\n\t\t\t<div class=\"ct-author-name\"><span class=\"ct-media-container-static\"><img src=\"https://secure.gravatar.com/avatar/3cb35a6e358d62310e6ba6e48638be0a50968f57bfd98dde58def523710563db?s=120&amp;d=mm&amp;r=g\" width=\"60\" height=\"60\" style=\"height:60px\" alt=\"ryan\"></span><h1 class=\"page-title\" itemprop=\"headline\">[[@html:headingHtml]]</h1></div>\n\t\t<ul class=\"entry-meta\" data-type=\"simple:slash\">\n\t\t\t\t\t\t\t<li class=\"meta-date\">Joined:&nbsp;September 27, 2026</li>\n\t\t\t\n\t\t\t\t\t\t\t<li class=\"meta-articles\">Articles:&nbsp;0</li>\n\t\t\t\n\t\t\t\t\t</ul>\n\n\t\t\t</header>\n\t</div>\n\n\n\n<div class=\"ct-container\" data-vertical-spacing=\"top:bottom\">\n\t<section class=\"ct-no-results\">\n\t\t<div class=\"entry-content is-layout-flow\">\n\n<form role=\"search\" method=\"get\" class=\"ct-search-form\" data-form-controls=\"inside\" data-taxonomy-filter=\"false\" data-submit-button=\"minimal:icon\" action=\"/\" data-live-results=\"thumbs\">\n\n\t<div class=\"ct-search-form-inner ct-pseudo-input\">\n\t\t\n\t\t\t<input type=\"search\" placeholder=\"Search\" value=\"\" name=\"s\" autocomplete=\"off\" title=\"Search for...\" aria-label=\"Search for...\" role=\"combobox\" aria-autocomplete=\"list\" aria-controls=\"ct-search-results-f1f\" aria-describedby=\"ct-search-status-f1f\" aria-expanded=\"false\">\n\n\t\t\t\n\t\t\n\t\t<button type=\"submit\" class=\"wp-element-button\" aria-label=\"Search button\">\n\t\t\t<svg class=\"ct-icon ct-search-button-content\" aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 15 15\"><path d=\"M14.8,13.7L12,11c0.9-1.2,1.5-2.6,1.5-4.2c0-3.7-3-6.8-6.8-6.8S0,3,0,6.8s3,6.8,6.8,6.8c1.6,0,3.1-0.6,4.2-1.5l2.8,2.8c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2C15.1,14.5,15.1,14,14.8,13.7z M1.5,6.8c0-2.9,2.4-5.2,5.2-5.2S12,3.9,12,6.8S9.6,12,6.8,12S1.5,9.6,1.5,6.8z\"></path></svg>\n\t\t\t<span class=\"ct-ajax-loader\">\n\t\t\t\t<svg viewBox=\"0 0 24 24\">\n\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"10\" opacity=\"0.2\" fill=\"none\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\"></circle>\n\n\t\t\t\t\t<path d=\"m12,2c5.52,0,10,4.48,10,10\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-miterlimit=\"10\" stroke-width=\"2\">\n\t\t\t\t\t\t<animateTransform attributeName=\"transform\" attributeType=\"XML\" type=\"rotate\" dur=\"0.6s\" from=\"0 12 12\" to=\"360 12 12\" repeatCount=\"indefinite\" begin=\"indefinite\"></animateTransform>\n\t\t\t\t\t</path>\n\t\t\t\t</svg>\n\t\t\t</span>\n\t\t</button>\n\n\t\t\n\t\t\n\t\t\n\n\t\t\t</div>\n\n\t\t\t<div class=\"screen-reader-text\" id=\"ct-search-status-f1f\" aria-live=\"polite\" role=\"status\">\n\t\t\tNo results\t\t</div>\n\t\n</form>\n</div>\t</section>\n\n\t</div>\n\t</main>",
-  "shell": "c162337052",
+  "shell": "f838d7fa65",
   "_id": "archive-author-ryan",
   "_type": "archivePage",
   "title": "Author: ryan",
@@ -51200,7 +51404,7 @@
   "bodyClass": "archive author author-subhan author-2 wp-custom-logo wp-embed-responsive wp-theme-blocksy elementor-default elementor-kit-5 ct-elementor-default-template",
   "headingHtml": "Subhan M",
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\" itemscope=\"itemscope\" itemtype=\"https://schema.org/CreativeWork\">\n\n\t\t\n<div class=\"hero-section\" data-type=\"type-2\">\n\t\n\t\t\t<header class=\"entry-header ct-container-narrow\">\n\t\t\t<div class=\"ct-author-name\"><span class=\"ct-media-container-static\"><img src=\"https://secure.gravatar.com/avatar/4f17fc1a6b9aa819935aea35b74679007a370b2d071caca24afbad2de2355b76?s=120&amp;d=mm&amp;r=g\" width=\"60\" height=\"60\" style=\"height:60px\" alt=\"Subhan M\"></span><h1 class=\"page-title\" itemprop=\"headline\">[[@html:headingHtml]]</h1></div>\n\t\t<ul class=\"entry-meta\" data-type=\"simple:slash\">\n\t\t\t\t\t\t\t<li class=\"meta-date\">Joined:&nbsp;August 28, 2026</li>\n\t\t\t\n\t\t\t\t\t\t\t<li class=\"meta-articles\">Articles:&nbsp;0</li>\n\t\t\t\n\t\t\t\t\t</ul>\n\n\t\t\t</header>\n\t</div>\n\n\n\n<div class=\"ct-container\" data-vertical-spacing=\"top:bottom\">\n\t<section class=\"ct-no-results\">\n\t\t<div class=\"entry-content is-layout-flow\">\n\n<form role=\"search\" method=\"get\" class=\"ct-search-form\" data-form-controls=\"inside\" data-taxonomy-filter=\"false\" data-submit-button=\"minimal:icon\" action=\"/\" data-live-results=\"thumbs\">\n\n\t<div class=\"ct-search-form-inner ct-pseudo-input\">\n\t\t\n\t\t\t<input type=\"search\" placeholder=\"Search\" value=\"\" name=\"s\" autocomplete=\"off\" title=\"Search for...\" aria-label=\"Search for...\" role=\"combobox\" aria-autocomplete=\"list\" aria-controls=\"ct-search-results-281\" aria-describedby=\"ct-search-status-281\" aria-expanded=\"false\">\n\n\t\t\t\n\t\t\n\t\t<button type=\"submit\" class=\"wp-element-button\" aria-label=\"Search button\">\n\t\t\t<svg class=\"ct-icon ct-search-button-content\" aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 15 15\"><path d=\"M14.8,13.7L12,11c0.9-1.2,1.5-2.6,1.5-4.2c0-3.7-3-6.8-6.8-6.8S0,3,0,6.8s3,6.8,6.8,6.8c1.6,0,3.1-0.6,4.2-1.5l2.8,2.8c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2C15.1,14.5,15.1,14,14.8,13.7z M1.5,6.8c0-2.9,2.4-5.2,5.2-5.2S12,3.9,12,6.8S9.6,12,6.8,12S1.5,9.6,1.5,6.8z\"></path></svg>\n\t\t\t<span class=\"ct-ajax-loader\">\n\t\t\t\t<svg viewBox=\"0 0 24 24\">\n\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"10\" opacity=\"0.2\" fill=\"none\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\"></circle>\n\n\t\t\t\t\t<path d=\"m12,2c5.52,0,10,4.48,10,10\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-miterlimit=\"10\" stroke-width=\"2\">\n\t\t\t\t\t\t<animateTransform attributeName=\"transform\" attributeType=\"XML\" type=\"rotate\" dur=\"0.6s\" from=\"0 12 12\" to=\"360 12 12\" repeatCount=\"indefinite\" begin=\"indefinite\"></animateTransform>\n\t\t\t\t\t</path>\n\t\t\t\t</svg>\n\t\t\t</span>\n\t\t</button>\n\n\t\t\n\t\t\n\t\t\n\n\t\t\t</div>\n\n\t\t\t<div class=\"screen-reader-text\" id=\"ct-search-status-281\" aria-live=\"polite\" role=\"status\">\n\t\t\tNo results\t\t</div>\n\t\n</form>\n</div>\t</section>\n\n\t</div>\n\t</main>",
-  "shell": "e8054297e2",
+  "shell": "dbc2249f6f",
   "_id": "archive-author-subhan",
   "_type": "archivePage",
   "title": "Author: Subhan M",
@@ -51227,7 +51431,7 @@
   "bodyClass": "archive category category-patient-guides category-14 wp-custom-logo wp-embed-responsive wp-theme-blocksy elementor-default elementor-kit-5 ct-elementor-default-template",
   "headingHtml": "<span class=\"ct-title-label\">Category</span> Patient Guides",
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\" itemscope=\"itemscope\" itemtype=\"https://schema.org/CreativeWork\">\n\n\t\t\n<div class=\"ct-container\" data-vertical-spacing=\"top:bottom\">\n\t<section class=\"ct-no-results\">\n\t\t\n<div class=\"hero-section is-width-constrained\" data-type=\"type-1\">\n\t\t\t<header class=\"entry-header\">\n\t\t\t<h1 class=\"page-title\" itemprop=\"headline\">[[@html:headingHtml]]</h1>\t\t</header>\n\t</div><div class=\"entry-content is-layout-flow\">\n\n<form role=\"search\" method=\"get\" class=\"ct-search-form\" data-form-controls=\"inside\" data-taxonomy-filter=\"false\" data-submit-button=\"minimal:icon\" action=\"/\" data-live-results=\"thumbs\">\n\n\t<div class=\"ct-search-form-inner ct-pseudo-input\">\n\t\t\n\t\t\t<input type=\"search\" placeholder=\"Search\" value=\"\" name=\"s\" autocomplete=\"off\" title=\"Search for...\" aria-label=\"Search for...\" role=\"combobox\" aria-autocomplete=\"list\" aria-controls=\"ct-search-results-50f\" aria-describedby=\"ct-search-status-50f\" aria-expanded=\"false\">\n\n\t\t\t\n\t\t\n\t\t<button type=\"submit\" class=\"wp-element-button\" aria-label=\"Search button\">\n\t\t\t<svg class=\"ct-icon ct-search-button-content\" aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 15 15\"><path d=\"M14.8,13.7L12,11c0.9-1.2,1.5-2.6,1.5-4.2c0-3.7-3-6.8-6.8-6.8S0,3,0,6.8s3,6.8,6.8,6.8c1.6,0,3.1-0.6,4.2-1.5l2.8,2.8c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2C15.1,14.5,15.1,14,14.8,13.7z M1.5,6.8c0-2.9,2.4-5.2,5.2-5.2S12,3.9,12,6.8S9.6,12,6.8,12S1.5,9.6,1.5,6.8z\"></path></svg>\n\t\t\t<span class=\"ct-ajax-loader\">\n\t\t\t\t<svg viewBox=\"0 0 24 24\">\n\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"10\" opacity=\"0.2\" fill=\"none\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\"></circle>\n\n\t\t\t\t\t<path d=\"m12,2c5.52,0,10,4.48,10,10\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-miterlimit=\"10\" stroke-width=\"2\">\n\t\t\t\t\t\t<animateTransform attributeName=\"transform\" attributeType=\"XML\" type=\"rotate\" dur=\"0.6s\" from=\"0 12 12\" to=\"360 12 12\" repeatCount=\"indefinite\" begin=\"indefinite\"></animateTransform>\n\t\t\t\t\t</path>\n\t\t\t\t</svg>\n\t\t\t</span>\n\t\t</button>\n\n\t\t\n\t\t\n\t\t\n\n\t\t\t</div>\n\n\t\t\t<div class=\"screen-reader-text\" id=\"ct-search-status-50f\" aria-live=\"polite\" role=\"status\">\n\t\t\tNo results\t\t</div>\n\t\n</form>\n</div>\t</section>\n\n\t</div>\n\t</main>",
-  "shell": "e86fddd5a1",
+  "shell": "e62ca94633",
   "_id": "archive-category-patient-guides",
   "_type": "archivePage",
   "title": "Category: Patient Guides",
@@ -51254,7 +51458,7 @@
   "bodyClass": "archive category category-uncategorized category-1 wp-custom-logo wp-embed-responsive wp-theme-blocksy elementor-default elementor-kit-5 ct-elementor-default-template",
   "headingHtml": "<span class=\"ct-title-label\">Category</span> Uncategorized",
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\" itemscope=\"itemscope\" itemtype=\"https://schema.org/CreativeWork\">\n\n\t\t\n<div class=\"ct-container\" data-vertical-spacing=\"top:bottom\">\n\t<section class=\"ct-no-results\">\n\t\t\n<div class=\"hero-section is-width-constrained\" data-type=\"type-1\">\n\t\t\t<header class=\"entry-header\">\n\t\t\t<h1 class=\"page-title\" itemprop=\"headline\">[[@html:headingHtml]]</h1>\t\t</header>\n\t</div><div class=\"entry-content is-layout-flow\">\n\n<form role=\"search\" method=\"get\" class=\"ct-search-form\" data-form-controls=\"inside\" data-taxonomy-filter=\"false\" data-submit-button=\"minimal:icon\" action=\"/\" data-live-results=\"thumbs\">\n\n\t<div class=\"ct-search-form-inner ct-pseudo-input\">\n\t\t\n\t\t\t<input type=\"search\" placeholder=\"Search\" value=\"\" name=\"s\" autocomplete=\"off\" title=\"Search for...\" aria-label=\"Search for...\" role=\"combobox\" aria-autocomplete=\"list\" aria-controls=\"ct-search-results-e56\" aria-describedby=\"ct-search-status-e56\" aria-expanded=\"false\">\n\n\t\t\t\n\t\t\n\t\t<button type=\"submit\" class=\"wp-element-button\" aria-label=\"Search button\">\n\t\t\t<svg class=\"ct-icon ct-search-button-content\" aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 15 15\"><path d=\"M14.8,13.7L12,11c0.9-1.2,1.5-2.6,1.5-4.2c0-3.7-3-6.8-6.8-6.8S0,3,0,6.8s3,6.8,6.8,6.8c1.6,0,3.1-0.6,4.2-1.5l2.8,2.8c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2C15.1,14.5,15.1,14,14.8,13.7z M1.5,6.8c0-2.9,2.4-5.2,5.2-5.2S12,3.9,12,6.8S9.6,12,6.8,12S1.5,9.6,1.5,6.8z\"></path></svg>\n\t\t\t<span class=\"ct-ajax-loader\">\n\t\t\t\t<svg viewBox=\"0 0 24 24\">\n\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"10\" opacity=\"0.2\" fill=\"none\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\"></circle>\n\n\t\t\t\t\t<path d=\"m12,2c5.52,0,10,4.48,10,10\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-miterlimit=\"10\" stroke-width=\"2\">\n\t\t\t\t\t\t<animateTransform attributeName=\"transform\" attributeType=\"XML\" type=\"rotate\" dur=\"0.6s\" from=\"0 12 12\" to=\"360 12 12\" repeatCount=\"indefinite\" begin=\"indefinite\"></animateTransform>\n\t\t\t\t\t</path>\n\t\t\t\t</svg>\n\t\t\t</span>\n\t\t</button>\n\n\t\t\n\t\t\n\t\t\n\n\t\t\t</div>\n\n\t\t\t<div class=\"screen-reader-text\" id=\"ct-search-status-e56\" aria-live=\"polite\" role=\"status\">\n\t\t\tNo results\t\t</div>\n\t\n</form>\n</div>\t</section>\n\n\t</div>\n\t</main>",
-  "shell": "9f86e9dff4",
+  "shell": "97dabe9686",
   "_id": "archive-category-uncategorized",
   "_type": "archivePage",
   "title": "Category: Uncategorized",
@@ -51273,10 +51477,39 @@
   "bodyClass": "error404 wp-custom-logo wp-embed-responsive wp-theme-blocksy elementor-default elementor-kit-5 ct-elementor-default-template",
   "headingHtml": "Oops! That page can’t be found.",
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t<div class=\"ct-container\" data-vertical-spacing=\"top:bottom\">\n\t<section class=\"ct-no-results\">\n\n\t\t<section class=\"hero-section\" data-type=\"type-1\">\n\t\t\t<header class=\"entry-header\">\n\t\t\t\t<h1 class=\"page-title\" itemprop=\"headline\">[[@html:headingHtml]]</h1>\n\n\t\t\t\t<div class=\"page-description\">\n\t\t\t\t\tIt looks like nothing was found at this location. Maybe try to search for something else?\t\t\t\t</div>\n\t\t\t</header>\n\t\t</section>\n\n\t\t<div class=\"entry-content is-layout-flow\">\n\t\t\t\n\n<form role=\"search\" method=\"get\" class=\"ct-search-form\" data-form-controls=\"inside\" data-taxonomy-filter=\"false\" data-submit-button=\"minimal:icon\" action=\"/\" data-live-results=\"thumbs\">\n\n\t<div class=\"ct-search-form-inner ct-pseudo-input\">\n\t\t\n\t\t\t<input type=\"search\" placeholder=\"Search\" value=\"\" name=\"s\" autocomplete=\"off\" title=\"Search for...\" aria-label=\"Search for...\" role=\"combobox\" aria-autocomplete=\"list\" aria-controls=\"ct-search-results-e6e\" aria-describedby=\"ct-search-status-e6e\" aria-expanded=\"false\">\n\n\t\t\t\n\t\t\n\t\t<button type=\"submit\" class=\"wp-element-button\" aria-label=\"Search button\">\n\t\t\t<svg class=\"ct-icon ct-search-button-content\" aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 15 15\"><path d=\"M14.8,13.7L12,11c0.9-1.2,1.5-2.6,1.5-4.2c0-3.7-3-6.8-6.8-6.8S0,3,0,6.8s3,6.8,6.8,6.8c1.6,0,3.1-0.6,4.2-1.5l2.8,2.8c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2C15.1,14.5,15.1,14,14.8,13.7z M1.5,6.8c0-2.9,2.4-5.2,5.2-5.2S12,3.9,12,6.8S9.6,12,6.8,12S1.5,9.6,1.5,6.8z\"></path></svg>\n\t\t\t<span class=\"ct-ajax-loader\">\n\t\t\t\t<svg viewBox=\"0 0 24 24\">\n\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"10\" opacity=\"0.2\" fill=\"none\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\"></circle>\n\n\t\t\t\t\t<path d=\"m12,2c5.52,0,10,4.48,10,10\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-miterlimit=\"10\" stroke-width=\"2\">\n\t\t\t\t\t\t<animateTransform attributeName=\"transform\" attributeType=\"XML\" type=\"rotate\" dur=\"0.6s\" from=\"0 12 12\" to=\"360 12 12\" repeatCount=\"indefinite\" begin=\"indefinite\"></animateTransform>\n\t\t\t\t\t</path>\n\t\t\t\t</svg>\n\t\t\t</span>\n\t\t</button>\n\n\t\t\n\t\t\n\t\t\n\n\t\t\t</div>\n\n\t\t\t<div class=\"screen-reader-text\" id=\"ct-search-status-e6e\" aria-live=\"polite\" role=\"status\">\n\t\t\tNo results\t\t</div>\n\t\n</form>\n\t\t</div>\n\n\t</section>\n</div>\n\t</main>",
-  "shell": "ab863f13c8",
+  "shell": "6b0a88ed31",
   "_id": "notFound",
   "_type": "notFoundPage",
   "title": "Page not found"
+ },
+ {
+  "_id": "searchPage",
+  "_type": "searchPage",
+  "title": "Search results",
+  "headingPrefix": "Search Results for ",
+  "perPage": 10,
+  "seo": {
+   "title": "You searched for {q} | Ideal Dental Solutions",
+   "robots": "noindex, follow",
+   "ogLocale": "en_US",
+   "ogType": "article",
+   "ogTitle": "You searched for {q} | Ideal Dental Solutions",
+   "ogUrl": "https://idealdentalsolutions.com/search/{q}/",
+   "ogSiteName": "Ideal Dental Solutions",
+   "twitterCard": "summary_large_image",
+   "twitterTitle": "You searched for {q} | Ideal Dental Solutions",
+   "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"CollectionPage\",\"SearchResultsPage\"],\"@id\":\"https://idealdentalsolutions.com/?s={q}\",\"url\":\"https://idealdentalsolutions.com/?s={q}\",\"name\":\"You searched for {q} - idealdental\",\"isPartOf\":{\"@id\":\"https://idealdentalsolutions.com/#website\"},\"breadcrumb\":{\"@id\":\"#breadcrumb\"},\"inLanguage\":\"en-US\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://idealdentalsolutions.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"You searched for {q}\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://idealdentalsolutions.com/#website\",\"url\":\"https://idealdentalsolutions.com/\",\"name\":\"Ideal Dental Solutions\",\"description\":\"\",\"publisher\":{\"@id\":\"https://idealdentalsolutions.com/#organization\"},\"inLanguage\":\"en-US\",\"alternateName\":\"idealdental\"},{\"@type\":\"Organization\",\"@id\":\"https://idealdentalsolutions.com/#organization\",\"name\":\"Ideal Dental Solutions\",\"url\":\"https://idealdentalsolutions.com/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https://idealdentalsolutions.com/#/schema/logo/image/\",\"url\":\"https://idealdentalsolutions.com/wp-content/uploads/2026/07/image__4_-removebg-preview.png\",\"contentUrl\":\"https://idealdentalsolutions.com/wp-content/uploads/2026/07/image__4_-removebg-preview.png\",\"width\":831,\"height\":300,\"caption\":\"idealdental\"},\"image\":{\"@id\":\"https://idealdentalsolutions.com/#/schema/logo/image/\"}}]}"
+  },
+  "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\" itemscope=\"itemscope\" itemtype=\"https://schema.org/CreativeWork\">\n\n\t\t\n<div class=\"ct-container\" data-vertical-spacing=\"top:bottom\">\n\t<section>\n\t\t\n<div class=\"hero-section is-width-constrained\" data-type=\"type-1\">\n\t\t\t<header class=\"entry-header\">\n\t\t\t<h1 class=\"page-title\" itemprop=\"headline\">[[@ctx:searchHeading]]</h1>\t\t</header>\n\t</div><div class=\"entries\" data-archive=\"default\" data-layout=\"grid\" data-cards=\"boxed\">[[@ctx:cards]]</div>\n\t\t[[@ctx:pagination]]\t</section>\n\n\t</div>\n\t</main>",
+  "shell": "7ffbd8ad56",
+  "blocksShell": "98fe93b9ef",
+  "bodyClass": "search search-results wp-custom-logo wp-embed-responsive wp-theme-blocksy elementor-default elementor-kit-5 ct-elementor-default-template",
+  "emptyFrameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\" itemscope=\"itemscope\" itemtype=\"https://schema.org/CreativeWork\">\n\n\t\t\n<div class=\"ct-container\" data-vertical-spacing=\"top:bottom\">\n\t<section class=\"ct-no-results\">\n\t\t\n<div class=\"hero-section is-width-constrained\" data-type=\"type-1\">\n\t\t\t<header class=\"entry-header\">\n\t\t\t<h1 class=\"page-title\" itemprop=\"headline\">[[@ctx:searchHeading]]</h1><div class=\"page-description ct-hidden-sm\">Sorry, but nothing matched your search terms. Please try again with some different keywords.</div>\t\t</header>\n\t</div><div class=\"entry-content is-layout-flow\">\n\n<form role=\"search\" method=\"get\" class=\"ct-search-form\" data-form-controls=\"inside\" data-taxonomy-filter=\"false\" data-submit-button=\"minimal:icon\" action=\"/\" data-live-results=\"thumbs\">\n\n\t<div class=\"ct-search-form-inner ct-pseudo-input\">\n\t\t\n\t\t\t<input type=\"search\" placeholder=\"Search\" value=\"[[@ctxattr:query]]\" name=\"s\" autocomplete=\"off\" title=\"Search for...\" aria-label=\"Search for...\" role=\"combobox\" aria-autocomplete=\"list\" aria-controls=\"ct-search-results-362\" aria-describedby=\"ct-search-status-362\" aria-expanded=\"false\">\n\n\t\t\t\n\t\t\n\t\t<button type=\"submit\" class=\"wp-element-button\" aria-label=\"Search button\">\n\t\t\t<svg class=\"ct-icon ct-search-button-content\" aria-hidden=\"true\" width=\"15\" height=\"15\" viewBox=\"0 0 15 15\"><path d=\"M14.8,13.7L12,11c0.9-1.2,1.5-2.6,1.5-4.2c0-3.7-3-6.8-6.8-6.8S0,3,0,6.8s3,6.8,6.8,6.8c1.6,0,3.1-0.6,4.2-1.5l2.8,2.8c0.1,0.1,0.3,0.2,0.5,0.2s0.4-0.1,0.5-0.2C15.1,14.5,15.1,14,14.8,13.7z M1.5,6.8c0-2.9,2.4-5.2,5.2-5.2S12,3.9,12,6.8S9.6,12,6.8,12S1.5,9.6,1.5,6.8z\"></path></svg>\n\t\t\t<span class=\"ct-ajax-loader\">\n\t\t\t\t<svg viewBox=\"0 0 24 24\">\n\t\t\t\t\t<circle cx=\"12\" cy=\"12\" r=\"10\" opacity=\"0.2\" fill=\"none\" stroke=\"currentColor\" stroke-miterlimit=\"10\" stroke-width=\"2\"></circle>\n\n\t\t\t\t\t<path d=\"m12,2c5.52,0,10,4.48,10,10\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-miterlimit=\"10\" stroke-width=\"2\">\n\t\t\t\t\t\t<animateTransform attributeName=\"transform\" attributeType=\"XML\" type=\"rotate\" dur=\"0.6s\" from=\"0 12 12\" to=\"360 12 12\" repeatCount=\"indefinite\" begin=\"indefinite\"></animateTransform>\n\t\t\t\t\t</path>\n\t\t\t\t</svg>\n\t\t\t</span>\n\t\t</button>\n\n\t\t\t\t\t<input type=\"hidden\" name=\"post_type\" value=\"any\">\n\t\t\n\t\t\n\t\t\n\n\t\t\t</div>\n\n\t\t\t<div class=\"screen-reader-text\" id=\"ct-search-status-362\" aria-live=\"polite\" role=\"status\">\n\t\t\tNo results\t\t</div>\n\t\n</form>\n</div>\t</section>\n\n\t</div>\n\t</main>",
+  "emptyShell": "43f5e5c310",
+  "emptyBodyClass": "search search-no-results wp-custom-logo wp-embed-responsive wp-theme-blocksy elementor-default elementor-kit-5 ct-elementor-default-template",
+  "prevIcon": "<svg width=\"9px\" height=\"9px\" viewBox=\"0 0 15 15\" fill=\"currentColor\"><path d=\"M10.9,15c-0.2,0-0.4-0.1-0.6-0.2L3.6,8c-0.3-0.3-0.3-0.8,0-1.1l6.6-6.6c0.3-0.3,0.8-0.3,1.1,0c0.3,0.3,0.3,0.8,0,1.1L5.2,7.4l6.2,6.2c0.3,0.3,0.3,0.8,0,1.1C11.3,14.9,11.1,15,10.9,15z\"></path></svg>",
+  "nextIcon": "<svg width=\"9px\" height=\"9px\" viewBox=\"0 0 15 15\" fill=\"currentColor\"><path d=\"M4.1,15c0.2,0,0.4-0.1,0.6-0.2L11.4,8c0.3-0.3,0.3-0.8,0-1.1L4.8,0.2C4.5-0.1,4-0.1,3.7,0.2C3.4,0.5,3.4,1,3.7,1.3l6.1,6.1l-6.2,6.2c-0.3,0.3-0.3,0.8,0,1.1C3.7,14.9,3.9,15,4.1,15z\"></path></svg>",
+  "paginationCss": "<link rel=\"stylesheet\" id=\"ct-pagination-styles-css\" href=\"/wp-content/themes/blocksy/static/bundle/pagination.min.css?ver=2.1.49\" media=\"all\">"
  },
  {
   "_id": "siteSettings",

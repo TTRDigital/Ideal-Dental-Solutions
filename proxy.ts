@@ -16,14 +16,36 @@ for (const r of wordpress as Row[]) {
   shortlinks.set(`${key}=${value}`, r.destination);
 }
 
-export function proxy(req: NextRequest) {
-  const { searchParams } = req.nextUrl;
-  for (const key of ["p", "page_id", "author", "cat"]) {
-    const value = searchParams.get(key);
-    const destination = value != null ? shortlinks.get(`${key}=${value}`) : undefined;
-    if (destination) return NextResponse.redirect(new URL(destination, req.url), 301);
+/** Site search: /?s=term, /page/2/?s=term and /search/term/(page/2/) are answered by /search-results/. */
+function searchRewrite(req: NextRequest) {
+  const { pathname, searchParams } = req.nextUrl;
+  let query: string | null = null;
+  let page = "1";
+  const paged = /^\/page\/(\d+)\/?$/.exec(pathname);
+  const pretty = /^\/search\/([^/]+)\/?(?:page\/(\d+)\/?)?$/.exec(pathname);
+  if ((pathname === "/" || paged) && searchParams.has("s")) {
+    query = searchParams.get("s") || "";
+    page = paged?.[1] || "1";
+  } else if (pretty) {
+    query = decodeURIComponent(pretty[1].replace(/\+/g, " "));
+    page = pretty[2] || "1";
   }
-  return NextResponse.next();
+  if (query == null) return null;
+  // Page and words go in the path: a rewrite keeps the visitor's query string.
+  const url = new URL(`/search-results/${page}/${query ? `${encodeURIComponent(query)}/` : ""}`, req.url);
+  return NextResponse.rewrite(url);
 }
 
-export const config = { matcher: "/" };
+export function proxy(req: NextRequest) {
+  const { searchParams, pathname } = req.nextUrl;
+  if (pathname === "/") {
+    for (const key of ["p", "page_id", "author", "cat"]) {
+      const value = searchParams.get(key);
+      const destination = value != null ? shortlinks.get(`${key}=${value}`) : undefined;
+      if (destination) return NextResponse.redirect(new URL(destination, req.url), 301);
+    }
+  }
+  return searchRewrite(req) || NextResponse.next();
+}
+
+export const config = { matcher: ["/", "/page/:path*", "/search/:path*"] };

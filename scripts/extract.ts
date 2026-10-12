@@ -28,7 +28,7 @@ const ROOT = new URL("..", import.meta.url).pathname;
 const CSS_OUT = join(ROOT, "public/assets/css");
 mkdirSync(CSS_OUT, { recursive: true });
 
-type WpItem = { id: number; link: string; parent?: number; title: { rendered: string }; slug: string; date: string; modified: string; template?: string };
+type WpItem = { id: number; link: string; parent?: number; title: { rendered: string }; slug: string; date: string; modified: string; template?: string; author?: number; excerpt?: { rendered: string } };
 const wpPages: WpItem[] = JSON.parse(readFileSync(join(SRC, "wp/pages.json"), "utf8"));
 const wpCats: { id: number; name: string; slug: string; link: string }[] = JSON.parse(readFileSync(join(SRC, "wp/categories.json"), "utf8"));
 const wpUsers: { id: number; name: string; slug: string; link: string }[] = JSON.parse(readFileSync(join(SRC, "wp/users.json"), "utf8"));
@@ -81,6 +81,7 @@ function extractSeo($: CheerioAPI): Seo {
     ogImageType: meta('meta[property="og:image:type"]'),
     author: meta('meta[name="author"]'),
     twitterCard: meta('meta[name="twitter:card"]'),
+    twitterTitle: meta('meta[name="twitter:title"]'),
     twitterMisc: misc.length ? misc : undefined,
     schema: $("script.yoast-schema-graph").html() || undefined,
   };
@@ -314,8 +315,75 @@ for (const file of files.sort()) {
       return out;
     })(),
     wpTemplate: wp?.template || "default",
+    // Search result cards: publish date, author and WordPress' excerpt.
+    published: wp?.date ? `${wp.date}Z` : undefined,
+    excerpt: wp?.excerpt ? decode(wp.excerpt.rendered).replace(/\s*\[…\]\s*$/, "").replace(/\s+/g, " ").trim() : undefined,
+    authorName: wpUsers.find((u) => u.id === wp?.author)?.name,
+    authorSlug: wpUsers.find((u) => u.id === wp?.author)?.slug,
   });
   docs.set(`page-${wpId}`, doc);
+}
+
+/* ---------------- search results (Blocksy) ---------------- */
+
+// <crawl-dir>/search: the live results page with Prev/Next (s-dental-p2), the
+// no-results page (s-xyzzyqq) and a page for an unknown word (s-template, SEO).
+const searchDir = join(SRC, "search");
+if (existsSync(join(searchDir, "s-dental-p2.html"))) {
+  const load = (f: string) => cheerio.load(readFileSync(join(searchDir, f), "utf8"));
+  const $r = load("s-dental-p2.html");
+  const results = $r("main#main").clone();
+  results.find("h1.page-title").first().html("[[@ctx:searchHeading]]");
+  results.find(".entries").first().html("[[@ctx:cards]]");
+  const nav = results.find("nav.ct-pagination").first();
+  const prevIcon = $r.html(nav.find("a.prev svg").first());
+  const nextIcon = $r.html(nav.find("a.next svg").first());
+  nav.replaceWith("[[@ctx:pagination]]");
+  const resultsBody = ($r("body").attr("class") || "").split(/\s+/).filter((c) => !/^(paged|paged-\d+|search-paged-\d+)$/.test(c)).join(" ");
+  const resultsTpl = relativizeTpl(outer($r, results));
+  // Blocksy prints the pagination stylesheet only when there is more than one page.
+  const paginationLink = (doc: CheerioAPI) => {
+    const link = doc("link#ct-pagination-styles-css");
+    const html = relativizeTpl(doc.html(link));
+    link.replaceWith("[[@ctx:paginationCss]]");
+    return html;
+  };
+  const paginationCss = paginationLink($r);
+  const resultsShell = buildShell($r);
+  // WordPress adds the block library stylesheet when the first result is a block-editor page.
+  const $b = load("s-dental.html");
+  paginationLink($b);
+  const blocksShell = buildShell($b);
+
+  const $e = load("s-xyzzyqq.html");
+  const empty = $e("main#main").clone();
+  empty.find("h1.page-title").first().html("[[@ctx:searchHeading]]");
+  empty.find('input[name="s"]').attr("value", "[[@ctxattr:query]]");
+  const emptyBody = $e("body").attr("class") || "";
+  const emptyTpl = relativizeTpl(outer($e, empty));
+  const emptyShell = buildShell($e);
+
+  // SEO as Yoast printed it, with the search words as {q}.
+  const $t = load("s-template.html");
+  const seo = JSON.parse(JSON.stringify(extractSeo($t)).replace(/qqzzxxqq/g, "{q}")) as Seo;
+  docs.set("searchPage", {
+    _id: "searchPage",
+    _type: "searchPage",
+    title: "Search results",
+    headingPrefix: "Search Results for ",
+    perPage: 10,
+    seo,
+    frameTpl: resultsTpl,
+    shell: resultsShell,
+    blocksShell,
+    bodyClass: resultsBody,
+    emptyFrameTpl: emptyTpl,
+    emptyShell,
+    emptyBodyClass: emptyBody,
+    prevIcon,
+    nextIcon,
+    paginationCss,
+  });
 }
 
 /* ---------------- form field labels ---------------- */
@@ -360,7 +428,7 @@ docs.set("siteSettings", {
 mkdirSync(join(ROOT, "content"), { recursive: true });
 mkdirSync(join(ROOT, "lib/generated"), { recursive: true });
 // Referenced documents first, so the seed can be written in order.
-const ORDER = ["siteHeader", "elementorTemplate", "page", "archivePage", "notFoundPage", "siteSettings"];
+const ORDER = ["siteHeader", "elementorTemplate", "page", "archivePage", "notFoundPage", "searchPage", "siteSettings"];
 const sorted = [...docs.values()].sort((a, b) => ORDER.indexOf(String(a._type)) - ORDER.indexOf(String(b._type)));
 writeFileSync(join(ROOT, "content/seed.json"), JSON.stringify(sorted, null, 1));
 writeFileSync(join(ROOT, "lib/generated/shells.json"), JSON.stringify(Object.fromEntries(shells)));

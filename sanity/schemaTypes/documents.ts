@@ -57,6 +57,7 @@ export const seo = defineType({
     defineField({ name: "modifiedTime", title: "Modified time", type: "string", fieldset: "advanced" }),
     defineField({ name: "author", title: "Author meta", type: "string", fieldset: "advanced" }),
     defineField({ name: "twitterCard", title: "Twitter card", type: "string", fieldset: "advanced" }),
+    defineField({ name: "twitterTitle", title: "Twitter title", type: "string", fieldset: "advanced" }),
     defineField({
       name: "twitterMisc",
       title: "Twitter labels",
@@ -98,6 +99,10 @@ export const page = defineType({
       fieldset: DEV,
       description: "Used to highlight the parent menu item.",
     }),
+    defineField({ name: "excerpt", title: "Excerpt (search results)", type: "text", rows: 3, group: "seo", description: "Shown on the search results card (first 40 words)." }),
+    defineField({ name: "published", title: "Published", type: "datetime", fieldset: DEV }),
+    defineField({ name: "authorName", title: "Author name", type: "string", fieldset: DEV }),
+    defineField({ name: "authorSlug", title: "Author slug", type: "string", fieldset: DEV }),
     defineField({ name: "wpTemplate", title: "WordPress template", type: "string", fieldset: DEV, readOnly: true }),
     ...layoutFields,
   ],
@@ -131,6 +136,29 @@ export const notFoundPage = defineType({
     defineField({ name: "headingHtml", title: "Heading (H1, HTML)", type: "text", rows: 2 }),
     seoField,
     ...layoutFields,
+  ],
+});
+
+export const searchPage = defineType({
+  name: "searchPage",
+  title: "Search results",
+  type: "document",
+  fieldsets: [devFieldset],
+  fields: [
+    defineField({ name: "title", title: "Title", type: "string" }),
+    defineField({ name: "headingPrefix", title: "Heading before the search words", type: "string", description: "e.g. “Search Results for ” (keep the trailing space)." }),
+    defineField({ name: "perPage", title: "Results per page", type: "number", initialValue: 10 }),
+    { ...seoField, description: "{q} stands for the search words." },
+    defineField({ name: "frameTpl", title: "Results template", type: "text", rows: 4, fieldset: DEV, readOnly: true }),
+    defineField({ name: "emptyFrameTpl", title: "No results template", type: "text", rows: 4, fieldset: DEV, readOnly: true }),
+    defineField({ name: "shell", title: "Results skeleton", type: "string", fieldset: DEV }),
+    defineField({ name: "emptyShell", title: "No results skeleton", type: "string", fieldset: DEV }),
+    defineField({ name: "blocksShell", title: "Results skeleton (block editor pages)", type: "string", fieldset: DEV }),
+    defineField({ name: "bodyClass", title: "Body classes (results)", type: "text", rows: 2, fieldset: DEV }),
+    defineField({ name: "emptyBodyClass", title: "Body classes (no results)", type: "text", rows: 2, fieldset: DEV }),
+    defineField({ name: "prevIcon", title: "Prev icon", type: "text", rows: 2, fieldset: DEV, readOnly: true }),
+    defineField({ name: "nextIcon", title: "Next icon", type: "text", rows: 2, fieldset: DEV, readOnly: true }),
+    defineField({ name: "paginationCss", title: "Pagination stylesheet", type: "string", fieldset: DEV, readOnly: true }),
   ],
 });
 

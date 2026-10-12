@@ -1,4 +1,5 @@
-import type { ArchiveDoc, HeaderDoc, PageDoc, Resolved, SiteData, TemplateDoc } from "./render.ts";
+import { search, type SearchDoc } from "./search.ts";
+import { searchPages, type ArchiveDoc, type HeaderDoc, type PageDoc, type Resolved, type SearchPageDoc, type SiteData, type TemplateDoc } from "./render.ts";
 
 /**
  * Resolves references in raw documents (content/seed.json, or the same
@@ -48,4 +49,16 @@ export function resolvePath(docs: SeedDoc[], rawPath: string): Resolved | null {
 function notFound(map: Map<string, SeedDoc>): Resolved | null {
   const nf = map.get("notFound");
   return nf ? { kind: "notFound", doc: nf as never } : null;
+}
+
+/** Search results page `page` for `query`; null when the page is past the last one (404). */
+export function resolveSearchFrom(searchPage: SearchPageDoc | undefined, pages: SeedDoc[], query: string, page: number): Resolved | null {
+  if (!searchPage) return null;
+  const results = search(pages.filter((d) => d._type === "page") as SearchDoc[], query) as PageDoc[];
+  if (page > searchPages(results, searchPage.perPage || 10)) return null;
+  return { kind: "search", doc: searchPage, query, page, results };
+}
+
+export function resolveSearch(docs: SeedDoc[], query: string, page: number): Resolved | null {
+  return resolveSearchFrom(docs.find((d) => d._id === "searchPage") as SearchPageDoc | undefined, docs, query, page);
 }

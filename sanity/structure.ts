@@ -12,4 +12,5 @@ export const structure: StructureResolver = (S) =>
       S.divider(),
       S.listItem().title("Site settings").id("siteSettings").child(S.document().schemaType("siteSettings").documentId("siteSettings")),
       S.listItem().title("404 page").id("notFound").child(S.document().schemaType("notFoundPage").documentId("notFound")),
+      S.listItem().title("Search results").id("searchPage").child(S.document().schemaType("searchPage").documentId("searchPage")),
     ]);

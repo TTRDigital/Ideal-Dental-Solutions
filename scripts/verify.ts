@@ -9,7 +9,7 @@ import { createHash } from "node:crypto";
 import { existsSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { renderDocument } from "../lib/site/render.ts";
-import { buildSiteData, resolvePath, type SeedDoc } from "../lib/site/local.ts";
+import { buildSiteData, resolvePath, resolveSearch, type SeedDoc } from "../lib/site/local.ts";
 import { resolveLazy } from "./lib/convert.ts";
 import { canonical, firstDiff, relHost } from "./lib/normalize.ts";
 
@@ -60,6 +60,15 @@ function headSignature($: cheerio.CheerioAPI) {
   return out.join("\n");
 }
 
+/** --fixed: differences scripts/fixes.ts makes on purpose (alt text, image labels, demoted H1s) are ignored. */
+function loosen($: cheerio.CheerioAPI) {
+  $("[alt]").attr("alt", "");
+  $("[role=img][aria-label]").attr("aria-label", "");
+  $("h1, h2").each((_, el) => {
+    (el as { tagName: string }).tagName = "hx";
+  });
+}
+
 const htmlDir = join(SRC, "html");
 let ok = 0;
 const failures: string[] = [];
@@ -81,16 +90,7 @@ for (const file of readdirSync(htmlDir).filter((f) => f.endsWith(".html")).sort(
   }
   const a = prep(readFileSync(join(htmlDir, file), "utf8"));
   const b = prep(html);
-  if (FIXED) {
-    // Expected differences after scripts/fixes.ts: alt text, image labels, demoted H1s.
-    for (const $ of [a, b]) {
-      $("[alt]").attr("alt", "");
-      $("[role=img][aria-label]").attr("aria-label", "");
-      $("h1, h2").each((_, el) => {
-        (el as { tagName: string }).tagName = "hx";
-      });
-    }
-  }
+  if (FIXED) for (const $ of [a, b]) loosen($);
   const ca = canonical(a("body").html() || "");
   const cb = canonical(b("body").html() || "");
   const bodyClassOk = a("body").attr("class") === b("body").attr("class");
@@ -105,5 +105,35 @@ for (const file of readdirSync(htmlDir).filter((f) => f.endsWith(".html")).sort(
     writeFileSync(`${process.env.VERIFY_OUT || "/tmp"}/verify-actual.txt`, cb);
   }
 }
+/* Site search: the crawled live results pages (<crawl-dir>/search/s-<words>[-p<page>].html). */
+const searchDir = join(SRC, "search");
+const SEARCH_WORDS: Record<string, string> = { root_canal: "root canal", empty: "", xss: '<b>x"', template: "qqzzxxqq" };
+if (!FILTER && existsSync(searchDir)) {
+  for (const file of readdirSync(searchDir).filter((f) => /^s-.*\.html$/.test(f)).sort()) {
+    const m = /^s-(.+?)(?:-p(\d+))?\.html$/.exec(file)!;
+    const query = SEARCH_WORDS[m[1]] ?? m[1].replace(/_/g, " ");
+    const page = Number(m[2] || 1);
+    let html: string;
+    if (SERVER) html = await (await fetch(`${SERVER}${page > 1 ? `/page/${page}/` : "/"}?s=${encodeURIComponent(query)}`)).text();
+    else {
+      const resolved = resolveSearch(docs, query, page);
+      if (!resolved) {
+        failures.push(`search ${file}: not resolved`);
+        continue;
+      }
+      html = renderDocument(resolved, data, page > 1 ? `/page/${page}/` : "/", { projectId: "ncba5cqx", dataset: "production" });
+    }
+    const a = prep(readFileSync(join(searchDir, file), "utf8"));
+    const b = prep(html);
+    if (FIXED) for (const $ of [a, b]) loosen($);
+    // Blocksy gives each search form a random id.
+    for (const $ of [a, b]) $("[aria-controls^=ct-search-results-], [aria-describedby^=ct-search-status-], [id^=ct-search-]").removeAttr("aria-controls").removeAttr("aria-describedby").removeAttr("id");
+    const d = firstDiff(canonical(a("body").html() || ""), canonical(b("body").html() || ""), 3) || (FIXED ? null : firstDiff(headSignature(a), headSignature(b), 2));
+    const bodyClassOk = a("body").attr("class") === b("body").attr("class");
+    if (!d && bodyClassOk) ok++;
+    else failures.push(`search ${file}: ${!bodyClassOk ? `body class differs (${b("body").attr("class")}); ` : ""}${d ? `line ${d.line}\n  expected:\n    ${d.expected.join("\n    ")}\n  actual:\n    ${d.actual.join("\n    ")}` : ""}`);
+  }
+}
+
 console.log(failures.join("\n\n"));
 console.log(`\n${ok} identical, ${failures.length} different`);

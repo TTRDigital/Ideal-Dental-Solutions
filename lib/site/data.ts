@@ -3,8 +3,8 @@ import "server-only";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { apiVersion, dataset, projectId } from "@/sanity/env";
-import { buildSiteData, normalizePath, resolvePath, type SeedDoc } from "./local";
-import type { ArchiveDoc, PageDoc, Resolved, SiteData } from "./render";
+import { buildSiteData, normalizePath, resolvePath, resolveSearch, resolveSearchFrom, type SeedDoc } from "./local";
+import type { ArchiveDoc, PageDoc, Resolved, SearchPageDoc, SiteData } from "./render";
 
 /** ISR window for CMS content, in seconds. Publishing also refreshes via /api/revalidate. */
 export const REVALIDATE_SECONDS = 300;
@@ -77,4 +77,22 @@ export async function allPaths(fromCms: boolean): Promise<{ path: string; type: 
         .filter((d) => ["page", "archivePage"].includes(d._type) && d.path)
         .map((d) => ({ path: d.path as string, _type: d._type, modified: (d.modified as string) || (d.seo as { modifiedTime?: string })?.modifiedTime, robots: (d.seo as { robots?: string })?.robots }));
   return rows.map((r) => ({ path: r.path, type: r._type, modified: r.modified, noindex: /noindex/.test(r.robots || "") }));
+}
+
+/** Site search (?s=): the results page, or null when `page` is past the last one. */
+export async function resolveSearchPage(query: string, page: number, fromCms: boolean): Promise<Resolved | null> {
+  if (!fromCms) return resolveSearch(seed(), query, page);
+  const [searchPage, pages] = await Promise.all([
+    sanity<SearchPageDoc>(`*[_id == "searchPage"][0]`),
+    // Whole pages: WordPress searched the page content (see lib/site/search.ts).
+    sanity<SeedDoc[]>(`*[_type == "page" && defined(path)]`),
+  ]);
+  return resolveSearchFrom(searchPage || undefined, pages || [], query, page);
+}
+
+/** The 404 page document, for search pages past the end. */
+export async function notFoundDoc(fromCms: boolean): Promise<Resolved | null> {
+  if (!fromCms) return resolvePath(seed(), "/this-page-does-not-exist/");
+  const nf = await sanity<SeedDoc>(`*[_id == "notFound"][0]`);
+  return nf ? { kind: "notFound", doc: nf as never } : null;
 }
