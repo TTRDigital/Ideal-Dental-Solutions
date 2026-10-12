@@ -80,7 +80,15 @@ export const page = defineType({
   fields: [
     defineField({ name: "title", title: "Title", type: "string", group: "content", validation: (r) => r.required() }),
     { ...pathField, group: "content" },
-    { ...nodesField("content", "Content"), group: "content" },
+    { ...nodesField("content", "Content"), group: "content", hidden: ({ document }: { document?: Record<string, unknown> }) => Boolean(document?.body && !(document?.content as unknown[])?.length) },
+    defineField({
+      name: "body",
+      title: "Text",
+      type: "richText",
+      group: "content",
+      description: "Pages written in the WordPress block editor (not Elementor).",
+      hidden: ({ document }) => !document?.body,
+    }),
     { ...seoField, group: "seo" },
     defineField({
       name: "ancestorPaths",

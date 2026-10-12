@@ -20,7 +20,7 @@ import { join } from "node:path";
 import { relativeUrl } from "../lib/render/html.ts";
 import type { Seo } from "../lib/render/seo.ts";
 import type { Fields } from "../lib/render/template.ts";
-import { blocksyMenu, convertChildren, convertElement, imageFields, outer, relativizeTpl, resolveLazy, stats, type ConvertCtx } from "./lib/convert.ts";
+import { blocksyMenu, convertChildren, convertElement, htmlToPortableText, imageFields, outer, relativizeTpl, resolveLazy, stats, type ConvertCtx } from "./lib/convert.ts";
 
 const SRC = process.argv[2];
 if (!SRC) throw new Error("Usage: npm run extract -- <crawl-dir>");
@@ -102,7 +102,7 @@ const ICON_LINKS = [
   '<link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192">',
   '<link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180">',
   '<link rel="manifest" href="/site.webmanifest">',
-  '<meta name="theme-color" content="#1F5F8B">',
+  '<meta name="theme-color" content="#F7861E">',
   '<meta name="msapplication-TileImage" content="/icon-192.png">',
 ].join("\n");
 
@@ -254,6 +254,20 @@ for (const file of files.sort()) {
     doc.content = convertChildren($, run, ctx);
     if (run.length) $(run[0]).before("[[@nodes:content]]");
     for (const k of run) $(k).remove();
+  }
+  // Pages written in the block editor: the text after the (empty) Elementor document.
+  const ec = frame.find(".entry-content").first();
+  if (cls.has("page") && ec.length && !(doc.content as unknown[] | undefined)?.length) {
+    const kids = (ec.contents().toArray() as AnyNode[]).filter(
+      (n) => n.type === "tag" && (n as Element).name !== "script" && !(n as Element).attribs["data-elementor-type"],
+    );
+    if (kids.length) {
+      const pt = htmlToPortableText(relativizeTpl(kids.map((n) => outer($, n)).join("\n")));
+      if (!pt) throw new Error(`Block editor content of ${file} cannot be represented as rich text`);
+      doc.body = pt;
+      $(kids[0]).before("[[@rich:body]]");
+      for (const k of kids) $(k).remove();
+    }
   }
   // The page heading of archives and the 404 page.
   const h1 = frame.find("h1.page-title").first();

@@ -78,10 +78,14 @@ function renderBlockInner(block: PtTextBlock) {
   return renderSpans(block.children || [], defs);
 }
 
+/** Opening tag (with attributes) for a block style; "" prints the text bare. */
 function blockTag(style?: string) {
   if (!style || style === "normal") return "p";
   if (/^h[1-6]$/.test(style)) return style;
   if (style === "blockquote") return "blockquote";
+  // Block editor (Gutenberg) markup
+  if (style === "wp-p") return 'p class="wp-block-paragraph"';
+  if (/^wp-h[1-6]$/.test(style)) return `${style.slice(3)} class="wp-block-heading"`;
   return "";
 }
 
@@ -103,7 +107,7 @@ export function renderPortableText(blocks: PtBlock[] | undefined | null): string
       continue;
     }
     const tag = blockTag(block.style);
-    out += tag ? `<${tag}>${renderBlockInner(block)}</${tag}>` : renderBlockInner(block);
+    out += tag ? `<${tag}>${renderBlockInner(block)}</${tag.split(" ")[0]}>` : renderBlockInner(block);
     i++;
   }
   return out;

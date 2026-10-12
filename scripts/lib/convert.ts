@@ -136,6 +136,12 @@ export function relativizeTpl(html: string) {
 /* ---------------- Portable Text ---------------- */
 
 const BLOCK_STYLES: Record<string, string> = { p: "normal", h1: "h1", h2: "h2", h3: "h3", h4: "h4", h5: "h5", h6: "h6" };
+const WP_BLOCK_STYLES: Record<string, string> = {
+  "p.wp-block-paragraph": "wp-p",
+  "h2.wp-block-heading": "wp-h2",
+  "h3.wp-block-heading": "wp-h3",
+  "h4.wp-block-heading": "wp-h4",
+};
 const DECOS: Record<string, string> = { strong: "strong", em: "em", u: "underline", b: "b", i: "i" };
 
 function spansOf($: CheerioAPI, nodes: AnyNode[], marks: string[], defs: PtMarkDef[]): PtSpan[] | null {
@@ -229,6 +235,13 @@ export function htmlToPortableText(html: string): PtBlock[] | null {
     const el = n as Element;
     if (n.type === "tag" && (BLOCK_STYLES[el.name] || ["ul", "ol", "table", "div", "figure", "blockquote", "hr"].includes(el.name))) {
       if (!flushBare()) return null;
+      // Block editor (Gutenberg) paragraphs and headings carry a class of their own.
+      const wpStyle = WP_BLOCK_STYLES[`${el.name}.${el.attribs.class}`];
+      if (wpStyle && Object.keys(el.attribs).length === 1) {
+        const b = blockFrom($, el.children as AnyNode[], wpStyle);
+        blocks.push(b || { _type: "htmlBlock", _key: key(), html: outer($, el) });
+        continue;
+      }
       if (BLOCK_STYLES[el.name]) {
         if (Object.keys(el.attribs).length) {
           blocks.push({ _type: "htmlBlock", _key: key(), html: outer($, el) });

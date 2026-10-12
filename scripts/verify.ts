@@ -81,6 +81,16 @@ for (const file of readdirSync(htmlDir).filter((f) => f.endsWith(".html")).sort(
   }
   const a = prep(readFileSync(join(htmlDir, file), "utf8"));
   const b = prep(html);
+  if (FIXED) {
+    // Expected differences after scripts/fixes.ts: alt text, image labels, demoted H1s.
+    for (const $ of [a, b]) {
+      $("[alt]").attr("alt", "");
+      $("[role=img][aria-label]").attr("aria-label", "");
+      $("h1, h2").each((_, el) => {
+        (el as { tagName: string }).tagName = "hx";
+      });
+    }
+  }
   const ca = canonical(a("body").html() || "");
   const cb = canonical(b("body").html() || "");
   const bodyClassOk = a("body").attr("class") === b("body").attr("class");

@@ -28,7 +28,15 @@ export async function GET(_req: Request, ctx: { params: Promise<{ path?: string[
 
   if (segments.length === 1 && segments[0] === "sitemap_index.xml") return xml(sitemapIndex(origin, await allPaths(site.fromCms)));
   if (segments.length === 1 && SITEMAPS.has(segments[0])) return xml(sitemapXml(segments[0], origin, await allPaths(site.fromCms)));
-  if (segments.length === 1 && segments[0] === "feed") return xml(feedXml(origin), "application/rss+xml; charset=UTF-8");
+  // Site feed and WordPress' per-page comment feeds (/about-us/feed/): valid, empty RSS.
+  if (segments[segments.length - 1] === "feed" && (segments.length === 1 || (await resolve(`/${segments.slice(0, -1).join("/")}/`, site.fromCms))?.kind === "page")) {
+    return xml(feedXml(origin), "application/rss+xml; charset=UTF-8");
+  }
+  // WordPress ignored /page/N/ on normal pages and showed the page again; send it to the page.
+  if (segments.length >= 3 && segments[segments.length - 2] === "page" && /^\d+$/.test(segments[segments.length - 1])) {
+    const base = `/${segments.slice(0, -2).join("/")}/`;
+    if ((await resolve(base, site.fromCms))?.kind === "page") return new Response(null, { status: 301, headers: { Location: base } });
+  }
 
   const path = `/${segments.map((s) => decodeURIComponent(s)).join("/")}${segments.length ? "/" : ""}`;
   const resolved = await resolve(path, site.fromCms);

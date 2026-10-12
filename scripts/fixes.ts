@@ -1,5 +1,5 @@
 /**
- * Editorial and SEO fixes on top of the migrated content (content/seed.json).
+ * Launch-review fixes on top of the migrated content (content/seed.json).
  * Run after `npm run extract`, then `npm run seed -- --force` to publish.
  *
  *   npm run fixes
@@ -10,298 +10,385 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";
 
-type Doc = Record<string, unknown> & { _id: string; _type: string; path?: string; seo?: Record<string, unknown> };
+type Doc = Record<string, unknown> & { _id: string; _type: string; path?: string; title?: string; seo?: Record<string, unknown> };
 type Node = Record<string, unknown>;
 
 const ROOT = new URL("..", import.meta.url).pathname;
 const SITE = "https://idealdentalsolutions.com";
+const BRAND = "Ideal Dental Solutions";
 const file = join(ROOT, "content/seed.json");
 const docs: Doc[] = JSON.parse(readFileSync(file, "utf8"));
 const byId = new Map(docs.map((d) => [d._id, d]));
 const byPath = new Map(docs.filter((d) => d.path).map((d) => [d.path!, d]));
 const log: string[] = [];
 
-function walk(n: unknown, cb: (node: Node, parent: unknown[] | null) => void, parent: unknown[] | null = null) {
-  if (Array.isArray(n)) n.forEach((v) => walk(v, cb, n));
+function walk(n: unknown, cb: (node: Node) => void) {
+  if (Array.isArray(n)) n.forEach((v) => walk(v, cb));
   else if (n && typeof n === "object") {
-    cb(n as Node, parent);
-    for (const v of Object.values(n as Node)) walk(v, cb, null);
+    cb(n as Node);
+    for (const v of Object.values(n as Node)) walk(v, cb);
   }
 }
 
-const strip = (html: string) => html.replace(/<[^>]+>/g, "").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
-const firstTag = (tpl: unknown) => /^<[^>]+>/.exec(String(tpl || ""))?.[0] || "";
+const decode = (s: string) => s.replace(/&amp;/g, "&").replace(/&#8217;|&rsquo;/g, "’").replace(/&nbsp;/g, " ");
+const strip = (html: string) => decode(html.replace(/<[^>]+>/g, "")).replace(/\s+/g, " ").trim();
+const firstTag = (tpl: unknown) => /^\s*<[^>]+>/.exec(String(tpl || ""))?.[0] || "";
+const page = (path: string) => {
+  const d = byPath.get(path);
+  if (!d) throw new Error(`No document for ${path}`);
+  return d;
+};
+const headingText = (n: Node) => (typeof n.title === "string" ? n.title : strip(String(n.titleHtml || "")));
 
-/* 1. Sections hidden on desktop, tablet and mobile: invisible duplicates, removed. */
+/* 1. Elements hidden on desktop, tablet and mobile: invisible leftovers, removed. */
 function removeHiddenEverywhere(n: unknown) {
   if (Array.isArray(n)) {
     for (let i = n.length - 1; i >= 0; i--) {
       const x = n[i] as Node;
       const tag = firstTag(x?.tpl);
-      if (x?._type === "elContainer" && ["desktop", "tablet", "mobile"].every((d) => tag.includes(`elementor-hidden-${d}`))) {
+      if (x?._type && String(x._type).startsWith("el") && ["desktop", "tablet", "mobile"].every((d) => tag.includes(`elementor-hidden-${d}`))) {
         n.splice(i, 1);
-        log.push(`removed hidden section ${x.elId}`);
+        log.push(`removed hidden ${x._type} ${x.elId}`);
       } else removeHiddenEverywhere(x);
     }
   } else if (n && typeof n === "object") for (const v of Object.values(n)) removeHiddenEverywhere(v);
 }
 for (const d of docs) removeHiddenEverywhere(d);
 
-/* 2. Quote headings copied from the paver repair page. */
-const CTA: Record<string, string> = {
-  "/avon/": "Avon Hardscaping &amp; Masonry",
-  "/berlin/": "Berlin Hardscaping &amp; Masonry",
-  "/farmington/": "Farmington Hardscaping &amp; Masonry",
-  "/glastonbury/": "Glastonbury Hardscaping &amp; Masonry",
-  "/southington/": "Southington Hardscaping &amp; Masonry",
-  "/uncategorized/west-hartford/": "West Hartford Hardscaping &amp; Masonry",
-  "/fairfield-county-ct/": "Fairfield County Hardscaping &amp; Masonry",
-  "/hartford-county-ct/": "Hartford County Hardscaping &amp; Masonry",
-  "/new-haven-county-ct/": "New Haven County Hardscaping &amp; Masonry",
-  "/service-areas/": "Hardscaping &amp; Masonry",
-  "/chimney-installation-and-repair-connecticut/": "Chimney Installation &amp; Repair",
-  "/fire-features-connecticut/": "Fire Pit &amp; Fireplace",
-  "/outdoor-kitchens-connecticut/": "Outdoor Kitchen",
-  "/stone-steps-connecticut/": "Stone Steps",
-  "/thinstone-connecticut/": "Thin Stone Veneer",
-};
-for (const [path, label] of Object.entries(CTA)) {
-  const d = byPath.get(path);
-  if (!d) throw new Error(`No page ${path}`);
-  walk(d, (n) => {
-    if (n._type === "elHeading" && typeof n.titleHtml === "string" && n.titleHtml.includes("Paver Repair &amp; Maintenance</span> Quote")) {
-      n.titleHtml = n.titleHtml.replace(/Paver Repair &amp; Maintenance(?=<\/span> Quote)/, label);
-      log.push(`quote heading on ${path}`);
-    }
-  });
-}
-
-/* 3. Retaining walls: H1 matches the title (Fairfield & New Haven). */
-walk(byPath.get("/retaining-walls-connecticut/"), (n) => {
-  if (n._type === "elHeading" && n.title === "Beautiful Retaining Walls in Cheshire, Connecticut") {
-    n.title = "Beautiful Retaining Walls in Fairfield & New Haven County, CT";
-    log.push("retaining walls H1");
+/* 2. Copy-pasted heading: the McLean TMJ page said "Northern VA". */
+walk(page("/locations/mclean/tmj-tmd-treatments/"), (n) => {
+  if (n._type === "elHeading" && headingText(n) === "Your Trusted Partner for TMJ Care in Northern VA") {
+    if (n.title) n.title = "Your Trusted Partner for TMJ Care in McLean, VA";
+    if (n.titleHtml) n.titleHtml = String(n.titleHtml).replace("Northern VA", "McLean, VA");
+    log.push("McLean TMJ heading");
   }
 });
-
-/* 4. Alt text. Decorative graphics keep alt="" (correct for screen readers). */
-const DECORATIVE = /\/(alpha\.png|filled-bg|dot-grahpic|alphahardscapes-logo-icon|frame-\d+|[a-z-]*-icon\.svg|graphic|step-\d+\.svg|banner-bottom)/i;
-const LOGO = /(alpha-hardscapes-logo|alphahardscapes-logo|logo-with-bg|alpha-footer-logo)/i;
-const looksLikeFilename = (alt: string) => !/\s/.test(alt) && /[-_.]/.test(alt);
-
-function altFromFile(src: string): string | null {
-  const base = src.split("/").pop()!.replace(/\.\w+$/, "").replace(/-(\d+x\d+|scaled|e\d{10,})(?=-|$)/g, "");
-  const words = base.split(/[-_]+/).filter((w) => /^[a-z]{2,}$/i.test(w) && !/^(img|image|photo|copy|comp|bna|final|new|edited)$/i.test(w));
-  if (words.length < 3) return null;
-  const proper = new Set(["avon", "berlin", "farmington", "glastonbury", "southington", "hartford", "haven", "new", "fairfield", "cheshire", "connecticut", "west", "county"]);
-  const s = words
-    .map((w) => (/^ct$/i.test(w) ? "CT" : proper.has(w.toLowerCase()) ? w[0].toUpperCase() + w.slice(1).toLowerCase() : w.toLowerCase()))
-    .join(" ");
-  return s[0].toUpperCase() + s.slice(1);
-}
-
-function pageTopic(d: Doc): string {
-  let h1 = "";
+// "Mclean" -> "McLean" in headings.
+for (const d of docs) {
   walk(d, (n) => {
-    if (!h1 && n._type === "elHeading" && /<h1\b/.test(String(n.tpl))) h1 = String(n.title || strip(String(n.titleHtml || "")));
+    if (n._type !== "elHeading") return;
+    for (const k of ["title", "titleHtml"]) if (typeof n[k] === "string" && /\bMclean\b/.test(n[k] as string)) n[k] = (n[k] as string).replace(/\bMclean\b/g, "McLean");
   });
-  return (h1 || String(d.title || (d.seo?.title as string) || "").split("|")[0]).trim();
 }
 
-// Blog hero images: the post title.
-for (const d of docs.filter((x) => x._type === "post")) {
-  for (const f of ["featuredImage", "featuredMedium"]) {
-    const img = d[f] as Node | undefined;
-    if (img && !String(img.alt || "").trim()) img.alt = String(d.title);
+/* 3. One H1 per page. Extra H1s (team names, "Our Mission") become H2s with the same look. */
+for (const d of docs.filter((x) => x._type === "page")) {
+  let seen = 0;
+  walk(d.content, (n) => {
+    if (n._type !== "elHeading" || !/<h1\b/.test(String(n.tpl))) return;
+    if (seen++ === 0) return;
+    n.tpl = String(n.tpl).replace(/<h1\b/g, "<h2").replace(/<\/h1>/g, "</h2>");
+    log.push(`H1 -> H2 on ${d.path}: ${headingText(n)}`);
+  });
+}
+// The Dr. Adili profile (block editor page) had no heading at all.
+{
+  const d = page("/dr-mehdi-adili/");
+  const body = d.body as Node[];
+  if (!body.some((b) => b.style === "wp-h1")) {
+    body.unshift({ _type: "block", _key: "h1adili", style: "wp-h1", markDefs: [], children: [{ _type: "span", _key: "h1adilis", text: "Dr. Mehdi S. Adili, DDS, Prosthodontist", marks: [] }] });
+    log.push("H1 on /dr-mehdi-adili/");
   }
 }
+
+function h1Of(d: Doc): string {
+  let h1 = "";
+  walk(d.content, (n) => {
+    if (!h1 && n._type === "elHeading" && /<h1\b/.test(String(n.tpl))) h1 = headingText(n);
+  });
+  if (!h1) for (const b of (d.body as Node[]) || []) if (!h1 && /h1$/.test(String(b.style))) h1 = ((b.children as Node[]) || []).map((c) => c.text).join("");
+  return h1.replace(/​/g, "").trim();
+}
+
+/* 4. Page titles that were slugs or lower case. */
+const TITLES: Record<string, string> = {
+  "/locations/mclean/tmj-tmd-treatments/": "TMJ/TMD Treatments",
+  "/locations/": "Locations",
+  "/locations/mclean/": "McLean",
+  "/before-after/": "Before & After",
+};
+for (const [path, title] of Object.entries(TITLES)) page(path).title = title;
+
+/* 5. Not for search engines: a published draft, a duplicate, two empty pages, the thank-you page, empty archives. */
+const NOINDEX: Record<string, string | null> = {
+  "/about-us-client-draft-2/": "/about-us/",
+  "/dental-fillings-in-mclean-va-2/": "/dental-fillings-in-mclean-va/",
+  "/locations/": null,
+  "/locations/mclean/": null,
+  "/thank-you/": null,
+  "/category/patient-guides/": null,
+  "/category/uncategorized/": null,
+};
+for (const [path, canonical] of Object.entries(NOINDEX)) {
+  const seo = (page(path).seo ||= {});
+  seo.robots = "noindex, follow";
+  if (canonical) seo.canonical = `${SITE}${canonical}`;
+}
+
+/* 6. Title tags: the page's H1 (or topic) and the practice name, not "- idealdental". */
+const SEO_TITLES: Record<string, string> = {
+  "/": "The Art of Exceptional Smiles | Ideal Dental Solutions, McLean VA",
+  "/about-us/": "Northern Virginia’s Most Trusted Dental Team | Ideal Dental Solutions",
+  "/about-us-client-draft-2/": "About Us (draft) | Ideal Dental Solutions",
+  "/appointment/": "Call to Schedule an Appointment | Ideal Dental Solutions",
+  "/before-after/": "Before & After Smiles: A Gentle, Conservative Approach",
+  "/dr-mehdi-adili/": "Dr. Mehdi S. Adili, DDS | Prosthodontist at Ideal Dental Solutions",
+  "/locations/": "Locations | Ideal Dental Solutions",
+  "/locations/mclean/": "McLean, VA | Ideal Dental Solutions",
+  "/thank-you/": "Thank You | Ideal Dental Solutions",
+  "/category/patient-guides/": "Patient Guides | Ideal Dental Solutions",
+  "/category/uncategorized/": "Uncategorized | Ideal Dental Solutions",
+};
+for (const d of docs.filter((x) => ["page", "archivePage", "notFoundPage"].includes(x._type))) {
+  const seo = (d.seo ||= {});
+  let title = d.path ? SEO_TITLES[d.path] : undefined;
+  if (!title && d._type === "page") {
+    const h1 = h1Of(d);
+    if (!h1) throw new Error(`No H1 and no title for ${d.path}`);
+    title = `${h1} | ${BRAND}`.length <= 72 ? `${h1} | ${BRAND}` : h1;
+  }
+  if (!title) title = String(seo.title || "").replace(/ - idealdental$/, ` | ${BRAND}`);
+  seo.title = title;
+  seo.ogTitle = title;
+  seo.ogSiteName = BRAND;
+}
+// Author archives keep their (noindex) titles, with the practice name.
+for (const d of docs.filter((x) => x._type === "archivePage" && x.kind === "author")) {
+  const seo = d.seo!;
+  seo.title = seo.ogTitle = String(seo.title).replace(/ at idealdental$/, ` at ${BRAND}`);
+}
+
+/* 7. Meta descriptions for every indexable page. */
+const DESCRIPTIONS: Record<string, string> = {
+  "/": "Ideal Dental Solutions in McLean, VA: cosmetic, implant, restorative and preventive dentistry for Northern Virginia families. Call (703) 442-0442.",
+  "/about-us/": "Meet the dentists and hygienists of Ideal Dental Solutions in McLean, VA, with 50+ years of combined experience in cosmetic, implant and family dentistry.",
+  "/appointment/": "Request a dental appointment at Ideal Dental Solutions, 8280 Greensboro Drive, McLean, VA. Call (703) 442-0442 or send the form and we will call you back.",
+  "/before-after/": "Before and after photos of real smiles treated at Ideal Dental Solutions in McLean, VA, from whitening and bonding to veneers and implants.",
+  "/dental-bridges-in-mclean-va/": "Custom dental bridges in McLean, VA to replace missing teeth and restore your bite, with natural-looking results from Ideal Dental Solutions.",
+  "/dental-fillings-in-mclean-va/": "Tooth-colored dental fillings in McLean, VA. Ideal Dental Solutions repairs cavities and chipped teeth with durable, natural-looking materials.",
+  "/dr-mehdi-adili/": "Dr. Mehdi S. Adili, DDS, prosthodontist at Ideal Dental Solutions in McLean, VA: implants, crowns, bridges and dentures. Speaks English and Farsi.",
+  "/locations/mclean/dental-implant-dentistry/": "Dental implants in McLean, VA: single-tooth and full-arch implant solutions planned and restored by the team at Ideal Dental Solutions.",
+  "/locations/mclean/full-arch-implants/": "Full arch dental implants in McLean, VA: a fixed, permanent alternative to dentures from Ideal Dental Solutions. Book your consultation.",
+  "/locations/mclean/gum-disease-treatment/": "Gum disease treatment in McLean, VA, from deep cleanings to advanced periodontal care, to stop bleeding gums and protect your teeth.",
+  "/locations/mclean/gum-graft-surgery/": "Gum graft surgery in McLean, VA to cover exposed roots, reduce sensitivity and restore your gum line, at Ideal Dental Solutions.",
+  "/locations/mclean/invisalign/": "Invisalign clear aligners in McLean, VA: straighten your teeth discreetly with a custom treatment plan from Ideal Dental Solutions.",
+  "/locations/mclean/periodontal-dentistry/": "Periodontal dentistry in McLean, VA: gum disease treatment, gum grafts and crown lengthening to keep your gums and teeth healthy.",
+  "/locations/mclean/porcelain-dental-veneers/": "Porcelain veneers in McLean, VA to fix chips, stains, gaps and uneven teeth. Custom, natural-looking smiles from Ideal Dental Solutions.",
+  "/locations/mclean/preventive-dentistry/": "Preventive dentistry in McLean, VA: checkups, exams, professional cleanings and sealants to keep your smile healthy for life.",
+  "/locations/mclean/restorative-dentistry/": "Restorative dentistry in McLean, VA: fillings, bridges, dentures, root canals and extractions to repair damaged or missing teeth.",
+  "/locations/mclean/root-canal-therapy/": "Gentle, pain-free root canal treatment in McLean, VA to save infected teeth and relieve tooth pain. Call Ideal Dental Solutions today.",
+  "/locations/mclean/single-tooth-implants/": "Single tooth implants in McLean, VA: replace one missing tooth with a permanent, natural-looking implant and crown.",
+  "/locations/mclean/teeth-whitening/": "Professional teeth whitening in McLean, VA for a brighter smile, safely and quickly, at Ideal Dental Solutions.",
+  "/locations/mclean/tmj-tmd-treatments/": "TMJ and TMD treatment in McLean, VA to relieve jaw pain, clicking and tension headaches, with personalized care at Ideal Dental Solutions.",
+  "/locations/night-guards/": "Custom night guards in Northern Virginia protect your teeth from grinding and clenching. Comfortable fit from Ideal Dental Solutions in McLean.",
+  "/preventive-dentistry-in-northern-virginia/": "Preventive dentistry in Northern Virginia: exams, cleanings and sealants at Ideal Dental Solutions in McLean to stop problems before they start.",
+  "/services/": "Dental services at Ideal Dental Solutions in McLean, VA: cosmetic, implant, periodontal, preventive and restorative dentistry for the whole family.",
+  "/services/cosmetic-dentistry/": "Cosmetic dentistry in Northern Virginia: veneers, teeth whitening, bonding and Invisalign at Ideal Dental Solutions in McLean, VA.",
+  "/services/cosmetic-dentistry/dental-bonding/": "Dental bonding in Northern Virginia repairs chipped, cracked or discolored teeth, often in a single visit, at Ideal Dental Solutions in McLean.",
+  "/services/cosmetic-dentistry/invisalign/": "Invisalign clear aligners in Northern Virginia: straighten teeth without metal braces, with custom treatment at Ideal Dental Solutions.",
+  "/services/cosmetic-dentistry/porcelain-veneers/": "Porcelain veneers in Northern Virginia for a brighter, even smile. Custom-made veneers from Ideal Dental Solutions in McLean, VA.",
+  "/services/cosmetic-dentistry/teeth-whitening/": "Professional teeth whitening in Northern Virginia for a noticeably whiter smile, done safely at Ideal Dental Solutions in McLean, VA.",
+  "/services/dental-implants-dentistry/": "Dental implants in Northern Virginia: single-tooth and full-arch implants that look and feel like natural teeth. Ideal Dental Solutions, McLean.",
+  "/services/dental-implants-dentistry/full-arch-implants/": "Full arch dental implants in Northern Virginia: a permanent, fixed alternative to dentures. Consult the implant team at Ideal Dental Solutions.",
+  "/services/dental-implants-dentistry/single-tooth-implants/": "Single tooth implants in Northern Virginia replace a missing tooth permanently, with a natural-looking crown. Ideal Dental Solutions, McLean.",
+  "/services/periodontic-dentistry/": "Periodontic dentistry in Northern Virginia: gum disease treatment, gum grafts and crown lengthening at Ideal Dental Solutions in McLean.",
+  "/services/periodontic-dentistry/crown-lengthening/": "Crown lengthening in Northern Virginia to correct a gummy smile or prepare a tooth for a crown, with precise periodontal care.",
+  "/services/periodontic-dentistry/gum-disease-treatment/": "Gum disease treatment in Northern Virginia: periodontal therapy to stop infection, heal your gums and save your teeth. Ideal Dental Solutions.",
+  "/services/periodontic-dentistry/gum-graft-surgery/": "Gum graft surgery in Northern Virginia treats gum recession, protects exposed roots and restores your smile. Ideal Dental Solutions, McLean.",
+  "/services/preventive-dentistry/": "Preventive dentistry in Northern Virginia: checkups, exams, cleanings and sealants for the whole family at Ideal Dental Solutions in McLean.",
+  "/services/preventive-dentistry/checkups-exams/": "Comprehensive dental checkups and exams in Northern Virginia to catch cavities, gum disease and other problems early. Ideal Dental Solutions.",
+  "/services/preventive-dentistry/dental-sealants/": "Dental sealants in Northern Virginia protect the chewing surfaces of back teeth from cavities, for children and adults. Ideal Dental Solutions.",
+  "/services/preventive-dentistry/teeth-cleaning/": "Professional teeth cleaning in Northern Virginia removes plaque and tartar to prevent cavities and gum disease. Book at Ideal Dental Solutions.",
+  "/services/restorative-dentistry/": "Restorative dentistry in Northern Virginia: fillings, bridges, dentures, root canals, TMJ care and extractions at Ideal Dental Solutions.",
+  "/services/restorative-dentistry/dental-bridges/": "Dental bridges in Northern Virginia replace missing teeth and restore chewing and speech, with natural-looking results from Ideal Dental Solutions.",
+  "/services/restorative-dentistry/dental-fillings/": "Tooth-colored dental fillings in Northern Virginia that repair cavities and blend with your smile. Ideal Dental Solutions in McLean, VA.",
+  "/services/restorative-dentistry/dentures/": "Comfortable, natural-looking full and partial dentures in Northern Virginia, custom fitted at Ideal Dental Solutions in McLean, VA.",
+  "/services/restorative-dentistry/root-canal-therapy/": "Pain-free root canal treatment in Northern Virginia to save an infected tooth and stop tooth pain. Ideal Dental Solutions in McLean, VA.",
+  "/services/restorative-dentistry/tmj-tmd-treatments/": "TMJ and TMD treatment in Northern Virginia to ease jaw pain, clicking and tension headaches. Ideal Dental Solutions in McLean, VA.",
+  "/services/restorative-dentistry/tooth-extractions/": "Gentle, painless tooth extractions in Northern Virginia when a tooth cannot be saved, at Ideal Dental Solutions in McLean, VA.",
+};
+for (const [path, desc] of Object.entries(DESCRIPTIONS)) {
+  if (desc.length > 160) throw new Error(`Description too long for ${path} (${desc.length})`);
+  const seo = (page(path).seo ||= {});
+  seo.description = desc;
+  seo.ogDescription = desc;
+}
+for (const d of docs.filter((x) => ["page", "archivePage"].includes(x._type))) {
+  if (!/noindex/.test(String(d.seo?.robots)) && !d.seo?.description) throw new Error(`Indexable page without a description: ${d.path}`);
+}
+
+/* 8. Alt text. Decorative graphics (icons next to their own title, dividers) keep alt="". */
+const DECORATIVE = /\/(icon-\d+\.svg|separated-(top|bottom)\.png)$/;
+const LOGO = /\/(image__4_-removebg-preview|ChatGPT_Image_Jul_30__2026__01_30_28_AM-removebg-preview|cropped-ids-logo-home|ids-logo-home)[^/]*$/;
+const ALT_BY_FILE: [RegExp, string][] = [
+  [/\/img-2364234\.png$/, "Dr. Mehdi Adili, DDS"],
+  [/\/Frame-1984079077\.png$/, "Dr. Saman Sepahi, DDS"],
+  [/\/dr-hojaeva-1\.png$/, "Dr. Dilnoza Hojaeva, DDS"],
+  [/\/(Fosia(-2)?-\d+x\d+\.jpg|Rectangle-75-1-1-e1786545956358\.webp)$/, "Fozia Mohamed, RDH, dental hygienist"],
+  [/\/IMG_6255-1024x801\.jpeg$/, "Kaveh Sanatjou, RDH, dental hygienist"],
+  [/\/(Tiana-Norris\.webp|IMG_1980-1-768x576\.jpeg)$/, "Tiana Norris, RDH, dental hygienist"],
+  [/\/(img-7234|img-96234|Rectangle-3149-1024x764-1)\.webp$/, "Smiling dentist and dental assistant in a treatment room"],
+  [/\/(img-7868234|idealdentalsolutions-image-9-1024x682-1)\.webp$/, "Smiling senior patient in the dental chair"],
+  [/\/(img-1236553|idealdentalsolutions-image-13-1024x682-1)\.webp$/, "Dentist talking with a patient before treatment"],
+  [/\/img-6523432\.webp$/, "Dentist curing a tooth-colored filling with a curing light"],
+  [/\/Gemini_Generated_Image_elznlyelznlyelzn\.png$/, "Dentist curing a tooth-colored filling with a curing light"],
+  [/\/(img-712637|cosmetic-dentistry-image)\.webp$/, "Tooth shade guide held next to a patient's smile"],
+  [/\/(img-76234|image-slider-small-2)\.webp$/, "Dentist examining a patient with a dental microscope"],
+  [/\/(img-8982346|2-1-1024x1024-1)\.webp$/, "Dental model of the upper and lower teeth"],
+  [/\/(img-83234|1-1-1024x1024-1)\.webp$/, "Man holding his jaw because of tooth pain"],
+  [/\/img-238461\.webp$/, "Patient putting in a clear aligner"],
+  [/\/dental-bonding-image\.webp$/, "Dentist shaping tooth bonding on a patient"],
+  [/\/dental-image-1024x1024-1\.webp$/, "Close-up of a healthy, natural-looking smile"],
+  [/\/dental-patient-image-863x1024-1\.webp$/, "Smiling dental patient"],
+  [/\/smile-makeover-image\.webp$/, "Bright, even smile after a smile makeover"],
+  [/\/11-1024x1024-1\.webp$/, "Smiling patient during a dental cleaning"],
+  [/\/about-image-2\.webp$/, "Dentist treating a patient at Ideal Dental Solutions"],
+  [/\/4-1-1024x1024-1\.webp$/, "Patient checking her smile in a mirror after treatment"],
+  [/\/idealdentalsolutions-image-8-1024x682-1\.webp$/, "Senior patient checking his smile in a hand mirror"],
+  [/\/tooth-extrach-image-1024x1024-1\.webp$/, "Dental forceps used for a tooth extraction"],
+];
+const looksLikeFilename = (alt: string) => !alt || /^(b&a|idealdental$)/i.test(alt) || (!/\s/.test(alt) && /[-_.]/.test(alt));
+
 for (const d of docs) {
-  const topic = d._type === "post" ? String(d.title) : pageTopic(d);
-  const used = new Map<string, number>();
   walk(d, (n) => {
     if (n._type !== "wpImage") return;
-    const src = String(n.src || "");
+    const src = decodeURIComponent(String(n.src || ""));
     const alt = String(n.alt ?? "").trim();
-    if (alt && !looksLikeFilename(alt)) return;
-    let next: string;
-    if (LOGO.test(src) || /logo/i.test(alt)) next = "Alpha Hardscapes";
+    let next: string | null = null;
+    if (LOGO.test(src)) next = BRAND;
     else if (DECORATIVE.test(src)) next = "";
-    else if (/southern-connecticut-map/.test(src)) next = "Map of the Alpha Hardscapes service area in Southern Connecticut";
-    else if (/fairfield-county-map/.test(src)) next = "Map of Fairfield County, CT";
     else {
-      const base = altFromFile(src) || (topic ? `${topic} project by Alpha Hardscapes` : "Hardscaping project by Alpha Hardscapes");
-      const k = (used.get(base) || 0) + 1;
-      used.set(base, k);
-      next = k > 1 ? `${base} (photo ${k})` : base;
+      const ba = /\/ba-(\d+)/.exec(src);
+      if (ba) next = `Before and after smile treatment at Ideal Dental Solutions, case ${Number(ba[1])}`;
+      else if (looksLikeFilename(alt)) next = ALT_BY_FILE.find(([re]) => re.test(src))?.[1] ?? null;
+    }
+    if (next == null) {
+      if (looksLikeFilename(alt)) throw new Error(`No alt text for ${src} on ${d._id}`);
+      return;
     }
     if (next !== alt) {
       n.alt = next;
       log.push(`alt ${d._id}: ${src.split("/").pop()} -> "${next}"`);
     }
   });
-}
-// Header / footer / popup logos
-for (const d of docs.filter((x) => x._type === "elementorTemplate")) {
+  // Call-to-action backgrounds are images too (role="img").
   walk(d, (n) => {
-    if (n._type === "wpImage" && (LOGO.test(String(n.src)) || /logo/i.test(String(n.alt)))) n.alt = "Alpha Hardscapes";
-  });
-}
-
-/* 5. Blog index heading and meta descriptions. */
-const blog = byId.get("archive-blog")!;
-blog.heading = "Hardscaping & Landscaping Blog";
-if (!String(blog.frameTpl).includes("[[@text:heading]]")) {
-  blog.frameTpl = String(blog.frameTpl).replace(
-    '<main id="main" class="site-main">',
-    '<section class="ast-archive-description"><h1 class="page-title ast-archive-title">[[@text:heading]]</h1></section><main id="main" class="site-main">',
-  );
-}
-const DESCRIPTIONS: Record<string, string> = {
-  "/blog/": "Hardscaping, patio, paver and landscaping tips for Connecticut homeowners from the Alpha Hardscapes team: costs, materials, design ideas and maintenance.",
-  "/category/blog/": "Articles from Alpha Hardscapes on patios, pavers, retaining walls, outdoor kitchens and landscaping for Connecticut homes.",
-  "/category/uncategorized/": "More articles from Alpha Hardscapes on patios, pavers, fire features and outdoor living in Connecticut.",
-  "/masonry/retaining-walls/stone-3/": "Natural stone retaining walls built to handle Connecticut freeze-thaw. Alpha Hardscapes designs and installs stone walls for slopes, beds and patios.",
-  "/masonry/retaining-walls/wall-block-2/": "Segmental wall block retaining walls for Connecticut properties: engineered for drainage and durability. Get a free quote from Alpha Hardscapes.",
-  "/masonry/walkway-patio-masonry-optin/": "Custom paver and natural stone patios and walkways in Connecticut. Request your free estimate from Alpha Hardscapes today.",
-  "/privacy-policy/": "Privacy policy for idealdentalsolutions.com: how Alpha Hardscapes collects, uses and protects information submitted through our website and forms.",
-  "/terms-and-conditions/": "Terms and conditions for using idealdentalsolutions.com and requesting quotes from Alpha Hardscapes, a Connecticut hardscaping and masonry contractor.",
-  "/blog/prepare-patio-for-winter-connecticut/": "Step-by-step guide to preparing your patio for a Connecticut winter: cleaning, sealing, joint sand, drainage and safe de-icing for pavers and stone.",
-  "/blog/natural-stone-vs-wall-block/": "Natural stone vs wall block retaining walls: compare cost, look, strength and lifespan to choose the right wall for your Connecticut yard.",
-  "/blog/patio-and-walkway-maintenance-checklist/": "A seasonal patio and walkway maintenance checklist for Connecticut homeowners: cleaning, sealing, re-sanding joints and fixing heaved pavers.",
-  "/uncategorized/how-do-i-automation-my-facebook-ad/": "How to automate Facebook ads to save time, cut wasted spend and scale results, with practical steps for small local service businesses.",
-  "/uncategorized/hardscape-upgrades-before-fall/": "Hardscape upgrades to finish before fall in Connecticut: patios, walkways, retaining walls and fire features worth scheduling now.",
-  "/uncategorized/how-long-does-a-paver-patio-last/": "How long does a paver patio last in Connecticut? Typical lifespan, what shortens it, and the maintenance that keeps pavers looking new for decades.",
-  "/uncategorized/paver-patio-vs-natural-stone-patio-connecticut/": "Paver patio vs natural stone patio in Connecticut: compare cost, durability, freeze-thaw performance, maintenance and style.",
-  "/uncategorized/patio-around-outdoor-kitchen-ct/": "How to plan the patio around an outdoor kitchen in Connecticut: layout, materials, base, drainage and spacing for cooking and dining.",
-  "/uncategorized/fire-pit-vs-outdoor-fireplace-connecticut-guide/": "Fire pit vs outdoor fireplace in Connecticut: compare cost, heat, space, permits and style to pick the right fire feature for your yard.",
-  "/blog/small-backyard-patio-ideas-connecticut/": "Small backyard patio ideas for Connecticut homes: space-saving layouts, materials, seating, lighting and planting that make a small yard feel bigger.",
-  "/blog/pool-patio-materials-connecticut/": "Choosing pool patio materials in Connecticut: pavers, natural stone and concrete compared for slip resistance, heat, durability and cost.",
-  "/blog/backyard-remodel-ideas-connecticut/": "Backyard remodel ideas for Connecticut: patios, outdoor kitchens, fire features, retaining walls and planting, with tips on budget and timing.",
-  "/blog/outdoor-kitchen-cost-connecticut/": "What does an outdoor kitchen cost in Connecticut? Price ranges by size and materials, what drives the budget, and how to plan your project.",
-  "/blog/best-patio-materials-connecticut/": "The best patio materials for Connecticut: pavers, bluestone, natural stone and concrete compared for freeze-thaw durability, cost and upkeep.",
-  "/blog/patio-installation-cost-connecticut-cost-guide/": "Patio installation cost in Connecticut: typical price per square foot for pavers, stone and concrete, and what affects your final quote.",
-  "/blog/hardscaping-pavers-planning-your-outdoor-space/": "Planning hardscaping and pavers for your outdoor space: layout, materials, drainage and budget tips from Connecticut paver contractors.",
-  "/blog/hardscaping-pavers-contractor-complete-guide-to-planning-installation-and-maintenance/": "Complete guide to hardscaping and pavers: planning, base preparation, installation and long-term maintenance from a Connecticut paver contractor.",
-};
-for (const [path, desc] of Object.entries(DESCRIPTIONS)) {
-  const d = byPath.get(path);
-  if (!d) throw new Error(`No document for ${path}`);
-  d.seo = { ...(d.seo || {}), description: desc, ogDescription: desc };
-  if (desc.length > 160) throw new Error(`Description too long for ${path}`);
-}
-blog.seo = { ...(blog.seo || {}), title: "Hardscaping & Landscaping Blog | Alpha Hardscapes", ogTitle: "Hardscaping & Landscaping Blog | Alpha Hardscapes" };
-
-/* 6. Wrong link in the outdoor kitchen cost post. */
-walk(byPath.get("/blog/outdoor-kitchen-cost-connecticut/"), (n) => {
-  if (n._type !== "block") return;
-  const kids = (n.children as Node[]) || [];
-  for (const span of kids.filter((k) => k.text === "Walkway & Patio Connecticut")) {
-    for (const m of (span.marks as string[]) || []) {
-      const def = ((n.markDefs as Node[]) || []).find((x) => x._key === m && x._type === "link");
-      if (def && def.href !== "/walkway-patio-connecticut/") {
-        def.href = "/walkway-patio-connecticut/";
-        log.push("fixed Walkway & Patio Connecticut link");
-      }
-    }
-  }
-});
-
-/* 7. Menus point at the final URLs (no redirect hops, same page in header and footer). */
-const MENU_FIX: Record<string, { link: string; pageId: number }> = {
-  "/landscaping-connecticut/": { link: "/landscaping/", pageId: 727 },
-  "/locations/": { link: "/service-areas/", pageId: 4438 },
-};
-for (const id of ["template-61", "template-102"]) {
-  walk(byId.get(id), (n) => {
-    if (n._type === "navItem" && MENU_FIX[String(n.link)]) {
-      log.push(`menu ${id}: ${n.label} ${n.link} -> ${MENU_FIX[String(n.link)].link}`);
-      Object.assign(n, MENU_FIX[String(n.link)]);
+    if (n._type === "elCta" && /^[\w-]+$/.test(String(n.bgLabel || ""))) {
+      n.bgLabel = /before-after/.test(String(n.bgImage)) ? "Before and after smile at Ideal Dental Solutions" : `${headingText(n) || "Dental care"} at Ideal Dental Solutions`;
+      log.push(`cta label ${d._id}`);
     }
   });
 }
 
-/* 8. Copyright year follows the calendar. */
-walk(byId.get("template-102"), (n) => {
-  if (n._type === "span" && typeof n.text === "string" && /Copyright © \d{4}/.test(n.text)) n.text = n.text.replace(/© \d{4}/, "© {year}");
-});
-
-/* 9. Business details for structured data (Site settings > Business schema). */
-const towns = ["New Haven", "Hamden", "North Haven", "West Haven", "Cheshire", "Wallingford", "Branford", "Guilford", "Madison", "Milford", "Orange", "Woodbridge", "Shelton", "Trumbull", "Fairfield", "Stratford", "Avon", "Berlin", "Farmington", "Glastonbury", "Southington", "West Hartford"];
+/* 9. Structured data: Yoast's graph kept; Organization -> Dentist (Site settings > Business schema); no site search action. */
+const SERVICES: [string, string][] = [
+  ["Restorative Dentistry", "/services/restorative-dentistry/"],
+  ["Tooth Extractions", "/services/restorative-dentistry/tooth-extractions/"],
+  ["TMJ/TMD Treatments", "/services/restorative-dentistry/tmj-tmd-treatments/"],
+  ["Root Canal Therapy", "/services/restorative-dentistry/root-canal-therapy/"],
+  ["Dentures", "/services/restorative-dentistry/dentures/"],
+  ["Dental Fillings", "/services/restorative-dentistry/dental-fillings/"],
+  ["Dental Bridges", "/services/restorative-dentistry/dental-bridges/"],
+  ["Preventive Dentistry", "/services/preventive-dentistry/"],
+  ["Teeth Cleaning", "/services/preventive-dentistry/teeth-cleaning/"],
+  ["Dental Sealants", "/services/preventive-dentistry/dental-sealants/"],
+  ["Dental Checkups & Exams", "/services/preventive-dentistry/checkups-exams/"],
+  ["Periodontic Dentistry", "/services/periodontic-dentistry/"],
+  ["Gum Graft Surgery", "/services/periodontic-dentistry/gum-graft-surgery/"],
+  ["Gum Disease Treatment", "/services/periodontic-dentistry/gum-disease-treatment/"],
+  ["Crown Lengthening", "/services/periodontic-dentistry/crown-lengthening/"],
+  ["Dental Implants", "/services/dental-implants-dentistry/"],
+  ["Single Tooth Implants", "/services/dental-implants-dentistry/single-tooth-implants/"],
+  ["Full Arch Implants", "/services/dental-implants-dentistry/full-arch-implants/"],
+  ["Cosmetic Dentistry", "/services/cosmetic-dentistry/"],
+  ["Teeth Whitening", "/services/cosmetic-dentistry/teeth-whitening/"],
+  ["Porcelain Veneers", "/services/cosmetic-dentistry/porcelain-veneers/"],
+  ["Invisalign", "/services/cosmetic-dentistry/invisalign/"],
+  ["Dental Bonding", "/services/cosmetic-dentistry/dental-bonding/"],
+  ["Night Guards", "/locations/night-guards/"],
+];
 const business = {
-  "@type": ["HomeAndConstructionBusiness", "Organization"],
-  name: "Alpha Hardscapes",
+  "@type": ["Dentist", "LocalBusiness", "Organization"],
+  name: BRAND,
   url: `${SITE}/`,
-  logo: { "@type": "ImageObject", url: `${SITE}/icon-512.png`, contentUrl: `${SITE}/icon-512.png`, width: 512, height: 512, caption: "Alpha Hardscapes" },
+  logo: { "@type": "ImageObject", url: `${SITE}/wp-content/uploads/2026/07/image__4_-removebg-preview.png`, contentUrl: `${SITE}/wp-content/uploads/2026/07/image__4_-removebg-preview.png`, width: 831, height: 300, caption: BRAND },
   image: `${SITE}/og/home.jpg`,
-  telephone: "+1-475-227-6896",
-  email: "alphahardscapes1@gmail.com",
-  priceRange: "$$",
-  description: "Hardscaping, paver and masonry contractor serving New Haven, Fairfield and Hartford Counties in Connecticut: patios, walkways, retaining walls, outdoor kitchens, fire features, landscaping and seasonal cleanups.",
-  address: { "@type": "PostalAddress", addressLocality: "New Haven", addressRegion: "CT", postalCode: "06510", addressCountry: "US" },
-  geo: { "@type": "GeoCoordinates", latitude: 41.3083, longitude: -72.9279 },
+  telephone: "+1-703-442-0442",
+  description: "Dental practice in McLean, VA offering cosmetic, implant, periodontal, preventive and restorative dentistry for Northern Virginia.",
+  address: { "@type": "PostalAddress", streetAddress: "8280 Greensboro Drive, Unit 105", addressLocality: "McLean", addressRegion: "VA", postalCode: "22102", addressCountry: "US" },
+  geo: { "@type": "GeoCoordinates", latitude: 38.9239, longitude: -77.2311 },
+  hasMap: "https://www.google.com/maps/search/?api=1&query=8280+Greensboro+Drive+Unit+105+McLean+VA+22102",
   openingHoursSpecification: [
-    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], opens: "08:00", closes: "17:00" },
-    { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "09:00", closes: "13:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday"], opens: "09:00", closes: "17:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "08:30", closes: "15:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: "Saturday", opens: "08:00", closes: "14:00", description: "Every other Saturday" },
   ],
   areaServed: [
-    ...["New Haven County", "Fairfield County", "Hartford County"].map((name) => ({ "@type": "AdministrativeArea", name: `${name}, CT` })),
-    ...towns.map((name) => ({ "@type": "City", name: `${name}, CT` })),
+    { "@type": "AdministrativeArea", name: "Northern Virginia" },
+    ...["McLean", "Tysons Corner", "Vienna", "Falls Church", "Arlington", "Fairfax", "Alexandria"].map((name) => ({ "@type": "City", name: `${name}, VA` })),
   ],
-  sameAs: ["https://www.facebook.com/AlphaHardscapes", "https://www.instagram.com/alphahardscapes/"],
+  sameAs: ["https://www.facebook.com/IdealDentalSolutions/", "https://www.instagram.com/idealdentalsmiles/"],
+  medicalSpecialty: ["Dentistry", "Periodontics", "Prosthodontics"],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
-    name: "Hardscaping & Landscaping Services",
-    itemListElement: [
-      ["Patios & Walkways", "/walkway-patio-connecticut/"],
-      ["Retaining Walls", "/retaining-walls-connecticut/"],
-      ["Masonry", "/masonry/"],
-      ["Paver Repairs & Maintenance", "/repairs-maintenance-connecticut/"],
-      ["Outdoor Kitchens", "/outdoor-kitchens-connecticut/"],
-      ["Fire Features", "/fire-features-connecticut/"],
-      ["Stone Steps", "/stone-steps-connecticut/"],
-      ["Chimney Installation & Repair", "/chimney-installation-and-repair-connecticut/"],
-      ["Landscaping", "/landscaping/"],
-      ["Seasonal Clean-Up", "/seasonal-clean-up/"],
-      ["Snow Removal", "/seasonal-clean-up/snow-removal/"],
-      ["Leaf Removal", "/seasonal-clean-up/leaf-removal/"],
-    ].map(([name, path]) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name, url: `${SITE}${path}` } })),
+    name: "Dental Services",
+    itemListElement: SERVICES.map(([name, path]) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name, url: `${SITE}${path}` } })),
   },
 };
 byId.get("siteSettings")!.businessSchema = JSON.stringify(business, null, 2);
 
-/* 10. Social images: 1200x630 photo per page (was a 136x118 background graphic). */
+for (const d of docs) {
+  const seo = d.seo;
+  if (typeof seo?.schema !== "string") continue;
+  const g = JSON.parse(seo.schema) as { "@graph": Node[] };
+  for (const node of g["@graph"]) {
+    if (node["@type"] === "WebSite") {
+      delete node.potentialAction;
+      node.name = BRAND;
+      node.alternateName = "idealdental";
+    }
+    if (node["@type"] === "Organization") node.name = BRAND;
+    // WebPage/CollectionPage name follows the title tag.
+    if (/WebPage|CollectionPage|ProfilePage|SearchResultsPage/.test(String(node["@type"])) && seo.title) {
+      node.name = seo.title;
+      if (seo.description) node.description = seo.description;
+    }
+  }
+  seo.schema = JSON.stringify(g);
+}
+
+/* 10. Social images: 1200x630 photo per page. */
 const OG_DIR = join(ROOT, "public/og");
 mkdirSync(OG_DIR, { recursive: true });
 
 function firstPhoto(d: Doc): string | null {
-  const feat = (d.featuredImage as Node | undefined)?.src as string | undefined;
-  if (feat) return feat;
   let found: string | null = null;
   walk(d, (n) => {
-    if (found || n._type !== "wpImage") return;
+    if (found) return;
+    if (n._type === "elCta" && typeof n.bgImage === "string" && !/before-after/.test(n.bgImage)) found = n.bgImage;
+    if (n._type !== "wpImage") return;
     const src = String(n.src || "");
-    if (!src || DECORATIVE.test(src) || LOGO.test(src) || /map|\.svg$/i.test(src)) return;
+    if (!src || DECORATIVE.test(src) || LOGO.test(src) || /\.svg$/i.test(src) || /\/ba-\d+/.test(src)) return;
     if (Number(n.width || 0) && Number(n.width) < 500) return;
     found = src;
   });
   return found;
 }
 
-async function ogFor(d: Doc, fallback?: string): Promise<string | null> {
+async function ogFor(d: Doc, fallback: string): Promise<string | null> {
   const src = firstPhoto(d) || fallback;
-  if (!src) return null;
   const local = join(ROOT, "public", decodeURIComponent(src.split("?")[0]));
   if (!existsSync(local)) return null;
   const slug = d.path === "/" ? "home" : d.path!.split("/").filter(Boolean).join("-");
   const out = join(OG_DIR, `${slug}.jpg`);
   if (!existsSync(out)) {
-    await sharp(local).rotate().resize(1200, 630, { fit: "cover", position: "attention" }).jpeg({ quality: 82, mozjpeg: true }).toFile(out);
+    await sharp(local).rotate().flatten({ background: "#ffffff" }).resize(1200, 630, { fit: "cover", position: "attention" }).jpeg({ quality: 82, mozjpeg: true }).toFile(out);
   }
   return `${SITE}/og/${slug}.jpg`;
 }
 
-const homeImg = firstPhoto(byPath.get("/")!)!;
-for (const d of docs.filter((x) => ["page", "post", "archivePage"].includes(x._type) && x.path)) {
+const homeImg = firstPhoto(page("/"))!;
+for (const d of docs.filter((x) => ["page", "archivePage"].includes(x._type) && x.path)) {
   const url = await ogFor(d, homeImg);
   if (!url) continue;
   const seo = (d.seo ||= {});
@@ -309,18 +396,12 @@ for (const d of docs.filter((x) => ["page", "post", "archivePage"].includes(x._t
   Object.assign(seo, { ogImage: url, ogImageWidth: "1200", ogImageHeight: "630", ogImageType: "image/jpeg" });
   // Keep the schema's primary image in step with the social image.
   if (typeof seo.schema === "string") {
-    try {
-      const g = JSON.parse(seo.schema) as { "@graph": Node[] };
-      for (const node of g["@graph"]) {
-        if (node["@type"] === "ImageObject" && String(node["@id"]).endsWith("#primaryimage") && (!oldImg || node.url === oldImg) && /filled-bg/.test(String(node.url))) {
-          Object.assign(node, { url, contentUrl: url, width: 1200, height: 630 });
-        }
-        if (node["@type"] === "WebPage" && /filled-bg/.test(String(node.thumbnailUrl))) node.thumbnailUrl = url;
-      }
-      seo.schema = JSON.stringify(g);
-    } catch {
-      /* leave unparsable schema as is */
+    const g = JSON.parse(seo.schema) as { "@graph": Node[] };
+    for (const node of g["@graph"]) {
+      if (node["@type"] === "ImageObject" && String(node["@id"]).endsWith("#primaryimage") && (!oldImg || node.url === oldImg)) Object.assign(node, { url, contentUrl: url, width: 1200, height: 630 });
+      if (/WebPage/.test(String(node["@type"])) && node.thumbnailUrl) node.thumbnailUrl = url;
     }
+    seo.schema = JSON.stringify(g);
   }
 }
 

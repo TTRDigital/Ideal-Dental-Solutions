@@ -41,9 +41,9 @@ function phoneE164(raw = "") {
   return raw.trim();
 }
 
-/** First field whose label matches. */
-function pick(fields: Record<string, string>, re: RegExp) {
-  const key = Object.keys(fields).find((k) => re.test(k));
+/** First field whose label matches (and does not match `not`). */
+function pick(fields: Record<string, string>, re: RegExp, not?: RegExp) {
+  const key = Object.keys(fields).find((k) => re.test(k) && !not?.test(k));
   return key ? fields[key] : "";
 }
 
@@ -52,9 +52,10 @@ export async function deliverLead(lead: Lead) {
   const name = pick(f, /^(full )?name$/i) || f.name || "";
   const phone = pick(f, /phone/i);
   const email = pick(f, /e-?mail/i);
-  const address = pick(f, /address/i);
+  // "Email Address" is an email, not a street address.
+  const address = pick(f, /address/i, /e-?mail/i);
   const zip = pick(f, /zip|postal/i);
-  const service = pick(f, /service/i);
+  const service = pick(f, /service|treatment/i);
   const [first, ...rest] = name.trim().split(/\s+/);
   const tasks: Promise<void>[] = [];
 

@@ -261,6 +261,11 @@ export const richText = defineType({
         { title: "Heading 6", value: "h6" },
         { title: "Heading 1", value: "h1" },
         { title: "Text without paragraph", value: "bare" },
+        { title: "Paragraph (block editor)", value: "wp-p" },
+        { title: "Heading 1 (block editor)", value: "wp-h1" },
+        { title: "Heading 2 (block editor)", value: "wp-h2" },
+        { title: "Heading 3 (block editor)", value: "wp-h3" },
+        { title: "Heading 4 (block editor)", value: "wp-h4" },
       ],
       lists: [
         { title: "Bullets", value: "bullet" },
