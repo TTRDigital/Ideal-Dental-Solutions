@@ -1,0 +1,86 @@
+.elementor-kit-5{--e-global-color-primary:#6EC1E4;--e-global-color-secondary:#54595F;--e-global-color-text:#7A7A7A;--e-global-color-accent:#61CE70;--e-global-typography-primary-font-family:"Urbanist";--e-global-typography-primary-font-weight:600;--e-global-typography-secondary-font-family:"Urbanist";--e-global-typography-secondary-font-weight:600;--e-global-typography-text-font-family:"Urbanist";--e-global-typography-text-font-weight:400;--e-global-typography-accent-font-family:"Urbanist";--e-global-typography-accent-font-weight:600;font-family:"Urbanist", Sans-serif;font-size:16px;font-weight:400;line-height:1.65em;letter-spacing:0px;}.elementor-kit-5 e-page-transition{background-color:#FFBC7D;}.elementor-kit-5 h1{font-family:"Urbanist", Sans-serif;font-size:34px;font-weight:600;line-height:1.1em;letter-spacing:0px;}.elementor-kit-5 h2{font-family:"Urbanist", Sans-serif;font-size:24px;font-weight:600;line-height:1.3em;letter-spacing:0px;}.elementor-kit-5 h3{font-family:"Urbanist", Sans-serif;font-size:20px;font-weight:600;line-height:1.5em;letter-spacing:0px;}.elementor-kit-5 h4{font-family:"Urbanist", Sans-serif;font-size:18px;font-weight:600;line-height:1.5em;letter-spacing:0px;}.elementor-kit-5 h5{font-family:"Urbanist", Sans-serif;font-size:16px;font-weight:600;line-height:1.5em;letter-spacing:0px;}.elementor-kit-5 h6{font-family:"Urbanist", Sans-serif;font-size:14px;font-weight:600;line-height:1.5em;letter-spacing:0px;}.elementor-section.elementor-section-boxed > .elementor-container{max-width:1140px;}.e-con{--container-max-width:1140px;}.elementor-widget:not(:last-child){--kit-widget-spacing:20px;}.elementor-element{--widgets-spacing:20px 20px;--widgets-spacing-row:20px;--widgets-spacing-column:20px;}{}h1.entry-title{display:var(--page-title-display);}@media(max-width:1024px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:1024px;}.e-con{--container-max-width:1024px;}}@media(max-width:767px){.elementor-section.elementor-section-boxed > .elementor-container{max-width:767px;}.e-con{--container-max-width:767px;}}
+/* Start custom CSS *//* ============================================================
+   IDEAL DENTAL SOLUTIONS - SITE-WIDE TYPOGRAPHY NORMALIZATION
+   Typeface: Urbanist
+   Standard (from homepage "Exceptional Smiles" block):
+     H1 banner .. 34px / 600 / 1.1 / no letter-spacing
+     H2 section . 24px / 600 / 1.3 / no letter-spacing
+     H3 + cards . 20px / 600 / 1.5 / no letter-spacing
+     Body copy .. 16px / 400 / 1.65 / no letter-spacing
+   Added 2026-07-26 by TTR Digital Marketing. Delete this block to revert.
+   ============================================================ */
+
+/* --- 1. Banner / hero headline --- */
+.elementor .elementor-element.elementor-widget.elementor-widget-heading h1.elementor-heading-title {
+	font-family: "Urbanist", sans-serif !important;
+	font-weight: 600 !important;
+	letter-spacing: normal !important;
+}
+
+/* --- 2. Section headings --- */
+.elementor .elementor-element.elementor-widget.elementor-widget-heading h2.elementor-heading-title {
+	font-family: "Urbanist", sans-serif !important;
+	font-size: 24px !important;
+	font-weight: 600 !important;
+	line-height: 1.3 !important;
+	letter-spacing: normal !important;
+}
+.elementor .elementor-element.elementor-widget.elementor-widget-heading h3.elementor-heading-title,
+.elementor .elementor-element.elementor-widget.elementor-widget-heading h4.elementor-heading-title {
+	font-family: "Urbanist", sans-serif !important;
+	font-size: 20px !important;
+	font-weight: 600 !important;
+	line-height: 1.5 !important;
+	letter-spacing: normal !important;
+}
+
+/* --- 3. Card titles --- */
+.elementor .elementor-element.elementor-widget.elementor-widget-image-box .elementor-image-box-title,
+.elementor .elementor-element.elementor-widget.elementor-widget-icon-box .elementor-icon-box-title,
+.elementor .elementor-element.elementor-widget.elementor-widget-call-to-action .elementor-cta__title {
+	font-family: "Urbanist", sans-serif !important;
+	font-size: 20px !important;
+	font-weight: 600 !important;
+	line-height: 1.5 !important;
+	letter-spacing: normal !important;
+}
+
+/* --- 4. Body copy --- */
+.elementor .elementor-element.elementor-widget.elementor-widget-text-editor,
+.elementor .elementor-element.elementor-widget.elementor-widget-text-editor p,
+.elementor .elementor-element.elementor-widget.elementor-widget-text-editor li,
+.elementor .elementor-element.elementor-widget.elementor-widget-image-box .elementor-image-box-description,
+.elementor .elementor-element.elementor-widget.elementor-widget-icon-box .elementor-icon-box-description,
+.elementor .elementor-element.elementor-widget.elementor-widget-call-to-action .elementor-cta__description {
+	font-family: "Urbanist", sans-serif !important;
+	font-size: 16px !important;
+	font-weight: 400 !important;
+	line-height: 1.65 !important;
+	letter-spacing: normal !important;
+}
+
+/* --- 5. Catch-all: no stray tracking on headings --- */
+.elementor .elementor-element.elementor-widget.elementor-widget-heading .elementor-heading-title {
+	letter-spacing: normal !important;
+}
+
+/* --- 6. Hand-coded HTML blocks (accordions, custom components) --- */
+.elementor .elementor-element.elementor-widget.elementor-widget-html p,
+.elementor .elementor-element.elementor-widget.elementor-widget-html div,
+.elementor .elementor-element.elementor-widget.elementor-widget-html span {
+	font-family: "Urbanist", sans-serif !important;
+	font-size: 16px !important;
+	line-height: 1.65 !important;
+	letter-spacing: normal !important;
+}
+
+/* accordion / list titles keep their active-state weight, sizes unified */
+.elementor .elementor-element.elementor-widget.elementor-widget-html li,
+.elementor .elementor-element.elementor-widget.elementor-widget-html h2,
+.elementor .elementor-element.elementor-widget.elementor-widget-html h3,
+.elementor .elementor-element.elementor-widget.elementor-widget-html h4 {
+	font-family: "Urbanist", sans-serif !important;
+	font-size: 20px !important;
+	line-height: 1.5 !important;
+	letter-spacing: normal !important;
+}/* End custom CSS */
