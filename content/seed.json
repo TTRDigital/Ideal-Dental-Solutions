@@ -1359,7 +1359,7 @@
           "tpl": "<div class=\"elementor-element elementor-element-dbca927 elementor-widget elementor-widget-text-editor\" data-id=\"dbca927\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
          }
         ],
-        "tpl": "<div class=\"elementor-element elementor-element-cdae318 e-con-full elementor-hidden-desktop e-flex e-con e-child\" data-id=\"cdae318\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t[[@nodes:children]]</div>"
+        "tpl": "<div class=\"elementor-element elementor-element-cdae318 e-con-full elementor-hidden-desktop elementor-hidden-tablet e-flex e-con e-child\" data-id=\"cdae318\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t[[@nodes:children]]</div>"
        },
        {
         "_key": "66098d6255a7",
@@ -1577,7 +1577,7 @@
         "tpl": "<div class=\"elementor-element elementor-element-4d70e9f elementor-widget elementor-widget-text-editor\" data-id=\"4d70e9f\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
        }
       ],
-      "tpl": "<div class=\"elementor-element elementor-element-2040cf0 e-con-full elementor-hidden-desktop e-flex e-con e-child\" data-id=\"2040cf0\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t[[@nodes:children]]</div>"
+      "tpl": "<div class=\"elementor-element elementor-element-2040cf0 e-con-full elementor-hidden-desktop elementor-hidden-tablet e-flex e-con e-child\" data-id=\"2040cf0\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t[[@nodes:children]]</div>"
      },
      {
       "_key": "ec37c6acb320",
@@ -1594,7 +1594,7 @@
        "alt": "Fozia Mohamed, RDH, dental hygienist",
        "attrs": "loading=\"lazy\" decoding=\"async\" class=\"attachment-large size-large wp-image-3231\""
       },
-      "tpl": "<div class=\"elementor-element elementor-element-488a0ff elementor-hidden-desktop elementor-widget elementor-widget-image\" data-id=\"488a0ff\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image.default\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t[[@img:image]]\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>"
+      "tpl": "<div class=\"elementor-element elementor-element-488a0ff elementor-hidden-desktop elementor-hidden-tablet elementor-widget elementor-widget-image\" data-id=\"488a0ff\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image.default\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t[[@img:image]]\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>"
      }
     ],
     "tpl": "<div class=\"elementor-element elementor-element-3cd6af0c e-con-full e-flex e-con e-parent\" data-id=\"3cd6af0c\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t<div class=\"elementor-element elementor-element-7d5990fc e-con-full e-flex e-con e-child\" data-id=\"7d5990fc\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t<div class=\"elementor-element elementor-element-696d5c5 e-con-full e-flex e-con e-child\" data-id=\"696d5c5\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t[[@nodes:children]]</div></div></div>",
@@ -1775,7 +1775,7 @@
           "tpl": "<div class=\"elementor-element elementor-element-3d839c5 elementor-widget elementor-widget-text-editor\" data-id=\"3d839c5\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
          }
         ],
-        "tpl": "<div class=\"elementor-element elementor-element-2257ed0 e-con-full elementor-hidden-desktop e-flex e-con e-child\" data-id=\"2257ed0\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t[[@nodes:children]]</div>"
+        "tpl": "<div class=\"elementor-element elementor-element-2257ed0 e-con-full elementor-hidden-desktop elementor-hidden-tablet e-flex e-con e-child\" data-id=\"2257ed0\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t[[@nodes:children]]</div>"
        },
        {
         "_key": "a0f0a9307d35",
@@ -1968,7 +1968,7 @@
          {
           "_type": "htmlBlock",
           "_key": "62ca195a0723",
-          "html": "<p style=\"color:#ffffff;font-size:18px;line-height:28px;letter-spacing:0.9px;\">Mon: &nbsp;&nbsp;9:00 – 5:00<br>Tue: &nbsp;&nbsp;&nbsp;9:00 – 5:00<br>Wed: &nbsp;9:00 – 5:00<br>Thu: &nbsp;&nbsp;&nbsp;9:00 – 5:00<br>Fri: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8:30 – 3:00<br>Sat: &nbsp;&nbsp;&nbsp;8:00 – 2:00<br>Sun: &nbsp;&nbsp;Closed</p>"
+          "html": "<p style=\"color:#ffffff;font-size:18px;line-height:28px;letter-spacing:0.9px;\">Mon: &nbsp;&nbsp;9:00 – 5:00<br>Tue: &nbsp;&nbsp;&nbsp;9:00 – 5:00<br>Wed: &nbsp;9:00 – 5:00<br>Thu: &nbsp;&nbsp;&nbsp;9:00 – 5:00<br>Fri: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8:30 – 3:00<br>Sat: &nbsp;&nbsp;&nbsp;8:00 – 2:00 (every other week)<br>Sun: &nbsp;&nbsp;Closed</p>"
          }
         ],
         "tpl": "<div class=\"elementor-element elementor-element-2309391 elementor-widget elementor-widget-text-editor\" data-id=\"2309391\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -2021,7 +2021,7 @@
   "ancestorPaths": [],
   "wpTemplate": "default",
   "published": "2026-06-01T11:12:56Z",
-  "excerpt": "Call to schedule an appointment ☎ (703) 442-0442 📍8280 Greensboro Drive, Unit 105, McLean, VA 22102 Office Hours Mon: 9:00 – 5:00Tue: 9:00 – 5:00Wed: 9:00 – 5:00Thu: 9:00 – 5:00Fri: 8:30 – 3:00Sat: 8:00 – 2:00Sun: Closed Call to schedule an appointment Request an Appointment",
+  "excerpt": "Call to schedule an appointment ☎ (703) 442-0442 📍8280 Greensboro Drive, Unit 105, McLean, VA 22102 Office Hours Mon: 9:00 – 5:00Tue: 9:00 – 5:00Wed: 9:00 – 5:00Thu: 9:00 – 5:00Fri: 8:30 – 3:00Sat: 8:00 – 2:00 (every other week)Sun: Closed Call to schedule an appointment Request an Appointment",
   "authorName": "admin",
   "authorSlug": "admin"
  },
@@ -6977,7 +6977,7 @@
             "elId": "38400fb",
             "_type": "elHtmlCode",
             "widget": "html",
-            "html": "\n\t\t\t\t\t<div class=\"vyr-image-wrapper\">\n    <img decoding=\"async\" src=\"https://idealdentalsolutions.com/wp-content/uploads/2026/08/image_picker_64F57710-6D48-4DBB-B9FF-ABF6FC03238B-1081-000000F5757674E5_1_optimized_2000-scaled.jpg\" class=\"vyr-image-switch vyr-active-image\" data-vyr-img=\"2\" alt=\"Digital X-Rays\">\n    <img decoding=\"async\" src=\"https://idealdentalsolutions.com/wp-content/uploads/2026/06/intraoral-camera-image-1.png\" class=\"vyr-image-switch\" data-vyr-img=\"3\" alt=\"Intraoral Cameras\">\n    <img decoding=\"async\" src=\"https://idealdentalsolutions.com/wp-content/uploads/2026/05/Rectangle-4425-3.png\" class=\"vyr-image-switch\" data-vyr-img=\"5\" alt=\"3D Imaging and Cone Beam CT\">\n    <img decoding=\"async\" src=\"https://idealdentalsolutions.com/wp-content/uploads/2026/08/ChatGPT-Image-Aug-24-2026-10_34_06-PM.png\" class=\"vyr-image-switch\" data-vyr-img=\"6\" alt=\"CAD/CAM Technology\">\n</div>\t\t\t\t",
+            "html": "\n\t\t\t\t\t<div class=\"vyr-image-wrapper\">\n    <img decoding=\"async\" src=\"/wp-content/uploads/2026/08/image_picker_64F57710-6D48-4DBB-B9FF-ABF6FC03238B-1081-000000F5757674E5_1_optimized_2000-scaled.jpg\" class=\"vyr-image-switch vyr-active-image\" data-vyr-img=\"2\" alt=\"Digital X-Rays\">\n    <img decoding=\"async\" src=\"/wp-content/uploads/2026/06/intraoral-camera-image-1.png\" class=\"vyr-image-switch\" data-vyr-img=\"3\" alt=\"Intraoral Cameras\">\n    <img decoding=\"async\" src=\"/wp-content/uploads/2026/05/Rectangle-4425-3.png\" class=\"vyr-image-switch\" data-vyr-img=\"5\" alt=\"3D Imaging and Cone Beam CT\">\n    <img decoding=\"async\" src=\"/wp-content/uploads/2026/08/ChatGPT-Image-Aug-24-2026-10_34_06-PM.png\" class=\"vyr-image-switch\" data-vyr-img=\"6\" alt=\"CAD/CAM Technology\">\n</div>\t\t\t\t",
             "tpl": "<div class=\"elementor-element elementor-element-38400fb elementor-widget elementor-widget-html\" data-id=\"38400fb\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"html.default\">[[@html:html]]</div>"
            }
           ],

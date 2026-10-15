@@ -10,7 +10,9 @@ An exact copy of the WordPress site idealdentalsolutions.com (Blocksy theme + El
 
 Applied to the migrated content (idempotent; re-run after every extract):
 
-- **Hidden content:** removed elements that were hidden on desktop, tablet and mobile: a before/after carousel section on the home and thank-you pages, and a "Digital X-Rays" technology switcher on the home page.
+- **Hidden content:** removed elements that were hidden on desktop, tablet and mobile: a before/after carousel section on the home and thank-you pages, and a "Digital X-Rays" technology switcher on the home page. The six "View Transformation" lightbox buttons on the home page were inside that section: they are in WordPress' HTML but never displayed (the section computes to `display: none` at every width; only the mobile, tablet and desktop breakpoints are enabled), so nothing visible was lost. The 21 before/after photos are unchanged.
+- **About Us on tablets:** the bios of Dr. Sepahi, Fozia Mohamed and Tiana Norris exist in a desktop and a mobile version. WordPress hid the mobile versions only on desktop, so at 768–1024px each of them (and both of Fozia's photos) appeared twice, the second time squeezed into a narrow column. The mobile versions are now hidden on tablets too: every team member appears exactly once at every width (desktop version on desktop and tablet, mobile version on phones).
+- **Saturday hours:** the Appointment page said "Sat: 8:00 – 2:00" while the footer says "Every Other Saturday: 8am – 2pm". The Appointment page now reads "Sat: 8:00 – 2:00 (every other week)". *Please confirm with the practice which is right*; if Saturdays are every week, change the footer and the business schema instead.
 - **Copy-paste errors:** the McLean TMJ page said "TMJ Care in Northern VA" (now "in McLean, VA"); "Mclean" is spelled "McLean" in all headings. Other mentions were checked and are correct (the office is in McLean, which is in Northern Virginia).
 - **H1s:** one H1 per page. The About pages had 12 H1s (each team member's name); the extra ones are H2s now and look exactly the same. The Dr. Adili profile had no heading and now starts with "Dr. Mehdi S. Adili, DDS, Prosthodontist".
 - **Titles:** every title tag follows the page's H1 and ends with "| Ideal Dental Solutions" instead of "- idealdental". Page titles that were slugs or lower case are fixed ("tmj-tmd-treatments", "locations", "Mclean", "Before/After Page").
@@ -24,6 +26,7 @@ Applied to the migrated content (idempotent; re-run after every extract):
 - **Favicons** at the site root (favicon.ico with 16/32/48 px, 32/192/512 px PNGs, apple-touch-icon, web manifest), rendered from the orange logo mark of the 831px header logo (`npm run favicons`). The site has no vector logo, and WordPress' site icon was an upscaled low-resolution image.
 - **Social images:** a 1200x630 photo per page in `public/og/` (most pages had none).
 - `<html lang="en-US">` and `<meta charset="UTF-8">` (first in the head) on every page, checked by the audit.
+- **Root-relative URLs everywhere:** HTML widgets (e.g. the homepage technology section) and other HTML fields kept absolute `https://idealdentalsolutions.com/wp-content/...` image URLs; they are now root-relative like the rest of the site, so images load from this deployment before and after the domain moves. No absolute site URL is left in any content field (only canonical/Open Graph/schema URLs, which are absolute on purpose).
 
 ## Redirects
 

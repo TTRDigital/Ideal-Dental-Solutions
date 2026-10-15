@@ -71,6 +71,37 @@ for (const d of docs) {
   });
 }
 
+/* 2b. Saturday hours: the Appointment page said "Sat: 8:00 – 2:00", the footer "Every Other Saturday: 8am – 2pm". */
+{
+  const d = page("/appointment/");
+  const SAT = /(Sat:(?:\s|&nbsp;)*8:00 – 2:00)(?! \(every other week\))/;
+  walk(d, (n) => {
+    for (const k of ["html", "text"]) {
+      if (typeof n[k] === "string" && SAT.test(n[k] as string)) {
+        n[k] = (n[k] as string).replace(SAT, "$1 (every other week)");
+        log.push(`appointment Saturday hours (${k})`);
+      }
+    }
+  });
+  if (typeof d.excerpt === "string") d.excerpt = d.excerpt.replace(SAT, "$1 (every other week)");
+}
+
+/* 2c. About Us: the mobile versions of three team bios (and Fozia's mobile photo) were only hidden on
+ * desktop, so tablets (768-1024px) showed each of them twice. They are hidden on tablets too now;
+ * tablets keep the desktop version, which was already shown there. */
+for (const elId of ["cdae318", "2040cf0", "488a0ff", "2257ed0"]) {
+  let found = false;
+  walk(page("/about-us/"), (n) => {
+    if (n.elId !== elId) return;
+    found = true;
+    const tag = firstTag(n.tpl);
+    if (tag.includes("elementor-hidden-tablet")) return;
+    n.tpl = String(n.tpl).replace(tag, tag.replace("elementor-hidden-desktop", "elementor-hidden-desktop elementor-hidden-tablet"));
+    log.push(`about-us: ${elId} hidden on tablets`);
+  });
+  if (!found) throw new Error(`No element ${elId} on /about-us/`);
+}
+
 /* 3. One H1 per page. Extra H1s (team names, "Our Mission") become H2s with the same look. */
 for (const d of docs.filter((x) => x._type === "page")) {
   let seen = 0;

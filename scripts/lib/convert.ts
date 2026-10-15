@@ -69,7 +69,7 @@ function contentSlot($: CheerioAPI, $el: Cheerio<Element>, name: string, fields:
   const trail = inner.slice(lead.length).match(/\s*$/)![0];
   const core = inner.slice(lead.length, inner.length - trail.length);
   if (/<[a-z!/]/i.test(core)) {
-    fields[`${name}Html`] = core;
+    fields[`${name}Html`] = relativizeTpl(core);
     $el.html(`${lead}[[@html:${name}Html]]${trail}`);
   } else {
     fields[name] = cheerio.load(`<b>${core}</b>`, null, false)("b").text();
@@ -408,7 +408,7 @@ const WIDGETS: Record<string, WidgetHandler> = {
     type: "text",
     slot($, w, f) {
       const host = first(w, ".elementor-widget-container") || w;
-      const html = (host.html() ?? "").trim();
+      const html = relativizeTpl((host.html() ?? "").trim());
       const pt = htmlToPortableText(html);
       if (pt) {
         stats.rich++;
@@ -505,7 +505,7 @@ const WIDGETS: Record<string, WidgetHandler> = {
     type: "htmlCode",
     slot($, w, f) {
       const host = first(w, ".elementor-widget-container") || w;
-      f.html = host.html() ?? "";
+      f.html = relativizeTpl(host.html() ?? "");
       host.html("[[@html:html]]");
     },
   },
