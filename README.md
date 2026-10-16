@@ -68,12 +68,12 @@ The WordPress site did not combine its stylesheets, so every theme and plugin st
 ## Setup
 
 1. **Sanity project:** `ncba5cqx`, dataset `production`. The project ID is pinned in `sanity/env.ts` on purpose (a `NEXT_PUBLIC_SANITY_PROJECT_ID` meant for another site cannot redirect this one).
-2. **Content:** put an Editor token in `.env.local` as `SANITY_WRITE_TOKEN`, then `npm run seed` (adds missing documents) or `npm run seed -- --force` (overwrites the CMS with the built-in copy). The seed writes through the global API host (`api.sanity.io/.../projects/ncba5cqx/...`). Until the CMS has content, the site serves the built-in copy (response header `X-Content-Source: built-in`).
-3. **CORS:** in sanity.io/manage > API > CORS origins, allow with credentials: `http://localhost:3000`, `https://idealdentalsolutions.com`, `https://www.idealdentalsolutions.com` and the Vercel URL.
+2. **Content (done):** all 61 documents are in Sanity (51 pages, 5 archive pages, header & menu, footer, search results, 404 page, site settings); the site reads them from the CMS (response header `X-Content-Source: cms`). To reload: put an Editor token in `.env.local` as `SANITY_WRITE_TOKEN`, then `npm run seed` (adds missing documents) or `npm run seed -- --force` (overwrites the CMS with the built-in copy; editors' changes are lost). The seed writes through the global API host (`api.sanity.io/.../projects/ncba5cqx/...`). If the CMS is empty or unreachable, the site serves the built-in copy (`X-Content-Source: built-in`).
+3. **CORS (done):** `http://localhost:3000`, `https://ideal-dental-solutions.vercel.app`, `https://idealdentalsolutions.com` and `https://www.idealdentalsolutions.com` are allowed with credentials (plus Sanity's default `http://localhost:3333`). Add any new preview or hosting domain in sanity.io/manage > API > CORS origins.
 4. **Run locally:** `npm install`, `npm run dev`, open http://localhost:3000 and http://localhost:3000/cms.
-5. **Vercel:** import the repo, add the variables from `.env.example` (not `SANITY_WRITE_TOKEN`), deploy, then point idealdentalsolutions.com at it.
+5. **Hosting:** `https://ideal-dental-solutions.vercel.app` is a preview only; the WordPress site stays live for now. Add the variables from `.env.example` in Vercel (not `SANITY_WRITE_TOKEN`). Going live on SiteGround is not decided yet: SiteGround runs PHP, not a Node.js server, so it would need a static export (pages as HTML, redirects in `.htaccess`, a small PHP form handler) rebuilt on every Sanity publish.
 6. **Publish webhook:** in Sanity, API > Webhooks: URL `https://idealdentalsolutions.com/api/revalidate`, triggers create/update/delete, secret = `SANITY_REVALIDATE_SECRET`. Changes then go live within seconds (otherwise within 5 minutes).
-7. **Form leads:** set `GHL_WEBHOOK_URL` and/or `RESEND_API_KEY` + `LEAD_EMAIL_TO`. Without either, submissions are only logged.
+7. **Form leads:** set `GHL_WEBHOOK_URL` (the GoHighLevel inbound webhook, kept out of the repo because anyone with it can post leads) and/or `RESEND_API_KEY` + `LEAD_EMAIL_TO`. Without either, submissions are only logged. One test lead ("Kia Test", kia.test@example.com) was sent to the GoHighLevel webhook through the real appointment form; the preview does not send leads unless the variable is set in Vercel.
 
 ## Editing in /cms
 
