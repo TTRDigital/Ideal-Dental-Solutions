@@ -57,7 +57,22 @@ export type RenderOptions = {
   dataset: string;
   /** Public origin, e.g. https://idealdentalsolutions.com. Absolute SEO URLs use it. */
   origin?: string;
+  /**
+   * reCAPTCHA in the appointment form: a site key shows the checkbox with that key,
+   * "" removes the checkbox and Google's script (the old key only works on the
+   * WordPress domain), undefined keeps the markup exactly as WordPress printed it.
+   */
+  recaptchaSiteKey?: string;
 };
+
+const RECAPTCHA_FIELD = /<div class="elementor-field-type-recaptcha[^"]*">\s*<div class="elementor-field"[^>]*><div class="elementor-g-recaptcha"[^>]*><\/div><\/div>\s*<\/div>/g;
+const RECAPTCHA_SCRIPT = /<script id="elementor-recaptcha-api-js"[^>]*><\/script>\s*/g;
+
+function applyRecaptcha(html: string, siteKey: string | undefined) {
+  if (siteKey === undefined) return html;
+  if (!siteKey) return html.replace(RECAPTCHA_FIELD, "").replace(RECAPTCHA_SCRIPT, "");
+  return html.replace(/(class="elementor-g-recaptcha" data-sitekey=")[^"]*"/g, `$1${siteKey.replace(/[^\w-]/g, "")}"`);
+}
 
 /** Elementor's frontend config describes the current document. */
 function elementorPost(doc: BaseDoc, title: string) {
@@ -96,7 +111,7 @@ export function renderDocument(resolved: Resolved, data: SiteData, path: string,
   values.content = renderTpl(frameTpl, doc, ctx);
 
   const shell = shells[shellKey || ""] || shells[Object.keys(shells)[0]] || "";
-  return renderTpl(shell, {}, ctx);
+  return applyRecaptcha(renderTpl(shell, {}, ctx), opts.recaptchaSiteKey);
 }
 
 /** Number of result pages; a page past the end is a 404, as on WordPress. */

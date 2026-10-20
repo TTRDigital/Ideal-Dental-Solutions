@@ -40,7 +40,7 @@ Applied to the migrated content (idempotent; re-run after every extract):
 
 The appointment form (Elementor Pro, `/appointment/`) posts to `/wp-admin/admin-ajax.php`, which is now this site's route (`app/wp-admin/admin-ajax.php/route.ts`), not WordPress. The lead is sent with readable field names (Full Name, Email Address, Phone Number, Preferred Callback Time, Comments) to GoHighLevel and/or by email, and the visitor is sent to the form's thank-you page (**Site settings > Forms**: `314:4c3fd22` → `/thank-you/`). It was submitted end to end in a browser at 1440px and 390px against a local webhook: lead delivered with labels, phone in E.164, visitor on /thank-you/.
 
-- reCAPTCHA in the form only works on idealdentalsolutions.com (the site key is tied to that domain). Set `RECAPTCHA_SECRET_KEY` to check it server side.
+- **reCAPTCHA is switched off for now:** the old site key only works on the WordPress domain (on the preview it showed "Invalid domain for site key"), so the checkbox and Google's script are not printed while `RECAPTCHA_SITE_KEY` is empty. After go-live, set `RECAPTCHA_SITE_KEY` (the checkbox comes back with that key) and `RECAPTCHA_SECRET_KEY` (submissions are then checked server side). The form works the same either way.
 - WordPress kept the thank-you page in Elementor's form settings, which are not visible without a login; `/thank-you/` is the site's only thank-you page.
 
 ## Site search

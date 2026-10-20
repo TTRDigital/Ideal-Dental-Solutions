@@ -19,7 +19,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ args?: string[
   const resolved = (await resolveSearchPage(query, page, site.fromCms)) || (await notFoundDoc(site.fromCms));
   if (!resolved) return new Response("Not found", { status: 404 });
   const path = page > 1 ? `/page/${page}/` : "/";
-  const html = renderDocument(resolved, site.data, path, { projectId, dataset, origin });
+  const html = renderDocument(resolved, site.data, path, { projectId, dataset, origin, recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY?.trim() || "" });
   return new Response(html, {
     status: resolved.kind === "search" ? 200 : 404,
     headers: { "Content-Type": "text/html; charset=UTF-8", "Cache-Control": "private, no-store", "X-Robots-Tag": "noindex, follow" },
