@@ -1,11 +1,15 @@
 import "server-only";
 
 /**
- * Delivers a website form submission. Every destination is optional and
- * configured with environment variables (see .env.example):
- * - GHL_WEBHOOK_URL: GoHighLevel inbound webhook (flat JSON)
- * - RESEND_API_KEY + LEAD_EMAIL_TO (+ LEAD_EMAIL_FROM): email notification
+ * Delivers a website form submission:
+ * - GoHighLevel inbound webhook (flat JSON): the practice's webhook below, or
+ *   GHL_WEBHOOK_URL to send leads somewhere else
+ * - RESEND_API_KEY + LEAD_EMAIL_TO (+ LEAD_EMAIL_FROM): optional email notification
  */
+
+/** Ideal Dental Solutions' GoHighLevel "website form" webhook. */
+export const DEFAULT_GHL_WEBHOOK_URL =
+  "https://services.leadconnectorhq.com/hooks/QGW5f5gjWV1txaRw1JWN/webhook-trigger/36dd32f6-1f33-4109-8be7-85c5950be5f4";
 
 export type Lead = {
   form: string;
@@ -59,7 +63,7 @@ export async function deliverLead(lead: Lead) {
   const [first, ...rest] = name.trim().split(/\s+/);
   const tasks: Promise<void>[] = [];
 
-  const webhook = clean(process.env.GHL_WEBHOOK_URL);
+  const webhook = clean(process.env.GHL_WEBHOOK_URL) || DEFAULT_GHL_WEBHOOK_URL;
   if (/^https?:\/\//.test(webhook)) {
     tasks.push(
       post(webhook, {
@@ -108,7 +112,7 @@ export async function deliverLead(lead: Lead) {
   }
 
   if (!tasks.length) {
-    console.warn("[lead] No delivery configured (GHL_WEBHOOK_URL or RESEND_API_KEY + LEAD_EMAIL_TO). Lead:", JSON.stringify(lead));
+    console.warn("[lead] No delivery configured (GHL_WEBHOOK_URL is not a URL and no RESEND_API_KEY + LEAD_EMAIL_TO). Lead:", JSON.stringify(lead));
     return false;
   }
   const results = await Promise.allSettled(tasks);

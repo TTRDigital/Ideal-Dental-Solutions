@@ -73,7 +73,7 @@ The WordPress site did not combine its stylesheets, so every theme and plugin st
 4. **Run locally:** `npm install`, `npm run dev`, open http://localhost:3000 and http://localhost:3000/cms.
 5. **Hosting:** `https://ideal-dental-solutions.vercel.app` is a preview only; the WordPress site stays live for now. Add the variables from `.env.example` in Vercel (not `SANITY_WRITE_TOKEN`). Going live on SiteGround is not decided yet: SiteGround runs PHP, not a Node.js server, so it would need a static export (pages as HTML, redirects in `.htaccess`, a small PHP form handler) rebuilt on every Sanity publish.
 6. **Publish webhook:** in Sanity, API > Webhooks: URL `https://idealdentalsolutions.com/api/revalidate`, triggers create/update/delete, secret = `SANITY_REVALIDATE_SECRET`. Changes then go live within seconds (otherwise within 5 minutes).
-7. **Form leads:** set `GHL_WEBHOOK_URL` (the GoHighLevel inbound webhook, kept out of the repo because anyone with it can post leads) and/or `RESEND_API_KEY` + `LEAD_EMAIL_TO`. Without either, submissions are only logged. One test lead ("Kia Test", kia.test@example.com) was sent to the GoHighLevel webhook through the real appointment form; the preview does not send leads unless the variable is set in Vercel.
+7. **Form leads:** every submission is sent to the practice's GoHighLevel webhook, which is built into `lib/lead.ts` (`DEFAULT_GHL_WEBHOOK_URL`); set `GHL_WEBHOOK_URL` only to send leads elsewhere. Email notifications are optional (`RESEND_API_KEY` + `LEAD_EMAIL_TO`). If delivery fails, the visitor is asked to call (703) 442-0442 instead of seeing a thank-you page. Note: this also applies to the preview, so test submissions there become leads in GoHighLevel.
 
 ## Editing in /cms
 
