@@ -3,6 +3,7 @@ import "server-only";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { apiVersion, dataset, projectId } from "@/sanity/env";
+import { blogPaths } from "./blog";
 import { buildSiteData, normalizePath, resolvePath, resolveSearch, resolveSearchFrom, type SeedDoc } from "./local";
 import type { ArchiveDoc, PageDoc, Resolved, SearchPageDoc, SiteData } from "./render";
 
@@ -76,7 +77,8 @@ export async function allPaths(fromCms: boolean): Promise<{ path: string; type: 
     : seed()
         .filter((d) => ["page", "archivePage"].includes(d._type) && d.path)
         .map((d) => ({ path: d.path as string, _type: d._type, modified: (d.modified as string) || (d.seo as { modifiedTime?: string })?.modifiedTime, robots: (d.seo as { robots?: string })?.robots }));
-  return rows.map((r) => ({ path: r.path, type: r._type, modified: r.modified, noindex: /noindex/.test(r.robots || "") }));
+  // The Patient Guides blog lives in the repo (lib/site/blog.ts), not in the CMS.
+  return [...rows.map((r) => ({ path: r.path, type: r._type, modified: r.modified, noindex: /noindex/.test(r.robots || "") })), ...blogPaths()];
 }
 
 /** Site search (?s=): the results page, or null when `page` is past the last one. */

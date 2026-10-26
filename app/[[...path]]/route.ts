@@ -1,4 +1,5 @@
 import { allPaths, getSite, resolve, REVALIDATE_SECONDS } from "@/lib/site/data";
+import { resolveBlog } from "@/lib/site/blog";
 import { feedXml, sitemapIndex, sitemapXml } from "@/lib/site/sitemaps";
 import { guessRedirect } from "@/lib/site/guess";
 import { renderDocument } from "@/lib/site/render";
@@ -19,7 +20,7 @@ export async function generateStaticParams() {
   return paths.map((p) => ({ path: p.path.split("/").filter(Boolean) }));
 }
 
-const SITEMAPS = new Set(["page-sitemap.xml"]);
+const SITEMAPS = new Set(["page-sitemap.xml", "post-sitemap.xml"]);
 
 export async function GET(_req: Request, ctx: { params: Promise<{ path?: string[] }> }) {
   const { path: segments = [] } = await ctx.params;
@@ -39,7 +40,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ path?: string[
   }
 
   const path = `/${segments.map((s) => decodeURIComponent(s)).join("/")}${segments.length ? "/" : ""}`;
-  const resolved = await resolve(path, site.fromCms);
+  const resolved = resolveBlog(path) ?? (await resolve(path, site.fromCms));
   if (!resolved) return new Response("Not found", { status: 404 });
   if (resolved.kind === "notFound") {
     const target = guessRedirect(path, await allPaths(site.fromCms));
