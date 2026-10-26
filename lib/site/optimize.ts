@@ -18,9 +18,9 @@ import pageCssJson from "../generated/page-css.json" with { type: "json" };
  * - images: WebP copies (npm run images), a 768px copy for phones, the
  *   original width and height (no layout shift) and lazy loading below the
  *   first section
- * - scripts run exactly in WordPress' order, never deferred (deferring them let
- *   Elementor start before Elementor Pro's form and carousel handlers, #4, #7);
- *   only jQuery moves from the head to the footer scripts (jqueryToFooter)
+ * - scripts are printed exactly as WordPress printed them (jQuery in the
+ *   head, footer scripts in order). Deferring them let Elementor start before
+ *   Elementor Pro's form and carousel handlers on fast connections (#4, #7).
  */
 
 /** [width, height, WebP width or 0, phone copy width or 0] by original path. */
@@ -196,31 +196,10 @@ function heroPhone(html: string) {
   return html.replace("</head>", `<style id="hero-phone">@media (max-width: 767px){.elementor-element-${tag[1]}[style]{background-image:url(${phone})!important}}</style>\n</head>`);
 }
 
-/**
- * jQuery and jQuery Migrate move from the head to just before the first footer
- * script that loads a file or uses jQuery (nothing above that point needs them),
- * so they no longer hold up the first paint. They and every other script still
- * load and run in the original order, without defer or async: deferring them
- * let Elementor start before Elementor Pro's form handler (#4, #9).
- */
-function jqueryToFooter(html: string) {
-  const headEnd = html.indexOf("</head>");
-  const tags: string[] = [];
-  const head = html.slice(0, headEnd).replace(/<script id="jquery-(?:core|migrate)-js" src="[^"]*"><\/script>\n?/g, (t) => {
-    tags.push(t.trim());
-    return "";
-  });
-  if (tags.length !== 2) return html;
-  const body = html.slice(headEnd);
-  const at = [...body.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)].find((m) => /\ssrc=/.test(m[0].slice(0, m[0].indexOf(">"))) || /jQuery|\$\(/.test(m[1]));
-  if (!at || at.index == null) return html;
-  return `${head}${body.slice(0, at.index)}${tags.join("\n")}\n${body.slice(at.index)}`;
-}
-
 function guard(html: string) {
   return html.includes('id="overflow-guard"') ? html : html.replace("</head>", `${GUARD}\n</head>`);
 }
 
 export function optimizeHtml(html: string) {
-  return guard(jqueryToFooter(heroPhone(imagesPass(fonts(stylesheets(html))))));
+  return guard(heroPhone(imagesPass(fonts(stylesheets(html)))));
 }
