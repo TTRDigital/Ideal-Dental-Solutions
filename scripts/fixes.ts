@@ -460,6 +460,18 @@ walk(page("/about-us/").content, (n) => {
   log.push("link /about-us/ > /dr-mehdi-adili/");
 });
 
+/* 8c. The practice no longer has an Arlington office (Kia, Oct 26): Dr. Adili's profile names only Tysons Corner. */
+{
+  const REPLACE: [string, string][] = [
+    [" in Tysons Corner (8280 Greensboro Drive, Unit 105) and Arlington (1920 Clarendon Boulevard).", " in Tysons Corner (8280 Greensboro Drive, Unit 105)."],
+    ["call (703) 442-0442 (Tysons Corner) or (703) 528-0800 (Arlington).", "call (703) 442-0442."],
+  ];
+  walk(page("/dr-mehdi-adili/"), (n) => {
+    if (n._type !== "span" || typeof n.text !== "string") return;
+    for (const [from, to] of REPLACE) if ((n.text as string).includes(from)) n.text = (n.text as string).replace(from, to);
+  });
+}
+
 /* 9. Structured data: Yoast's graph kept; Organization -> Dentist (Site settings > Business schema); no site search action. */
 const SERVICES: [string, string][] = [
   ["Restorative Dentistry", "/services/restorative-dentistry/"],
@@ -505,7 +517,7 @@ const business = {
   ],
   areaServed: [
     { "@type": "AdministrativeArea", name: "Northern Virginia" },
-    ...["McLean", "Tysons Corner", "Vienna", "Falls Church", "Arlington", "Fairfax", "Alexandria"].map((name) => ({ "@type": "City", name: `${name}, VA` })),
+    ...["McLean", "Tysons Corner", "Vienna", "Falls Church", "Fairfax", "Alexandria"].map((name) => ({ "@type": "City", name: `${name}, VA` })),
   ],
   sameAs: ["https://www.facebook.com/IdealDentalSolutions/", "https://www.instagram.com/idealdentalsmiles/"],
   medicalSpecialty: ["Dentistry", "Periodontics", "Prosthodontics"],
@@ -583,6 +595,12 @@ for (const d of docs.filter((x) => ["page", "archivePage"].includes(x._type) && 
     }
     seo.schema = JSON.stringify(g);
   }
+}
+
+// No Arlington office any more: nothing may mention it.
+{
+  const left = docs.filter((d) => /arlington|clarendon|528-0800/i.test(JSON.stringify(d)));
+  if (left.length) throw new Error(`Arlington still mentioned in ${left.map((d) => d._id).join(", ")}`);
 }
 
 writeFileSync(file, JSON.stringify(docs, null, 1));
