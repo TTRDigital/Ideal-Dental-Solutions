@@ -99,12 +99,12 @@ const others = (slug: string) =>
 const FAIRFAX_RESOURCES = `<ul>
 <li>Fairfax County's own dental program moved to the community health centers serving the county on January 1, 2023. The county's ${link("https://www.fairfaxcounty.gov/health/dental", "dental services page")} lists where to go now.</li>
 <li>The ${link("https://www.novadentalclinic.org/", "Northern Virginia Dental Clinic")}, a nonprofit founded in 1994, provides volunteer dental care to low-income adults referred by local agencies.</li>
-<li>The county's ${link("https://www.fairfaxcounty.gov/familyservices/public-assistance-employment-services/medical-care-for-children", "Medical Care for Children Partnership")} helps children from low-income families who do not qualify for Medicaid get medical and dental care.</li>
+<li>The county's ${link("https://www.fairfaxcounty.gov/familyservices/public-assistance-employment-services/medical-care-for-children", "Medical Care for Children Partnership")} helps children from low-income families who do not qualify for Medicaid or FAMIS get medical and dental care.</li>
 <li>Virginia Medicaid and FAMIS dental coverage is called ${link("https://www.dmas.virginia.gov/for-members/benefits-and-services/dental/", "Cardinal Care Smiles")}.</li>
 </ul>`;
 
 const FAIRFAX_WATER_FLUORIDE =
-  "Fairfax Water adds fluoride to the water it treats. Its two treatment plants measured about 0.6 parts per million in 2025, close to the 0.7 mg/L level the CDC recommends for community water.";
+  "Fairfax Water adds fluoride, targeting 0.7 mg/L, the level the CDC recommends for community water; its treatment plants measured about 0.6 to 0.7 mg/L in 2025.";
 
 const cta = (town: string, photo: string) => ({
   heading: `Book Your Visit From ${town}`,
@@ -135,11 +135,11 @@ export const HUB: Page = {
       heading: "Our Office and the Towns Our Patients Come From",
       html: `<ul>
 <li>${link("/locations/mclean/", "McLean")}: our office, with its hours, team and services.</li>
-<li>${link("/locations/tysons/", "Tysons")}: our office is in Tysons, about 1 mile from Tysons Corner Center.</li>
+<li>${link("/locations/tysons/", "Tysons")}: our office is in Tysons, about a mile from Tysons Corner Center.</li>
 <li>${link("/locations/vienna/", "Vienna")}: about 2.8 miles from the Town of Vienna's center, usually 7 to 12 minutes by car on Maple Avenue and Chain Bridge Road (Route 123).</li>
 <li>${link("/locations/falls-church/", "Falls Church")}: about 4.6 miles from Falls Church City Hall, usually 12 to 18 minutes on Broad Street and Leesburg Pike (Route 7).</li>
-<li>${link("/locations/great-falls/", "Great Falls")}: about 7 miles from Great Falls village, usually 14 to 22 minutes on Walker Road, Colvin Run Road and Leesburg Pike, or on Georgetown Pike.</li>
-<li>${link("/locations/potomac/", "Potomac, MD")}: about 10.6 miles from Potomac Village, usually 18 to 25 minutes across the American Legion Bridge on I-495.</li>
+<li>${link("/locations/great-falls/", "Great Falls")}: about 7 miles from Great Falls village, usually 14 to 22 minutes on Walker Road, Colvin Run Road and Leesburg Pike, or on Georgetown Pike and Spring Hill Road.</li>
+<li>${link("/locations/potomac/", "Potomac, MD")}: about 12 miles from Potomac Village, usually 20 to 30 minutes across the American Legion Bridge on I-495.</li>
 </ul>
 <p>${DRIVE_NOTE} For the care we provide, see ${S.all}.</p>`,
     },
@@ -149,7 +149,7 @@ export const HUB: Page = {
   faqs: [
     { q: "How many offices does Ideal Dental Solutions have?", a: `One. Every patient is seen at ${ADDRESS}.` },
     { q: "Can I get to the office by Metro?", a: `Yes. ${METRO}.` },
-    { q: "Do you see patients from Maryland?", a: `Yes. Patients from Potomac, Maryland reach us across the American Legion Bridge on I-495, usually in 18 to 25 minutes outside rush hour. See our ${link("/locations/potomac/", "Potomac page")}.` },
+    { q: "Do you see patients from Maryland?", a: `Yes. Patients from Potomac, Maryland reach us across the American Legion Bridge on I-495, usually in 20 to 30 minutes outside rush hour. See our ${link("/locations/potomac/", "Potomac page")}.` },
     { q: "How do I book a visit?", a: `Call ${PHONE} or ${BOOK}.` },
   ],
   cta: { heading: "Book Your Visit", html: `<p>Call ${PHONE} or ${BOOK}. Hours: ${HOURS}.</p>`, photo: wide.tiana },
@@ -192,7 +192,7 @@ export const MCLEAN_PAGE: Page = {
       html: `<ul>
 <li>Address: ${ADDRESS} (${link(MAP, "open in Google Maps")}). The address is in McLean, and the building is in Tysons, Fairfax County.</li>
 <li>By Metro: ${METRO}.</li>
-<li>By car: from the Capital Beltway (I-495), take the Chain Bridge Road (Route 123) or Leesburg Pike (Route 7) exits into Tysons, then turn onto Greensboro Drive.</li>
+<li>By car: from the Capital Beltway (I-495), take the Chain Bridge Road (Route 123) or Leesburg Pike (Route 7) exits into Tysons, then International Drive or Westpark Drive to Greensboro Drive.</li>
 <li>Hours: ${HOURS}.</li>
 <li>Phone: ${PHONE}. Call us if you need directions on the day of your visit.</li>
 </ul>`,
@@ -200,7 +200,7 @@ export const MCLEAN_PAGE: Page = {
     {
       kind: "accordion",
       heading: "Meet Our McLean Team",
-      intro: "Three dentists and a team of dental hygienists see every patient at this office.",
+      intro: "Our three dentists and three dental hygienists all work at this office.",
       photo: photos.adili,
       items: [
         { title: "Dr. Mehdi S. Adili, DDS", text: "Our principal dentist and a prosthodontist. He earned his DDS at Georgetown University. His focus includes dental implants, bridges, dentures, crowns and full-mouth restoration." },
@@ -224,7 +224,7 @@ ${MCLEAN_SERVICES.map(([href, label]) => `<li>${link(href, label)}</li>`).join("
       kind: "text",
       heading: "Local Dental Health Facts for McLean",
       html: `<p>McLean is an unincorporated community in Fairfax County with 50,773 residents in the 2020 Census.</p>
-<p>Public water in McLean comes from Fairfax Water, which in 2014 also took over the City of Falls Church's water system and its customers in the McLean area. ${FAIRFAX_WATER_FLUORIDE}</p>
+<p>Public water in McLean comes from Fairfax Water, which in 2014 also took over the City of Falls Church's water system and its customers in the McLean area. ${FAIRFAX_WATER_FLUORIDE} Part of the area also receives Washington Aqueduct water, which is fluoridated too. Homes on private wells should have their water tested.</p>
 <p>Low-cost and public dental care in Fairfax County:</p>
 ${FAIRFAX_RESOURCES}
 <p>Patients also come to us from ${TOWN_LINKS.map(([s, n]) => link(`/locations/${s}/`, n)).join(", ")}. See ${link("/locations/", "all areas we serve")}.</p>`,
@@ -255,15 +255,15 @@ export const TOWNS: Town[] = [
     description: "Ideal Dental Solutions is in Tysons at 8280 Greensboro Drive, about 8 minutes on foot from Greensboro Metro: checkups, gum care, fillings, whitening and more.",
     h1: "Your Dentist in Tysons, VA",
     subtitle: "Our McLean office is in Tysons, near Greensboro Metro",
-    answer: `<p>Our office at ${ADDRESS} has a McLean mailing address and sits in Tysons, Fairfax County. It is about 1 mile from Tysons Corner Center, and ${METRO}. Call ${PHONE} or ${BOOK}.</p>`,
+    answer: `<p>Our office at ${ADDRESS} has a McLean mailing address and sits in Tysons, Fairfax County. It is about a mile from Tysons Corner Center, and ${METRO}. Call ${PHONE} or ${BOOK}.</p>`,
     sections: [
       {
         kind: "text",
         heading: "Getting Here Within Tysons",
         html: `<ul>
-<li>By Metro: ${METRO}. Tysons station is about an 18 minute walk.</li>
-<li>By car from Tysons Corner Center: about 1 mile, usually 3 to 8 minutes, using Chain Bridge Road (Route 123) or Leesburg Pike (Route 7) to Greensboro Drive.</li>
-<li>From the Capital Beltway (I-495): take the Route 123 or Route 7 exits into Tysons.</li>
+<li>By Metro: ${METRO}. Tysons station is about a 17 minute walk.</li>
+<li>By car from Tysons Corner Center: about a mile, usually 3 to 8 minutes, using Leesburg Pike (Route 7) or Chain Bridge Road (Route 123), then Westpark Drive or International Drive to Greensboro Drive.</li>
+<li>From the Capital Beltway (I-495): take the Route 123 or Route 7 exits into Tysons, then International Drive or Westpark Drive to Greensboro Drive.</li>
 </ul>
 <p>${DRIVE_NOTE}</p>`,
       },
@@ -274,8 +274,8 @@ export const TOWNS: Town[] = [
         photo: photos.adili,
         items: [
           { title: "Greensboro Station", text: "The Silver Line station at 8305 Leesburg Pike, the closest Metro stop to our office." },
-          { title: "Tysons Corner Center", text: "The shopping center with its own Silver Line access, about 1 mile from our office." },
-          { title: "Tysons Galleria", text: "The shopping center on Chain Bridge Road (Route 123), a short drive from Greensboro Drive." },
+          { title: "Tysons Corner Center", text: "The shopping center with its own Silver Line access, about a mile from our office." },
+          { title: "Tysons Galleria", text: "The shopping center at 2001 International Drive, along Chain Bridge Road (Route 123), a short drive from Greensboro Drive." },
           { title: "Capital One Center", text: "Home of Capital One Hall and Capital One Park, next to the Beltway in Tysons." },
           { title: "McLean, Tysons and Spring Hill Stations", text: "The other three Silver Line stations in Tysons. All four opened in 2014." },
         ],
@@ -311,7 +311,7 @@ ${others("tysons")}`,
       { q: "What is the closest Metro station?", a: `Greensboro station on the Silver Line, at 8305 Leesburg Pike. The walk is about 8 minutes.` },
       { q: "Can I come in before or after work?", a: `Our hours are ${HOURS}. Call ${PHONE} to find a time that fits your day.` },
       { q: "Do you treat receding gums?", a: `Yes. We evaluate gum recession and provide ${S.gumGraft} and ${S.gumDisease} when they are needed.` },
-      { q: "Is the water in Tysons fluoridated?", a: `Yes. Fairfax Water adds fluoride; its plants measured about 0.6 parts per million in 2025, near the CDC's recommended 0.7 mg/L.` },
+      { q: "Is the water in Tysons fluoridated?", a: `Yes. Fairfax Water adds fluoride and targets 0.7 mg/L, the level the CDC recommends.` },
     ],
     cta: cta("Tysons", wide.fozia),
     ogPhoto: wide.kaveh,
@@ -331,7 +331,7 @@ ${others("tysons")}`,
         kind: "text",
         heading: "Getting Here From Vienna",
         html: `<ul>
-<li>From Maple Avenue: drive northeast on Maple Avenue (Route 123), which becomes Chain Bridge Road, into Tysons, then turn onto Greensboro Drive. About 2.8 miles from Vienna Town Hall.</li>
+<li>From Maple Avenue: drive northeast on Maple Avenue (Route 123), which becomes Chain Bridge Road, into Tysons, then take International Drive or Westpark Drive to Greensboro Drive. About 2.8 miles from Vienna Town Hall.</li>
 <li>By Metro: there is no station inside the town; ${METRO}.</li>
 </ul>
 <p>${DRIVE_NOTE}</p>`,
@@ -353,7 +353,7 @@ ${others("tysons")}`,
       {
         kind: "text",
         heading: "Local Dental Health Facts for Vienna",
-        html: `<p>The Town of Vienna is an incorporated town in Fairfax County, founded in 1890, with 16,473 residents in the 2020 Census.</p>
+        html: `<p>The Town of Vienna is an incorporated town in Fairfax County, incorporated in 1890, with 16,473 residents in the 2020 Census.</p>
 <p>The town runs its own water utility. It buys its water from Fairfax Water, and in 2025 part of it also came from the Washington Aqueduct. The town's 2026 water quality report says fluoride is added; in 2025 it measured about 0.6 parts per million in Fairfax Water's supply and 0.7 in the Aqueduct's, in line with the CDC's recommended 0.7 mg/L. The town system also serves some homes outside town limits, so check your water bill to see your provider.</p>
 <p>Low-cost and public dental care in Fairfax County:</p>
 ${FAIRFAX_RESOURCES}`,
@@ -379,7 +379,7 @@ ${others("vienna")}`,
       { q: "How long is the drive from Vienna?", a: `Usually 7 to 12 minutes from Vienna Town Hall on Maple Avenue and Chain Bridge Road (Route 123), longer at rush hour.` },
       { q: "Is Vienna's water fluoridated?", a: `Yes. The Town of Vienna's 2026 water quality report says fluoride is added to its supply.` },
       { q: "Can I bring my children?", a: `Yes. We see children and adults, and we place ${S.sealants} to help protect back teeth.` },
-      { q: "Who places dental implants?", a: `Dr. Mehdi S. Adili, DDS, a prosthodontist, plans and restores ${S.implants} at our McLean office.` },
+      { q: "Who handles dental implant treatment?", a: `Dr. Mehdi S. Adili, DDS, a prosthodontist, plans and restores ${S.implants} at our McLean office.` },
     ],
     cta: cta("Vienna", wide.tiana),
     ogPhoto: wide.fozia2,
@@ -399,7 +399,7 @@ ${others("vienna")}`,
         kind: "text",
         heading: "Getting Here From Falls Church",
         html: `<ul>
-<li>By car: take West Broad Street, which becomes Leesburg Pike (Route 7), west into Tysons, then turn onto Greensboro Drive.</li>
+<li>By car: take West Broad Street, which becomes Leesburg Pike (Route 7), west into Tysons, then Westpark Drive to Greensboro Drive.</li>
 <li>By Metro: from East Falls Church station, the Silver Line runs straight to Greensboro station with no transfer; ${METRO}. From West Falls Church station (Orange Line) you need to change trains.</li>
 </ul>
 <p>${DRIVE_NOTE}</p>`,
@@ -423,9 +423,9 @@ ${others("vienna")}`,
         kind: "text",
         heading: "Local Dental Health Facts for Falls Church",
         html: `<p>The City of Falls Church is an independent city, not part of any county, with 14,658 residents in the 2020 Census. Many homes with a Falls Church address, such as those around Seven Corners and West Falls Church station, are in Fairfax County instead.</p>
-<p>The city sold its water system to Fairfax Water in 2014, so homes in the city and the surrounding Fairfax County area get their water from Fairfax Water. ${FAIRFAX_WATER_FLUORIDE}</p>
+<p>The city sold its water system to Fairfax Water in 2014, so homes in the city and the surrounding Fairfax County area get their water from Fairfax Water, which adds fluoride and targets 0.7 mg/L, the level the CDC recommends. Part of the area also receives fluoridated Washington Aqueduct water.</p>
 <p>Low-cost and public dental care for Falls Church residents:</p>
-${FAIRFAX_RESOURCES}`,
+${FAIRFAX_RESOURCES.replace(/<li>The county's (<a [^>]+>Medical Care for Children Partnership<\/a>) helps/, "<li>The $1, open to residents of Fairfax County and the City of Falls Church, helps")}`,
       },
       {
         kind: "text",
@@ -447,7 +447,7 @@ ${others("falls-church")}`,
       { q: "Do you have an office in Falls Church?", a: `No. Our only office is ${ADDRESS}, in Tysons, about 4.6 miles from Falls Church City Hall.` },
       { q: "Can I take Metro from Falls Church?", a: `Yes. From East Falls Church station, ride the Silver Line to Greensboro station; the office is about an 8 minute walk from there.` },
       { q: "Do you do gum graft surgery?", a: `Yes. We evaluate gum recession at a consultation and explain whether ${S.gumGraft} is needed or whether monitoring is enough for now.` },
-      { q: "Is Falls Church water fluoridated?", a: `Yes. Fairfax Water, which has supplied the city since 2014, adds fluoride; its plants measured about 0.6 parts per million in 2025.` },
+      { q: "Is Falls Church water fluoridated?", a: `Yes. Fairfax Water, which has run the city's water system since 2014, adds fluoride.` },
       { q: "How do I book?", a: `Call ${PHONE} or ${BOOK}.` },
     ],
     cta: cta("Falls Church", wide.fozia),
@@ -468,8 +468,8 @@ ${others("falls-church")}`,
         kind: "text",
         heading: "Getting Here From Great Falls",
         html: `<ul>
-<li>By Walker Road: take Walker Road to Colvin Run Road, then Leesburg Pike (Route 7) east into Tysons, and turn onto Greensboro Drive.</li>
-<li>By Georgetown Pike: take Georgetown Pike (Route 193) east, then Old Dominion Drive or Chain Bridge Road (Route 123) into Tysons.</li>
+<li>By Walker Road: take Walker Road to Colvin Run Road, then Leesburg Pike (Route 7) east into Tysons, then Westpark Drive to Greensboro Drive.</li>
+<li>By Georgetown Pike: take Georgetown Pike (Route 193) east, then turn right on Spring Hill Road and follow it south into Tysons to Greensboro Drive.</li>
 <li>Great Falls has no Metro station, so most patients drive.</li>
 </ul>
 <p>${DRIVE_NOTE}</p>`,
@@ -513,8 +513,8 @@ ${others("great-falls")}`,
     faqs: [
       { q: "Do you have an office in Great Falls?", a: `No. Our only office is ${ADDRESS}, in Tysons, about 7 miles from Great Falls village.` },
       { q: "My home is on a well. Does that matter for my teeth?", a: `It can. Private well water is not fluoridated, and its natural fluoride varies. Tell us at your visit and we can discuss whether a fluoride treatment is a good idea. The county advises testing well water every year.` },
-      { q: "Which way is quickest from Great Falls?", a: `Usually Walker Road, Colvin Run Road and Leesburg Pike (Route 7), or Georgetown Pike (Route 193) to Route 123. Both take about 14 to 22 minutes outside rush hour.` },
-      { q: "Do you place dental implants?", a: `Yes. Dr. Mehdi S. Adili, DDS, a prosthodontist, plans and restores ${S.implants} at our McLean office.` },
+      { q: "Which way is quickest from Great Falls?", a: `Usually Walker Road, Colvin Run Road and Leesburg Pike (Route 7), or Georgetown Pike (Route 193) to Spring Hill Road. Both take about 14 to 22 minutes outside rush hour.` },
+      { q: "Do you provide dental implants?", a: `Yes. We provide ${S.implants}, and Dr. Mehdi S. Adili, DDS, a prosthodontist, plans and restores them at our McLean office.` },
     ],
     cta: cta("Great Falls", wide.fozia2),
     ogPhoto: wide.tiana,
@@ -525,17 +525,17 @@ ${others("great-falls")}`,
     name: "Potomac",
     place: { "@type": "City", name: "Potomac, MD", containedInPlace: { "@type": "AdministrativeArea", name: "Montgomery County, MD" } },
     title: "Dentist Serving Potomac, MD | Ideal Dental Solutions",
-    description: "Serving Potomac, MD from our McLean, VA office in Tysons, about 10.6 miles across the American Legion Bridge. Implants, gum care, checkups and more.",
+    description: "Serving Potomac, MD from our McLean, VA office in Tysons, about 12 miles across the American Legion Bridge. Implants, gum care, checkups and more.",
     h1: "Dentist Serving Potomac, MD",
-    subtitle: "About 10.6 miles across the American Legion Bridge",
-    answer: `<p>We serve Potomac, Maryland from our only office, ${ADDRESS}, in Tysons, Virginia. From Potomac Village it is about 10.6 miles, usually 18 to 25 minutes by car across the American Legion Bridge on I-495. Call ${PHONE} or ${BOOK}.</p>`,
+    subtitle: "About 12 miles across the American Legion Bridge",
+    answer: `<p>We serve Potomac, Maryland from our only office, ${ADDRESS}, in Tysons, Virginia. From Potomac Village it is about 12 miles, usually 20 to 30 minutes by car across the American Legion Bridge on I-495. Call ${PHONE} or ${BOOK}.</p>`,
     sections: [
       {
         kind: "text",
         heading: "Getting Here From Potomac",
         html: `<ul>
-<li>By car: take River Road (Route 190) to I-495 (Capital Beltway) and cross the American Legion Bridge into Virginia. Take exit 46 to Chain Bridge Road (Route 123) or exit 47 to Leesburg Pike (Route 7) into Tysons, then turn onto Greensboro Drive.</li>
-<li>Potomac has no Metro service. In Tysons, ${METRO}.</li>
+<li>By car: take River Road (Route 190) to I-495 (Capital Beltway) and cross the American Legion Bridge into Virginia. Take exit 46 to Chain Bridge Road (Route 123) or exit 47 to Leesburg Pike (Route 7) into Tysons, then International Drive or Westpark Drive to Greensboro Drive.</li>
+<li>Potomac has no Metrorail station. In Tysons, ${METRO}.</li>
 </ul>
 <p>${DRIVE_NOTE} Traffic on the American Legion Bridge varies a lot by time of day.</p>`,
       },
@@ -560,7 +560,7 @@ ${others("great-falls")}`,
 <p>Public water in Potomac comes from WSSC Water, which adds fluoride. Because of a national supply shortage, WSSC Water lowered fluoride to about 0.4 mg/L on April 7, 2026, and returned it to about 0.7 mg/L on September 16, 2026. If you have questions about fluoride for your family, ask us at your visit; we offer fluoride treatments.</p>
 <p>Low-cost and public dental care in Montgomery County and Maryland:</p>
 <ul>
-<li>Montgomery County's ${link("https://www.montgomerycountymd.gov/department-health-human-services/about-us/public-health-services-phs/dental-health-services-home", "Dental Health Services")} provide sliding-scale care to uninsured county residents who qualify by income.</li>
+<li>Montgomery County's ${link("https://www.montgomerycountymd.gov/department-health-human-services/about-us/public-health-services-phs/dental-health-services-home", "Dental Health Services")} help uninsured county residents with incomes up to 250% of the federal poverty level.</li>
 <li>The county's ${link("https://www.montgomerycountymd.gov/department-health-human-services/about-us/public-health-services-phs/dental-health-services-home/dental-health-services-dental-services-children", "school-based dental program")}, run with Montgomery County Public Schools, offers screenings, cleanings, fluoride and sealants at select schools.</li>
 <li>Maryland Medicaid dental coverage is the ${link("https://health.maryland.gov/mmcp/Pages/maryland-healthy-smiles-dental-program.aspx", "Maryland Healthy Smiles Dental Program")}.</li>
 <li>The Maryland Department of Health's ${link("https://health.maryland.gov/phpa/oralhealth/Pages/Home.aspx", "Office of Oral Health")} runs sealant and fluoride varnish programs.</li>
@@ -582,8 +582,8 @@ ${others("potomac")}`,
     faqHeading: "Frequently Asked Questions From Potomac Patients",
     faqIntro: "Quick answers for patients coming from Potomac, Maryland.",
     faqs: [
-      { q: "Do you have an office in Maryland?", a: `No. Our only office is ${ADDRESS}, in Tysons, Virginia, about 10.6 miles from Potomac Village.` },
-      { q: "How long is the drive from Potomac?", a: `Usually 18 to 25 minutes outside rush hour, by River Road and I-495 across the American Legion Bridge. Bridge traffic can add a lot of time at peak hours.` },
+      { q: "Do you have an office in Maryland?", a: `No. Our only office is ${ADDRESS}, in Tysons, Virginia, about 12 miles from Potomac Village.` },
+      { q: "How long is the drive from Potomac?", a: `Usually 20 to 30 minutes outside rush hour, by River Road and I-495 across the American Legion Bridge. Bridge traffic can add a lot of time at peak hours.` },
       { q: "Is Potomac's water fluoridated?", a: `Yes. WSSC Water adds fluoride. It lowered the level to about 0.4 mg/L from April 7 to September 16, 2026 because of a supply shortage, and it is back to about 0.7 mg/L.` },
       { q: "Can I use my dental insurance from Maryland?", a: `Plans differ on where you can be seen. Call ${PHONE} with your plan details and we will check your coverage before your visit.` },
     ],

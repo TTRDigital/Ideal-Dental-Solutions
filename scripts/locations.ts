@@ -255,13 +255,13 @@ async function build(pg: Page, opts: { id: string; wpId: number; path: string; t
   else docs.splice(docs.findIndex((d) => d.path === "/locations/mclean/") + 1 + TOWNS.findIndex((t) => opts.path.includes(`/${t.slug}/`)), 0, doc);
 }
 
-await build(HUB, { id: "page-868", wpId: 868, path: "/locations/", title: "Areas We Serve", crumbs: [["Home", "/"], ["Locations"]], ancestors: [], areaServed: [MCLEAN, ...TOWNS.map((t) => t.place)] });
+await build(HUB, { id: "page-868", wpId: 868, path: "/locations/", title: "Areas We Serve", crumbs: [["Home", "/"], ["Areas We Serve"]], ancestors: [], areaServed: [MCLEAN, ...TOWNS.map((t) => t.place)] });
 await build(MCLEAN_PAGE, {
   id: "page-931",
   wpId: 931,
   path: "/locations/mclean/",
   title: "McLean",
-  crumbs: [["Home", "/"], ["Locations", "/locations/"], ["McLean"]],
+  crumbs: [["Home", "/"], ["Areas We Serve", "/locations/"], ["McLean"]],
   ancestors: ["/locations/"],
   parent: "page-868",
   areaServed: [MCLEAN],
@@ -272,7 +272,7 @@ for (const [i, t] of TOWNS.entries()) {
     wpId: 9101 + i,
     path: `/locations/${t.slug}/`,
     title: t.name,
-    crumbs: [["Home", "/"], ["Locations", "/locations/"], [t.name]],
+    crumbs: [["Home", "/"], ["Areas We Serve", "/locations/"], [t.name]],
     ancestors: ["/locations/"],
     parent: "page-868",
     areaServed: [t.place],
