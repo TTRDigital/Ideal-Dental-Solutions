@@ -15,7 +15,7 @@ import { existsSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { join } from "node:path";
 import sharp from "sharp";
-import { HUB, MCLEAN, TOWNS, type Faq, type Page, type Town } from "./locations-content.ts";
+import { HUB, MCLEAN, MCLEAN_PAGE, TOWNS, type Faq, type Page, type Town } from "./locations-content.ts";
 
 type Node = Record<string, unknown> & { _key?: string; elId?: string; children?: Node[]; items?: Node[]; content?: Node[] };
 type Doc = Record<string, unknown> & { _id: string; _type: string; path?: string };
@@ -28,8 +28,8 @@ const source = docs.find((d) => d.path === "/locations/mclean/gum-graft-surgery/
 if (!source) throw new Error("No /locations/mclean/gum-graft-surgery/ in content/seed.json");
 const SOURCE_ID = source.wpId as number;
 
-/** The hero photo: Dr. Adili with a patient in the McLean office. */
-const HERO_PHOTO = "/wp-content/uploads/2026/05/f27652e6-1b34-4494-a431-a20933a947bc-scaled.png";
+/** The hero photo: Kaveh Sanatjou, RDH, at the reception sign of the McLean office. */
+const HERO_PHOTO = "/wp-content/uploads/2026/07/IMG_6255-2048x1602.jpeg";
 
 /* ---------------- blocks ---------------- */
 
@@ -256,6 +256,16 @@ async function build(pg: Page, opts: { id: string; wpId: number; path: string; t
 }
 
 await build(HUB, { id: "page-868", wpId: 868, path: "/locations/", title: "Areas We Serve", crumbs: [["Home", "/"], ["Locations"]], ancestors: [], areaServed: [MCLEAN, ...TOWNS.map((t) => t.place)] });
+await build(MCLEAN_PAGE, {
+  id: "page-931",
+  wpId: 931,
+  path: "/locations/mclean/",
+  title: "McLean",
+  crumbs: [["Home", "/"], ["Locations", "/locations/"], ["McLean"]],
+  ancestors: ["/locations/"],
+  parent: "page-868",
+  areaServed: [MCLEAN],
+});
 for (const [i, t] of TOWNS.entries()) {
   await build(t, {
     id: `page-location-${t.slug}`,
@@ -270,4 +280,4 @@ for (const [i, t] of TOWNS.entries()) {
 }
 
 writeFileSync(file, JSON.stringify(docs, null, 1));
-console.log(`Location pages: /locations/ and ${TOWNS.map((t: Town) => `/locations/${t.slug}/`).join(", ")}`);
+console.log(`Location pages: /locations/, /locations/mclean/ and ${TOWNS.map((t: Town) => `/locations/${t.slug}/`).join(", ")}`);

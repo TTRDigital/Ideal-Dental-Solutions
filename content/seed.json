@@ -7464,7 +7464,7 @@
       "tpl": "<div class=\"elementor-element elementor-element-f716402 elementor-widget elementor-widget-text-editor\" data-id=\"f716402\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
      }
     ],
-    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/05/f27652e6-1b34-4494-a431-a20933a947bc-scaled.png)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/07/IMG_6255-2048x1602.jpeg)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
    },
    {
     "_key": "58fa96908ed3",
@@ -7506,7 +7506,7 @@
       "elId": "c826dbe",
       "_type": "elHeading",
       "widget": "heading",
-      "title": "Towns Our Patients Come From",
+      "title": "Our Office and the Towns Our Patients Come From",
       "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
      },
      {
@@ -7518,7 +7518,7 @@
        {
         "_type": "htmlBlock",
         "_key": "8ff8b7169053",
-        "html": "<ul style=\"font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;\">\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/tysons/\">Tysons</a>: our office is in Tysons, about 1 mile from Tysons Corner Center.</li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/vienna/\">Vienna</a>: about 2.8 miles from the Town of Vienna's center, usually 7 to 12 minutes by car on Maple Avenue and Chain Bridge Road (Route 123).</li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/falls-church/\">Falls Church</a>: about 4.6 miles from Falls Church City Hall, usually 12 to 18 minutes on Broad Street and Leesburg Pike (Route 7).</li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/great-falls/\">Great Falls</a>: about 7 miles from Great Falls village, usually 14 to 22 minutes on Walker Road, Colvin Run Road and Leesburg Pike, or on Georgetown Pike.</li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/potomac/\">Potomac, MD</a>: about 10.6 miles from Potomac Village, usually 18 to 25 minutes across the American Legion Bridge on I-495.</li>\n</ul>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Drive times are approximate and assume light traffic; allow more time at rush hour. For the care we provide, see <a href=\"/services/\">all of our services</a>.</p>"
+        "html": "<ul style=\"font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;\">\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/mclean/\">McLean</a>: our office, with its hours, team and services.</li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/tysons/\">Tysons</a>: our office is in Tysons, about 1 mile from Tysons Corner Center.</li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/vienna/\">Vienna</a>: about 2.8 miles from the Town of Vienna's center, usually 7 to 12 minutes by car on Maple Avenue and Chain Bridge Road (Route 123).</li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/falls-church/\">Falls Church</a>: about 4.6 miles from Falls Church City Hall, usually 12 to 18 minutes on Broad Street and Leesburg Pike (Route 7).</li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/great-falls/\">Great Falls</a>: about 7 miles from Great Falls village, usually 14 to 22 minutes on Walker Road, Colvin Run Road and Leesburg Pike, or on Georgetown Pike.</li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/potomac/\">Potomac, MD</a>: about 10.6 miles from Potomac Village, usually 18 to 25 minutes across the American Legion Bridge on I-495.</li>\n</ul>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Drive times are approximate and assume light traffic; allow more time at rush hour. For the care we provide, see <a href=\"/services/\">all of our services</a>.</p>"
        }
       ],
       "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -7708,25 +7708,546 @@
  },
  {
   "seo": {
-   "title": "McLean, VA | Ideal Dental Solutions",
-   "robots": "noindex, follow",
+   "title": "Dentist in McLean, VA | Ideal Dental Solutions",
+   "description": "Ideal Dental Solutions, 8280 Greensboro Drive, Unit 105, McLean, VA 22102: hours, directions, our dentists and hygienists, and the dental care we provide.",
+   "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
    "canonical": "https://idealdentalsolutions.com/locations/mclean/",
    "ogLocale": "en_US",
    "ogType": "article",
-   "ogTitle": "McLean, VA | Ideal Dental Solutions",
+   "ogTitle": "Dentist in McLean, VA | Ideal Dental Solutions",
+   "ogDescription": "Ideal Dental Solutions, 8280 Greensboro Drive, Unit 105, McLean, VA 22102: hours, directions, our dentists and hygienists, and the dental care we provide.",
    "ogUrl": "https://idealdentalsolutions.com/locations/mclean/",
    "ogSiteName": "Ideal Dental Solutions",
-   "modifiedTime": "2026-06-01T16:55:51+00:00",
-   "twitterCard": "summary_large_image",
-   "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://idealdentalsolutions.com/locations/mclean/\",\"url\":\"https://idealdentalsolutions.com/locations/mclean/\",\"name\":\"McLean, VA | Ideal Dental Solutions\",\"isPartOf\":{\"@id\":\"https://idealdentalsolutions.com/#website\"},\"datePublished\":\"2026-06-01T16:55:29+00:00\",\"dateModified\":\"2026-06-01T16:55:51+00:00\",\"breadcrumb\":{\"@id\":\"https://idealdentalsolutions.com/locations/mclean/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://idealdentalsolutions.com/locations/mclean/\"]}]},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://idealdentalsolutions.com/locations/mclean/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://idealdentalsolutions.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"locations\",\"item\":\"https://idealdentalsolutions.com/locations/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Mclean\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://idealdentalsolutions.com/#website\",\"url\":\"https://idealdentalsolutions.com/\",\"name\":\"Ideal Dental Solutions\",\"description\":\"\",\"publisher\":{\"@id\":\"https://idealdentalsolutions.com/#organization\"},\"inLanguage\":\"en-US\",\"alternateName\":\"idealdental\"},{\"@type\":\"Organization\",\"@id\":\"https://idealdentalsolutions.com/#organization\",\"name\":\"Ideal Dental Solutions\",\"url\":\"https://idealdentalsolutions.com/\",\"logo\":{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https://idealdentalsolutions.com/#/schema/logo/image/\",\"url\":\"https://idealdentalsolutions.com/wp-content/uploads/2026/07/image__4_-removebg-preview.png\",\"contentUrl\":\"https://idealdentalsolutions.com/wp-content/uploads/2026/07/image__4_-removebg-preview.png\",\"width\":831,\"height\":300,\"caption\":\"idealdental\"},\"image\":{\"@id\":\"https://idealdentalsolutions.com/#/schema/logo/image/\"}}]}",
+   "modifiedTime": "2026-10-26T12:00:00+00:00",
    "ogImage": "https://idealdentalsolutions.com/og/locations-mclean.jpg",
    "ogImageWidth": "1200",
    "ogImageHeight": "630",
-   "ogImageType": "image/jpeg"
+   "ogImageType": "image/jpeg",
+   "twitterCard": "summary_large_image",
+   "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://idealdentalsolutions.com/locations/mclean/\",\"url\":\"https://idealdentalsolutions.com/locations/mclean/\",\"name\":\"Dentist in McLean, VA | Ideal Dental Solutions\",\"isPartOf\":{\"@id\":\"https://idealdentalsolutions.com/#website\"},\"about\":{\"@id\":\"https://idealdentalsolutions.com/#organization\"},\"primaryImageOfPage\":{\"@id\":\"https://idealdentalsolutions.com/locations/mclean/#primaryimage\"},\"image\":{\"@id\":\"https://idealdentalsolutions.com/locations/mclean/#primaryimage\"},\"thumbnailUrl\":\"https://idealdentalsolutions.com/og/locations-mclean.jpg\",\"datePublished\":\"2026-06-01T12:00:00+00:00\",\"dateModified\":\"2026-10-26T12:00:00+00:00\",\"description\":\"Ideal Dental Solutions, 8280 Greensboro Drive, Unit 105, McLean, VA 22102: hours, directions, our dentists and hygienists, and the dental care we provide.\",\"breadcrumb\":{\"@id\":\"https://idealdentalsolutions.com/locations/mclean/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://idealdentalsolutions.com/locations/mclean/\"]}]},{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https://idealdentalsolutions.com/locations/mclean/#primaryimage\",\"url\":\"https://idealdentalsolutions.com/og/locations-mclean.jpg\",\"contentUrl\":\"https://idealdentalsolutions.com/og/locations-mclean.jpg\",\"width\":1200,\"height\":630},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://idealdentalsolutions.com/locations/mclean/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://idealdentalsolutions.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Locations\",\"item\":\"https://idealdentalsolutions.com/locations/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"McLean\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://idealdentalsolutions.com/#website\",\"url\":\"https://idealdentalsolutions.com/\",\"name\":\"Ideal Dental Solutions\",\"description\":\"\",\"publisher\":{\"@id\":\"https://idealdentalsolutions.com/#organization\"},\"inLanguage\":\"en-US\",\"alternateName\":\"idealdental\"},{\"@type\":\"Organization\",\"@id\":\"https://idealdentalsolutions.com/#organization\",\"name\":\"Ideal Dental Solutions\",\"url\":\"https://idealdentalsolutions.com/\",\"areaServed\":[{\"@type\":\"City\",\"name\":\"McLean, VA\",\"containedInPlace\":{\"@type\":\"AdministrativeArea\",\"name\":\"Fairfax County, VA\"}}]}]}"
   },
-  "bodyClass": "wp-singular page-template-default page page-id-931 page-parent page-child parent-pageid-868 wp-custom-logo wp-embed-responsive wp-theme-blocksy elementor-default elementor-kit-5 ct-elementor-default-template",
-  "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-931\" class=\"post-931 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
-  "shell": "0c92f6d65a",
+  "bodyClass": "wp-singular page-template-default page page-id-931 page-child parent-pageid-868 wp-custom-logo wp-embed-responsive wp-theme-blocksy elementor-default elementor-kit-5 elementor-page elementor-page-931 ct-elementor-default-template",
+  "content": [
+   {
+    "_key": "16af80215c69",
+    "elId": "bc61501",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "c65e3743fb30",
+      "elId": "f716402",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "6411965b67b1",
+        "html": "<nav aria-label=\"Breadcrumb\"><p style=\"color:#ffffff;font-size:14px;letter-spacing:0.6px;margin-bottom:8px;\"><a href=\"/\" style=\"color:#ffffff;text-decoration:underline;\">Home</a> / <a href=\"/locations/\" style=\"color:#ffffff;text-decoration:underline;\">Locations</a> / <span aria-current=\"page\">McLean</span></p></nav>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-f716402 elementor-widget elementor-widget-text-editor\" data-id=\"f716402\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     },
+     {
+      "_key": "1101b57ffd9e",
+      "elId": "4d1056f",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "Your Dentist in McLean, VA",
+      "tpl": "<div class=\"elementor-element elementor-element-4d1056f elementor-widget__width-initial elementor-widget-tablet__width-inherit elementor-widget elementor-widget-heading\" data-id=\"4d1056f\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h1 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h1>\t\t\t\t</div>"
+     },
+     {
+      "_key": "7d6473f45514",
+      "elId": "65bba16",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "8280 Greensboro Drive, Unit 105, near Greensboro Metro",
+      "tpl": "<div class=\"elementor-element elementor-element-65bba16 elementor-widget elementor-widget-heading\" data-id=\"65bba16\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+     },
+     {
+      "_key": "26a877b52403",
+      "elId": "f716402",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "f371739cd431",
+        "html": "<p style=\"color:#ffffff;font-size:18px;line-height:26px;letter-spacing:0.9px;max-width:720px;\">Ideal Dental Solutions is at 8280 Greensboro Drive, Unit 105, McLean, VA 22102, our only office. Hours: Monday to Thursday 9am to 5pm, Friday 8:30am to 3pm, every other Saturday 8am to 2pm, closed Sunday. Greensboro station on the Metro Silver Line is about an 8 minute walk from the office. Call <a style=\"color:#ffffff;text-decoration:underline;\" href=\"tel:+17034420442\">(703) 442-0442</a> or <a style=\"color:#ffffff;text-decoration:underline;\" href=\"/appointment/\">request an appointment online</a>.</p>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-f716402 elementor-widget elementor-widget-text-editor\" data-id=\"f716402\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/07/IMG_6255-2048x1602.jpeg)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+   },
+   {
+    "_key": "bca38ed4752c",
+    "elId": "a5658b6",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "5751c2643e32",
+      "elId": "c826dbe",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "Visit Our Office",
+      "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+     },
+     {
+      "_key": "bc48f7c016e4",
+      "elId": "2bb8729",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "d966bf8ce333",
+        "html": "<ul style=\"font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;\">\n<li style=\"margin-bottom:6px;\">Address: 8280 Greensboro Drive, Unit 105, McLean, VA 22102 (<a href=\"https://www.google.com/maps/search/?api=1&query=8280+Greensboro+Drive+Unit+105+McLean+VA+22102\">open in Google Maps</a>). The address is in McLean, and the building is in Tysons, Fairfax County.</li>\n<li style=\"margin-bottom:6px;\">By Metro: Greensboro station on the Metro Silver Line is about an 8 minute walk from the office.</li>\n<li style=\"margin-bottom:6px;\">By car: from the Capital Beltway (I-495), take the Chain Bridge Road (Route 123) or Leesburg Pike (Route 7) exits into Tysons, then turn onto Greensboro Drive.</li>\n<li style=\"margin-bottom:6px;\">Hours: Monday to Thursday 9am to 5pm, Friday 8:30am to 3pm, every other Saturday 8am to 2pm, closed Sunday.</li>\n<li style=\"margin-bottom:6px;\">Phone: <a href=\"tel:+17034420442\">(703) 442-0442</a>. Call us if you need directions on the day of your visit.</li>\n</ul>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-a5658b6 e-flex e-con-boxed e-con e-parent\" data-id=\"a5658b6\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+   },
+   {
+    "_key": "5be4ca256ffa",
+    "elId": "8a23a75",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "8032b08e581b",
+      "elId": "31c37ae",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "Meet Our McLean Team",
+      "tpl": "<div class=\"elementor-element elementor-element-31c37ae elementor-widget elementor-widget-heading\" data-id=\"31c37ae\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+     },
+     {
+      "_key": "8f04708cfa86",
+      "elId": "f36453c",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "f0c1f3cdd05d",
+        "html": "<p style=\"color:#ffffff;font-size:18px;line-height:26px;letter-spacing:0.9px;max-width:814px;\">Three dentists and a team of dental hygienists see every patient at this office.</p>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-f36453c elementor-widget elementor-widget-text-editor\" data-id=\"f36453c\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     },
+     {
+      "_key": "58f18b5cbf6c",
+      "elId": "0e416a2",
+      "_type": "elContainer",
+      "children": [
+       {
+        "_key": "14b78de3de42",
+        "elId": "d54f03a",
+        "_type": "elContainer",
+        "children": [
+         {
+          "_key": "d23538c39094",
+          "elId": "088e71c",
+          "_type": "elImage",
+          "widget": "image",
+          "image": {
+           "_type": "wpImage",
+           "src": "/wp-content/uploads/2026/05/img-2364234.png",
+           "width": "710",
+           "height": "791",
+           "alt": "Dr. Mehdi S. Adili, DDS, prosthodontist at Ideal Dental Solutions",
+           "attrs": "decoding=\"async\" class=\"attachment-full size-full\""
+          },
+          "tpl": "<div class=\"elementor-element elementor-element-088e71c elementor-widget elementor-widget-image\" data-id=\"088e71c\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image.default\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t[[@img:image]]\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>"
+         }
+        ],
+        "tpl": "<div class=\"elementor-element elementor-element-d54f03a e-con-full e-flex e-con e-child\" data-id=\"d54f03a\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:children]]</div>"
+       },
+       {
+        "_key": "0e81c776c94d",
+        "elId": "07aad87",
+        "_type": "elContainer",
+        "children": [
+         {
+          "_key": "c26a060397fe",
+          "elId": "954b86a",
+          "_type": "elAccordion",
+          "widget": "nested-accordion",
+          "items": [
+           {
+            "_type": "accordionItem",
+            "_key": "284e78a3b6e2",
+            "title": "Dr. Mehdi S. Adili, DDS",
+            "content": [
+             {
+              "_key": "2ccfe0491e47",
+              "elId": "07ad478",
+              "_type": "elHeading",
+              "widget": "heading",
+              "title": "Our principal dentist and a prosthodontist. He earned his DDS at Georgetown University. His focus includes dental implants, bridges, dentures, crowns and full-mouth restoration.",
+              "tpl": "<div class=\"elementor-element elementor-element-07ad478 elementor-widget elementor-widget-heading\" data-id=\"07ad478\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<div class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</div>\t\t\t\t</div>"
+             }
+            ],
+            "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-1560\" class=\"e-n-accordion-item\" open=\"\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"1\" tabindex=\"0\" aria-expanded=\"true\" aria-controls=\"e-n-accordion-item-1560\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-1560\" class=\"elementor-element elementor-element-bad694c e-con-full e-flex e-con e-child\" data-id=\"bad694c\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+           },
+           {
+            "_type": "accordionItem",
+            "_key": "0e3cf779d644",
+            "title": "Dr. Saman Sepahi, DDS",
+            "content": [
+             {
+              "_key": "f601b0e8cb64",
+              "elId": "2690ce2",
+              "_type": "elHeading",
+              "widget": "heading",
+              "title": "He received his DDS in 2008 from the Karolinska Institute in Stockholm, Sweden, and helped start the organization Dentists Without Borders.",
+              "tpl": "<div class=\"elementor-element elementor-element-2690ce2 elementor-widget elementor-widget-heading\" data-id=\"2690ce2\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<div class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</div>\t\t\t\t</div>"
+             }
+            ],
+            "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-1561\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"2\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-1561\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-1561\" class=\"elementor-element elementor-element-c69026b e-con-full e-flex e-con e-child\" data-id=\"c69026b\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+           },
+           {
+            "_type": "accordionItem",
+            "_key": "25b8c86c0283",
+            "title": "Dr. Dilnoza Hojaeva, DDS",
+            "content": [
+             {
+              "_key": "34a067b7c624",
+              "elId": "8647942",
+              "_type": "elHeading",
+              "widget": "heading",
+              "title": "She earned her DDS through the Advanced Standing Program for Internationally Trained Dentists at the Virginia Commonwealth University School of Dentistry.",
+              "tpl": "<div class=\"elementor-element elementor-element-8647942 elementor-widget elementor-widget-heading\" data-id=\"8647942\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<div class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</div>\t\t\t\t</div>"
+             }
+            ],
+            "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-1562\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"3\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-1562\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-1562\" class=\"elementor-element elementor-element-a4f54c2 e-con-full e-flex e-con e-child\" data-id=\"a4f54c2\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+           },
+           {
+            "_type": "accordionItem",
+            "_key": "ab6b23804e63",
+            "title": "Fozia Mohamed, RDH",
+            "content": [
+             {
+              "_key": "3273323993e6",
+              "elId": "306d78a",
+              "_type": "elHeading",
+              "widget": "heading",
+              "title": "Dental hygienist. She graduated from Pacific University Oregon in 2012 with a bachelor's degree in Dental Health Science.",
+              "tpl": "<div class=\"elementor-element elementor-element-306d78a elementor-widget elementor-widget-heading\" data-id=\"306d78a\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<div class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</div>\t\t\t\t</div>"
+             }
+            ],
+            "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-1563\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"4\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-1563\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-1563\" class=\"elementor-element elementor-element-26011ab e-con-full e-flex e-con e-child\" data-id=\"26011ab\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+           },
+           {
+            "_type": "accordionItem",
+            "_key": "1b64fe795341",
+            "title": "Kaveh Sanatjou, RDH",
+            "content": [
+             {
+              "_key": "9deb397ea2d5",
+              "elId": "15a2662",
+              "_type": "elHeading",
+              "widget": "heading",
+              "title": "Dental hygienist. He graduated from Northern Virginia Community College in 2000 with an AAS in Dental Hygiene.",
+              "tpl": "<div class=\"elementor-element elementor-element-15a2662 elementor-widget elementor-widget-heading\" data-id=\"15a2662\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<div class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</div>\t\t\t\t</div>"
+             }
+            ],
+            "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-1564\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"5\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-1564\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-1564\" class=\"elementor-element elementor-element-605f894 e-con-full e-flex e-con e-child\" data-id=\"605f894\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+           },
+           {
+            "_type": "accordionItem",
+            "_key": "607f6af8a6a0",
+            "title": "Tiana Norris, RDH",
+            "content": [
+             {
+              "_key": "6c0c8d2bd510",
+              "elId": "08aa683",
+              "_type": "elHeading",
+              "widget": "heading",
+              "title": "Dental hygienist. She graduated from Northern Virginia Community College with an AAS in Dental Hygiene.",
+              "tpl": "<div class=\"elementor-element elementor-element-08aa683 elementor-widget elementor-widget-heading\" data-id=\"08aa683\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<div class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</div>\t\t\t\t</div>"
+             }
+            ],
+            "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-1565\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"6\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-1565\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-1565\" class=\"elementor-element elementor-element-2ceb362 e-con-full e-flex e-con e-child\" data-id=\"2ceb362\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+           }
+          ],
+          "tpl": "<div class=\"elementor-element elementor-element-954b86a elementor-widget elementor-widget-n-accordion\" data-id=\"954b86a\" data-element_type=\"widget\" data-e-type=\"widget\" data-settings=\"{&quot;default_state&quot;:&quot;expanded&quot;,&quot;max_items_expended&quot;:&quot;one&quot;,&quot;n_accordion_animation_duration&quot;:{&quot;unit&quot;:&quot;ms&quot;,&quot;size&quot;:400,&quot;sizes&quot;:[]}}\" data-widget_type=\"nested-accordion.default\">\n\t\t\t\t\t\t\t<div class=\"e-n-accordion\" aria-label=\"Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys\">[[@items:items]]\n\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>"
+         },
+         {
+          "_key": "56cbe9904ceb",
+          "elId": "ec83923",
+          "_type": "elText",
+          "widget": "text-editor",
+          "body": [
+           {
+            "_type": "htmlBlock",
+            "_key": "e9c840b9dd78",
+            "html": "<p style=\"color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: underline;\"><a href=\"/about-us/\">More about our team</a></p>"
+           }
+          ],
+          "tpl": "<div class=\"elementor-element elementor-element-ec83923 elementor-widget elementor-widget-text-editor\" data-id=\"ec83923\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+         }
+        ],
+        "tpl": "<div class=\"elementor-element elementor-element-07aad87 e-con-full e-flex e-con e-child\" data-id=\"07aad87\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:children]]</div>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-0e416a2 e-flex e-con-boxed e-con e-child\" data-id=\"0e416a2\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-8a23a75 e-flex e-con-boxed e-con e-parent\" data-id=\"8a23a75\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+   },
+   {
+    "_key": "74f0630da2f1",
+    "elId": "a5658b6",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "fb3b94e7c321",
+      "elId": "c826dbe",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "Dental Care at Our McLean Office",
+      "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+     },
+     {
+      "_key": "690c57523cf7",
+      "elId": "2bb8729",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "3fc7caaacbdd",
+        "html": "<ul style=\"font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;\">\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/mclean/preventive-dentistry/\">Preventive dentistry</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/mclean/restorative-dentistry/\">Restorative dentistry</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/dental-fillings-in-mclean-va/\">Dental fillings</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/dental-bridges-in-mclean-va/\">Dental bridges</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/mclean/root-canal-therapy/\">Root canal therapy</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/mclean/periodontal-dentistry/\">Periodontal dentistry</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/mclean/gum-disease-treatment/\">Gum disease treatment</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/mclean/gum-graft-surgery/\">Gum graft surgery</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/mclean/dental-implant-dentistry/\">Dental implants</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/mclean/single-tooth-implants/\">Single tooth implants</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/mclean/full-arch-implants/\">Full arch implants</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/mclean/invisalign/\">Invisalign</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/mclean/porcelain-dental-veneers/\">Porcelain veneers</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/mclean/teeth-whitening/\">Teeth whitening</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/locations/mclean/tmj-tmd-treatments/\">TMJ/TMD treatment</a></li>\n</ul>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">We also provide <a href=\"/services/preventive-dentistry/checkups-exams/\">checkups and exams</a>, <a href=\"/services/preventive-dentistry/teeth-cleaning/\">teeth cleaning</a>, <a href=\"/services/preventive-dentistry/dental-sealants/\">dental sealants</a>, <a href=\"/services/cosmetic-dentistry/dental-bonding/\">dental bonding</a>, <a href=\"/services/restorative-dentistry/dentures/\">dentures</a>, <a href=\"/locations/night-guards/\">night guards</a> and <a href=\"/services/restorative-dentistry/tooth-extractions/\">tooth extractions</a>. See <a href=\"/services/\">all of our services</a> and our <a href=\"/before-after/\">before and after photos</a>.</p>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-a5658b6 e-flex e-con-boxed e-con e-parent\" data-id=\"a5658b6\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+   },
+   {
+    "_key": "fbd7f4d58fa3",
+    "elId": "a5658b6",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "ccd5e6600805",
+      "elId": "c826dbe",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "Local Dental Health Facts for McLean",
+      "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+     },
+     {
+      "_key": "472bab527902",
+      "elId": "2bb8729",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "ead18f9c8433",
+        "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">McLean is an unincorporated community in Fairfax County with 50,773 residents in the 2020 Census.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Public water in McLean comes from Fairfax Water, which in 2014 also took over the City of Falls Church's water system and its customers in the McLean area. Fairfax Water adds fluoride to the water it treats. Its two treatment plants measured about 0.6 parts per million in 2025, close to the 0.7 mg/L level the CDC recommends for community water.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Low-cost and public dental care in Fairfax County:</p>\n<ul style=\"font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;\">\n<li style=\"margin-bottom:6px;\">Fairfax County's own dental program moved to the community health centers serving the county on January 1, 2023. The county's <a href=\"https://www.fairfaxcounty.gov/health/dental\">dental services page</a> lists where to go now.</li>\n<li style=\"margin-bottom:6px;\">The <a href=\"https://www.novadentalclinic.org/\">Northern Virginia Dental Clinic</a>, a nonprofit founded in 1994, provides volunteer dental care to low-income adults referred by local agencies.</li>\n<li style=\"margin-bottom:6px;\">The county's <a href=\"https://www.fairfaxcounty.gov/familyservices/public-assistance-employment-services/medical-care-for-children\">Medical Care for Children Partnership</a> helps children from low-income families who do not qualify for Medicaid get medical and dental care.</li>\n<li style=\"margin-bottom:6px;\">Virginia Medicaid and FAMIS dental coverage is called <a href=\"https://www.dmas.virginia.gov/for-members/benefits-and-services/dental/\">Cardinal Care Smiles</a>.</li>\n</ul>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Patients also come to us from <a href=\"/locations/tysons/\">Tysons</a>, <a href=\"/locations/vienna/\">Vienna</a>, <a href=\"/locations/falls-church/\">Falls Church</a>, <a href=\"/locations/great-falls/\">Great Falls</a>, <a href=\"/locations/potomac/\">Potomac, MD</a>. See <a href=\"/locations/\">all areas we serve</a>.</p>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-a5658b6 e-flex e-con-boxed e-con e-parent\" data-id=\"a5658b6\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+   },
+   {
+    "_key": "23d1db2f3a53",
+    "elId": "e68da39",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "2ed5a1462f10",
+      "elId": "8183bb8",
+      "_type": "elContainer",
+      "children": [
+       {
+        "_key": "64a7b167b49d",
+        "elId": "a484b10",
+        "_type": "elHeading",
+        "widget": "heading",
+        "title": "Frequently Asked Questions About Our McLean Office",
+        "tpl": "<div class=\"elementor-element elementor-element-a484b10 elementor-widget elementor-widget-heading\" data-id=\"a484b10\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+       },
+       {
+        "_key": "d017d0518417",
+        "elId": "0fcfee9",
+        "_type": "elText",
+        "widget": "text-editor",
+        "body": [
+         {
+          "_type": "htmlBlock",
+          "_key": "3ee3dedb746f",
+          "html": "<p>Quick answers before your visit.</p>"
+         }
+        ],
+        "tpl": "<div class=\"elementor-element elementor-element-0fcfee9 elementor-widget elementor-widget-text-editor\" data-id=\"0fcfee9\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+       },
+       {
+        "_key": "43b8398ee24b",
+        "elId": "5f18e52",
+        "_type": "elAccordion",
+        "widget": "nested-accordion",
+        "items": [
+         {
+          "_type": "accordionItem",
+          "_key": "f5e4d63702ac",
+          "title": "Where is Ideal Dental Solutions?",
+          "content": [
+           {
+            "_key": "81810f713086",
+            "elId": "78763b7",
+            "_type": "elText",
+            "widget": "text-editor",
+            "body": [
+             {
+              "_type": "htmlBlock",
+              "_key": "4cc555803429",
+              "html": "<p>At 8280 Greensboro Drive, Unit 105, McLean, VA 22102, in Tysons. It is our only office.</p>"
+             }
+            ],
+            "tpl": "<div class=\"elementor-element elementor-element-78763b7 elementor-widget elementor-widget-text-editor\" data-id=\"78763b7\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+           }
+          ],
+          "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-9970\" class=\"e-n-accordion-item\" open=\"\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"1\" tabindex=\"0\" aria-expanded=\"true\" aria-controls=\"e-n-accordion-item-9970\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-9970\" class=\"elementor-element elementor-element-9053043 e-con-full e-flex e-con e-child\" data-id=\"9053043\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+         },
+         {
+          "_type": "accordionItem",
+          "_key": "afe7b55eb15f",
+          "title": "What are your hours?",
+          "content": [
+           {
+            "_key": "2b845507bfd2",
+            "elId": "4cdffbd",
+            "_type": "elText",
+            "widget": "text-editor",
+            "body": [
+             {
+              "_type": "htmlBlock",
+              "_key": "c58131197a70",
+              "html": "<p>Monday to Thursday 9am to 5pm, Friday 8:30am to 3pm, every other Saturday 8am to 2pm, closed Sunday.</p>"
+             }
+            ],
+            "tpl": "<div class=\"elementor-element elementor-element-4cdffbd elementor-widget elementor-widget-text-editor\" data-id=\"4cdffbd\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+           }
+          ],
+          "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-9971\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"2\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-9971\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-9971\" class=\"elementor-element elementor-element-dc6895d e-con-full e-flex e-con e-child\" data-id=\"dc6895d\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+         },
+         {
+          "_type": "accordionItem",
+          "_key": "5d1f10800b2f",
+          "title": "Can I get there by Metro?",
+          "content": [
+           {
+            "_key": "cee929b9bbcb",
+            "elId": "6122755",
+            "_type": "elText",
+            "widget": "text-editor",
+            "body": [
+             {
+              "_type": "htmlBlock",
+              "_key": "b9c26b9fb5b2",
+              "html": "<p>Yes. Greensboro station on the Metro Silver Line is about an 8 minute walk from the office.</p>"
+             }
+            ],
+            "tpl": "<div class=\"elementor-element elementor-element-6122755 elementor-widget elementor-widget-text-editor\" data-id=\"6122755\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+           }
+          ],
+          "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-9972\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"3\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-9972\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-9972\" class=\"elementor-element elementor-element-03693a2 e-con-full e-flex e-con e-child\" data-id=\"03693a2\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+         },
+         {
+          "_type": "accordionItem",
+          "_key": "1ef16ac58a0e",
+          "title": "Which insurance plans do you work with?",
+          "content": [
+           {
+            "_key": "79e1d6258fb3",
+            "elId": "675708f",
+            "_type": "elText",
+            "widget": "text-editor",
+            "body": [
+             {
+              "_type": "htmlBlock",
+              "_key": "d7ef65fb0a56",
+              "html": "<p>Plans we work with include Aetna, Ameritas, Anthem, CareFirst, Cigna, Delta Dental, GEHA, Guardian, Humana, Lincoln, MetLife, Principal, United Concordia and UnitedHealthcare. Call <a href=\"tel:+17034420442\">(703) 442-0442</a> to confirm your plan before your visit.</p>"
+             }
+            ],
+            "tpl": "<div class=\"elementor-element elementor-element-675708f elementor-widget elementor-widget-text-editor\" data-id=\"675708f\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+           }
+          ],
+          "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-9973\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"4\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-9973\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-9973\" class=\"elementor-element elementor-element-bdefb73 e-flex e-con-boxed e-con e-child\" data-id=\"bdefb73\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div></details>"
+         },
+         {
+          "_type": "accordionItem",
+          "_key": "24a62700e998",
+          "title": "How do I book an appointment?",
+          "content": [
+           {
+            "_key": "7cd1e5e660fc",
+            "elId": "d31f3a3",
+            "_type": "elText",
+            "widget": "text-editor",
+            "body": [
+             {
+              "_type": "htmlBlock",
+              "_key": "2fd33946e091",
+              "html": "<p>Call <a href=\"tel:+17034420442\">(703) 442-0442</a> or <a href=\"/appointment/\">request an appointment online</a>.</p>"
+             }
+            ],
+            "tpl": "<div class=\"elementor-element elementor-element-d31f3a3 elementor-widget elementor-widget-text-editor\" data-id=\"d31f3a3\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+           }
+          ],
+          "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-9974\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"5\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-9974\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\">  [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-9974\" class=\"elementor-element elementor-element-67a5668 e-flex e-con-boxed e-con e-child\" data-id=\"67a5668\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div></details>"
+         }
+        ],
+        "tpl": "<div class=\"elementor-element elementor-element-5f18e52 elementor-widget elementor-widget-n-accordion\" data-id=\"5f18e52\" data-element_type=\"widget\" data-e-type=\"widget\" data-settings=\"{&quot;default_state&quot;:&quot;expanded&quot;,&quot;max_items_expended&quot;:&quot;one&quot;,&quot;n_accordion_animation_duration&quot;:{&quot;unit&quot;:&quot;ms&quot;,&quot;size&quot;:400,&quot;sizes&quot;:[]}}\" data-widget_type=\"nested-accordion.default\">\n\t\t\t\t\t\t\t<div class=\"e-n-accordion\" aria-label=\"Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys\">[[@items:items]]\n\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-8183bb8 e-flex e-con-boxed e-con e-child\" data-id=\"8183bb8\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-e68da39 e-flex e-con-boxed e-con e-parent\" data-id=\"e68da39\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+   },
+   {
+    "_key": "e4842d4fde68",
+    "elId": "da7b818",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "978369c145b6",
+      "elId": "9fad9d2",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "Book Your Visit From McLean",
+      "tpl": "<div class=\"elementor-element elementor-element-9fad9d2 elementor-widget elementor-widget-heading\" data-id=\"9fad9d2\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+     },
+     {
+      "_key": "45b289980ef7",
+      "elId": "cff12d7",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "54bf8e6adabb",
+        "html": "<p style=\"font-size:18px;line-height:26px;letter-spacing:0.9px;max-width:728px;\">Call <a href=\"tel:+17034420442\">(703) 442-0442</a> or <a href=\"/appointment/\">request an appointment online</a>. Our office is at 8280 Greensboro Drive, Unit 105, McLean, VA 22102. Hours: Monday to Thursday 9am to 5pm, Friday 8:30am to 3pm, every other Saturday 8am to 2pm, closed Sunday.</p>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-cff12d7 elementor-widget elementor-widget-text-editor\" data-id=\"cff12d7\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-da7b818 e-con-full e-flex e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/08/IMG_1980-1-1024x768.jpeg)\" data-id=\"da7b818\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t[[@nodes:children]]</div>"
+   }
+  ],
+  "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-931\" class=\"post-931 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"913\" class=\"elementor elementor-913\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
+  "shell": "3aca04dd54",
   "_id": "page-931",
   "_type": "page",
   "title": "McLean",
@@ -7742,7 +8263,7 @@
   ],
   "wpTemplate": "default",
   "published": "2026-06-01T16:55:29Z",
-  "excerpt": "",
+  "excerpt": "Ideal Dental Solutions, 8280 Greensboro Drive, Unit 105, McLean, VA 22102: hours, directions, our dentists and hygienists, and the dental care we provide.",
   "authorName": "admin",
   "authorSlug": "admin"
  },
@@ -7818,7 +8339,7 @@
       "tpl": "<div class=\"elementor-element elementor-element-f716402 elementor-widget elementor-widget-text-editor\" data-id=\"f716402\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
      }
     ],
-    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/05/f27652e6-1b34-4494-a431-a20933a947bc-scaled.png)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/07/IMG_6255-2048x1602.jpeg)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
    },
    {
     "_key": "710f05443270",
@@ -8074,7 +8595,7 @@
        {
         "_type": "htmlBlock",
         "_key": "3f099e4f46ad",
-        "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">These are the services people in Tysons search for most often. Each link has the details:</p>\n<ul style=\"font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;\">\n<li style=\"margin-bottom:6px;\"><a href=\"/services/periodontic-dentistry/gum-graft-surgery/\">gum graft surgery</a> for receding gums, and <a href=\"/services/periodontic-dentistry/gum-disease-treatment/\">gum disease treatment</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/services/restorative-dentistry/dental-fillings/\">dental fillings</a> and <a href=\"/services/cosmetic-dentistry/dental-bonding/\">dental bonding</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/services/cosmetic-dentistry/teeth-whitening/\">teeth whitening</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/services/preventive-dentistry/dental-sealants/\">dental sealants</a> for children and teens</li>\n<li style=\"margin-bottom:6px;\"><a href=\"/services/restorative-dentistry/tmj-tmd-treatments/\">TMJ/TMD treatment</a> for jaw pain and clicking</li>\n</ul>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">We also provide <a href=\"/services/preventive-dentistry/checkups-exams/\">checkups and exams</a>, <a href=\"/services/preventive-dentistry/teeth-cleaning/\">teeth cleaning</a>, <a href=\"/services/dental-implants-dentistry/\">dental implants</a> and <a href=\"/services/cosmetic-dentistry/invisalign/\">Invisalign</a>. See <a href=\"/services/\">all of our services</a>.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Also served from our McLean office: <a href=\"/locations/vienna/\">Vienna</a>, <a href=\"/locations/falls-church/\">Falls Church</a>, <a href=\"/locations/great-falls/\">Great Falls</a>, <a href=\"/locations/potomac/\">Potomac, MD</a>. See <a href=\"/locations/\">all areas we serve</a>.</p>"
+        "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">These are the services people in Tysons search for most often. Each link has the details:</p>\n<ul style=\"font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;\">\n<li style=\"margin-bottom:6px;\"><a href=\"/services/periodontic-dentistry/gum-graft-surgery/\">gum graft surgery</a> for receding gums, and <a href=\"/services/periodontic-dentistry/gum-disease-treatment/\">gum disease treatment</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/services/restorative-dentistry/dental-fillings/\">dental fillings</a> and <a href=\"/services/cosmetic-dentistry/dental-bonding/\">dental bonding</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/services/cosmetic-dentistry/teeth-whitening/\">teeth whitening</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/services/preventive-dentistry/dental-sealants/\">dental sealants</a> for children and teens</li>\n<li style=\"margin-bottom:6px;\"><a href=\"/services/restorative-dentistry/tmj-tmd-treatments/\">TMJ/TMD treatment</a> for jaw pain and clicking</li>\n</ul>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">We also provide <a href=\"/services/preventive-dentistry/checkups-exams/\">checkups and exams</a>, <a href=\"/services/preventive-dentistry/teeth-cleaning/\">teeth cleaning</a>, <a href=\"/services/dental-implants-dentistry/\">dental implants</a> and <a href=\"/services/cosmetic-dentistry/invisalign/\">Invisalign</a>. See <a href=\"/services/\">all of our services</a>.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Our office: <a href=\"/locations/mclean/\">Ideal Dental Solutions in McLean</a>. Also served from it: <a href=\"/locations/vienna/\">Vienna</a>, <a href=\"/locations/falls-church/\">Falls Church</a>, <a href=\"/locations/great-falls/\">Great Falls</a>, <a href=\"/locations/potomac/\">Potomac, MD</a>. See <a href=\"/locations/\">all areas we serve</a>.</p>"
        }
       ],
       "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -8267,7 +8788,7 @@
       "tpl": "<div class=\"elementor-element elementor-element-cff12d7 elementor-widget elementor-widget-text-editor\" data-id=\"cff12d7\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
      }
     ],
-    "tpl": "<div class=\"elementor-element elementor-element-da7b818 e-con-full e-flex e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/07/IMG_6255-1024x801.jpeg)\" data-id=\"da7b818\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t[[@nodes:children]]</div>"
+    "tpl": "<div class=\"elementor-element elementor-element-da7b818 e-con-full e-flex e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/08/Fosia-2-1024x768.jpg)\" data-id=\"da7b818\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t[[@nodes:children]]</div>"
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-9101\" class=\"post-9101 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"913\" class=\"elementor elementor-913\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
@@ -8363,7 +8884,7 @@
       "tpl": "<div class=\"elementor-element elementor-element-f716402 elementor-widget elementor-widget-text-editor\" data-id=\"f716402\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
      }
     ],
-    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/05/f27652e6-1b34-4494-a431-a20933a947bc-scaled.png)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/07/IMG_6255-2048x1602.jpeg)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
    },
    {
     "_key": "40ffc19f13e0",
@@ -8619,7 +9140,7 @@
        {
         "_type": "htmlBlock",
         "_key": "f74bf108542d",
-        "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">From one office, our dentists and hygienists provide:</p>\n<ul style=\"font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;\">\n<li style=\"margin-bottom:6px;\">Preventive care: <a href=\"/services/preventive-dentistry/checkups-exams/\">checkups and exams</a>, <a href=\"/services/preventive-dentistry/teeth-cleaning/\">teeth cleaning</a> and <a href=\"/services/preventive-dentistry/dental-sealants/\">dental sealants</a></li>\n<li style=\"margin-bottom:6px;\">Repairs: <a href=\"/services/restorative-dentistry/dental-fillings/\">dental fillings</a>, <a href=\"/services/restorative-dentistry/dental-bridges/\">dental bridges</a> and <a href=\"/services/restorative-dentistry/root-canal-therapy/\">root canal therapy</a></li>\n<li style=\"margin-bottom:6px;\">Replacing teeth: <a href=\"/services/dental-implants-dentistry/\">dental implants</a>, <a href=\"/services/dental-implants-dentistry/full-arch-implants/\">full arch implants</a> and <a href=\"/services/restorative-dentistry/dentures/\">dentures</a>, with Dr. Mehdi S. Adili, a prosthodontist</li>\n<li style=\"margin-bottom:6px;\">Cosmetic care: <a href=\"/services/cosmetic-dentistry/invisalign/\">Invisalign</a>, <a href=\"/services/cosmetic-dentistry/teeth-whitening/\">teeth whitening</a> and <a href=\"/services/cosmetic-dentistry/porcelain-veneers/\">porcelain veneers</a></li>\n</ul>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">See <a href=\"/services/\">all of our services</a>.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Also served from our McLean office: <a href=\"/locations/tysons/\">Tysons</a>, <a href=\"/locations/falls-church/\">Falls Church</a>, <a href=\"/locations/great-falls/\">Great Falls</a>, <a href=\"/locations/potomac/\">Potomac, MD</a>. See <a href=\"/locations/\">all areas we serve</a>.</p>"
+        "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">From one office, our dentists and hygienists provide:</p>\n<ul style=\"font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;\">\n<li style=\"margin-bottom:6px;\">Preventive care: <a href=\"/services/preventive-dentistry/checkups-exams/\">checkups and exams</a>, <a href=\"/services/preventive-dentistry/teeth-cleaning/\">teeth cleaning</a> and <a href=\"/services/preventive-dentistry/dental-sealants/\">dental sealants</a></li>\n<li style=\"margin-bottom:6px;\">Repairs: <a href=\"/services/restorative-dentistry/dental-fillings/\">dental fillings</a>, <a href=\"/services/restorative-dentistry/dental-bridges/\">dental bridges</a> and <a href=\"/services/restorative-dentistry/root-canal-therapy/\">root canal therapy</a></li>\n<li style=\"margin-bottom:6px;\">Replacing teeth: <a href=\"/services/dental-implants-dentistry/\">dental implants</a>, <a href=\"/services/dental-implants-dentistry/full-arch-implants/\">full arch implants</a> and <a href=\"/services/restorative-dentistry/dentures/\">dentures</a>, with Dr. Mehdi S. Adili, a prosthodontist</li>\n<li style=\"margin-bottom:6px;\">Cosmetic care: <a href=\"/services/cosmetic-dentistry/invisalign/\">Invisalign</a>, <a href=\"/services/cosmetic-dentistry/teeth-whitening/\">teeth whitening</a> and <a href=\"/services/cosmetic-dentistry/porcelain-veneers/\">porcelain veneers</a></li>\n</ul>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">See <a href=\"/services/\">all of our services</a>.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Our office: <a href=\"/locations/mclean/\">Ideal Dental Solutions in McLean</a>. Also served from it: <a href=\"/locations/tysons/\">Tysons</a>, <a href=\"/locations/falls-church/\">Falls Church</a>, <a href=\"/locations/great-falls/\">Great Falls</a>, <a href=\"/locations/potomac/\">Potomac, MD</a>. See <a href=\"/locations/\">all areas we serve</a>.</p>"
        }
       ],
       "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -8908,7 +9429,7 @@
       "tpl": "<div class=\"elementor-element elementor-element-f716402 elementor-widget elementor-widget-text-editor\" data-id=\"f716402\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
      }
     ],
-    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/05/f27652e6-1b34-4494-a431-a20933a947bc-scaled.png)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/07/IMG_6255-2048x1602.jpeg)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
    },
    {
     "_key": "579899f4efef",
@@ -9180,7 +9701,7 @@
        {
         "_type": "htmlBlock",
         "_key": "5433a44a5666",
-        "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Gum graft surgery is one of the services people in Falls Church search for most often. We provide:</p>\n<ul style=\"font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;\">\n<li style=\"margin-bottom:6px;\"><a href=\"/services/periodontic-dentistry/gum-graft-surgery/\">gum graft surgery</a> for receding gums and exposed roots</li>\n<li style=\"margin-bottom:6px;\"><a href=\"/services/periodontic-dentistry/gum-disease-treatment/\">gum disease treatment</a> and deep cleanings</li>\n<li style=\"margin-bottom:6px;\"><a href=\"/services/preventive-dentistry/checkups-exams/\">checkups and exams</a>, <a href=\"/services/preventive-dentistry/teeth-cleaning/\">teeth cleaning</a> and <a href=\"/services/restorative-dentistry/dental-fillings/\">dental fillings</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/services/dental-implants-dentistry/\">dental implants</a> and <a href=\"/services/restorative-dentistry/dentures/\">dentures</a>, with Dr. Mehdi S. Adili, a prosthodontist</li>\n</ul>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">See <a href=\"/services/\">all of our services</a>.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Also served from our McLean office: <a href=\"/locations/tysons/\">Tysons</a>, <a href=\"/locations/vienna/\">Vienna</a>, <a href=\"/locations/great-falls/\">Great Falls</a>, <a href=\"/locations/potomac/\">Potomac, MD</a>. See <a href=\"/locations/\">all areas we serve</a>.</p>"
+        "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Gum graft surgery is one of the services people in Falls Church search for most often. We provide:</p>\n<ul style=\"font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;\">\n<li style=\"margin-bottom:6px;\"><a href=\"/services/periodontic-dentistry/gum-graft-surgery/\">gum graft surgery</a> for receding gums and exposed roots</li>\n<li style=\"margin-bottom:6px;\"><a href=\"/services/periodontic-dentistry/gum-disease-treatment/\">gum disease treatment</a> and deep cleanings</li>\n<li style=\"margin-bottom:6px;\"><a href=\"/services/preventive-dentistry/checkups-exams/\">checkups and exams</a>, <a href=\"/services/preventive-dentistry/teeth-cleaning/\">teeth cleaning</a> and <a href=\"/services/restorative-dentistry/dental-fillings/\">dental fillings</a></li>\n<li style=\"margin-bottom:6px;\"><a href=\"/services/dental-implants-dentistry/\">dental implants</a> and <a href=\"/services/restorative-dentistry/dentures/\">dentures</a>, with Dr. Mehdi S. Adili, a prosthodontist</li>\n</ul>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">See <a href=\"/services/\">all of our services</a>.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Our office: <a href=\"/locations/mclean/\">Ideal Dental Solutions in McLean</a>. Also served from it: <a href=\"/locations/tysons/\">Tysons</a>, <a href=\"/locations/vienna/\">Vienna</a>, <a href=\"/locations/great-falls/\">Great Falls</a>, <a href=\"/locations/potomac/\">Potomac, MD</a>. See <a href=\"/locations/\">all areas we serve</a>.</p>"
        }
       ],
       "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -9469,7 +9990,7 @@
       "tpl": "<div class=\"elementor-element elementor-element-f716402 elementor-widget elementor-widget-text-editor\" data-id=\"f716402\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
      }
     ],
-    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/05/f27652e6-1b34-4494-a431-a20933a947bc-scaled.png)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/07/IMG_6255-2048x1602.jpeg)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
    },
    {
     "_key": "670b3e7942e5",
@@ -9709,7 +10230,7 @@
        {
         "_type": "htmlBlock",
         "_key": "47f18059e6d0",
-        "html": "<ul style=\"font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;\">\n<li style=\"margin-bottom:6px;\">Preventive care: <a href=\"/services/preventive-dentistry/checkups-exams/\">checkups and exams</a>, <a href=\"/services/preventive-dentistry/teeth-cleaning/\">teeth cleaning</a> and <a href=\"/services/preventive-dentistry/dental-sealants/\">dental sealants</a></li>\n<li style=\"margin-bottom:6px;\">Gum care: <a href=\"/services/periodontic-dentistry/gum-disease-treatment/\">gum disease treatment</a> and <a href=\"/services/periodontic-dentistry/gum-graft-surgery/\">gum graft surgery</a></li>\n<li style=\"margin-bottom:6px;\">Replacing teeth: <a href=\"/services/dental-implants-dentistry/\">dental implants</a>, <a href=\"/services/dental-implants-dentistry/full-arch-implants/\">full arch implants</a>, <a href=\"/services/restorative-dentistry/dental-bridges/\">dental bridges</a> and <a href=\"/services/restorative-dentistry/dentures/\">dentures</a>, with Dr. Mehdi S. Adili, a prosthodontist</li>\n<li style=\"margin-bottom:6px;\">Cosmetic care: <a href=\"/services/cosmetic-dentistry/porcelain-veneers/\">porcelain veneers</a>, <a href=\"/services/cosmetic-dentistry/teeth-whitening/\">teeth whitening</a> and <a href=\"/services/cosmetic-dentistry/invisalign/\">Invisalign</a></li>\n</ul>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">See <a href=\"/services/\">all of our services</a>.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Also served from our McLean office: <a href=\"/locations/tysons/\">Tysons</a>, <a href=\"/locations/vienna/\">Vienna</a>, <a href=\"/locations/falls-church/\">Falls Church</a>, <a href=\"/locations/potomac/\">Potomac, MD</a>. See <a href=\"/locations/\">all areas we serve</a>.</p>"
+        "html": "<ul style=\"font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;\">\n<li style=\"margin-bottom:6px;\">Preventive care: <a href=\"/services/preventive-dentistry/checkups-exams/\">checkups and exams</a>, <a href=\"/services/preventive-dentistry/teeth-cleaning/\">teeth cleaning</a> and <a href=\"/services/preventive-dentistry/dental-sealants/\">dental sealants</a></li>\n<li style=\"margin-bottom:6px;\">Gum care: <a href=\"/services/periodontic-dentistry/gum-disease-treatment/\">gum disease treatment</a> and <a href=\"/services/periodontic-dentistry/gum-graft-surgery/\">gum graft surgery</a></li>\n<li style=\"margin-bottom:6px;\">Replacing teeth: <a href=\"/services/dental-implants-dentistry/\">dental implants</a>, <a href=\"/services/dental-implants-dentistry/full-arch-implants/\">full arch implants</a>, <a href=\"/services/restorative-dentistry/dental-bridges/\">dental bridges</a> and <a href=\"/services/restorative-dentistry/dentures/\">dentures</a>, with Dr. Mehdi S. Adili, a prosthodontist</li>\n<li style=\"margin-bottom:6px;\">Cosmetic care: <a href=\"/services/cosmetic-dentistry/porcelain-veneers/\">porcelain veneers</a>, <a href=\"/services/cosmetic-dentistry/teeth-whitening/\">teeth whitening</a> and <a href=\"/services/cosmetic-dentistry/invisalign/\">Invisalign</a></li>\n</ul>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">See <a href=\"/services/\">all of our services</a>.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Our office: <a href=\"/locations/mclean/\">Ideal Dental Solutions in McLean</a>. Also served from it: <a href=\"/locations/tysons/\">Tysons</a>, <a href=\"/locations/vienna/\">Vienna</a>, <a href=\"/locations/falls-church/\">Falls Church</a>, <a href=\"/locations/potomac/\">Potomac, MD</a>. See <a href=\"/locations/\">all areas we serve</a>.</p>"
        }
       ],
       "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -9880,7 +10401,7 @@
       "tpl": "<div class=\"elementor-element elementor-element-cff12d7 elementor-widget elementor-widget-text-editor\" data-id=\"cff12d7\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
      }
     ],
-    "tpl": "<div class=\"elementor-element elementor-element-da7b818 e-con-full e-flex e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/07/IMG_6255-1024x801.jpeg)\" data-id=\"da7b818\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t[[@nodes:children]]</div>"
+    "tpl": "<div class=\"elementor-element elementor-element-da7b818 e-con-full e-flex e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/07/Fosia-1024x768.jpg)\" data-id=\"da7b818\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t[[@nodes:children]]</div>"
    }
   ],
   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-9104\" class=\"post-9104 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"913\" class=\"elementor elementor-913\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
@@ -9976,7 +10497,7 @@
       "tpl": "<div class=\"elementor-element elementor-element-f716402 elementor-widget elementor-widget-text-editor\" data-id=\"f716402\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
      }
     ],
-    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/05/f27652e6-1b34-4494-a431-a20933a947bc-scaled.png)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/07/IMG_6255-2048x1602.jpeg)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
    },
    {
     "_key": "7c73ca44ccd8",
@@ -10232,7 +10753,7 @@
        {
         "_type": "htmlBlock",
         "_key": "dab65f159d6a",
-        "html": "<ul style=\"font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;\">\n<li style=\"margin-bottom:6px;\">Replacing teeth: <a href=\"/services/dental-implants-dentistry/\">dental implants</a>, <a href=\"/services/dental-implants-dentistry/full-arch-implants/\">full arch implants</a>, <a href=\"/services/restorative-dentistry/dental-bridges/\">dental bridges</a> and <a href=\"/services/restorative-dentistry/dentures/\">dentures</a>, with Dr. Mehdi S. Adili, a prosthodontist</li>\n<li style=\"margin-bottom:6px;\">Gum care: <a href=\"/services/periodontic-dentistry/gum-disease-treatment/\">gum disease treatment</a> and <a href=\"/services/periodontic-dentistry/gum-graft-surgery/\">gum graft surgery</a></li>\n<li style=\"margin-bottom:6px;\">Preventive care: <a href=\"/services/preventive-dentistry/checkups-exams/\">checkups and exams</a>, <a href=\"/services/preventive-dentistry/teeth-cleaning/\">teeth cleaning</a> and <a href=\"/services/preventive-dentistry/dental-sealants/\">dental sealants</a></li>\n<li style=\"margin-bottom:6px;\">Cosmetic care: <a href=\"/services/cosmetic-dentistry/porcelain-veneers/\">porcelain veneers</a>, <a href=\"/services/cosmetic-dentistry/teeth-whitening/\">teeth whitening</a> and <a href=\"/services/cosmetic-dentistry/invisalign/\">Invisalign</a></li>\n</ul>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">See <a href=\"/services/\">all of our services</a>.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Also served from our McLean office: <a href=\"/locations/tysons/\">Tysons</a>, <a href=\"/locations/vienna/\">Vienna</a>, <a href=\"/locations/falls-church/\">Falls Church</a>, <a href=\"/locations/great-falls/\">Great Falls</a>. See <a href=\"/locations/\">all areas we serve</a>.</p>"
+        "html": "<ul style=\"font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;\">\n<li style=\"margin-bottom:6px;\">Replacing teeth: <a href=\"/services/dental-implants-dentistry/\">dental implants</a>, <a href=\"/services/dental-implants-dentistry/full-arch-implants/\">full arch implants</a>, <a href=\"/services/restorative-dentistry/dental-bridges/\">dental bridges</a> and <a href=\"/services/restorative-dentistry/dentures/\">dentures</a>, with Dr. Mehdi S. Adili, a prosthodontist</li>\n<li style=\"margin-bottom:6px;\">Gum care: <a href=\"/services/periodontic-dentistry/gum-disease-treatment/\">gum disease treatment</a> and <a href=\"/services/periodontic-dentistry/gum-graft-surgery/\">gum graft surgery</a></li>\n<li style=\"margin-bottom:6px;\">Preventive care: <a href=\"/services/preventive-dentistry/checkups-exams/\">checkups and exams</a>, <a href=\"/services/preventive-dentistry/teeth-cleaning/\">teeth cleaning</a> and <a href=\"/services/preventive-dentistry/dental-sealants/\">dental sealants</a></li>\n<li style=\"margin-bottom:6px;\">Cosmetic care: <a href=\"/services/cosmetic-dentistry/porcelain-veneers/\">porcelain veneers</a>, <a href=\"/services/cosmetic-dentistry/teeth-whitening/\">teeth whitening</a> and <a href=\"/services/cosmetic-dentistry/invisalign/\">Invisalign</a></li>\n</ul>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">See <a href=\"/services/\">all of our services</a>.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Our office: <a href=\"/locations/mclean/\">Ideal Dental Solutions in McLean</a>. Also served from it: <a href=\"/locations/tysons/\">Tysons</a>, <a href=\"/locations/vienna/\">Vienna</a>, <a href=\"/locations/falls-church/\">Falls Church</a>, <a href=\"/locations/great-falls/\">Great Falls</a>. See <a href=\"/locations/\">all areas we serve</a>.</p>"
        }
       ],
       "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"

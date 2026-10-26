@@ -52,11 +52,11 @@ Every page is rendered as WordPress printed it, then sped up on the way out (the
 
 ## Location pages (scripts/locations.ts)
 
-`/locations/` (areas served) and one page per nearby town: `/locations/tysons/`, `/locations/vienna/`, `/locations/falls-church/`, `/locations/great-falls/` and `/locations/potomac/`. The practice has one office (McLean, 8280 Greensboro Drive, in Tysons); every page says so and none claims an office in its town.
+`/locations/` (areas served), `/locations/mclean/` (the office: address, map, hours, Metro, team, services, insurance, FAQ) and one page per nearby town: `/locations/tysons/`, `/locations/vienna/`, `/locations/falls-church/`, `/locations/great-falls/` and `/locations/potomac/`. The practice has one office (McLean, 8280 Greensboro Drive, in Tysons); every page says so and none claims an office in its town.
 
 - **Content:** the text is in `scripts/locations-content.ts`, with the source of every local fact in `docs/locations/sources.md`. `npm run locations` builds the pages into `content/seed.json` from the blocks of the McLean gum graft page (same layout, stylesheet and accordions) and writes their social images to `public/og/`. Photos are the practice's own (team and office).
 - **Each page:** title and description, one H1, a short answer at the top, directions with approximate drive times, local landmarks, the county or city, the water supplier and its fluoride, public dental resources, links to the service pages and /appointment/, an FAQ (FAQPage schema from `lib/site/seo-pass.ts`), breadcrumbs (visible and BreadcrumbList), and the Dentist schema with the page's own `areaServed`. They are in the sitemap and `/llms.txt`.
-- **Publishing:** until the CMS has them, the site serves these pages from the built-in copy (`lib/site/data.ts`: a page the CMS lacks, or has only as an empty page like `/locations/` was, comes from `content/seed.json`). To make them editable in /cms: `npm run seed -- --only=page-868,page-location-tysons,page-location-vienna,page-location-falls-church,page-location-great-falls,page-location-potomac` (plain `npm run seed` would not replace the empty `/locations/` page already in the CMS). After that, edit them in /cms; re-running `npm run locations` only changes `content/seed.json`.
+- **Publishing:** until the CMS has them, the site serves these pages from the built-in copy (`lib/site/data.ts`: a page the CMS lacks, or has only as an empty page like `/locations/` and `/locations/mclean/` were, comes from `content/seed.json`). To make them editable in /cms: `npm run seed -- --only=page-868,page-931,page-location-tysons,page-location-vienna,page-location-falls-church,page-location-great-falls,page-location-potomac` (plain `npm run seed` would not replace the empty `/locations/` and `/locations/mclean/` pages already in the CMS). After that, edit them in /cms; re-running `npm run locations` only changes `content/seed.json`.
 - **Not done here (CMS edits):** a "Locations" item in the header menu or footer linking to `/locations/`.
 
 ## Redirects
@@ -145,4 +145,4 @@ Order: `extract` → `verify` (must be identical) → `fixes` → `verify --fixe
 ## Notes from the review
 
 - The site has no blog posts (WordPress had none published), so there is no blog index; the category and author archives are kept at their URLs.
-- `/locations/mclean/` is a blank page on the live site; it is kept (it is a parent in the URL structure) but not indexed. `/locations/` is now the areas-served page (see Location pages).
+- `/locations/` and `/locations/mclean/` were blank on the WordPress site; they are now the areas-served page and the McLean office page (see Location pages).

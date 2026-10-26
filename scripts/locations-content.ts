@@ -60,7 +60,6 @@ const wide = {
   tiana: "/wp-content/uploads/2026/08/IMG_1980-1-1024x768.jpeg",
   fozia: "/wp-content/uploads/2026/08/Fosia-2-1024x768.jpg",
   fozia2: "/wp-content/uploads/2026/07/Fosia-1024x768.jpg",
-  adili: "/wp-content/uploads/2026/05/f27652e6-1b34-4494-a431-a20933a947bc-scaled.png",
 };
 
 const link = (href: string, label: string) => `<a href="${href}">${label}</a>`;
@@ -93,7 +92,7 @@ const TOWN_LINKS: [string, string][] = [
   ["potomac", "Potomac, MD"],
 ];
 const others = (slug: string) =>
-  `<p>Also served from our McLean office: ${TOWN_LINKS.filter(([s]) => s !== slug)
+  `<p>Our office: ${link("/locations/mclean/", "Ideal Dental Solutions in McLean")}. Also served from it: ${TOWN_LINKS.filter(([s]) => s !== slug)
     .map(([s, n]) => link(`/locations/${s}/`, n))
     .join(", ")}. See ${link("/locations/", "all areas we serve")}.</p>`;
 
@@ -133,8 +132,9 @@ export const HUB: Page = {
     },
     {
       kind: "text",
-      heading: "Towns Our Patients Come From",
+      heading: "Our Office and the Towns Our Patients Come From",
       html: `<ul>
+<li>${link("/locations/mclean/", "McLean")}: our office, with its hours, team and services.</li>
 <li>${link("/locations/tysons/", "Tysons")}: our office is in Tysons, about 1 mile from Tysons Corner Center.</li>
 <li>${link("/locations/vienna/", "Vienna")}: about 2.8 miles from the Town of Vienna's center, usually 7 to 12 minutes by car on Maple Avenue and Chain Bridge Road (Route 123).</li>
 <li>${link("/locations/falls-church/", "Falls Church")}: about 4.6 miles from Falls Church City Hall, usually 12 to 18 minutes on Broad Street and Leesburg Pike (Route 7).</li>
@@ -153,7 +153,94 @@ export const HUB: Page = {
     { q: "How do I book a visit?", a: `Call ${PHONE} or ${BOOK}.` },
   ],
   cta: { heading: "Book Your Visit", html: `<p>Call ${PHONE} or ${BOOK}. Hours: ${HOURS}.</p>`, photo: wide.tiana },
-  ogPhoto: wide.adili,
+  ogPhoto: wide.kaveh,
+  date: DATE,
+};
+
+/* ---------------- McLean (the office) ---------------- */
+
+const MCLEAN_SERVICES = [
+  ["/locations/mclean/preventive-dentistry/", "Preventive dentistry"],
+  ["/locations/mclean/restorative-dentistry/", "Restorative dentistry"],
+  ["/dental-fillings-in-mclean-va/", "Dental fillings"],
+  ["/dental-bridges-in-mclean-va/", "Dental bridges"],
+  ["/locations/mclean/root-canal-therapy/", "Root canal therapy"],
+  ["/locations/mclean/periodontal-dentistry/", "Periodontal dentistry"],
+  ["/locations/mclean/gum-disease-treatment/", "Gum disease treatment"],
+  ["/locations/mclean/gum-graft-surgery/", "Gum graft surgery"],
+  ["/locations/mclean/dental-implant-dentistry/", "Dental implants"],
+  ["/locations/mclean/single-tooth-implants/", "Single tooth implants"],
+  ["/locations/mclean/full-arch-implants/", "Full arch implants"],
+  ["/locations/mclean/invisalign/", "Invisalign"],
+  ["/locations/mclean/porcelain-dental-veneers/", "Porcelain veneers"],
+  ["/locations/mclean/teeth-whitening/", "Teeth whitening"],
+  ["/locations/mclean/tmj-tmd-treatments/", "TMJ/TMD treatment"],
+];
+
+const MAP = "https://www.google.com/maps/search/?api=1&query=8280+Greensboro+Drive+Unit+105+McLean+VA+22102";
+
+export const MCLEAN_PAGE: Page = {
+  title: "Dentist in McLean, VA | Ideal Dental Solutions",
+  description: "Ideal Dental Solutions, 8280 Greensboro Drive, Unit 105, McLean, VA 22102: hours, directions, our dentists and hygienists, and the dental care we provide.",
+  h1: "Your Dentist in McLean, VA",
+  subtitle: "8280 Greensboro Drive, Unit 105, near Greensboro Metro",
+  answer: `<p>Ideal Dental Solutions is at ${ADDRESS}, our only office. Hours: ${HOURS}. ${METRO}. Call ${PHONE} or ${BOOK}.</p>`,
+  sections: [
+    {
+      kind: "text",
+      heading: "Visit Our Office",
+      html: `<ul>
+<li>Address: ${ADDRESS} (${link(MAP, "open in Google Maps")}). The address is in McLean, and the building is in Tysons, Fairfax County.</li>
+<li>By Metro: ${METRO}.</li>
+<li>By car: from the Capital Beltway (I-495), take the Chain Bridge Road (Route 123) or Leesburg Pike (Route 7) exits into Tysons, then turn onto Greensboro Drive.</li>
+<li>Hours: ${HOURS}.</li>
+<li>Phone: ${PHONE}. Call us if you need directions on the day of your visit.</li>
+</ul>`,
+    },
+    {
+      kind: "accordion",
+      heading: "Meet Our McLean Team",
+      intro: "Three dentists and a team of dental hygienists see every patient at this office.",
+      photo: photos.adili,
+      items: [
+        { title: "Dr. Mehdi S. Adili, DDS", text: "Our principal dentist and a prosthodontist. He earned his DDS at Georgetown University. His focus includes dental implants, bridges, dentures, crowns and full-mouth restoration." },
+        { title: "Dr. Saman Sepahi, DDS", text: "He received his DDS in 2008 from the Karolinska Institute in Stockholm, Sweden, and helped start the organization Dentists Without Borders." },
+        { title: "Dr. Dilnoza Hojaeva, DDS", text: "She earned her DDS through the Advanced Standing Program for Internationally Trained Dentists at the Virginia Commonwealth University School of Dentistry." },
+        { title: "Fozia Mohamed, RDH", text: "Dental hygienist. She graduated from Pacific University Oregon in 2012 with a bachelor's degree in Dental Health Science." },
+        { title: "Kaveh Sanatjou, RDH", text: "Dental hygienist. He graduated from Northern Virginia Community College in 2000 with an AAS in Dental Hygiene." },
+        { title: "Tiana Norris, RDH", text: "Dental hygienist. She graduated from Northern Virginia Community College with an AAS in Dental Hygiene." },
+      ],
+      link: `<p style="color: #ffffff; font-size: 18px; font-weight: bold; text-decoration: underline;"><a href="/about-us/">More about our team</a></p>`,
+    },
+    {
+      kind: "text",
+      heading: "Dental Care at Our McLean Office",
+      html: `<ul>
+${MCLEAN_SERVICES.map(([href, label]) => `<li>${link(href, label)}</li>`).join("\n")}
+</ul>
+<p>We also provide ${S.checkups}, ${S.cleaning}, ${S.sealants}, ${S.bonding}, ${S.dentures}, ${S.nightGuards} and ${link("/services/restorative-dentistry/tooth-extractions/", "tooth extractions")}. See ${S.all} and our ${link("/before-after/", "before and after photos")}.</p>`,
+    },
+    {
+      kind: "text",
+      heading: "Local Dental Health Facts for McLean",
+      html: `<p>McLean is an unincorporated community in Fairfax County with 50,773 residents in the 2020 Census.</p>
+<p>Public water in McLean comes from Fairfax Water, which in 2014 also took over the City of Falls Church's water system and its customers in the McLean area. ${FAIRFAX_WATER_FLUORIDE}</p>
+<p>Low-cost and public dental care in Fairfax County:</p>
+${FAIRFAX_RESOURCES}
+<p>Patients also come to us from ${TOWN_LINKS.map(([s, n]) => link(`/locations/${s}/`, n)).join(", ")}. See ${link("/locations/", "all areas we serve")}.</p>`,
+    },
+  ],
+  faqHeading: "Frequently Asked Questions About Our McLean Office",
+  faqIntro: "Quick answers before your visit.",
+  faqs: [
+    { q: "Where is Ideal Dental Solutions?", a: `At ${ADDRESS}, in Tysons. It is our only office.` },
+    { q: "What are your hours?", a: `${HOURS}.` },
+    { q: "Can I get there by Metro?", a: `Yes. ${METRO}.` },
+    { q: "Which insurance plans do you work with?", a: `Plans we work with include Aetna, Ameritas, Anthem, CareFirst, Cigna, Delta Dental, GEHA, Guardian, Humana, Lincoln, MetLife, Principal, United Concordia and UnitedHealthcare. Call ${PHONE} to confirm your plan before your visit.` },
+    { q: "How do I book an appointment?", a: `Call ${PHONE} or ${BOOK}.` },
+  ],
+  cta: cta("McLean", wide.tiana),
+  ogPhoto: wide.kaveh,
   date: DATE,
 };
 
@@ -226,7 +313,7 @@ ${others("tysons")}`,
       { q: "Do you treat receding gums?", a: `Yes. We evaluate gum recession and provide ${S.gumGraft} and ${S.gumDisease} when they are needed.` },
       { q: "Is the water in Tysons fluoridated?", a: `Yes. Fairfax Water adds fluoride; its plants measured about 0.6 parts per million in 2025, near the CDC's recommended 0.7 mg/L.` },
     ],
-    cta: cta("Tysons", wide.kaveh),
+    cta: cta("Tysons", wide.fozia),
     ogPhoto: wide.kaveh,
     date: DATE,
   },
@@ -429,7 +516,7 @@ ${others("great-falls")}`,
       { q: "Which way is quickest from Great Falls?", a: `Usually Walker Road, Colvin Run Road and Leesburg Pike (Route 7), or Georgetown Pike (Route 193) to Route 123. Both take about 14 to 22 minutes outside rush hour.` },
       { q: "Do you place dental implants?", a: `Yes. Dr. Mehdi S. Adili, DDS, a prosthodontist, plans and restores ${S.implants} at our McLean office.` },
     ],
-    cta: cta("Great Falls", wide.kaveh),
+    cta: cta("Great Falls", wide.fozia2),
     ogPhoto: wide.tiana,
     date: DATE,
   },
@@ -501,7 +588,7 @@ ${others("potomac")}`,
       { q: "Can I use my dental insurance from Maryland?", a: `Plans differ on where you can be seen. Call ${PHONE} with your plan details and we will check your coverage before your visit.` },
     ],
     cta: cta("Potomac", wide.fozia),
-    ogPhoto: wide.adili,
+    ogPhoto: wide.fozia2,
     date: DATE,
   },
 ];
