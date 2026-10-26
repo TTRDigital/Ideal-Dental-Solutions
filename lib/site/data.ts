@@ -70,13 +70,19 @@ export async function resolve(rawPath: string, fromCms: boolean): Promise<Resolv
 
 /** Every routed path, for static generation and the sitemaps. */
 export async function allPaths(fromCms: boolean): Promise<{ path: string; type: string; modified?: string; noindex?: boolean }[]> {
-  const q = `*[_type in ["page", "archivePage"] && defined(path)]{path, _type, "modified": coalesce(modified, seo.modifiedTime, _updatedAt), "robots": seo.robots}`;
+  const q = `*[_type in ["page", "archivePage"] && defined(path)]{path, _type, "modified": coalesce(modified, seo.modifiedTime, _updatedAt), "robots": seo.robots, "canonical": seo.canonical}`;
+  type Row = { path: string; _type: string; modified?: string; robots?: string; canonical?: string };
   const rows = fromCms
-    ? (await sanity<{ path: string; _type: string; modified?: string; robots?: string }[]>(q)) || []
+    ? (await sanity<Row[]>(q)) || []
     : seed()
         .filter((d) => ["page", "archivePage"].includes(d._type) && d.path)
-        .map((d) => ({ path: d.path as string, _type: d._type, modified: (d.modified as string) || (d.seo as { modifiedTime?: string })?.modifiedTime, robots: (d.seo as { robots?: string })?.robots }));
-  return rows.map((r) => ({ path: r.path, type: r._type, modified: r.modified, noindex: /noindex/.test(r.robots || "") }));
+        .map((d) => {
+          const seo = (d.seo || {}) as { modifiedTime?: string; robots?: string; canonical?: string };
+          return { path: d.path as string, _type: d._type, modified: (d.modified as string) || seo.modifiedTime, robots: seo.robots, canonical: seo.canonical };
+        });
+  // Pages whose canonical is another page stay out of the sitemap too.
+  const elsewhere = (r: Row) => Boolean(r.canonical) && new URL(r.canonical!, "https://idealdentalsolutions.com").pathname !== r.path;
+  return rows.map((r) => ({ path: r.path, type: r._type, modified: r.modified, noindex: /noindex/.test(r.robots || "") || elsewhere(r) }));
 }
 
 /** Site search (?s=): the results page, or null when `page` is past the last one. */
