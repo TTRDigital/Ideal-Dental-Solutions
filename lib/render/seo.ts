@@ -45,13 +45,8 @@ export function upgradeSchema(schema: string | undefined, business?: string): st
     const biz = JSON.parse(business) as Node;
     const graph = (json["@graph"] || []).map((node) => {
       if (node["@type"] !== "Organization") return node;
-      const out: Node = { ...node, ...biz, "@id": node["@id"] };
-      // A page may name the areas it is about (location pages): those first, then the practice's own list.
-      if (Array.isArray(node.areaServed) && Array.isArray(biz.areaServed)) {
-        const names = new Set((node.areaServed as Node[]).map((a) => a.name));
-        out.areaServed = [...(node.areaServed as Node[]), ...(biz.areaServed as Node[]).filter((a) => !names.has(a.name))];
-      }
-      return out;
+      // A page may name the areas it is about (location pages): its own list replaces the practice's.
+      return { ...node, ...biz, "@id": node["@id"], ...(Array.isArray(node.areaServed) ? { areaServed: node.areaServed } : {}) };
     });
     return JSON.stringify({ ...json, "@graph": graph });
   } catch {

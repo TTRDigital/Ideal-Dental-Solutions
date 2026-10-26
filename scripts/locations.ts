@@ -15,7 +15,7 @@ import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { join } from "node:path";
 import sharp from "sharp";
-import { HUB, TOWNS, type Faq, type Page, type Town } from "./locations-content.ts";
+import { HUB, MCLEAN, TOWNS, type Faq, type Page, type Town } from "./locations-content.ts";
 
 type Node = Record<string, unknown> & { _key?: string; elId?: string; children?: Node[]; items?: Node[]; content?: Node[] };
 type Doc = Record<string, unknown> & { _id: string; _type: string; path?: string };
@@ -182,7 +182,7 @@ function schema(pg: Page, path: string, published: string, modified: string, cru
         inLanguage: "en-US",
         alternateName: "idealdental",
       },
-      // Replaced by the business details from Site settings when rendered (lib/render/seo.ts); areaServed is kept first.
+      // Replaced by the business details from Site settings when rendered (lib/render/seo.ts); the page's areaServed is kept.
       { "@type": "Organization", "@id": `${SITE}/#organization`, name: "Ideal Dental Solutions", url: `${SITE}/`, ...(areaServed ? { areaServed } : {}) },
     ],
   });
@@ -256,7 +256,7 @@ async function build(pg: Page, opts: { id: string; wpId: number; path: string; t
   else docs.splice(docs.findIndex((d) => d.path === "/locations/mclean/") + 1 + TOWNS.findIndex((t) => opts.path.includes(`/${t.slug}/`)), 0, doc);
 }
 
-await build(HUB, { id: "page-868", wpId: 868, path: "/locations/", title: "Areas We Serve", crumbs: [["Home", "/"], ["Locations"]], ancestors: [] });
+await build(HUB, { id: "page-868", wpId: 868, path: "/locations/", title: "Areas We Serve", crumbs: [["Home", "/"], ["Locations"]], ancestors: [], areaServed: [MCLEAN, ...TOWNS.map((t) => t.place)] });
 for (const [i, t] of TOWNS.entries()) {
   await build(t, {
     id: `page-location-${t.slug}`,

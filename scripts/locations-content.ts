@@ -31,5 +31,8 @@ export type Page = {
 
 export type Town = Page & { slug: string; name: string; place: Record<string, unknown> };
 
+/** The office's own town, named in the hub's areaServed. */
+export const MCLEAN = { "@type": "City", name: "McLean, VA", containedInPlace: { "@type": "AdministrativeArea", name: "Fairfax County, VA" } };
+
 export const HUB = {} as Page;
 export const TOWNS: Town[] = [];
