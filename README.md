@@ -42,7 +42,7 @@ Every page is rendered as WordPress printed it, then sped up on the way out (the
 - **One stylesheet per page:** the 20 or so theme and Elementor stylesheets of a page are replaced by one file with only the rules the page uses (`public/assets/page-css/`, built by `npm run optimize` from the content). Fail-safe: if the page uses a class or id whose rules were left out (for example a new kind of block added in /cms), it gets its original stylesheets back, so nothing can lose its styling. Re-run `npm run optimize` after layout changes in the CMS to get the small file back.
 - **Images:** WebP copies of every uploaded PNG/JPEG next to the original (`<file>.webp`, plus `<file>-768w.webp` for phones; `npm run images`). 112 MB of uploads became 6.3 MB. Every image gets its width and height (no layout shift) and loads lazily below the first section. Images with an empty alt get a default one (the title next to the icon, or the page's H1).
 - **Fonts:** Urbanist is served from this site (`public/assets/fonts`, OFL) and preloaded, instead of two Google Fonts stylesheets.
-- **Scripts:** jQuery loads with the footer scripts instead of in the head. The hero's YouTube background video plays on desktop only; phones show its background image.
+- **Scripts:** jQuery loads with the footer scripts instead of in the head.
 - **Tracking:** the TTR tracker (`data-site` H1QeRbEKxfQo2axph4VByw) and Google Analytics 4 (G-55S3P7PW3V) on every page, including search results and the 404 page.
 - **/llms.txt:** the practice and its pages (titles and descriptions from the CMS), for AI assistants.
 

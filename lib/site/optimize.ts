@@ -7,6 +7,7 @@ import pageCssJson from "../generated/page-css.json" with { type: "json" };
  * migration check (scripts/verify.ts) are unchanged:
  *
  * - tracking: the TTR tracker and Google Analytics 4 on every page
+ * - no sideways scrolling: html clips horizontal overflow
  * - stylesheets: the page's theme and Elementor stylesheets are replaced by
  *   one stylesheet holding only the rules the page uses (npm run optimize,
  *   lib/generated/page-css.json). Fail-safe: when the page uses a class or id
@@ -19,8 +20,6 @@ import pageCssJson from "../generated/page-css.json" with { type: "json" };
  *   first section; images printed with an empty alt get one (defaultAlt)
  * - scripts: jQuery moves from the head to the footer scripts (nothing above
  *   them uses it), so it no longer blocks the first paint
- * - the hero's YouTube background video plays on desktop only; phones show
- *   its background image (Elementor's own fallback)
  */
 
 export const GA4_ID = "G-55S3P7PW3V";
@@ -31,6 +30,9 @@ const images = imagesJson as unknown as Record<string, [number, number, number, 
 
 type CssBundle = { file: string; dropped: string };
 const pageCss = pageCssJson as { dictionary: string[]; bundles: Record<string, CssBundle> };
+
+/** Nothing may widen the page sideways (the hero's video frame is wider than a phone). `clip` keeps the sticky header working. */
+const GUARD = "<style id=\"overflow-guard\">html{overflow-x:clip}</style>";
 
 const TRACKING = [
   `<script async src="https://ttr-portal.vercel.app/api/site/script" data-site="${TTR_SITE_ID}"></script>`,
@@ -192,6 +194,12 @@ function imagesPass(html: string) {
   let out = html.replace(/<img\s[^>]*>/g, (tag, offset: number) => imageTag(tag, main >= 0 && offset > main && (firstSectionEnd < 0 || offset > firstSectionEnd)));
   // Background images in inline styles and Elementor settings.
   out = out.replace(/(url\(\s*(?:&quot;|['"])?)(\/wp-content\/uploads\/[^"')&]+?\.(?:png|jpe?g))/gi, (_m, pre: string, url: string) => `${pre}${webp(url)}`);
+  // Background slideshows: image URLs in Elementor's settings JSON (escaped slashes).
+  out = out.replace(/\\\/wp-content\\\/uploads\\\/[^"&]+?\.(?:png|jpe?g)(?=&quot;)/gi, (url) => webp(url.replace(/\\\//g, "/")).replace(/\//g, "\\/"));
+  // A slideshow at the top of the page is drawn by script: fetch its first image right away.
+  const hero = main >= 0 ? /<div class="[^"]*\be-parent\b[^"]*"[^>]*data-settings="([^"]*)"/.exec(out.slice(main)) : null;
+  const slide = hero && /background_slideshow_gallery&quot;:\[\{[^\]]*?&quot;url&quot;:&quot;([^&]+)&quot;/.exec(hero[1]);
+  if (slide) out = out.replace("</head>", `<link rel="preload" as="image" href="${slide[1].replace(/\\\//g, "/")}" fetchpriority="high">\n</head>`);
   return out;
 }
 
@@ -212,15 +220,11 @@ function scripts(html: string) {
   return out;
 }
 
-function heroVideo(html: string) {
-  return html.replace(/,&quot;background_play_on_mobile&quot;:&quot;yes&quot;/g, "");
-}
-
 function tracking(html: string) {
   if (html.includes(TTR_SITE_ID)) return html;
-  return html.replace("</head>", `${TRACKING}\n</head>`);
+  return html.replace("</head>", `${GUARD}\n${TRACKING}\n</head>`);
 }
 
 export function optimizeHtml(html: string) {
-  return tracking(scripts(heroVideo(defaultAlt(imagesPass(fonts(stylesheets(html)))))));
+  return tracking(scripts(defaultAlt(imagesPass(fonts(stylesheets(html))))));
 }
