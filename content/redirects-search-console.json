@@ -222,5 +222,29 @@
   {
     "source": "/wp-content/uploads/2024/09/porcelain-veneers-image.webp",
     "destination": "/wp-content/uploads/2026/06/smile-makeover-image.webp"
+  },
+  {
+    "source": "/wp-content/uploads/2026/05/f27652e6-1b34-4494-a431-a20933a947bc-scaled.png",
+    "destination": "/wp-content/uploads/2026/07/Edited385-web-1.jpg"
+  },
+  {
+    "source": "/wp-content/uploads/2026/05/f27652e6-1b34-4494-a431-a20933a947bc-scaled.png.webp",
+    "destination": "/wp-content/uploads/2026/07/Edited385-web-1.jpg.webp"
+  },
+  {
+    "source": "/wp-content/uploads/2026/05/f27652e6-1b34-4494-a431-a20933a947bc-scaled.png-768w.webp",
+    "destination": "/wp-content/uploads/2026/07/Edited385-web-1.jpg-768w.webp"
+  },
+  {
+    "source": "/wp-content/uploads/2026/05/8dc0a8ce-a9b3-4e4a-bd09-18ca643740b6-scaled.png",
+    "destination": "/wp-content/uploads/2026/07/Edited385-web-1.jpg"
+  },
+  {
+    "source": "/wp-content/uploads/2026/05/8dc0a8ce-a9b3-4e4a-bd09-18ca643740b6-scaled.png.webp",
+    "destination": "/wp-content/uploads/2026/07/Edited385-web-1.jpg.webp"
+  },
+  {
+    "source": "/wp-content/uploads/2026/05/8dc0a8ce-a9b3-4e4a-bd09-18ca643740b6-scaled.png-768w.webp",
+    "destination": "/wp-content/uploads/2026/07/Edited385-web-1.jpg-768w.webp"
   }
 ]
