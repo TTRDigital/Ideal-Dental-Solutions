@@ -150,6 +150,14 @@ const NOINDEX: Record<string, string | null> = {
   "/category/patient-guides/": null,
   "/category/uncategorized/": null,
 };
+// TTR-895: a second "Preventive Dentistry Services in Northern Virginia" page (same title and H1,
+// about half the same text) competes with /services/preventive-dentistry/ in search. It stays online
+// and indexable, with a canonical to the services page (merging or removing it is the client's call).
+{
+  const seo = (page("/preventive-dentistry-in-northern-virginia/").seo ||= {});
+  seo.canonical = `${SITE}/services/preventive-dentistry/`;
+  seo.ogUrl = `${SITE}/services/preventive-dentistry/`;
+}
 for (const [path, canonical] of Object.entries(NOINDEX)) {
   const seo = (page(path).seo ||= {});
   seo.robots = "noindex, follow";
@@ -158,17 +166,53 @@ for (const [path, canonical] of Object.entries(NOINDEX)) {
 
 /* 6. Title tags: the page's H1 (or topic) and the practice name, not "- idealdental". */
 const SEO_TITLES: Record<string, string> = {
-  "/": "The Art of Exceptional Smiles | Ideal Dental Solutions, McLean VA",
-  "/about-us/": "Northern Virginia’s Most Trusted Dental Team | Ideal Dental Solutions",
   "/about-us-client-draft-2/": "About Us (draft) | Ideal Dental Solutions",
   "/appointment/": "Call to Schedule an Appointment | Ideal Dental Solutions",
-  "/before-after/": "Before & After Smiles: A Gentle, Conservative Approach",
-  "/dr-mehdi-adili/": "Dr. Mehdi S. Adili, DDS | Prosthodontist at Ideal Dental Solutions",
   "/locations/": "Locations | Ideal Dental Solutions",
   "/locations/mclean/": "McLean, VA | Ideal Dental Solutions",
   "/thank-you/": "Thank You | Ideal Dental Solutions",
   "/category/patient-guides/": "Patient Guides | Ideal Dental Solutions",
   "/category/uncategorized/": "Uncategorized | Ideal Dental Solutions",
+  // TTR-895: every title 60 characters or less (Google cuts longer ones) and unique.
+  "/": "Ideal Dental Solutions | Dentist in McLean & Tysons, VA",
+  "/about-us/": "About Dr. Saman Sepahi & Our Team | Ideal Dental Solutions",
+  "/before-after/": "Before & After Smile Gallery | Ideal Dental Solutions",
+  "/dr-mehdi-adili/": "Dr. Mehdi Adili, DDS, Prosthodontist | Ideal Dental",
+  "/services/": "Our Dental Services | Ideal Dental Solutions, McLean VA",
+  "/services/restorative-dentistry/": "Restorative Dentistry, Northern VA | Ideal Dental Solutions",
+  "/services/restorative-dentistry/tooth-extractions/": "Tooth Extractions in Northern VA | Ideal Dental Solutions",
+  "/services/restorative-dentistry/tmj-tmd-treatments/": "TMJ & TMD Treatment in Northern VA | Ideal Dental Solutions",
+  "/services/restorative-dentistry/root-canal-therapy/": "Root Canal Therapy in Northern VA | Ideal Dental Solutions",
+  "/services/restorative-dentistry/dentures/": "Dentures in Northern VA | Ideal Dental Solutions",
+  "/services/restorative-dentistry/dental-fillings/": "Dental Fillings in Northern VA | Ideal Dental Solutions",
+  "/services/restorative-dentistry/dental-bridges/": "Dental Bridges in Northern VA | Ideal Dental Solutions",
+  "/services/preventive-dentistry/": "Preventive Dentistry in Northern VA | Ideal Dental Solutions",
+  "/preventive-dentistry-in-northern-virginia/": "Preventive Dental Care in Northern Virginia | Ideal Dental",
+  "/services/preventive-dentistry/teeth-cleaning/": "Teeth Cleaning in Northern VA | Ideal Dental Solutions",
+  "/services/preventive-dentistry/dental-sealants/": "Dental Sealants in Northern VA | Ideal Dental Solutions",
+  "/services/preventive-dentistry/checkups-exams/": "Checkups & Exams in Northern VA | Ideal Dental Solutions",
+  "/services/periodontic-dentistry/": "Periodontics in Northern VA | Ideal Dental Solutions",
+  "/services/periodontic-dentistry/gum-graft-surgery/": "Gum Graft Surgery in Northern VA | Ideal Dental Solutions",
+  "/services/periodontic-dentistry/gum-disease-treatment/": "Gum Disease Treatment, Northern VA | Ideal Dental Solutions",
+  "/services/periodontic-dentistry/crown-lengthening/": "Crown Lengthening in Northern VA | Ideal Dental Solutions",
+  "/services/dental-implants-dentistry/": "Dental Implants in Northern VA | Ideal Dental Solutions",
+  "/services/dental-implants-dentistry/full-arch-implants/": "Full Arch Implants in Northern VA | Ideal Dental Solutions",
+  "/services/dental-implants-dentistry/single-tooth-implants/": "Single Tooth Implants, Northern VA | Ideal Dental Solutions",
+  "/services/cosmetic-dentistry/": "Cosmetic Dentistry in Northern VA | Ideal Dental Solutions",
+  "/services/cosmetic-dentistry/porcelain-veneers/": "Porcelain Veneers in Northern VA | Ideal Dental Solutions",
+  "/locations/night-guards/": "Custom Night Guards in Northern VA | Ideal Dental Solutions",
+  "/locations/mclean/tmj-tmd-treatments/": "TMJ & TMD Treatment in McLean, VA | Ideal Dental Solutions",
+  "/locations/mclean/single-tooth-implants/": "Single Tooth Implants in McLean, VA | Ideal Dental Solutions",
+  "/locations/mclean/root-canal-therapy/": "Root Canal Therapy in McLean, VA | Ideal Dental Solutions",
+  "/locations/mclean/preventive-dentistry/": "Preventive Dentistry in McLean, VA | Ideal Dental Solutions",
+  "/locations/mclean/porcelain-dental-veneers/": "Porcelain Veneers in McLean, VA | Ideal Dental Solutions",
+  "/locations/mclean/periodontal-dentistry/": "Periodontics in McLean, VA | Ideal Dental Solutions",
+  "/locations/mclean/gum-graft-surgery/": "Gum Graft Surgery in McLean, VA | Ideal Dental Solutions",
+  "/locations/mclean/gum-disease-treatment/": "Gum Disease Treatment in McLean, VA | Ideal Dental Solutions",
+  "/locations/mclean/full-arch-implants/": "Full Arch Implants in McLean, VA | Ideal Dental Solutions",
+  "/locations/mclean/dental-implant-dentistry/": "Dental Implants in McLean, VA | Ideal Dental Solutions",
+  "/dental-fillings-in-mclean-va/": "Dental Fillings in McLean, VA | Ideal Dental Solutions",
+  "/dental-bridges-in-mclean-va/": "Dental Bridges in McLean, VA | Ideal Dental Solutions",
 };
 for (const d of docs.filter((x) => ["page", "archivePage", "notFoundPage"].includes(x._type))) {
   const seo = (d.seo ||= {});
@@ -181,7 +225,18 @@ for (const d of docs.filter((x) => ["page", "archivePage", "notFoundPage"].inclu
   if (!title) title = String(seo.title || "").replace(/ - idealdental$/, ` | ${BRAND}`);
   seo.title = title;
   seo.ogTitle = title;
+  if (seo.twitterTitle) seo.twitterTitle = title;
   seo.ogSiteName = BRAND;
+}
+{
+  const indexable = docs.filter((d) => d.path && d._type === "page" && !/noindex/.test(String(d.seo?.robots)));
+  const seen = new Map<string, string>();
+  for (const d of indexable) {
+    const t = String(d.seo!.title);
+    if (t.length > 60) throw new Error(`Title over 60 characters on ${d.path}: ${t}`);
+    if (seen.has(t)) throw new Error(`Same title on ${seen.get(t)} and ${d.path}`);
+    seen.set(t, d.path!);
+  }
 }
 // Search results: "You searched for {q} | Ideal Dental Solutions".
 {
@@ -318,6 +373,92 @@ for (const d of docs) {
     }
   });
 }
+
+/* 8b. Internal links (TTR-895): 20 pages had no link from any other page. */
+// Each Northern Virginia service page and its McLean page link to each other, with the
+// location in the link text, so search engines can tell which page answers which search.
+const TWINS: [string, string, string][] = [
+  ["/services/restorative-dentistry/", "/locations/mclean/restorative-dentistry/", "restorative dentistry"],
+  ["/services/restorative-dentistry/root-canal-therapy/", "/locations/mclean/root-canal-therapy/", "root canal therapy"],
+  ["/services/restorative-dentistry/tmj-tmd-treatments/", "/locations/mclean/tmj-tmd-treatments/", "TMJ and TMD treatment"],
+  ["/services/restorative-dentistry/dental-fillings/", "/dental-fillings-in-mclean-va/", "dental fillings"],
+  ["/services/restorative-dentistry/dental-bridges/", "/dental-bridges-in-mclean-va/", "dental bridges"],
+  ["/services/preventive-dentistry/", "/locations/mclean/preventive-dentistry/", "preventive dentistry"],
+  ["/services/periodontic-dentistry/", "/locations/mclean/periodontal-dentistry/", "periodontics"],
+  ["/services/periodontic-dentistry/gum-graft-surgery/", "/locations/mclean/gum-graft-surgery/", "gum graft surgery"],
+  ["/services/periodontic-dentistry/gum-disease-treatment/", "/locations/mclean/gum-disease-treatment/", "gum disease treatment"],
+  ["/services/dental-implants-dentistry/", "/locations/mclean/dental-implant-dentistry/", "dental implants"],
+  ["/services/dental-implants-dentistry/full-arch-implants/", "/locations/mclean/full-arch-implants/", "full arch implants"],
+  ["/services/dental-implants-dentistry/single-tooth-implants/", "/locations/mclean/single-tooth-implants/", "single tooth implants"],
+  ["/services/cosmetic-dentistry/teeth-whitening/", "/locations/mclean/teeth-whitening/", "teeth whitening"],
+  ["/services/cosmetic-dentistry/invisalign/", "/locations/mclean/invisalign/", "Invisalign®"],
+  ["/services/cosmetic-dentistry/porcelain-veneers/", "/locations/mclean/porcelain-dental-veneers/", "porcelain veneers"],
+];
+const LINK_STYLE = "color:#ffffff;text-decoration:underline;";
+/** Adds a line with a link under the intro text at the top of the page (once). */
+function heroLink(path: string, html: string) {
+  let done = false;
+  walk(page(path).content, (n) => {
+    if (done || n._type !== "elText") return;
+    const blocks = n.body as { _type: string; html?: string }[];
+    const block = blocks?.find((b) => b._type === "htmlBlock" && /^<p style="color:\s*#ffffff;/.test(b.html || ""));
+    if (!block) return;
+    done = true;
+    if (block.html!.includes('data-link="twin"')) block.html = block.html!.replace(/<p [^>]*data-link="twin"[^>]*>[\s\S]*?<\/p>$/, "");
+    const style = /^<p style="([^"]*)"/.exec(block.html!)![1];
+    block.html += `<p style="${style}margin-top:12px;" data-link="twin">${html}</p>`;
+  });
+  if (!done) throw new Error(`No intro text on ${path}`);
+  log.push(`link ${path}`);
+}
+for (const [nova, mclean, topic] of TWINS) {
+  heroLink(nova, `In McLean? See <a href="${mclean}" style="${LINK_STYLE}">${topic} in McLean, VA</a>.`);
+  // The McLean implant pages compete with each other for "dental implants mclean va": point both at the McLean implants page.
+  const hub = /implants\/$/.test(mclean) && !/dental-implant-dentistry/.test(mclean) ? ` See all <a href="/locations/mclean/dental-implant-dentistry/" style="${LINK_STYLE}">dental implants in McLean, VA</a>.` : "";
+  heroLink(mclean, `Serving all of Northern Virginia: <a href="${nova}" style="${LINK_STYLE}">${topic} in Northern VA</a>.${hub}`);
+}
+
+// Menu: "Services" opens the services page (it was "#"), and the two service pages that were in no menu.
+{
+  const header = docs.find((d) => d._type === "siteHeader") as Doc & { items: Node[] };
+  const services = header.items.find((i) => i.label === "Services")!;
+  services.link = "/services/";
+  services.classes = String(services.classes).replace("menu-item-type-custom menu-item-object-custom", "menu-item-type-post_type menu-item-object-page");
+  services.pageId = page("/services/").wpId;
+  const groups = services.children as Node[];
+  const add = (group: string, after: string | null, label: string, path: string, id: number) => {
+    const list = groups.find((g) => g.label === group)!.children as Node[];
+    if (list.some((i) => i.link === path)) return;
+    const like = list[0];
+    const item = {
+      ...like,
+      _key: `ttr${id}`,
+      wpId: id,
+      label,
+      link: path,
+      pageId: page(path).wpId,
+      classes: String(like.classes).replace(/menu-item-\d+$/, `menu-item-${id}`),
+      tpl: String(like.tpl).replace(/menu-item-\d+"/, `menu-item-${id}"`),
+    };
+    const at = after ? list.findIndex((i) => i.link === after) + 1 : list.length;
+    list.splice(at || list.length, 0, item);
+    log.push(`menu ${group} > ${label}`);
+  };
+  add("Restorative Dentistry", "/services/restorative-dentistry/tmj-tmd-treatments/", "Root Canal Therapy", "/services/restorative-dentistry/root-canal-therapy/", 9001);
+  add("Preventive Dentistry", null, "Night Guards", "/locations/night-guards/", 9002);
+}
+
+// About Us: Dr. Adili's name opens his profile.
+walk(page("/about-us/").content, (n) => {
+  if (n._type !== "block" || !Array.isArray(n.children)) return;
+  const spans = n.children as { _type: string; _key?: string; text?: string; marks?: string[] }[];
+  const first = spans[0];
+  if (!first?.text?.startsWith("Dr. Adili, our principal dentist") || first.marks?.includes("ttrAdili")) return;
+  const defs = (n.markDefs ||= []) as Node[];
+  defs.push({ _type: "link", _key: "ttrAdili", href: "/dr-mehdi-adili/" });
+  spans.splice(0, 1, { ...first, _key: `${first._key}a`, text: "Dr. Adili", marks: ["ttrAdili"] }, { ...first, text: first.text.slice("Dr. Adili".length) });
+  log.push("link /about-us/ > /dr-mehdi-adili/");
+});
 
 /* 9. Structured data: Yoast's graph kept; Organization -> Dentist (Site settings > Business schema); no site search action. */
 const SERVICES: [string, string][] = [

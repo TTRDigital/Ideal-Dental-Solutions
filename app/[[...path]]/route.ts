@@ -1,12 +1,14 @@
 import { allPaths, getSite, resolve, REVALIDATE_SECONDS } from "@/lib/site/data";
 import { feedXml, sitemapIndex, sitemapXml } from "@/lib/site/sitemaps";
 import { guessRedirect } from "@/lib/site/guess";
+import { optimizeHtml } from "@/lib/site/optimize";
 import { renderDocument } from "@/lib/site/render";
 import { dataset, projectId } from "@/sanity/env";
 
 /**
  * The whole public site: every URL is rendered from the CMS into the same
- * HTML the WordPress site printed (see lib/site/render.ts). Pages are
+ * HTML the WordPress site printed (see lib/site/render.ts), then sped up
+ * and tagged for tracking (lib/site/optimize.ts). Pages are
  * static and refresh every 5 minutes or right after publishing.
  */
 
@@ -45,7 +47,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ path?: string[
     const target = guessRedirect(path, await allPaths(site.fromCms));
     if (target) return new Response(null, { status: 301, headers: { Location: target } });
   }
-  const html = renderDocument(resolved, site.data, path, { projectId, dataset, origin, recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY?.trim() || "" });
+  const html = optimizeHtml(renderDocument(resolved, site.data, path, { projectId, dataset, origin, recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY?.trim() || "" }));
   return new Response(html, {
     status: resolved.kind === "notFound" ? 404 : 200,
     headers: {
