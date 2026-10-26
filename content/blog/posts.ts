@@ -18,8 +18,12 @@ export type BlogPost = {
   modified?: string;
   /** The matching service page */
   service: { path: string; label: string };
-  /** Optional existing site image (no stock photos of patients) */
-  image?: { src: string; width: number; height: number; alt: string; caption?: string };
+  /** Blog category (list grouping and pill), see lib/site/blog.ts */
+  category: "implants" | "cosmetic" | "gums" | "restorative";
+  /** Hero photo: one of the practice's own photos in public/images/blog/ (no stock photos of patients) */
+  photo: "model" | "scan" | "team-kaveh" | "team-fozia";
+  /** "At a glance" card under the short answer (icons: clock, calendar, shield, scan, layers, tooth, implant, smile) */
+  facts?: { icon: string; label: string; value: string }[];
   /** Short answer at the top (HTML) */
   answer: string;
   sections: { heading: string; html: string }[];
@@ -38,6 +42,14 @@ export const posts: BlogPost[] = [
     description: "Common cosmetic dentistry questions answered: treatments, how long results last, insurance, whitening, bonding vs. veneers and what to expect. McLean, VA.",
     published: "2026-10-26",
     service: { path: "/services/cosmetic-dentistry/", label: "Cosmetic dentistry" },
+    category: "cosmetic",
+    photo: "model",
+    facts: [
+      { icon: "smile", label: "Whitening lasts", value: "Six months to three years" },
+      { icon: "layers", label: "Bonding lasts", value: "Three to 10 years" },
+      { icon: "shield", label: "Veneers last", value: "10 to 15 years on average" },
+      { icon: "calendar", label: "Insurance", value: "Usually not for cosmetic-only work" },
+    ],
     answer: `<p>Cosmetic dentistry covers treatments that improve how your smile looks, such as professional whitening, bonding, porcelain veneers and clear aligners. Results last anywhere from several months (whitening) to many years (veneers), and some treatments, like veneers, cannot be undone. Dental insurance usually does not cover treatments done only for appearance. The right option depends on your teeth, your gums and your goals, so the first step is an exam and an honest conversation about what each treatment can and cannot do.</p>`,
     sections: [
       {
@@ -142,6 +154,14 @@ export const posts: BlogPost[] = [
     description: "The real benefits of cosmetic dentistry, treatment by treatment, plus the trade-offs to weigh first: upkeep, reversibility and insurance. McLean, VA.",
     published: "2026-10-26",
     service: { path: "/services/cosmetic-dentistry/", label: "Cosmetic dentistry" },
+    category: "cosmetic",
+    photo: "team-fozia",
+    facts: [
+      { icon: "clock", label: "Bonding", value: "Often one visit; usually reversible" },
+      { icon: "shield", label: "Veneers", value: "Last longest; cannot be undone" },
+      { icon: "smile", label: "Whitening", value: "Works well on yellow stains" },
+      { icon: "calendar", label: "Insurance", value: "Usually not for cosmetic-only work" },
+    ],
     answer: `<p>Cosmetic dentistry can brighten stained teeth, repair chips and cracks, close small gaps, straighten crooked teeth and replace missing ones, and Cleveland Clinic notes it can help people feel more confident about their smile. Some treatments also improve how your teeth work, not just how they look. The trade-offs are upkeep, cost (insurance usually does not cover purely cosmetic work) and, for some treatments such as veneers, the fact that they cannot be undone.</p>`,
     sections: [
       {
@@ -244,6 +264,14 @@ export const posts: BlogPost[] = [
     description: "How to care for dental implants: healing after surgery, daily cleaning, checkups, warning signs of implant gum problems and when to call. McLean, VA.",
     published: "2026-10-26",
     service: { path: "/services/dental-implants-dentistry/", label: "Dental implants" },
+    category: "implants",
+    photo: "team-kaveh",
+    facts: [
+      { icon: "tooth", label: "Brushing", value: "Twice a day, soft brush" },
+      { icon: "layers", label: "Between teeth", value: "Clean every day" },
+      { icon: "shield", label: "Implant post", value: "Can often last a lifetime" },
+      { icon: "calendar", label: "Checkups", value: "Regular visits catch problems early" },
+    ],
     answer: `<p>Care for a dental implant much like a natural tooth: brush twice a day, clean between your teeth every day and keep up with regular dental checkups. An implant cannot get a cavity, but the gums and bone around it can become inflamed and infected, a problem called peri-implant disease. Not smoking, cleaning carefully around the implant and seeing your dentist regularly are the most important ways to protect it. Call your dentist if the implant feels loose, or if the gum around it bleeds, swells or has pus.</p>`,
     sections: [
       {
@@ -346,13 +374,14 @@ export const posts: BlogPost[] = [
     description: "What drives the cost of dental implants: number of teeth, bone grafts, extractions, the type of restoration, insurance and financing. McLean, VA.",
     published: "2026-10-26",
     service: { path: "/services/dental-implants-dentistry/", label: "Dental implants" },
-    image: {
-      src: "/wp-content/uploads/2026/05/8b88abfc-8705-4c39-a5b3-62533d4ba5be-768x483.png",
-      width: 768,
-      height: 483,
-      alt: "Ideal Dental Solutions team member reviewing a 3D scan of a patient's teeth",
-      caption: "Implant planning starts with an exam and 3D imaging, which shows what your treatment will involve.",
-    },
+    category: "implants",
+    photo: "scan",
+    facts: [
+      { icon: "implant", label: "Full arch", value: "Usually 4 to 6 implants" },
+      { icon: "calendar", label: "Before final teeth", value: "Often 3 to 9 months" },
+      { icon: "layers", label: "Bone graft healing", value: "At least about 3 months" },
+      { icon: "shield", label: "Financing", value: "Cherry and CareCredit" },
+    ],
     answer: `<p>The cost of dental implants depends mostly on how many teeth are being replaced and how, and on whether you need extra steps first, such as removing a tooth or a bone graft. A single implant with a crown is a very different treatment from a full arch of teeth on four to six implants. Insurance coverage for implants varies widely, and some plans exclude them. To get a reliable figure, you need an exam with imaging and a personalized treatment plan that lists every part.</p>`,
     sections: [
       {
