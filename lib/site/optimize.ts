@@ -203,7 +203,14 @@ function scripts(html: string) {
     if (!code.trim()) return tag;
     return `<script defer${attrs} src="data:text/javascript;base64,${Buffer.from(code).toString("base64")}"></script>`;
   });
-  out += `${body.slice(0, at.index)}${tags.map((t) => t.replace("<script ", "<script defer ")).join("\n")}\n${footer}`;
+  // A deferred jQuery sees the page as already read and would run its ready handlers (Elementor's
+  // start-up) as soon as the browser pauses between two scripts, before Elementor Pro's handlers
+  // (carousels) are in. Hold the ready event until the last deferred script has run.
+  const inline = (code: string) => `<script defer src="data:text/javascript;base64,${Buffer.from(code).toString("base64")}"></script>`;
+  const jquery = tags.map((t) => t.replace("<script ", "<script defer ")).join("\n");
+  const lastScript = footer.lastIndexOf("</script>") + "</script>".length;
+  const release = inline("jQuery.holdReady(false);");
+  out += `${body.slice(0, at.index)}${jquery}\n${inline("jQuery.holdReady(true);")}\n${footer.slice(0, lastScript)}\n${release}${footer.slice(lastScript)}`;
   return out;
 }
 
