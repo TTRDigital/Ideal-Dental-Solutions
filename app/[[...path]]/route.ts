@@ -45,6 +45,9 @@ export async function GET(_req: Request, ctx: { params: Promise<{ path?: string[
   const resolved = await resolve(path, site.fromCms);
   if (!resolved) return new Response("Not found", { status: 404 });
   if (resolved.kind === "notFound") {
+    // Old WordPress blog posts (the blog was removed): any address under /blog/ that is not a page goes to the services page.
+    // Real pages under /blog/ are answered above, so new posts are never redirected.
+    if (path.startsWith("/blog/")) return new Response(null, { status: 301, headers: { Location: "/services/" } });
     const target = guessRedirect(path, await allPaths(site.fromCms));
     if (target) return new Response(null, { status: 301, headers: { Location: target } });
   }
