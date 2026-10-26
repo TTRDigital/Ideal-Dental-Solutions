@@ -28,6 +28,16 @@ Applied to the migrated content (idempotent; re-run after every extract):
 - `<html lang="en-US">` and `<meta charset="UTF-8">` (first in the head) on every page, checked by the audit.
 - **Root-relative URLs everywhere:** HTML widgets (e.g. the homepage technology section) and other HTML fields kept absolute `https://idealdentalsolutions.com/wp-content/...` image URLs; they are now root-relative like the rest of the site, so images load from this deployment before and after the domain moves. No absolute site URL is left in any content field (only canonical/Open Graph/schema URLs, which are absolute on purpose).
 
+## Speed (lib/site/optimize.ts)
+
+Every page is rendered as WordPress printed it, then sped up on the way out (the CMS content and `npm run verify` are not affected):
+
+- **One stylesheet per page:** the 20 or so theme and Elementor stylesheets of a page are replaced by one file with only the rules the page uses (`public/assets/page-css/`, built by `npm run optimize` from the content). Fail-safe: if the page uses a class or id whose rules were left out (for example a new kind of block added in /cms), it gets its original stylesheets back. Re-run `npm run optimize` after layout changes in the CMS.
+- **Images:** WebP copies of every uploaded PNG/JPEG next to the original (`<file>.webp`, plus `<file>-768w.webp` for phones; `npm run images`): 112 MB of uploads became 6.3 MB. Every image gets its width and height and loads lazily below the first section. The first section's background (or the first slide of a slideshow) is preloaded, with the phone copy on phones.
+- **Fonts:** Urbanist is served from this site (`public/assets/fonts`, OFL) and preloaded, instead of two Google Fonts stylesheets.
+- **Scripts:** jQuery moves from the head to the footer scripts, and the footer scripts run deferred in the same order (inline ones as deferred `data:` scripts). Google's GA4 script loads on the first scroll, tap or key press, or 10 seconds after the page has loaded.
+- `html{overflow-x:clip}`: nothing can make the page scroll sideways.
+
 ## Redirects
 
 - `content/redirects.json` (loaded by `next.config.ts`, all 301): every redirect the live WordPress site answered when probed with ~3,400 old and alternative URLs (dental service slugs under 15 possible parents, existing slugs under other parents, common practice pages, feeds, `/sitemap.xml`, `/index.php`). 483 path rules, each pointing straight at the final page, all tested on a production build.
@@ -98,6 +108,8 @@ npm run fixes      # apply the review fixes to content/seed.json (after extract)
 npm run seed -- --force  # publish content/seed.json to Sanity
 npm run audit -- https://<site>  # launch checks on a running site
 npm run favicons   # re-render the favicon set from the logo
+npm run images     # WebP copies of new uploads (lib/generated/images.json)
+npm run optimize   # one stylesheet per page (public/assets/page-css, lib/generated/page-css.json)
 ```
 
 ### Migration tools
