@@ -28,6 +28,18 @@ Applied to the migrated content (idempotent; re-run after every extract):
 - `<html lang="en-US">` and `<meta charset="UTF-8">` (first in the head) on every page, checked by the audit.
 - **Root-relative URLs everywhere:** HTML widgets (e.g. the homepage technology section) and other HTML fields kept absolute `https://idealdentalsolutions.com/wp-content/...` image URLs; they are now root-relative like the rest of the site, so images load from this deployment before and after the domain moves. No absolute site URL is left in any content field (only canonical/Open Graph/schema URLs, which are absolute on purpose).
 
+### TTR-900 (Oct 2026): on-page fixes
+
+In scripts/fixes.ts (content):
+- **Titles** are 60 characters or less and unique (26 were longer; two pages shared one).
+- **Internal links:** 20 pages had no link from any other page. Each Northern Virginia service page and its McLean page now link to each other under the intro at the top ("In McLean? See …" / "Serving all of Northern Virginia: …"), with the location in the link text. The two McLean implant pages also link to the McLean dental implants page. The **Services** menu item opens /services/ (it was "#"), Root Canal Therapy and Night Guards are in the menu, and Dr. Adili's name on About Us links to his profile.
+- **Competing pages:** /preventive-dentistry-in-northern-virginia/ (same title and H1 as /services/preventive-dentistry/, about half the same text) has a canonical to /services/preventive-dentistry/. Pages whose canonical is another page are left out of the sitemap. Merging or removing pages is the client's decision. The Search Console list is in `docs/ttr-900/competing-searches.md`.
+- These content changes are in `content/seed.json`; the live CMS gets them with `npm run seed -- --force` (Editor token; done together with the team, after checking nobody has edited in /cms since).
+
+In lib/site/seo-pass.ts (computed from each page, so it follows CMS edits):
+- **FAQ structured data:** accordion items whose title is a question and that have an answer become a FAQPage in the page's JSON-LD (40 pages).
+- **Default alt text** for images printed with an empty alt: the title next to the icon, or the page's H1.
+
 ## Speed (lib/site/optimize.ts)
 
 Every page is rendered as WordPress printed it, then sped up on the way out (the CMS content and `npm run verify` are not affected):
