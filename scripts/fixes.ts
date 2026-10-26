@@ -618,8 +618,8 @@ for (const d of docs.filter((x) => ["page", "archivePage"].includes(x._type) && 
 {
   const left = docs.filter((d) => /arlington|clarendon|528-0800|Tysons Corner \(8280|f27652e6-1b34|8dc0a8ce-a9b3/i.test(JSON.stringify(d)));
   if (left.length) throw new Error(`Arlington or a replaced photo still in ${left.map((d) => d._id).join(", ")}`);
-  const perio = docs.filter((d) => /periodontists/i.test(JSON.stringify(d)));
-  if (perio.length) throw new Error(`Periodontists still mentioned in ${perio.map((d) => d._id).join(", ")}`);
+  const perio = docs.filter((d) => /periodontists|proven expertise in periodontics|decades of combined/i.test(JSON.stringify(d)));
+  if (perio.length) throw new Error(`Unverified gum care claims still in ${perio.map((d) => d._id).join(", ")}`);
 }
 
 writeFileSync(file, JSON.stringify(docs, null, 1));

@@ -14837,7 +14837,7 @@
         "elId": "9d03fcb",
         "_type": "elHeading",
         "widget": "heading",
-        "title": "Our Proven Expertise in Periodontics",
+        "title": "Our Care for Your Gums",
         "tpl": "<div class=\"elementor-element elementor-element-9d03fcb elementor-widget elementor-widget-heading\" data-id=\"9d03fcb\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
        },
        {
@@ -15002,7 +15002,7 @@
         "elId": "84b016f",
         "_type": "elHeading",
         "widget": "heading",
-        "title": "Our Proven Expertise in Periodontics",
+        "title": "Our Care for Your Gums",
         "tpl": "<div class=\"elementor-element elementor-element-84b016f elementor-widget elementor-widget-heading\" data-id=\"84b016f\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
        },
        {
@@ -37500,7 +37500,7 @@
         "elId": "07a4e15",
         "_type": "elHeading",
         "widget": "heading",
-        "title": "Our Proven Expertise in Periodontics",
+        "title": "Our Care for Your Gums",
         "tpl": "<div class=\"elementor-element elementor-element-07a4e15 elementor-widget elementor-widget-heading\" data-id=\"07a4e15\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
        },
        {
@@ -37512,7 +37512,7 @@
          {
           "_type": "htmlBlock",
           "_key": "1d50c9c9b054",
-          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our patients trust us for specialized periodontal care backed by decades of combined experience, advanced technology, and genuine commitment to comfort.</p>"
+          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our patients trust us for specialized periodontal care backed by years of experience, advanced technology, and genuine commitment to comfort.</p>"
          }
         ],
         "tpl": "<div class=\"elementor-element elementor-element-a445321 elementor-widget elementor-widget-text-editor\" data-id=\"a445321\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -37651,7 +37651,7 @@
         "elId": "011df00",
         "_type": "elHeading",
         "widget": "heading",
-        "title": "Our Proven Expertise in Periodontics",
+        "title": "Our Care for Your Gums",
         "tpl": "<div class=\"elementor-element elementor-element-011df00 elementor-widget elementor-widget-heading\" data-id=\"011df00\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
        },
        {
@@ -37663,7 +37663,7 @@
          {
           "_type": "htmlBlock",
           "_key": "a3254ff991ec",
-          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our patients trust us for specialized periodontal care backed by decades of combined experience, advanced technology, and genuine commitment to comfort.</p>"
+          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our patients trust us for specialized periodontal care backed by years of experience, advanced technology, and genuine commitment to comfort.</p>"
          }
         ],
         "tpl": "<div class=\"elementor-element elementor-element-42392eb elementor-widget elementor-widget-text-editor\" data-id=\"42392eb\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
