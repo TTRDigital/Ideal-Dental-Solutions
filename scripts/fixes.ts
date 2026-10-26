@@ -9,6 +9,7 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";
+import { fixText } from "../lib/site/arlington.ts";
 
 type Doc = Record<string, unknown> & { _id: string; _type: string; path?: string; title?: string; seo?: Record<string, unknown> };
 type Node = Record<string, unknown>;
@@ -460,6 +461,16 @@ walk(page("/about-us/").content, (n) => {
   log.push("link /about-us/ > /dr-mehdi-adili/");
 });
 
+/* 8c. The Arlington office was sold and is closed (Kia, Oct 26): McLean is the only office (lib/site/arlington.ts). */
+{
+  const adili = page("/dr-mehdi-adili/");
+  const fix = fixText;
+  walk(adili, (n) => {
+    if (n._type === "span" && typeof n.text === "string") n.text = fix(n.text as string);
+  });
+  if (typeof adili.excerpt === "string") adili.excerpt = fix(adili.excerpt as string);
+}
+
 /* 9. Structured data: Yoast's graph kept; Organization -> Dentist (Site settings > Business schema); no site search action. */
 const SERVICES: [string, string][] = [
   ["Restorative Dentistry", "/services/restorative-dentistry/"],
@@ -505,7 +516,7 @@ const business = {
   ],
   areaServed: [
     { "@type": "AdministrativeArea", name: "Northern Virginia" },
-    ...["McLean", "Tysons Corner", "Vienna", "Falls Church", "Arlington", "Fairfax", "Alexandria"].map((name) => ({ "@type": "City", name: `${name}, VA` })),
+    ...["McLean", "Tysons Corner", "Vienna", "Falls Church", "Fairfax", "Alexandria"].map((name) => ({ "@type": "City", name: `${name}, VA` })),
   ],
   sameAs: ["https://www.facebook.com/IdealDentalSolutions/", "https://www.instagram.com/idealdentalsmiles/"],
   medicalSpecialty: ["Dentistry", "Periodontics", "Prosthodontics"],
@@ -583,6 +594,12 @@ for (const d of docs.filter((x) => ["page", "archivePage"].includes(x._type) && 
     }
     seo.schema = JSON.stringify(g);
   }
+}
+
+// No Arlington office any more: nothing may mention it.
+{
+  const left = docs.filter((d) => /arlington|clarendon|528-0800|Tysons Corner \(8280/i.test(JSON.stringify(d)));
+  if (left.length) throw new Error(`Arlington still mentioned in ${left.map((d) => d._id).join(", ")}`);
 }
 
 writeFileSync(file, JSON.stringify(docs, null, 1));
