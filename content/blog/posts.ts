@@ -43,7 +43,7 @@ export const posts: BlogPost[] = [
       {
         heading: "What is cosmetic dentistry?",
         html: `<p>Cosmetic dentistry is the branch of dentistry focused on improving the appearance of your smile: the color, shape, size and alignment of your teeth. Some treatments are purely cosmetic, like whitening. Others improve both looks and function, like bonding a chipped tooth or replacing a missing tooth with an implant.</p>
-<p>Healthy teeth and gums come first. Cavities and gum disease need to be treated before most cosmetic work, and some treatments, such as veneers, are only an option once those problems are under control.</p>`,
+<p>Healthy teeth and gums come first. Your dentist will check for cavities and gum disease and usually treat them before cosmetic work. Veneers, for example, are only an option once those problems are under control.</p>`,
       },
       {
         heading: "Which cosmetic treatments are available?",
@@ -59,7 +59,7 @@ export const posts: BlogPost[] = [
       },
       {
         heading: "How long do cosmetic results last?",
-        html: `<p>Every treatment wears or changes over time. These are typical ranges from Cleveland Clinic; your own results depend on your habits and how well you care for your teeth.</p>
+        html: `<p>Every treatment wears or changes over time. These are typical ranges from Cleveland Clinic's treatment pages; your own results depend on your habits and how well you care for your teeth.</p>
 <div class="ids-table-wrap"><table class="ids-table">
 <thead><tr><th>Treatment</th><th>Typical lifespan</th><th>Reversible?</th></tr></thead>
 <tbody>
@@ -89,9 +89,9 @@ export const posts: BlogPost[] = [
         html: `<p>You do not need a special diet, but a few habits help your results last:</p>
 <ul>
 <li>Coffee, tea, red wine and other dark foods and drinks can stain bonding, and can stain veneers over time too.</li>
-<li>Limit acidic foods and drinks, which can wear bonding material.</li>
-<li>Do not chew on pens, ice or fingernails, which can chip bonding and veneers.</li>
-<li>Avoid over-the-counter whitening products on veneers, which can scratch them.</li>
+<li>Limit acidic foods, like citrus and vinegar, to help your bonding last.</li>
+<li>Do not chew on pens or bite your fingernails, which can chip bonding, and avoid biting very hard foods or using your teeth as tools, which can damage veneers.</li>
+<li>Avoid whitening products on veneers, which can scratch them.</li>
 <li>Brush twice a day with a non-abrasive fluoride toothpaste, floss every day and keep up with checkups.</li>
 </ul>`,
       },
@@ -111,7 +111,7 @@ export const posts: BlogPost[] = [
       },
       {
         q: "Are cosmetic dental treatments painful?",
-        a: `<p>Most are comfortable. Whitening and bonding usually need no numbing. Veneers involve removing a thin layer of enamel, and your dentist can numb the area for that step. Some people feel temporary sensitivity after whitening.</p>`,
+        a: `<p>Most are comfortable. Whitening does not need numbing, and bonding usually does not either, unless it is being used to fill a cavity. Veneers involve removing a thin layer of enamel, and your dentist can numb the area for that step. Some people feel temporary sensitivity after whitening.</p>`,
       },
       {
         q: "Can cosmetic dentistry fix a missing tooth?",
@@ -146,7 +146,7 @@ export const posts: BlogPost[] = [
     sections: [
       {
         heading: "The main benefits",
-        html: `<p><strong>A brighter smile.</strong> Professional whitening lightens many types of staining, and veneers and bonding can cover stains that whitening cannot reach.</p>
+        html: `<p><strong>A brighter smile.</strong> Professional whitening works best on yellowed teeth. Brown stains may respond less well and gray stains may not lighten, but veneers and bonding can cover stains that whitening cannot reach.</p>
 <p><strong>Repairing chips, cracks and worn edges.</strong> Bonding rebuilds a chipped or uneven tooth with tooth-colored resin, often in one visit. Veneers and crowns can restore teeth with larger flaws.</p>
 <p><strong>Closing gaps and evening out shape.</strong> Bonding or veneers can close small spaces and make teeth look more even in size and shape.</p>
 <p><strong>Straighter teeth.</strong> Clear aligners such as Invisalign move teeth gradually. Because they come out for eating and brushing, cleaning your teeth is easier than with fixed braces.</p>
@@ -158,8 +158,8 @@ export const posts: BlogPost[] = [
         html: `<div class="ids-table-wrap"><table class="ids-table">
 <thead><tr><th>Treatment</th><th>What it can do</th><th>Worth knowing</th></tr></thead>
 <tbody>
-<tr><th scope="row">Teeth whitening</th><td>Lightens yellow and many other stains</td><td>Lasts months to a few years; does not change crowns, veneers or fillings</td></tr>
-<tr><th scope="row">Bonding</th><td>Repairs chips, closes small gaps, covers stains in one visit</td><td>Usually reversible; can stain or chip; lasts about 3 to 10 years</td></tr>
+<tr><th scope="row">Teeth whitening</th><td>Lightens yellow stains best; brown and gray stains respond less well</td><td>Lasts months to a few years; does not change crowns, veneers or fillings</td></tr>
+<tr><th scope="row">Bonding</th><td>Repairs chips, closes small gaps, covers stains in one visit</td><td>Usually reversible; can stain or chip; lasts about 3 to 10 years, depending on habits and care</td></tr>
 <tr><th scope="row">Porcelain veneers</th><td>Changes the color and shape of front teeth; resists stains</td><td>Not reversible; about 10 to 15 years on average</td></tr>
 <tr><th scope="row">Invisalign</th><td>Straightens teeth without fixed braces</td><td>Needs consistent daily wear and a retainer afterward</td></tr>
 <tr><th scope="row">Implants</th><td>Replace missing teeth; help preserve jawbone</td><td>Involves surgery and months of healing</td></tr>
@@ -173,12 +173,23 @@ export const posts: BlogPost[] = [
       {
         heading: "What to weigh before you start",
         html: `<ul>
-<li><strong>Health comes first.</strong> Cavities and gum disease need treatment before cosmetic work. Veneers, for example, are only an option if you are free of extensive cavities and gum disease.</li>
+<li><strong>Health comes first.</strong> Cavities and gum disease are usually treated before cosmetic work. Veneers, for example, are only an option if you are free of extensive cavities and gum disease.</li>
 <li><strong>Some changes cannot be undone.</strong> Most veneers require removing enamel, so they cannot be undone. Bonding is usually reversible.</li>
 <li><strong>Results need upkeep.</strong> Whitening fades, bonding can stain or chip, and veneers eventually need replacing.</li>
 <li><strong>Insurance usually does not pay</strong> for treatment done only for appearance. Ask for a written plan and check it with your insurer.</li>
 <li><strong>Sensitivity is possible.</strong> Some people get temporary sensitivity after whitening.</li>
 </ul>`,
+      },
+      {
+        heading: "Keeping the benefits",
+        html: `<p>How long the benefits last depends a lot on daily habits. Cleveland Clinic recommends:</p>
+<ul>
+<li>Brushing twice a day with a non-abrasive fluoride toothpaste and flossing every day.</li>
+<li>Limiting coffee, tea, red wine and other dark foods and drinks, which can stain bonding and, over time, veneers.</li>
+<li>Not chewing on pens or biting your nails, and not using your teeth as tools.</li>
+<li>Keeping up with regular checkups and cleanings, so small chips or worn edges can be repaired early.</li>
+</ul>
+<p>Whitening also fades gradually, typically over six months to three years, so ask your dentist how to keep your shade.</p>`,
       },
       {
         heading: "Choosing the right treatment",
@@ -201,15 +212,15 @@ export const posts: BlogPost[] = [
       },
       {
         q: "Which cosmetic treatment lasts the longest?",
-        a: `<p>Of the common options, porcelain veneers last longest, about 10 to 15 years on average with good care. Dental implants can last much longer, though the crown on top may need replacing over time.</p>`,
+        a: `<p>Among whitening, bonding and veneers, veneers usually last longest, often 10 to 15 years with good care. Dental implants can last much longer, though the crown on top may need replacing over time.</p>`,
       },
       {
         q: "Is cosmetic dentistry safe?",
-        a: `<p>Treatments such as whitening, bonding and veneers are routine when done by a dentist after an exam. The main risks are sensitivity and the need for future repair or replacement, which your dentist can explain for your case.</p>`,
+        a: `<p>Whitening, bonding and veneers are common treatments, and your dentist will check your teeth and gums first. Possible downsides include temporary sensitivity, chips or stains on bonding, loss of some enamel for veneers, and veneers that may come loose or need replacing. Your dentist can explain the risks for your case.</p>`,
       },
       {
         q: "Can I get cosmetic dentistry if I have gum disease?",
-        a: `<p>Gum disease should be treated first. Healthy gums are needed for most cosmetic work to look good and last.</p>`,
+        a: `<p>Gum disease should be treated first. Your dentist will want your gums healthy before most cosmetic work, and it is a requirement for veneers.</p>`,
       },
     ],
     sources: [
@@ -217,6 +228,9 @@ export const posts: BlogPost[] = [
       { title: "Cleveland Clinic: Dental Bonding", url: "https://my.clevelandclinic.org/health/treatments/10922-dental-bonding" },
       { title: "Cleveland Clinic: Dental Veneers", url: "https://my.clevelandclinic.org/health/treatments/23522-dental-veneers" },
       { title: "Cleveland Clinic: Clear Aligners", url: "https://my.clevelandclinic.org/health/treatments/clear-aligners" },
+      { title: "American Association of Orthodontists: Braces vs. Clear Aligners", url: "https://aaoinfo.org/whats-trending/braces-vs-clear-aligners/" },
+      { title: "Cleveland Clinic: Braces", url: "https://my.clevelandclinic.org/health/treatments/24601-teeth-braces" },
+      { title: "Cleveland Clinic: Dental Bridges", url: "https://my.clevelandclinic.org/health/treatments/10921-dental-bridges" },
       { title: "Cleveland Clinic: Dental Implants", url: "https://my.clevelandclinic.org/health/treatments/10903-dental-implants" },
       { title: "American Dental Association (MouthHealthy): Teeth Whitening", url: "https://www.mouthhealthy.org/all-topics-a-z/teeth-whitening" },
     ],
@@ -327,7 +341,7 @@ export const posts: BlogPost[] = [
       alt: "Ideal Dental Solutions team member reviewing a 3D scan of a patient's teeth",
       caption: "Implant planning starts with an exam and 3D imaging, which shows what your treatment will involve.",
     },
-    answer: `<p>The cost of dental implants depends mostly on how many teeth are being replaced and how, and on whether you need extra steps first, such as removing a tooth or a bone graft. A single implant with a crown is a very different treatment from a full arch of teeth on four to six implants. Insurance coverage for implants varies widely, and some plans exclude them. The only way to get a reliable figure is an exam with imaging and a written treatment plan that lists every part.</p>`,
+    answer: `<p>The cost of dental implants depends mostly on how many teeth are being replaced and how, and on whether you need extra steps first, such as removing a tooth or a bone graft. A single implant with a crown is a very different treatment from a full arch of teeth on four to six implants. Insurance coverage for implants varies widely, and some plans exclude them. To get a reliable figure, you need an exam with imaging and a personalized treatment plan that lists every part.</p>`,
     sections: [
       {
         heading: "What an implant treatment includes",
@@ -349,7 +363,7 @@ export const posts: BlogPost[] = [
 <li><strong>Implant-supported bridge:</strong> two or more implants holding a bridge that replaces three or more teeth.</li>
 <li><strong>Full arch:</strong> usually four to six implants supporting a whole upper or lower set of teeth, either fixed in place or as a denture that snaps on and off.</li>
 </ul>
-<p>Replacing several teeth with a bridge or full arch uses fewer implants than one implant per tooth, which is one reason these options exist.</p>`,
+<p>A bridge or full arch can replace several teeth with fewer implants than one implant per tooth.</p>`,
       },
       {
         heading: "Factor 2: extra steps before the implant",
@@ -357,7 +371,7 @@ export const posts: BlogPost[] = [
 <li><strong>Removing a damaged tooth</strong>, if it is still there.</li>
 <li><strong>Bone grafting.</strong> An implant needs enough healthy jawbone. If bone has been lost, a graft may be placed first to build it up. Cleveland Clinic notes a graft needs at least about three months to heal, and a large one can take nine to 12 months.</li>
 <li><strong>Sinus lift.</strong> For some upper back teeth, the sinus floor has to be raised and bone added before an implant can be placed.</li>
-<li><strong>Treating gum disease.</strong> Active or untreated gum disease needs to be treated before an implant.</li>
+<li><strong>Treating gum disease.</strong> Active or untreated gum disease can make implants a poor option, so it is usually treated first.</li>
 </ul>
 <p>Each of these adds visits and time, so they affect both the cost and the timeline.</p>`,
       },
@@ -379,17 +393,17 @@ export const posts: BlogPost[] = [
       },
       {
         heading: "Financing and comparing over time",
-        html: `<p>Implants usually cost more up front than a bridge or a denture. Over many years the comparison can look different: Cleveland Clinic says implants can often last a lifetime with good care, while bridges typically last five to 15 years and dentures seven to 10 years before they need replacing. That does not make implants right for everyone, but it is worth weighing.</p>
+        html: `<p>Implants usually cost more up front than a bridge or a denture. Over many years the comparison can look different: Cleveland Clinic says the implant itself can last a lifetime with good care, though the crown on top may need replacing after about 15 years. Bridges typically last five to 15 years and dentures seven to 10 years. That does not make implants right for everyone, but it is worth weighing.</p>
 <p>For patients who want to spread the cost, we offer payment plans through Cherry and CareCredit.</p>`,
       },
       {
         heading: "How to get an accurate number",
-        html: `<p>Book a consultation with an exam and 3D imaging. That shows how much bone you have and whether you need any extra steps, which is what turns a rough range into a real plan. At Ideal Dental Solutions, Dr. Mehdi S. Adili, a prosthodontist, plans implant treatment and gives you a written plan that lists each step, so you can check it with your insurer before deciding.</p>`,
+        html: `<p>Book a consultation with an exam and 3D imaging. That shows how much bone you have and whether you need any extra steps, which is what turns a rough range into a real plan. At Ideal Dental Solutions, Dr. Mehdi S. Adili, a prosthodontist, creates a personalized implant treatment plan and a detailed cost estimate, so you can check it with your insurer before deciding.</p>`,
       },
     ],
     cta: {
-      heading: "Get a written implant plan",
-      text: "Book an implant consultation at our McLean office. We will take 3D images, explain your options and give you a written plan that lists each step so you know what to expect.",
+      heading: "Get a personalized implant plan",
+      text: "Book an implant consultation at our McLean office. We will take 3D images, explain your options and give you a personalized treatment plan and detailed estimate so you know what to expect.",
     },
     faq: [
       {
@@ -406,7 +420,7 @@ export const posts: BlogPost[] = [
       },
       {
         q: "Are implants more expensive than a bridge or dentures?",
-        a: `<p>Usually, up front. Implants can often last a lifetime with good care, while bridges and dentures usually need replacing after some years, so it helps to compare over the long term too.</p>`,
+        a: `<p>Usually, up front. The implant itself can last a lifetime with good care (the crown on top may need replacing after some years), while bridges and dentures usually need replacing sooner, so it helps to compare over the long term too.</p>`,
       },
       {
         q: "Do you offer financing for implants?",
