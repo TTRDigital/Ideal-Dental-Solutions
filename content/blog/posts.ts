@@ -146,7 +146,7 @@ export const posts: BlogPost[] = [
     sections: [
       {
         heading: "The main benefits",
-        html: `<p><strong>A brighter smile.</strong> Professional whitening works best on yellowed teeth. Brown stains may respond less well and gray stains may not lighten, but veneers and bonding can cover stains that whitening cannot reach.</p>
+        html: `<p><strong>A brighter smile.</strong> Professional whitening tends to work well on yellowed teeth. Brown stains may respond less well and gray stains may not lighten, but veneers and bonding can cover stains that whitening cannot reach.</p>
 <p><strong>Repairing chips, cracks and worn edges.</strong> Bonding rebuilds a chipped or uneven tooth with tooth-colored resin, often in one visit. Veneers and crowns can restore teeth with larger flaws.</p>
 <p><strong>Closing gaps and evening out shape.</strong> Bonding or veneers can close small spaces and make teeth look more even in size and shape.</p>
 <p><strong>Straighter teeth.</strong> Clear aligners such as Invisalign move teeth gradually. Because they come out for eating and brushing, cleaning your teeth is easier than with fixed braces.</p>
@@ -158,7 +158,7 @@ export const posts: BlogPost[] = [
         html: `<div class="ids-table-wrap"><table class="ids-table">
 <thead><tr><th>Treatment</th><th>What it can do</th><th>Worth knowing</th></tr></thead>
 <tbody>
-<tr><th scope="row">Teeth whitening</th><td>Lightens yellow stains best; brown and gray stains respond less well</td><td>Lasts months to a few years; does not change crowns, veneers or fillings</td></tr>
+<tr><th scope="row">Teeth whitening</th><td>Works well on yellow stains; brown and gray stains respond less well</td><td>Lasts months to a few years; does not change crowns, veneers or fillings</td></tr>
 <tr><th scope="row">Bonding</th><td>Repairs chips, closes small gaps, covers stains in one visit</td><td>Usually reversible; can stain or chip; lasts about 3 to 10 years, depending on habits and care</td></tr>
 <tr><th scope="row">Porcelain veneers</th><td>Changes the color and shape of front teeth; resists stains</td><td>Not reversible; about 10 to 15 years on average</td></tr>
 <tr><th scope="row">Invisalign</th><td>Straightens teeth without fixed braces</td><td>Needs consistent daily wear and a retainer afterward</td></tr>
@@ -254,9 +254,9 @@ export const posts: BlogPost[] = [
       {
         heading: "Daily care at home",
         html: `<ul>
-<li><strong>Brush twice a day</strong> with a soft-bristled toothbrush and a nonabrasive fluoride toothpaste, paying attention to where the implant meets the gum.</li>
+<li><strong>Brush twice a day</strong> with a soft-bristled toothbrush and a nonabrasive toothpaste (Cleveland Clinic recommends these for implant teeth), paying attention to where the implant meets the gum.</li>
 <li><strong>Clean between your teeth every day.</strong> Floss works for a single implant crown. For implant bridges and full-arch teeth, floss threaders and small interproximal brushes reach under the replacement teeth.</li>
-<li><strong>Removable implant dentures</strong> (the kind that snap on) should be taken out and cleaned daily and soaked overnight in denture solution, as your dentist recommends.</li>
+<li><strong>Removable implant dentures</strong> (the kind that snap on) should be taken out and cleaned at least twice a day and soaked overnight in denture solution, or as your dentist recommends.</li>
 <li><strong>Do not use tobacco.</strong> Smoking is a risk factor for gum problems around implants.</li>
 </ul>
 <p>Cleveland Clinic notes that with brushing, flossing and regular dental visits, implants can often last a lifetime.</p>`,
@@ -275,25 +275,36 @@ export const posts: BlogPost[] = [
 <p>Signs are similar to gum disease: red or tender gums around the implant, or bleeding when you brush. The AAP lists a past diagnosis of gum disease, poor plaque control, smoking and diabetes as risk factors. If any of these apply to you, careful home care and regular checkups are especially important.</p>`,
       },
       {
+        heading: "Habits that help an implant last",
+        html: `<p>The AAP lists the main risk factors for gum problems around implants: a past diagnosis of gum disease, poor plaque control, smoking and diabetes. That points to the habits that matter most:</p>
+<ul>
+<li>Clean around the implant every day, including under bridges and full-arch teeth.</li>
+<li>Avoid tobacco, which can also slow healing after surgery.</li>
+<li>If you have diabetes, work with your doctor to keep it under control.</li>
+<li>If you have had gum disease before, keep to the checkup schedule your dentist recommends.</li>
+</ul>`,
+      },
+      {
         heading: "When to call your dentist",
         html: `<p>Contact the office if you notice:</p>
 <ul>
 <li>An implant or implant tooth that feels loose or wobbly</li>
 <li>Pus around the implant</li>
 <li>Gums around the implant that are red, swollen, tender or bleeding</li>
-<li>Pain that does not go away, or that gets worse after the first few days of healing</li>
+<li>Pain that does not improve with medication, or that gets worse after the first few days of healing</li>
+<li>A fever along with swelling or pus around the implant</li>
 <li>A crown, bridge or denture on the implant that is cracked, chipped or no longer fits well</li>
 </ul>`,
       },
       {
         heading: "How long implants last",
-        html: `<p>The implant post itself can often last a lifetime with good care. The tooth or teeth attached to it wear like any restoration: Cleveland Clinic says most implant crowns and bridges last around 15 years, and most implant dentures at least seven years, before they need replacing. Your daily care and regular visits are what keep both in good shape.</p>
-<p>At Ideal Dental Solutions, implant treatment and follow-up are planned by Dr. Mehdi S. Adili, a prosthodontist: a dentist with additional specialty training in replacing missing teeth.</p>`,
+        html: `<p>The implant post itself can often last a lifetime with good care. The tooth or teeth attached to it wear like any restoration and may need replacing at some point. Cleveland Clinic says most crowns and bridges last around 15 years, though this varies. Your daily care and regular visits are what keep both in good shape.</p>
+<p>At Ideal Dental Solutions, implant care is led by Dr. Mehdi S. Adili, a prosthodontist. That is a dentist with three to four years of extra specialty training in replacing missing teeth.</p>`,
       },
     ],
     cta: {
       heading: "Due for an implant check?",
-      text: "Whether your implant was placed with us or elsewhere, we can check the gums and bone around it and clean the areas that are hard to reach at home. Book a visit at our McLean office.",
+      text: "If you have a dental implant, regular checkups help keep the gums and bone around it healthy. Book a visit at our McLean office.",
     },
     faq: [
       {
@@ -322,6 +333,7 @@ export const posts: BlogPost[] = [
       { title: "American Dental Association (MouthHealthy): Implants", url: "https://www.mouthhealthy.org/all-topics-a-z/implants" },
       { title: "Cleveland Clinic: Dental Implants", url: "https://my.clevelandclinic.org/health/treatments/10903-dental-implants" },
       { title: "Cleveland Clinic: Implant-Supported Dentures", url: "https://my.clevelandclinic.org/health/treatments/24303-implant-supported-dentures" },
+      { title: "Cleveland Clinic Health Essentials: Dental Bridge vs. Implant", url: "https://health.clevelandclinic.org/dental-bridge-vs-implant" },
       { title: "Cleveland Clinic: Prosthodontics", url: "https://my.clevelandclinic.org/health/treatments/23904-prosthodontics" },
     ],
   },
