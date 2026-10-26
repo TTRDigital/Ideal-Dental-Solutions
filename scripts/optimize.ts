@@ -115,8 +115,21 @@ const bundles: Record<string, { file: string; dropped: string }> = {};
 let before = 0;
 let after = 0;
 
+/**
+ * PurgeCSS misjudges selectors built with :is(), :where() and :not() (it drops
+ * Blocksy's block-editor spacing, `:is(.is-layout-flow,.is-layout-constrained)>*:where(:not(h1,...))`),
+ * so those rules are always kept.
+ */
+function keepFunctional(css: string) {
+  const root = postcss.parse(css);
+  root.walkRules((rule) => {
+    if (/:(is|where|not|has)\(/.test(rule.selector)) rule.before(postcss.comment({ text: "purgecss ignore" }));
+  });
+  return root.toString();
+}
+
 for (const [key, group] of groups) {
-  const full = group.sheets.map(({ href, media }) => (media && media !== "all" ? `@media ${media}{${read(href)}}` : read(href))).join("\n");
+  const full = keepFunctional(group.sheets.map(({ href, media }) => (media && media !== "all" ? `@media ${media}{${read(href)}}` : read(href))).join("\n"));
   const content = group.html.join("\n");
   const [purged] = await new PurgeCSS().purge({
     content: [

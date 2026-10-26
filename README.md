@@ -28,12 +28,31 @@ Applied to the migrated content (idempotent; re-run after every extract):
 - `<html lang="en-US">` and `<meta charset="UTF-8">` (first in the head) on every page, checked by the audit.
 - **Root-relative URLs everywhere:** HTML widgets (e.g. the homepage technology section) and other HTML fields kept absolute `https://idealdentalsolutions.com/wp-content/...` image URLs; they are now root-relative like the rest of the site, so images load from this deployment before and after the domain moves. No absolute site URL is left in any content field (only canonical/Open Graph/schema URLs, which are absolute on purpose).
 
+### TTR-895 (Oct 2026), also in scripts/fixes.ts
+
+- **Titles** are 60 characters or less and unique (Google cuts longer ones; 26 were longer, two pages shared one).
+- **Internal links:** 20 pages had no link from any other page. Each Northern Virginia service page and its McLean page now link to each other under the intro at the top ("In McLean? See …" / "Serving all of Northern Virginia: …"), with the location in the link text; the two McLean implant pages also link to the McLean dental implants page. The **Services** menu item opens /services/ (it was "#"), Root Canal Therapy and Night Guards are in the menu, and Dr. Adili's name on About Us links to his profile.
+- **Competing pages:** /preventive-dentistry-in-northern-virginia/ (same title and H1 as /services/preventive-dentistry/, about half the same text) has a canonical to /services/preventive-dentistry/ and is left out of the sitemap. Merging or removing it is the client's decision.
+- These content changes are in `content/seed.json`; the live CMS gets them with `npm run seed -- --force` (needs an Editor token).
+
+## Speed and tracking (lib/site/optimize.ts)
+
+Every page is rendered as WordPress printed it, then sped up on the way out (the CMS content and `npm run verify` are not affected):
+
+- **One stylesheet per page:** the 20 or so theme and Elementor stylesheets of a page are replaced by one file with only the rules the page uses (`public/assets/page-css/`, built by `npm run optimize` from the content). Fail-safe: if the page uses a class or id whose rules were left out (for example a new kind of block added in /cms), it gets its original stylesheets back, so nothing can lose its styling. Re-run `npm run optimize` after layout changes in the CMS to get the small file back.
+- **Images:** WebP copies of every uploaded PNG/JPEG next to the original (`<file>.webp`, plus `<file>-768w.webp` for phones; `npm run images`). 112 MB of uploads became 6.3 MB. Every image gets its width and height (no layout shift) and loads lazily below the first section. Images with an empty alt get a default one (the title next to the icon, or the page's H1).
+- **Fonts:** Urbanist is served from this site (`public/assets/fonts`, OFL) and preloaded, instead of two Google Fonts stylesheets.
+- **Scripts:** jQuery loads with the footer scripts instead of in the head. The hero's YouTube background video plays on desktop only; phones show its background image.
+- **Tracking:** the TTR tracker (`data-site` H1QeRbEKxfQo2axph4VByw) and Google Analytics 4 (G-55S3P7PW3V) on every page, including search results and the 404 page.
+- **/llms.txt:** the practice and its pages (titles and descriptions from the CMS), for AI assistants.
+
 ## Redirects
 
 - `content/redirects.json` (loaded by `next.config.ts`, all 301): every redirect the live WordPress site answered when probed with ~3,400 old and alternative URLs (dental service slugs under 15 possible parents, existing slugs under other parents, common practice pages, feeds, `/sitemap.xml`, `/index.php`). 483 path rules, each pointing straight at the final page, all tested on a production build.
 - 125 shortlinks (`/?p=ID`, `/?page_id=ID`, `/?author=ID`, `/?cat=ID`) are answered in `proxy.ts` (config redirects would carry the query string over).
 - Any other unknown URL whose last part matches a page is 301'd at request time (`lib/site/guess.ts`), exactly as WordPress did: the rules plus the guessing agree with the live site on all 2,855 probed URLs that were not real pages (including the 404s, e.g. WordPress does not guess below an existing page like `/locations/mclean/<anything>/`).
 - `/<page>/page/2/` (WordPress showed the page again) now 301s to the page; `/<page>/feed/` returns an empty feed like WordPress. Upper-case URLs 301 to the lower-case page (WordPress showed a duplicate). URLs without the trailing slash get Next.js' own permanent redirect (308).
+- `content/redirects-search-console.json`: the addresses Google showed in the 90 days to Oct 25, 2026 (Search Console) that answer 404 on the live WordPress site (old blog posts, contact, legal and pricing pages, five McLean service URLs) go to their closest page. With these, all 106 addresses Google showed answer 200 or a single 301 to a 200.
 - The redirect plugin's own list could not be exported without a WordPress login. If you have one, export it and add any rule missing from `content/redirects.json`.
 
 ## Forms
@@ -71,7 +90,7 @@ The WordPress site did not combine its stylesheets, so every theme and plugin st
 2. **Content (done):** all 61 documents are in Sanity (51 pages, 5 archive pages, header & menu, footer, search results, 404 page, site settings); the site reads them from the CMS (response header `X-Content-Source: cms`). To reload: put an Editor token in `.env.local` as `SANITY_WRITE_TOKEN`, then `npm run seed` (adds missing documents) or `npm run seed -- --force` (overwrites the CMS with the built-in copy; editors' changes are lost). The seed writes through the global API host (`api.sanity.io/.../projects/ncba5cqx/...`). If the CMS is empty or unreachable, the site serves the built-in copy (`X-Content-Source: built-in`).
 3. **CORS (done):** `http://localhost:3000`, `https://ideal-dental-solutions.vercel.app`, `https://idealdentalsolutions.com` and `https://www.idealdentalsolutions.com` are allowed with credentials (plus Sanity's default `http://localhost:3333`). Add any new preview or hosting domain in sanity.io/manage > API > CORS origins.
 4. **Run locally:** `npm install`, `npm run dev`, open http://localhost:3000 and http://localhost:3000/cms.
-5. **Hosting:** `https://ideal-dental-solutions.vercel.app` is a preview only; the WordPress site stays live for now. Add the variables from `.env.example` in Vercel (not `SANITY_WRITE_TOKEN`). Going live on SiteGround is not decided yet: SiteGround runs PHP, not a Node.js server, so it would need a static export (pages as HTML, redirects in `.htaccess`, a small PHP form handler) rebuilt on every Sanity publish.
+5. **Hosting: Vercel** (production host since TTR-895; the SiteGround FTPS deploy was retired). Vercel builds every push; the preview is `https://ideal-dental-solutions-ttr15.vercel.app`. Add the variables from `.env.example` in Vercel (not `SANITY_WRITE_TOKEN`). Going live is a DNS change only (done by the team, not in this repo): the domain's web records point at Vercel, the mail records stay at SiteGround. After the switch, add `idealdentalsolutions.com` and `www` in Vercel > Domains (www redirecting to the apex), and set `RECAPTCHA_SITE_KEY`/`RECAPTCHA_SECRET_KEY` if the form should get its checkbox back.
 6. **Publish webhook:** in Sanity, API > Webhooks: URL `https://idealdentalsolutions.com/api/revalidate`, triggers create/update/delete, secret = `SANITY_REVALIDATE_SECRET`. Changes then go live within seconds (otherwise within 5 minutes).
 7. **Form leads:** every submission is sent to the practice's GoHighLevel webhook, which is built into `lib/lead.ts` (`DEFAULT_GHL_WEBHOOK_URL`); set `GHL_WEBHOOK_URL` only to send leads elsewhere. Email notifications are optional (`RESEND_API_KEY` + `LEAD_EMAIL_TO`). If delivery fails, the visitor is asked to call (703) 442-0442 instead of seeing a thank-you page. Note: this also applies to the preview, so test submissions there become leads in GoHighLevel.
 
@@ -97,6 +116,8 @@ npm run fixes      # apply the review fixes to content/seed.json (after extract)
 npm run seed -- --force  # publish content/seed.json to Sanity
 npm run audit -- https://<site>  # launch checks on a running site
 npm run favicons   # re-render the favicon set from the logo
+npm run images     # WebP copies of new uploads (lib/generated/images.json)
+npm run optimize   # one stylesheet per page (public/assets/page-css, lib/generated/page-css.json)
 ```
 
 ### Migration tools
