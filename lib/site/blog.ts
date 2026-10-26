@@ -329,6 +329,8 @@ function listDoc(): PageDoc {
 /* ---------------- styles ---------------- */
 
 const STYLE = `<style id="ids-blog-css">
+@font-face{font-family:"Urbanist Fallback";src:local("Arial"),local("Liberation Sans"),local("Helvetica");size-adjust:97%;ascent-override:95%;descent-override:25%;line-gap-override:0%}
+.ids-blog,.ids-blog h1,.ids-blog h2,.ids-blog h3{font-family:Urbanist,"Urbanist Fallback",sans-serif}
 .ids-blog{--ids-accent:var(--theme-palette-color-1,#ff6310);--ids-text:var(--theme-palette-color-4,#111518);--ids-muted:#5a636a;--ids-soft:var(--theme-palette-color-6,#f4f5f6);--ids-link:#c2410c;color:var(--ids-text);font-size:17px;line-height:1.7}
 .ids-wrap{max-width:760px;margin:0 auto;padding:0 16px}
 .ids-wide{max-width:1120px}
