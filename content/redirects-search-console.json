@@ -1,0 +1,226 @@
+[
+  {
+    "source": "/payment-plans-pricing/",
+    "destination": "/appointment/"
+  },
+  {
+    "source": "/about/payment-plans-pricing/",
+    "destination": "/appointment/"
+  },
+  {
+    "source": "/terms-of-service/",
+    "destination": "/"
+  },
+  {
+    "source": "/privacy-policy/",
+    "destination": "/"
+  },
+  {
+    "source": "/sitemap/",
+    "destination": "/"
+  },
+  {
+    "source": "/contact-us/",
+    "destination": "/appointment/"
+  },
+  {
+    "source": "/contact-us/tysons-corner/",
+    "destination": "/appointment/"
+  },
+  {
+    "source": "/about-us-client-draft/",
+    "destination": "/about-us/"
+  },
+  {
+    "source": "/locations/mclean/cosmetic-dentistry/",
+    "destination": "/services/cosmetic-dentistry/"
+  },
+  {
+    "source": "/locations/mclean/crown-lengthening/",
+    "destination": "/services/periodontic-dentistry/crown-lengthening/"
+  },
+  {
+    "source": "/locations/mclean/dental-bonding/",
+    "destination": "/services/cosmetic-dentistry/dental-bonding/"
+  },
+  {
+    "source": "/locations/mclean/dental-fillings/",
+    "destination": "/dental-fillings-in-mclean-va/"
+  },
+  {
+    "source": "/locations/mclean/laser-gum-therapy/",
+    "destination": "/locations/mclean/gum-disease-treatment/"
+  },
+  {
+    "source": "/services/periodontal-dentistry/laser-gum-therapy/",
+    "destination": "/services/periodontic-dentistry/gum-disease-treatment/"
+  },
+  {
+    "source": "/services/restorative-dentistry/dental-bridge/",
+    "destination": "/dental-bridges-in-mclean-va/"
+  },
+  {
+    "source": "/services/cosmetic-dentistry/dental-veneers/",
+    "destination": "/services/cosmetic-dentistry/porcelain-veneers/"
+  },
+  {
+    "source": "/blog/",
+    "destination": "/services/"
+  },
+  {
+    "source": "/blog/arlington-cosmetic-dentistry-near-me/",
+    "destination": "/services/cosmetic-dentistry/"
+  },
+  {
+    "source": "/blog/arlington-dental-solutions/",
+    "destination": "/"
+  },
+  {
+    "source": "/blog/best-cosmetic-dentist-in-virginia/",
+    "destination": "/services/cosmetic-dentistry/"
+  },
+  {
+    "source": "/blog/benefits-of-cosmetic-dentistry/",
+    "destination": "/services/cosmetic-dentistry/"
+  },
+  {
+    "source": "/blog/cosmetic-dental-surgery/",
+    "destination": "/services/cosmetic-dentistry/"
+  },
+  {
+    "source": "/blog/cosmetic-dental-treatments/",
+    "destination": "/services/cosmetic-dentistry/"
+  },
+  {
+    "source": "/blog/cosmetic-dentistry-questions-answered/",
+    "destination": "/services/cosmetic-dentistry/"
+  },
+  {
+    "source": "/blog/cosmetic-dentists-in-tysons/",
+    "destination": "/services/cosmetic-dentistry/"
+  },
+  {
+    "source": "/blog/difference-general-and-cosmetic-dentist/",
+    "destination": "/services/cosmetic-dentistry/"
+  },
+  {
+    "source": "/blog/guide-to-cosmetic-dental-procedures/",
+    "destination": "/services/cosmetic-dentistry/"
+  },
+  {
+    "source": "/blog/popular-cosmetic-dentistry-treatments/",
+    "destination": "/services/cosmetic-dentistry/"
+  },
+  {
+    "source": "/blog/prepare-for-cosmetic-dentistry-procedure/",
+    "destination": "/services/cosmetic-dentistry/"
+  },
+  {
+    "source": "/blog/tysons-cosmetic-dentistry-near-me/",
+    "destination": "/services/cosmetic-dentistry/"
+  },
+  {
+    "source": "/blog/benefits-of-dental-implants/",
+    "destination": "/services/dental-implants-dentistry/"
+  },
+  {
+    "source": "/blog/bone-grafting-for-dental-implants-do-you-need-it/",
+    "destination": "/services/dental-implants-dentistry/"
+  },
+  {
+    "source": "/blog/care-for-your-dental-implants/",
+    "destination": "/services/dental-implants-dentistry/"
+  },
+  {
+    "source": "/blog/care-for-your-teeth-implants/",
+    "destination": "/services/dental-implants-dentistry/"
+  },
+  {
+    "source": "/blog/cost-of-dental-implants/",
+    "destination": "/services/dental-implants-dentistry/"
+  },
+  {
+    "source": "/blog/cost-of-dental-implants-in-virginia/",
+    "destination": "/services/dental-implants-dentistry/"
+  },
+  {
+    "source": "/blog/different-types-of-dental-implants/",
+    "destination": "/services/dental-implants-dentistry/"
+  },
+  {
+    "source": "/blog/what-is-the-lifespan-of-dental-implants/",
+    "destination": "/services/dental-implants-dentistry/"
+  },
+  {
+    "source": "/blog/dental-implants-or-dentures/",
+    "destination": "/services/dental-implants-dentistry/"
+  },
+  {
+    "source": "/blog/full-arch-implants-a-complete-guide-to-restoring-an-entire-dental-arch/",
+    "destination": "/services/dental-implants-dentistry/full-arch-implants/"
+  },
+  {
+    "source": "/blog/single-tooth-implant-timeline-how-long-from-consult-to-crown/",
+    "destination": "/services/dental-implants-dentistry/single-tooth-implants/"
+  },
+  {
+    "source": "/blog/single-tooth-implant-timeline-how-long-from-crown/",
+    "destination": "/services/dental-implants-dentistry/single-tooth-implants/"
+  },
+  {
+    "source": "/blog/national-gum-care-month/",
+    "destination": "/services/periodontic-dentistry/gum-disease-treatment/"
+  },
+  {
+    "source": "/blog/causes-of-bad-breath/",
+    "destination": "/services/periodontic-dentistry/gum-disease-treatment/"
+  },
+  {
+    "source": "/blog/how-to-floss-properly/",
+    "destination": "/services/preventive-dentistry/teeth-cleaning/"
+  },
+  {
+    "source": "/blog/october-is-national-dental-hygiene-month/",
+    "destination": "/services/preventive-dentistry/teeth-cleaning/"
+  },
+  {
+    "source": "/blog/quality-dental-care/",
+    "destination": "/services/"
+  },
+  {
+    "source": "/locations/mclean/dental-bridges/",
+    "destination": "/dental-bridges-in-mclean-va/"
+  },
+  {
+    "source": "/wp-content/uploads/2024/10/cosmetic-dentistry-image.png",
+    "destination": "/wp-content/uploads/2026/06/cosmetic-dentistry-image.webp"
+  },
+  {
+    "source": "/wp-content/uploads/2025/07/ba-12.png",
+    "destination": "/wp-content/uploads/2026/07/ba-12.png"
+  },
+  {
+    "source": "/wp-content/uploads/2025/07/BA-1TTR.png",
+    "destination": "/wp-content/uploads/2026/07/ba-01.-png.png"
+  },
+  {
+    "source": "/wp-content/uploads/2024/06/ids-logo-home-menu.png",
+    "destination": "/wp-content/uploads/2026/05/ids-logo-home.png"
+  },
+  {
+    "source": "/wp-content/uploads/2024/09/ids-logo-color.svg",
+    "destination": "/wp-content/uploads/2026/05/ids-logo-home.png"
+  },
+  {
+    "source": "/wp-content/uploads/2024/07/bg-logo.png",
+    "destination": "/wp-content/uploads/2026/05/ids-logo-home.png"
+  },
+  {
+    "source": "/wp-content/uploads/2024/07/Rectangle-3149-1.png",
+    "destination": "/wp-content/uploads/2026/06/Rectangle-3149-1024x764-1.webp"
+  },
+  {
+    "source": "/wp-content/uploads/2024/09/porcelain-veneers-image.webp",
+    "destination": "/wp-content/uploads/2026/06/smile-makeover-image.webp"
+  }
+]

@@ -96,3 +96,22 @@ export async function notFoundDoc(fromCms: boolean): Promise<Resolved | null> {
   const nf = await sanity<SeedDoc>(`*[_id == "notFound"][0]`);
   return nf ? { kind: "notFound", doc: nf as never } : null;
 }
+export type PageSummary = { path: string; title: string; description: string };
+
+/** Indexable pages with their title tag and meta description (for /llms.txt). */
+export async function pageSummaries(fromCms: boolean): Promise<PageSummary[]> {
+  type Row = { path: string; title?: string; description?: string; robots?: string; canonical?: string };
+  const q = `*[_type == "page" && defined(path)]{path, "title": coalesce(seo.title, title), "description": seo.description, "robots": seo.robots, "canonical": seo.canonical}`;
+  const rows: Row[] = fromCms
+    ? (await sanity<Row[]>(q)) || []
+    : seed()
+        .filter((d) => d._type === "page" && d.path)
+        .map((d) => {
+          const seo = (d.seo || {}) as { title?: string; description?: string; robots?: string; canonical?: string };
+          return { path: d.path as string, title: seo.title || (d.title as string), description: seo.description, robots: seo.robots, canonical: seo.canonical };
+        });
+  return rows
+    .filter((r) => !/noindex/.test(r.robots || "") && (!r.canonical || new URL(r.canonical, "https://idealdentalsolutions.com").pathname === r.path))
+    .map((r) => ({ path: r.path, title: r.title || r.path, description: r.description || "" }))
+    .sort((a, b) => a.path.localeCompare(b.path));
+}
