@@ -47,7 +47,7 @@ Every page is rendered as WordPress printed it, then sped up on the way out (the
 - **One stylesheet per page:** the 20 or so theme and Elementor stylesheets of a page are replaced by one file with only the rules the page uses (`public/assets/page-css/`, built by `npm run optimize` from the content). Fail-safe: if the page uses a class or id whose rules were left out (for example a new kind of block added in /cms), it gets its original stylesheets back. Re-run `npm run optimize` after layout changes in the CMS.
 - **Images:** WebP copies of every uploaded PNG/JPEG next to the original (`<file>.webp`, plus `<file>-768w.webp` for phones; `npm run images`): 112 MB of uploads became 6.3 MB. Every image gets its width and height and loads lazily below the first section. The first section's background (or the first slide of a slideshow) is preloaded, with the phone copy on phones.
 - **Fonts:** Urbanist is served from this site (`public/assets/fonts`, OFL) and preloaded, instead of two Google Fonts stylesheets.
-- **Scripts:** jQuery moves from the head to the footer scripts, and the footer scripts run deferred in the same order (inline ones as deferred `data:` scripts). Google's GA4 script loads on the first scroll, tap or key press, or 10 seconds after the page has loaded.
+- **Scripts:** the theme and Elementor scripts load exactly as WordPress printed them (deferring them broke the form handler on fast connections). Google's GA4 script loads on the first scroll, tap or key press, or 10 seconds after the page has loaded.
 - `html{overflow-x:clip}`: nothing can make the page scroll sideways.
 
 ## Redirects
