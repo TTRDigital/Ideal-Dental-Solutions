@@ -167,18 +167,34 @@ function imagesPass(html: string) {
   // Background images in inline styles and Elementor settings.
   out = out.replace(/(url\(\s*(?:&quot;|['"])?)(\/wp-content\/uploads\/[^"')&]+?\.(?:png|jpe?g))/gi, (_m, pre: string, url: string) => `${pre}${webp(url)}`);
   // Background slideshows: image URLs in Elementor's settings JSON (escaped slashes).
-  out = out.replace(/\\\/wp-content\\\/uploads\\\/[^"&]+?\.(?:png|jpe?g)(?=&quot;)/gi, (url) => webp(url.replace(/\\\//g, "/")).replace(/\//g, "\\/"));
+  const phones: Record<string, string> = {};
+  out = out.replace(/\\\/wp-content\\\/uploads\\\/[^"&]+?\.(?:png|jpe?g)(?=&quot;)/gi, (url) => {
+    const path = url.replace(/\\\//g, "/");
+    const full = webp(path).replace(/\//g, "\\/");
+    const phone = phoneCopy(path);
+    if (phone) phones[full] = phone.replace(/\//g, "\\/");
+    return full;
+  });
   // A slideshow at the top of the page is drawn by script: fetch its first image right away.
   const mainAt = out.indexOf('<main id="main"');
-  const hero = mainAt >= 0 ? /<div class="[^"]*\be-parent\b[^"]*"[^>]*data-settings="([^"]*)"/.exec(out.slice(mainAt)) : null;
-  const slide = hero && /background_slideshow_gallery&quot;:\[\{[^\]]*?&quot;url&quot;:&quot;([^&]+)&quot;/.exec(hero[1]);
+  const hero = mainAt >= 0 ? /<div class="[^"]*\be-parent\b[^"]*"[^>]*data-id="([0-9a-f]+)"[^>]*data-settings="([^"]*)"/.exec(out.slice(mainAt)) : null;
+  const slide = hero && /background_slideshow_gallery&quot;:\[\{[^\]]*?&quot;url&quot;:&quot;([^&]+)&quot;/.exec(hero[2]);
   if (slide) {
     const first = slide[1].replace(/\\\//g, "/");
-    // Paint that image as the section's own background until the slideshow script draws over it.
-    const at = mainAt + (hero!.index ?? 0);
-    const tag = /^<div [^>]*>/.exec(out.slice(at))?.[0];
-    if (tag && !/\sstyle="/.test(tag)) out = `${out.slice(0, at)}${tag.replace(/^<div /, `<div style="background:url(${first}) center/cover no-repeat" `)}${out.slice(at + tag.length)}`;
-    out = out.replace("</head>", `<link rel="preload" as="image" href="${first}" fetchpriority="high">\n</head>`);
+    const phone = phones[slide[1]]?.replace(/\\\//g, "/");
+    // Paint that image as the section's own background until the slideshow script draws over it (the phone copy on phones).
+    const el = `.elementor-element.elementor-element-${hero![1]}.e-parent`;
+    const css = `${el}{background:url(${first}) center/cover no-repeat}${phone ? `@media (max-width: 767px){${el}{background-image:url(${phone})}}` : ""}`;
+    const preload = phone
+      ? `<link rel="preload" as="image" href="${phone}" media="(max-width: 767px)" fetchpriority="high">\n<link rel="preload" as="image" href="${first}" media="(min-width: 768px)" fetchpriority="high">`
+      : `<link rel="preload" as="image" href="${first}" fetchpriority="high">`;
+    out = out.replace("</head>", `${preload}\n<style id="hero-slide">${css}</style>\n</head>`);
+  }
+  // On phones every slideshow uses the 768px copies. Elementor reads the slide list from data-settings when its
+  // footer scripts start, so this swaps it first. It only edits attributes: no script is moved, deferred or added before jQuery.
+  if (Object.keys(phones).length && out.includes("</main>")) {
+    const swap = `<script id="slideshow-phone">(function(m){if(!matchMedia("(max-width: 767px)").matches)return;document.querySelectorAll("[data-settings*=background_slideshow_gallery]").forEach(function(e){var s=e.getAttribute("data-settings");for(var k in m)s=s.split(k).join(m[k]);e.setAttribute("data-settings",s)})})(${JSON.stringify(phones)})</script>`;
+    out = out.replace("</main>", `${swap}\n</main>`);
   }
   return out;
 }
