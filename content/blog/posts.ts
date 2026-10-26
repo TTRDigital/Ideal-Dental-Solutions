@@ -18,8 +18,12 @@ export type BlogPost = {
   modified?: string;
   /** The matching service page */
   service: { path: string; label: string };
-  /** Optional existing site image (no stock photos of patients) */
-  image?: { src: string; width: number; height: number; alt: string; caption?: string };
+  /** Blog category (list grouping and pill), see lib/site/blog.ts */
+  category: "implants" | "cosmetic" | "gums" | "restorative";
+  /** Hero photo: one of the practice's own photos in public/images/blog/ (no stock photos of patients) */
+  photo: "model" | "scan" | "team-kaveh" | "team-fozia";
+  /** "At a glance" card under the short answer (icons: clock, calendar, shield, scan, layers, tooth, implant, smile) */
+  facts?: { icon: string; label: string; value: string }[];
   /** Short answer at the top (HTML) */
   answer: string;
   sections: { heading: string; html: string }[];
@@ -37,12 +41,14 @@ export const posts: BlogPost[] = [
     description: "Implant or bridge? How each replaces a missing tooth, how long they last, what they do to neighboring teeth and bone, and how to decide. McLean, VA.",
     published: "2026-10-26",
     service: { path: "/services/dental-implants-dentistry/single-tooth-implants/", label: "Single tooth implants" },
-    image: {
-      src: "/wp-content/uploads/2026/06/img-8982346-768x768.webp",
-      width: 768,
-      height: 768,
-      alt: "Dental model of the upper and lower teeth",
-    },
+    category: "implants",
+    photo: "model",
+    facts: [
+      { icon: "clock", label: "Bridge: time to finish", value: "About 2 to 4 weeks" },
+      { icon: "calendar", label: "Implant: time to heal", value: "Often 3 to 9 months" },
+      { icon: "shield", label: "How long they last", value: "Bridge: typically 5 to 15 years. Implant: can last a lifetime" },
+      { icon: "tooth", label: "Teeth beside the gap", value: "Bridge: reshaped for crowns. Implant: left alone" },
+    ],
     answer: `<p>Both a dental implant and a bridge can replace one missing tooth with a fixed tooth that does not come out. An <strong>implant</strong> replaces the root with a small titanium post in the jawbone and leaves the neighboring teeth alone. A <strong>bridge</strong> is anchored to the teeth on either side of the gap, which usually need to be reshaped for crowns. Implants take longer and need enough healthy bone, but they tend to last longer and help preserve the jawbone. A bridge is faster and avoids surgery. The right choice depends on your bone, your gums, the health of the neighboring teeth and your timeline.</p>`,
     sections: [
       {
@@ -145,13 +151,14 @@ export const posts: BlogPost[] = [
     description: "Full-arch implants or dentures? How each works, how they feel, how long they last, cleaning, and who is a candidate. From a McLean, VA prosthodontist.",
     published: "2026-10-26",
     service: { path: "/services/dental-implants-dentistry/full-arch-implants/", label: "Full arch implants" },
-    image: {
-      src: "/wp-content/uploads/2026/05/8b88abfc-8705-4c39-a5b3-62533d4ba5be-768x483.png",
-      width: 768,
-      height: 483,
-      alt: "Ideal Dental Solutions team member reviewing a 3D scan of a patient's teeth",
-      caption: "Full-arch treatment is planned from a 3D scan of your jaw.",
-    },
+    category: "implants",
+    photo: "scan",
+    facts: [
+      { icon: "implant", label: "Implants per arch", value: "Usually 4 to 6" },
+      { icon: "calendar", label: "Healing before final teeth", value: "About 3 to 6 months" },
+      { icon: "clock", label: "Average denture lifespan", value: "About 7 to 10 years" },
+      { icon: "layers", label: "Denture relines", value: "Every 1 to 2 years" },
+    ],
     answer: `<p>Traditional dentures are removable teeth that rest on your gums. Full-arch implants (sometimes called implant-supported or "fixed" dentures) replace a whole upper or lower arch of teeth with a set that is attached to several implants in the jawbone, usually four to six per arch. Full-arch implants are more stable, do not slip the way dentures can and help prevent bone loss in the jaw, but they require surgery, healing time and enough bone. Dentures cost less and involve no surgery, but they can slip and usually need relining and replacing over the years.</p>`,
     sections: [
       {
@@ -242,6 +249,14 @@ export const posts: BlogPost[] = [
     description: "How long Invisalign takes, what speeds it up or slows it down, how often aligners change, and what happens after. Plain answers from McLean, VA.",
     published: "2026-10-26",
     service: { path: "/services/cosmetic-dentistry/invisalign/", label: "Invisalign treatment" },
+    category: "cosmetic",
+    photo: "scan",
+    facts: [
+      { icon: "calendar", label: "Typical treatment", value: "About a year to a year and a half" },
+      { icon: "clock", label: "Mild cases", value: "As little as six months" },
+      { icon: "smile", label: "Daily wear", value: "20 to 22 hours" },
+      { icon: "layers", label: "New aligners", value: "Every 1 to 2 weeks" },
+    ],
     answer: `<p>Many people finish Invisalign in about a year to a year and a half. Simple cases, such as closing a small gap or fixing mild crowding, can take as little as six months, while more complex bite problems can take two years or longer. The biggest factor you control is wear time: aligners need to be worn 20 to 22 hours a day. After treatment you will wear a retainer, usually every night, to keep your teeth from drifting back.</p>`,
     sections: [
       {
@@ -256,7 +271,7 @@ export const posts: BlogPost[] = [
       },
       {
         heading: "Step by step: from consultation to retainer",
-        html: `<ol>
+        html: `<ol class="ib-steps">
 <li><strong>Consultation:</strong> an exam and digital 3D scans of your teeth to see whether clear aligners are a good fit.</li>
 <li><strong>Treatment plan:</strong> a digital plan of how your teeth will move, and the number of aligners you will likely need.</li>
 <li><strong>First aligners:</strong> you get your first trays. Small bumps called attachments may be bonded to some teeth to help the aligners grip and move them.</li>
@@ -337,6 +352,14 @@ export const posts: BlogPost[] = [
     description: "Bleeding gums, bad breath, receding gums: the early signs of gum disease, who is at risk, how it is treated, and when to see a dentist in McLean, VA.",
     published: "2026-10-26",
     service: { path: "/services/periodontic-dentistry/gum-disease-treatment/", label: "Gum disease treatment" },
+    category: "gums",
+    photo: "team-fozia",
+    facts: [
+      { icon: "tooth", label: "Earliest signs", value: "Red, swollen or bleeding gums" },
+      { icon: "shield", label: "Gingivitis", value: "Usually reversible with care" },
+      { icon: "layers", label: "Adults 30+ with periodontitis", value: "About 4 in 10 (CDC, 2009 to 2014)" },
+      { icon: "calendar", label: "Checkups", value: "At least once a year (CDC)" },
+    ],
     answer: `<p>The earliest signs of gum disease are gums that are red, swollen or tender, and gums that bleed when you brush or floss. Other warning signs include bad breath that will not go away, gums pulling back from the teeth, and teeth that feel loose or sensitive. Early gum disease often does not hurt, so it is easy to miss. Caught early (gingivitis), it can usually be reversed with a professional cleaning and better daily care. If you notice any of these signs, book a dental exam rather than waiting for pain.</p>`,
     sections: [
       {
@@ -455,6 +478,14 @@ export const posts: BlogPost[] = [
     description: "What happens during a root canal, how long it takes, whether it hurts, recovery tips and why you may need a crown. Plain answers from McLean, VA.",
     published: "2026-10-26",
     service: { path: "/services/restorative-dentistry/root-canal-therapy/", label: "Root canal therapy" },
+    category: "restorative",
+    photo: "team-kaveh",
+    facts: [
+      { icon: "clock", label: "Treatment time", value: "About 60 to 90 minutes" },
+      { icon: "calendar", label: "Visits", value: "Usually 1 or 2" },
+      { icon: "shield", label: "Recovery", value: "Usually less than a week" },
+      { icon: "tooth", label: "Afterward", value: "A crown or filling protects the tooth" },
+    ],
     answer: `<p>A root canal removes infected or damaged pulp from inside a tooth, cleans and seals the space, and saves the tooth instead of pulling it. The area is numbed first, and Cleveland Clinic says a root canal is usually no more painful than getting a filling. Most treatments take about 60 to 90 minutes, sometimes over two visits. Expect some tenderness for a few days, and plan on a crown or filling afterward to protect the tooth.</p>`,
     sections: [
       {
@@ -472,7 +503,7 @@ export const posts: BlogPost[] = [
       },
       {
         heading: "The root canal procedure, step by step",
-        html: `<ol>
+        html: `<ol class="ib-steps">
 <li><strong>Exam and X-rays.</strong> Your dentist confirms which tooth is affected and looks at the shape of the roots.</li>
 <li><strong>Numbing.</strong> A local anesthetic numbs the tooth and the area around it. Ask about options to help you relax if you feel anxious.</li>
 <li><strong>Isolating the tooth.</strong> A small sheet called a dental dam keeps the tooth clean and dry during treatment.</li>
