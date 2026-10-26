@@ -30,6 +30,8 @@ export const FIXES: [string, string][] = [
   ],
   ["Our team of experienced periodontists uses", "Our dental team uses"],
   ["Book your appointment with our periodontists today", "Book your appointment with our dental team today"],
+  ["Our Proven Expertise in Periodontics", "Our Care for Your Gums"],
+  ["backed by decades of combined experience,", "backed by years of experience,"],
 ];
 
 export function fixText(text: string) {
@@ -40,6 +42,6 @@ export function fixText(text: string) {
 const AREA = /,?\{"@type":"City","name":"Arlington, VA"\}/g;
 
 export function withoutArlington(html: string) {
-  if (!/Arlington|528-0800|[Pp]eriodontists/.test(html)) return html;
+  if (!/Arlington|528-0800|[Pp]eriodontists|Proven Expertise|decades of combined/.test(html)) return html;
   return fixText(html).replace(AREA, "").replace(/\[,/g, "[");
 }
