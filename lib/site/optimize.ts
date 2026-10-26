@@ -191,7 +191,7 @@ function scripts(html: string) {
     return "";
   });
   if (tags.length !== 2) return html;
-  let body = html.slice(headEnd);
+  const body = html.slice(headEnd);
   // Before the first footer script that loads a file or uses jQuery.
   const at = [...body.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)].find((m) => /\ssrc=/.test(m[0].slice(0, m[0].indexOf(">"))) || /jQuery|\$\(/.test(m[1]));
   if (!at || at.index == null) return html;
