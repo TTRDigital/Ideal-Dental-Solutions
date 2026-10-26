@@ -222,5 +222,17 @@
   {
     "source": "/wp-content/uploads/2024/09/porcelain-veneers-image.webp",
     "destination": "/wp-content/uploads/2026/06/smile-makeover-image.webp"
+  },
+  {
+    "source": "/about-us-client-draft-2/",
+    "destination": "/about-us/"
+  },
+  {
+    "source": "/dental-fillings-in-mclean-va-2/",
+    "destination": "/dental-fillings-in-mclean-va/"
+  },
+  {
+    "source": "/preventive-dentistry-in-northern-virginia/",
+    "destination": "/services/preventive-dentistry/"
   }
 ]

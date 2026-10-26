@@ -2,9 +2,13 @@ import "server-only";
 
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import { redirects } from "@/redirects";
 import { apiVersion, dataset, projectId } from "@/sanity/env";
 import { buildSiteData, normalizePath, resolvePath, resolveSearch, resolveSearchFrom, type SeedDoc } from "./local";
 import type { ArchiveDoc, PageDoc, Resolved, SearchPageDoc, SiteData } from "./render";
+
+/** Pages that answer a 301 (redirects.ts) stay out of the sitemap and /llms.txt. */
+const redirected = new Set(redirects.map((r) => r.source));
 
 /** ISR window for CMS content, in seconds. Publishing also refreshes via /api/revalidate. */
 export const REVALIDATE_SECONDS = 300;
@@ -82,7 +86,7 @@ export async function allPaths(fromCms: boolean): Promise<{ path: string; type: 
         });
   // Pages whose canonical is another page stay out of the sitemap too.
   const elsewhere = (r: Row) => Boolean(r.canonical) && new URL(r.canonical!, "https://idealdentalsolutions.com").pathname !== r.path;
-  return rows.map((r) => ({ path: r.path, type: r._type, modified: r.modified, noindex: /noindex/.test(r.robots || "") || elsewhere(r) }));
+  return rows.map((r) => ({ path: r.path, type: r._type, modified: r.modified, noindex: /noindex/.test(r.robots || "") || elsewhere(r) || redirected.has(r.path) }));
 }
 
 /** Site search (?s=): the results page, or null when `page` is past the last one. */
@@ -117,7 +121,7 @@ export async function pageSummaries(fromCms: boolean): Promise<PageSummary[]> {
           return { path: d.path as string, title: seo.title || (d.title as string), description: seo.description, robots: seo.robots, canonical: seo.canonical };
         });
   return rows
-    .filter((r) => !/noindex/.test(r.robots || "") && (!r.canonical || new URL(r.canonical, "https://idealdentalsolutions.com").pathname === r.path))
+    .filter((r) => !redirected.has(r.path) && !/noindex/.test(r.robots || "") && (!r.canonical || new URL(r.canonical, "https://idealdentalsolutions.com").pathname === r.path))
     .map((r) => ({ path: r.path, title: r.title || r.path, description: r.description || "" }))
     .sort((a, b) => a.path.localeCompare(b.path));
 }
