@@ -10,6 +10,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";
 import { fixText } from "../lib/site/arlington.ts";
+import { NEW_IMAGE, REPLACED } from "../lib/site/replaced-images.ts";
 
 type Doc = Record<string, unknown> & { _id: string; _type: string; path?: string; title?: string; seo?: Record<string, unknown> };
 type Node = Record<string, unknown>;
@@ -471,6 +472,16 @@ walk(page("/about-us/").content, (n) => {
   if (typeof adili.excerpt === "string") adili.excerpt = fix(adili.excerpt as string);
 }
 
+/* 8d. A photo of a dentist who is not at the practice (coat: "Mahesh Patel, D.D.S.") is replaced by the team photo (lib/site/replaced-images.ts). */
+for (const d of docs) {
+  walk(d, (n) => {
+    if (n._type === "elCta" && REPLACED.includes(String(n.bgImage))) {
+      n.bgImage = NEW_IMAGE;
+      n.bgLabel = "The Ideal Dental Solutions team at the McLean office";
+    }
+  });
+}
+
 /* 9. Structured data: Yoast's graph kept; Organization -> Dentist (Site settings > Business schema); no site search action. */
 const SERVICES: [string, string][] = [
   ["Restorative Dentistry", "/services/restorative-dentistry/"],
@@ -596,10 +607,10 @@ for (const d of docs.filter((x) => ["page", "archivePage"].includes(x._type) && 
   }
 }
 
-// No Arlington office any more: nothing may mention it.
+// No Arlington office any more, and no photo of a dentist who is not at the practice.
 {
-  const left = docs.filter((d) => /arlington|clarendon|528-0800|Tysons Corner \(8280/i.test(JSON.stringify(d)));
-  if (left.length) throw new Error(`Arlington still mentioned in ${left.map((d) => d._id).join(", ")}`);
+  const left = docs.filter((d) => /arlington|clarendon|528-0800|Tysons Corner \(8280|f27652e6-1b34|8dc0a8ce-a9b3/i.test(JSON.stringify(d)));
+  if (left.length) throw new Error(`Arlington or a replaced photo still in ${left.map((d) => d._id).join(", ")}`);
 }
 
 writeFileSync(file, JSON.stringify(docs, null, 1));
