@@ -10,7 +10,8 @@
  * plugin script counts as content, so classes added by scripts are kept) and
  * the result is minified to public/assets/page-css/<hash>.css.
  *
- * lib/generated/page-css.json maps each stylesheet set to its bundle and lists
+ * lib/generated/page-css.json maps each stylesheet set to its bundle (and the
+ * background image of each page's first section, which is preloaded) and lists
  * the classes and ids whose rules were removed: a page that uses one of them
  * (content added in the CMS later) gets its original stylesheets back
  * (lib/site/optimize.ts). Re-run after changing the content's layout.
@@ -111,7 +112,7 @@ rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 const dictionary: string[] = [];
 const index = new Map<string, number>();
-const bundles: Record<string, { file: string; dropped: string }> = {};
+const bundles: Record<string, { file: string; dropped: string; heroes?: Record<string, [string, string | null]> }> = {};
 let before = 0;
 let after = 0;
 
@@ -149,8 +150,23 @@ for (const [key, group] of groups) {
   const kept = selectorTokens(css);
   const used = markupTokens(content);
   const dropped = [...selectorTokens(full)].filter((t) => !kept.has(t) && !used.has(t)).sort();
+  // Background image of each page's first section, to preload it (it is only found once the CSS is in).
+  const heroes: Record<string, [string, string | null]> = {};
+  for (const html of group.html) {
+    const main = html.indexOf('<main id="main"');
+    const id = main >= 0 ? /class="[^"]*\be-parent\b[^"]*"[^>]*data-id="([0-9a-f]+)"/.exec(html.slice(main))?.[1] : undefined;
+    if (!id) continue;
+    postcss.parse(css).walkRules((rule) => {
+      if (rule.parent?.type !== "root" || !rule.selector.includes(`.elementor-element-${id}`) || /::?(before|after)/.test(rule.selector)) return;
+      rule.walkDecls(/^background(-image)?$/, (decl) => {
+        const url = /url\((['"]?)(\/wp-content\/uploads\/[^'")]+)\1\)/.exec(decl.value)?.[2];
+        if (url && !heroes[id]) heroes[id] = [url, phoneCopy(url.replace(/\.webp$/, ""))];
+      });
+    });
+  }
   bundles[key] = {
     file,
+    ...(Object.keys(heroes).length ? { heroes } : {}),
     dropped: dropped
       .map((t) => {
         if (!index.has(t)) index.set(t, dictionary.push(t) - 1);

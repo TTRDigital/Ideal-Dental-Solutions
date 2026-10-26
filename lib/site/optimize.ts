@@ -6,8 +6,10 @@ import pageCssJson from "../generated/page-css.json" with { type: "json" };
  * see render.ts). It runs on the finished HTML, so the CMS content and the
  * migration check (scripts/verify.ts) are unchanged:
  *
- * - tracking: the TTR tracker and Google Analytics 4 on every page
+ * - tracking: the TTR tracker and Google Analytics 4 on every page (Google's
+ *   script loads after the page, so it does not hold up the first interaction)
  * - no sideways scrolling: html clips horizontal overflow
+ * - the first section's background image is preloaded (phone copy on phones)
  * - stylesheets: the page's theme and Elementor stylesheets are replaced by
  *   one stylesheet holding only the rules the page uses (npm run optimize,
  *   lib/generated/page-css.json). Fail-safe: when the page uses a class or id
@@ -28,16 +30,18 @@ export const TTR_SITE_ID = "H1QeRbEKxfQo2axph4VByw";
 /** [width, height, WebP width or 0, phone copy width or 0] by original path. */
 const images = imagesJson as unknown as Record<string, [number, number, number, number]>;
 
-type CssBundle = { file: string; dropped: string };
-const pageCss = pageCssJson as { dictionary: string[]; bundles: Record<string, CssBundle> };
+/** heroes: first-section background by Elementor element id: [image, phone copy or null]. */
+type CssBundle = { file: string; dropped: string; heroes?: Record<string, [string, string | null]> };
+const pageCss = pageCssJson as unknown as { dictionary: string[]; bundles: Record<string, CssBundle> };
 
 /** Nothing may widen the page sideways (the hero's video frame is wider than a phone). `clip` keeps the sticky header working. */
 const GUARD = "<style id=\"overflow-guard\">html{overflow-x:clip}</style>";
 
 const TRACKING = [
   `<script async src="https://ttr-portal.vercel.app/api/site/script" data-site="${TTR_SITE_ID}"></script>`,
-  `<script async src="https://www.googletagmanager.com/gtag/js?id=${GA4_ID}"></script>`,
-  `<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","${GA4_ID}");</script>`,
+  // GA4: the config is queued at once; Google's script (the heaviest script on the page) loads after the page has loaded.
+  `<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","${GA4_ID}");` +
+    `addEventListener("load",function(){setTimeout(function(){var s=document.createElement("script");s.async=true;s.src="https://www.googletagmanager.com/gtag/js?id=${GA4_ID}";document.head.appendChild(s)},1500)});</script>`,
 ].join("\n");
 
 /** Urbanist (variable, latin and latin-ext) from this site instead of Google Fonts: no extra connections before the first paint. */
@@ -111,11 +115,19 @@ function stylesheets(html: string) {
   const dropped = new Set(bundle.dropped ? bundle.dropped.split(",").map((i) => pageCss.dictionary[parseInt(i, 36)]) : []);
   for (const t of markupTokens(html)) if (dropped.has(t)) return html; // fail-safe: keep the original stylesheets
   let first = true;
+  const main = html.indexOf('<main id="main"');
+  const heroId = main >= 0 ? /class="[^"]*\be-parent\b[^"]*"[^>]*data-id="([0-9a-f]+)"/.exec(html.slice(main))?.[1] : undefined;
+  const hero = heroId ? bundle.heroes?.[heroId] : undefined;
+  const preload = hero
+    ? hero[1]
+      ? `<link rel="preload" as="image" href="${hero[1]}" media="(max-width: 767px)" fetchpriority="high">\n<link rel="preload" as="image" href="${hero[0]}" media="(min-width: 768px)" fetchpriority="high">\n`
+      : `<link rel="preload" as="image" href="${hero[0]}" fetchpriority="high">\n`
+    : "";
   return html.replace(STYLESHEET, (tag) => {
     if (!sheets.some((s) => s.tag === tag)) return tag;
     if (!first) return "";
     first = false;
-    return `<link rel="stylesheet" id="page-css" href="${bundle.file}" media="all">\n`;
+    return `${preload}<link rel="stylesheet" id="page-css" href="${bundle.file}" media="all">\n`;
   });
 }
 
