@@ -482,6 +482,13 @@ for (const d of docs) {
   });
 }
 
+/* 8e. Fact check (Mara, Oct 26): no periodontist is named on the site, so the gum care pages speak of the dental team. */
+{
+  const deep = (n: unknown): unknown =>
+    typeof n === "string" ? fixText(n) : Array.isArray(n) ? n.map(deep) : n && typeof n === "object" ? Object.fromEntries(Object.entries(n).map(([k, v]) => [k, deep(v)])) : n;
+  for (const path of ["/services/periodontic-dentistry/", "/locations/mclean/periodontal-dentistry/"]) Object.assign(page(path), deep(page(path)));
+}
+
 /* 9. Structured data: Yoast's graph kept; Organization -> Dentist (Site settings > Business schema); no site search action. */
 const SERVICES: [string, string][] = [
   ["Restorative Dentistry", "/services/restorative-dentistry/"],
@@ -611,6 +618,8 @@ for (const d of docs.filter((x) => ["page", "archivePage"].includes(x._type) && 
 {
   const left = docs.filter((d) => /arlington|clarendon|528-0800|Tysons Corner \(8280|f27652e6-1b34|8dc0a8ce-a9b3/i.test(JSON.stringify(d)));
   if (left.length) throw new Error(`Arlington or a replaced photo still in ${left.map((d) => d._id).join(", ")}`);
+  const perio = docs.filter((d) => /periodontists|proven expertise in periodontics|decades of combined/i.test(JSON.stringify(d)));
+  if (perio.length) throw new Error(`Unverified gum care claims still in ${perio.map((d) => d._id).join(", ")}`);
 }
 
 writeFileSync(file, JSON.stringify(docs, null, 1));

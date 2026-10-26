@@ -14837,7 +14837,7 @@
         "elId": "9d03fcb",
         "_type": "elHeading",
         "widget": "heading",
-        "title": "Our Proven Expertise in Periodontics",
+        "title": "Our Care for Your Gums",
         "tpl": "<div class=\"elementor-element elementor-element-9d03fcb elementor-widget elementor-widget-heading\" data-id=\"9d03fcb\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
        },
        {
@@ -14849,7 +14849,7 @@
          {
           "_type": "htmlBlock",
           "_key": "4fa3a1eead92",
-          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our team of experienced periodontists uses advanced technology and a comprehensive approach to deliver effective, minimally invasive treatments tailored to each patient’s unique needs.</p>"
+          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our dental team uses advanced technology and a comprehensive approach to deliver effective, minimally invasive treatments tailored to each patient’s unique needs.</p>"
          }
         ],
         "tpl": "<div class=\"elementor-element elementor-element-c43e0a5 elementor-widget elementor-widget-text-editor\" data-id=\"c43e0a5\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -14899,8 +14899,8 @@
              "alt": "",
              "attrs": "loading=\"lazy\" decoding=\"async\" class=\"attachment-full size-full wp-image-323\""
             },
-            "title": "Experienced Periodontists",
-            "description": "Our team includes some of the most experienced and qualified periodontists, adept at diagnosing and treating all forms of gum disease.",
+            "title": "Experienced Care for Your Gums",
+            "description": "Our dental team diagnoses and treats gum disease at every stage.",
             "tpl": "<div class=\"elementor-element elementor-element-2d35904 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"2d35904\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n\t\t\t\t\t<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\">[[@img:image]]</figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\">[[@text:title]]</h3><p class=\"elementor-image-box-description\">[[@text:description]]</p></div></div>\t\t\t\t</div>"
            }
           ],
@@ -15002,7 +15002,7 @@
         "elId": "84b016f",
         "_type": "elHeading",
         "widget": "heading",
-        "title": "Our Proven Expertise in Periodontics",
+        "title": "Our Care for Your Gums",
         "tpl": "<div class=\"elementor-element elementor-element-84b016f elementor-widget elementor-widget-heading\" data-id=\"84b016f\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
        },
        {
@@ -15014,7 +15014,7 @@
          {
           "_type": "htmlBlock",
           "_key": "bbb99cf21e62",
-          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our team of experienced periodontists uses advanced technology and a comprehensive approach to deliver effective, minimally invasive treatments tailored to each patient’s unique needs.</p>"
+          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our dental team uses advanced technology and a comprehensive approach to deliver effective, minimally invasive treatments tailored to each patient’s unique needs.</p>"
          }
         ],
         "tpl": "<div class=\"elementor-element elementor-element-aef1825 elementor-widget elementor-widget-text-editor\" data-id=\"aef1825\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -15054,8 +15054,8 @@
          "alt": "",
          "attrs": "loading=\"lazy\" decoding=\"async\" class=\"attachment-full size-full wp-image-323\""
         },
-        "title": "Experienced Periodontists",
-        "description": "Our team includes some of the most experienced and qualified periodontists, adept at diagnosing and treating all forms of gum disease.",
+        "title": "Experienced Care for Your Gums",
+        "description": "Our dental team diagnoses and treats gum disease at every stage.",
         "tpl": "<div class=\"elementor-element elementor-element-fe774cb elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"fe774cb\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n\t\t\t\t\t<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\">[[@img:image]]</figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\">[[@text:title]]</h3><p class=\"elementor-image-box-description\">[[@text:description]]</p></div></div>\t\t\t\t</div>"
        },
        {
@@ -15137,7 +15137,7 @@
        {
         "_type": "htmlBlock",
         "_key": "1c5a84a94f31",
-        "html": "<p style=\"font-size: 18px; line-height: 26px; letter-spacing: 0.9px; max-width: 728px;\">Book your appointment with our periodontists today and be on your way to achieving the smile of your dreams. Contact Ideal Dental Solutions in McLean, VA to get started.</p>"
+        "html": "<p style=\"font-size: 18px; line-height: 26px; letter-spacing: 0.9px; max-width: 728px;\">Book your appointment with our dental team today and be on your way to achieving the smile of your dreams. Contact Ideal Dental Solutions in McLean, VA to get started.</p>"
        }
       ],
       "tpl": "<div class=\"elementor-element elementor-element-9d58add elementor-widget elementor-widget-text-editor\" data-id=\"9d58add\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -37500,7 +37500,7 @@
         "elId": "07a4e15",
         "_type": "elHeading",
         "widget": "heading",
-        "title": "Our Proven Expertise in Periodontics",
+        "title": "Our Care for Your Gums",
         "tpl": "<div class=\"elementor-element elementor-element-07a4e15 elementor-widget elementor-widget-heading\" data-id=\"07a4e15\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
        },
        {
@@ -37512,7 +37512,7 @@
          {
           "_type": "htmlBlock",
           "_key": "1d50c9c9b054",
-          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our patients trust us for specialized periodontal care backed by decades of combined experience, advanced technology, and genuine commitment to comfort.</p>"
+          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our patients trust us for specialized periodontal care backed by years of experience, advanced technology, and genuine commitment to comfort.</p>"
          }
         ],
         "tpl": "<div class=\"elementor-element elementor-element-a445321 elementor-widget elementor-widget-text-editor\" data-id=\"a445321\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -37548,8 +37548,8 @@
              "alt": "",
              "attrs": "loading=\"lazy\" decoding=\"async\" class=\"attachment-full size-full wp-image-323\""
             },
-            "title": "Experienced Periodontists",
-            "description": "Our highly qualified periodontists bring years of specialized training and hands-on experience to every patient case.",
+            "title": "Experienced Care for Your Gums",
+            "description": "Our dental team brings years of hands-on experience to caring for your gums.",
             "tpl": "<div class=\"elementor-element elementor-element-47a4518 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"47a4518\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n\t\t\t\t\t<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\">[[@img:image]]</figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\">[[@text:title]]</h3><p class=\"elementor-image-box-description\">[[@text:description]]</p></div></div>\t\t\t\t</div>"
            }
           ],
@@ -37651,7 +37651,7 @@
         "elId": "011df00",
         "_type": "elHeading",
         "widget": "heading",
-        "title": "Our Proven Expertise in Periodontics",
+        "title": "Our Care for Your Gums",
         "tpl": "<div class=\"elementor-element elementor-element-011df00 elementor-widget elementor-widget-heading\" data-id=\"011df00\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
        },
        {
@@ -37663,7 +37663,7 @@
          {
           "_type": "htmlBlock",
           "_key": "a3254ff991ec",
-          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our patients trust us for specialized periodontal care backed by decades of combined experience, advanced technology, and genuine commitment to comfort.</p>"
+          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our patients trust us for specialized periodontal care backed by years of experience, advanced technology, and genuine commitment to comfort.</p>"
          }
         ],
         "tpl": "<div class=\"elementor-element elementor-element-42392eb elementor-widget elementor-widget-text-editor\" data-id=\"42392eb\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -37689,8 +37689,8 @@
          "alt": "",
          "attrs": "loading=\"lazy\" decoding=\"async\" class=\"attachment-full size-full wp-image-323\""
         },
-        "title": "Experienced Periodontists",
-        "description": "Our highly qualified periodontists bring years of specialized training and hands-on experience to every patient case.",
+        "title": "Experienced Care for Your Gums",
+        "description": "Our dental team brings years of hands-on experience to caring for your gums.",
         "tpl": "<div class=\"elementor-element elementor-element-35ff551 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"35ff551\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n\t\t\t\t\t<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\">[[@img:image]]</figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\">[[@text:title]]</h3><p class=\"elementor-image-box-description\">[[@text:description]]</p></div></div>\t\t\t\t</div>"
        },
        {
