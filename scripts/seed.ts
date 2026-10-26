@@ -3,6 +3,7 @@
  *
  *   SANITY_WRITE_TOKEN=... npm run seed              # only adds missing documents
  *   SANITY_WRITE_TOKEN=... npm run seed -- --force   # overwrites the CMS with the built-in content
+ *   SANITY_WRITE_TOKEN=... npm run seed -- --only=page-868,page-location-vienna  # writes just these documents (replacing them)
  *   npm run seed -- --dry-run                        # validates without writing
  *
  * Images stay where they are (public/wp-content/uploads, same URLs as the
@@ -16,13 +17,19 @@ import { dataset, projectId } from "../sanity/env.ts";
 const token = process.env.SANITY_WRITE_TOKEN;
 const force = process.argv.includes("--force");
 const dryRun = process.argv.includes("--dry-run");
+const only = process.argv.find((a) => a.startsWith("--only="))?.slice(7).split(",").filter(Boolean);
 
 if (!token && !dryRun) {
   console.error("Set SANITY_WRITE_TOKEN (an Editor token from sanity.io/manage > API > Tokens).");
   process.exit(1);
 }
 
-const docs: { _id: string; _type: string }[] = JSON.parse(readFileSync(join(ROOT, "content/seed.json"), "utf8"));
+const all: { _id: string; _type: string }[] = JSON.parse(readFileSync(join(ROOT, "content/seed.json"), "utf8"));
+const docs = only ? all.filter((d) => only.includes(d._id)) : all;
+if (only && docs.length !== only.length) {
+  console.error(`Not in content/seed.json: ${only.filter((id) => !docs.some((d) => d._id === id)).join(", ")}`);
+  process.exit(1);
+}
 const url = `https://api.sanity.io/v2024-01-01/projects/${projectId}/datasets/${dataset}/mutate${dryRun ? "?dryRun=true" : ""}`;
 
 // Keep each request well under Sanity's payload limit.
@@ -30,7 +37,7 @@ const batches: unknown[][] = [];
 let current: unknown[] = [];
 let size = 0;
 for (const doc of docs) {
-  const m = force ? { createOrReplace: doc } : { createIfNotExists: doc };
+  const m = force || only ? { createOrReplace: doc } : { createIfNotExists: doc };
   const s = JSON.stringify(m).length;
   if (current.length && size + s > Number(process.env.SEED_BATCH_BYTES || 2_000_000)) {
     batches.push(current);
@@ -58,6 +65,6 @@ for (const mutations of batches) {
     process.exit(1);
   }
   n += mutations.length;
-  console.log(`${dryRun ? "checked" : force ? "wrote" : "added (if missing)"} ${n}/${docs.length}`);
+  console.log(`${dryRun ? "checked" : force || only ? "wrote" : "added (if missing)"} ${n}/${docs.length}`);
 }
 console.log(`Done: ${docs.length} documents ${dryRun ? "validated" : "sent"} to ${projectId}/${dataset}.`);

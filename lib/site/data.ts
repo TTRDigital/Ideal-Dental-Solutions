@@ -34,6 +34,26 @@ function seed(): SeedDoc[] {
   return seedCache;
 }
 
+/**
+ * Pages in the built-in copy that the CMS does not have yet, or has only as an
+ * empty page (/locations/ was blank on WordPress): served from
+ * content/seed.json until `npm run seed` publishes them. As soon as the CMS
+ * page has content, the CMS wins. Like `npm run seed`, this treats the
+ * built-in copy as the source of new pages: to remove a page, remove it from
+ * content/seed.json too.
+ */
+const hasContent = (d: Record<string, unknown> | null | undefined) => Boolean(d && (d.content || d.body));
+
+function builtInPage(path: string) {
+  return seed().find((d) => d._type === "page" && d.path === path && hasContent(d));
+}
+
+/** Built-in pages that replace a missing or empty CMS page. */
+function builtInPages(cmsPages: { path?: string; empty?: boolean }[]) {
+  const filled = new Set(cmsPages.filter((p) => p.path && !p.empty).map((p) => p.path));
+  return seed().filter((d) => d._type === "page" && typeof d.path === "string" && hasContent(d) && !filled.has(d.path));
+}
+
 /* ---------------- queries ---------------- */
 
 const SETTINGS = `*[_id == "siteSettings"][0]{..., header->, footer->}`;
@@ -62,6 +82,10 @@ export async function resolve(rawPath: string, fromCms: boolean): Promise<Resolv
   if (!fromCms) return resolvePath(seed(), rawPath);
   const path = normalizePath(rawPath);
   const doc = await sanity<SeedDoc>(BY_PATH, { path });
+  if (!hasContent(doc)) {
+    const local = builtInPage(path);
+    if (local) return { kind: "page", doc: local as PageDoc, ancestors: (local.ancestorPaths as string[]) || [] };
+  }
   if (doc?._type === "archivePage") return { kind: "archive", doc: doc as unknown as ArchiveDoc };
   if (doc?._type === "page") return { kind: "page", doc: doc as PageDoc, ancestors: (doc.ancestorPaths as string[]) || [] };
   const nf = await sanity<SeedDoc>(`*[_id == "notFound"][0]`);
@@ -70,16 +94,18 @@ export async function resolve(rawPath: string, fromCms: boolean): Promise<Resolv
 
 /** Every routed path, for static generation and the sitemaps. */
 export async function allPaths(fromCms: boolean): Promise<{ path: string; type: string; modified?: string; noindex?: boolean }[]> {
-  const q = `*[_type in ["page", "archivePage"] && defined(path)]{path, _type, "modified": coalesce(modified, seo.modifiedTime, _updatedAt), "robots": seo.robots, "canonical": seo.canonical}`;
-  type Row = { path: string; _type: string; modified?: string; robots?: string; canonical?: string };
-  const rows = fromCms
-    ? (await sanity<Row[]>(q)) || []
-    : seed()
-        .filter((d) => ["page", "archivePage"].includes(d._type) && d.path)
-        .map((d) => {
-          const seo = (d.seo || {}) as { modifiedTime?: string; robots?: string; canonical?: string };
-          return { path: d.path as string, _type: d._type, modified: (d.modified as string) || seo.modifiedTime, robots: seo.robots, canonical: seo.canonical };
-        });
+  const q = `*[_type in ["page", "archivePage"] && defined(path)]{path, _type, "modified": coalesce(modified, seo.modifiedTime, _updatedAt), "robots": seo.robots, "canonical": seo.canonical, "empty": _type == "page" && !defined(content) && !defined(body)}`;
+  type Row = { path: string; _type: string; modified?: string; robots?: string; canonical?: string; empty?: boolean };
+  const local = (d: SeedDoc): Row => {
+    const seo = (d.seo || {}) as { modifiedTime?: string; robots?: string; canonical?: string };
+    return { path: d.path as string, _type: d._type, modified: (d.modified as string) || seo.modifiedTime, robots: seo.robots, canonical: seo.canonical };
+  };
+  let rows: Row[];
+  if (fromCms) {
+    const cms = (await sanity<Row[]>(q)) || [];
+    const extra = builtInPages(cms).map(local);
+    rows = [...cms.filter((r) => !extra.some((e) => e.path === r.path)), ...extra];
+  } else rows = seed().filter((d) => ["page", "archivePage"].includes(d._type) && d.path).map(local);
   // Pages whose canonical is another page stay out of the sitemap too.
   const elsewhere = (r: Row) => Boolean(r.canonical) && new URL(r.canonical!, "https://idealdentalsolutions.com").pathname !== r.path;
   return rows.map((r) => ({ path: r.path, type: r._type, modified: r.modified, noindex: /noindex/.test(r.robots || "") || elsewhere(r) }));
@@ -93,7 +119,9 @@ export async function resolveSearchPage(query: string, page: number, fromCms: bo
     // Whole pages: WordPress searched the page content (see lib/site/search.ts).
     sanity<SeedDoc[]>(`*[_type == "page" && defined(path)]`),
   ]);
-  return resolveSearchFrom(searchPage || undefined, pages || [], query, page);
+  const extra = builtInPages((pages || []).map((p) => ({ path: p.path as string, empty: !hasContent(p) })));
+  const all = [...(pages || []).filter((p) => !extra.some((e) => e.path === p.path)), ...extra];
+  return resolveSearchFrom(searchPage || undefined, all, query, page);
 }
 
 /** The 404 page document, for search pages past the end. */
@@ -107,15 +135,17 @@ export type PageSummary = { path: string; title: string; description: string };
 /** Indexable pages with their title tag and meta description (for /llms.txt). */
 export async function pageSummaries(fromCms: boolean): Promise<PageSummary[]> {
   type Row = { path: string; title?: string; description?: string; robots?: string; canonical?: string };
-  const q = `*[_type == "page" && defined(path)]{path, "title": coalesce(seo.title, title), "description": seo.description, "robots": seo.robots, "canonical": seo.canonical}`;
-  const rows: Row[] = fromCms
-    ? (await sanity<Row[]>(q)) || []
-    : seed()
-        .filter((d) => d._type === "page" && d.path)
-        .map((d) => {
-          const seo = (d.seo || {}) as { title?: string; description?: string; robots?: string; canonical?: string };
-          return { path: d.path as string, title: seo.title || (d.title as string), description: seo.description, robots: seo.robots, canonical: seo.canonical };
-        });
+  const q = `*[_type == "page" && defined(path)]{path, "title": coalesce(seo.title, title), "description": seo.description, "robots": seo.robots, "canonical": seo.canonical, "empty": !defined(content) && !defined(body)}`;
+  const local = (d: SeedDoc): Row => {
+    const seo = (d.seo || {}) as { title?: string; description?: string; robots?: string; canonical?: string };
+    return { path: d.path as string, title: seo.title || (d.title as string), description: seo.description, robots: seo.robots, canonical: seo.canonical };
+  };
+  let rows: Row[];
+  if (fromCms) {
+    const cms = (await sanity<(Row & { empty?: boolean })[]>(q)) || [];
+    const extra = builtInPages(cms).map(local);
+    rows = [...cms.filter((r) => !extra.some((e) => e.path === r.path)), ...extra];
+  } else rows = seed().filter((d) => d._type === "page" && d.path).map(local);
   return rows
     .filter((r) => !/noindex/.test(r.robots || "") && (!r.canonical || new URL(r.canonical, "https://idealdentalsolutions.com").pathname === r.path))
     .map((r) => ({ path: r.path, title: r.title || r.path, description: r.description || "" }))
