@@ -11,7 +11,7 @@
  * Until `npm run seed` publishes them, the site serves these pages from the
  * built-in copy (lib/site/data.ts). After that they are edited in /cms.
  */
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, unlinkSync, writeFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { join } from "node:path";
 import sharp from "sharp";
@@ -33,13 +33,12 @@ const HERO_PHOTO = "/wp-content/uploads/2026/05/f27652e6-1b34-4494-a431-a20933a9
 
 /* ---------------- blocks ---------------- */
 
-function find(nodes: Node[], elId: string): Node {
+function find(nodes: Node[], elId: string): Node | undefined {
   for (const n of nodes) {
     if (n.elId === elId) return n;
-    const inner = find([...(n.children || [])], elId);
+    const inner = find(n.children || [], elId);
     if (inner) return inner;
   }
-  return undefined as unknown as Node;
 }
 
 function block(elId: string): Node {
@@ -70,7 +69,7 @@ function copy<T>(n: T): T {
 const container = (elId: string, children: Node[], style?: string) => {
   const c: Node = copy({ ...block(elId), children: [] as Node[] });
   c.children = children;
-  if (style) c.tpl = String(c.tpl).replace(/^<div /, `<div style="${style}" `);
+  if (style) c.tpl = String(c.tpl).replace(/^(<div class="[^"]*")/, `$1 style="${style}"`);
   return c;
 };
 const heading = (elId: string, title: string) => ({ ...copy({ ...block(elId) }), title });
@@ -126,7 +125,7 @@ function sections(pg: Page, crumbs: [string, string?][]) {
       out.push(
         container("8a23a75", [
           heading("31c37ae", s.heading),
-          text("f36453c", prose(s.intro, P_DARK)),
+          text("f36453c", prose(`<p>${s.intro}</p>`, P_DARK)),
           container("0e416a2", [
             container("d54f03a", [{ ...copy(block("088e71c")), image: { ...(block("088e71c").image as Node), ...s.photo, srcset: undefined, sizes: undefined, attrs: 'decoding="async" class="attachment-full size-full"' } }]),
             container("07aad87", [accordion("954b86a", s.items.map((i) => ({ title: i.title, html: i.text }))), text("ec83923", s.link)]),
@@ -195,7 +194,7 @@ async function ogImage(path: string, photo: string) {
   await sharp(join(ROOT, "public", photo)).rotate().flatten({ background: "#ffffff" }).resize(1200, 630, { fit: "cover", position: "attention" }).jpeg({ quality: 82, mozjpeg: true }).toFile(`${out}.tmp`);
   const fresh = readFileSync(`${out}.tmp`);
   if (!existsSync(out) || !fresh.equals(readFileSync(out))) writeFileSync(out, fresh);
-  (await import("node:fs")).unlinkSync(`${out}.tmp`);
+  unlinkSync(`${out}.tmp`);
 }
 
 function frame(id: number) {

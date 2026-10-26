@@ -110,7 +110,6 @@ function stylesheets(html: string) {
   // A first section with its own photo in an inline style (location pages) preloads that photo instead.
   const own = heroTag ? /\sstyle="[^"]*background-image:\s*url\(['"]?(\/wp-content\/uploads\/[^'")]+?\.(?:png|jpe?g))/i.exec(heroTag[0])?.[1] : undefined;
   const hero: [string, string | null] | undefined = own ? [webp(own), phoneCopy(own)] : heroId ? bundle.heroes?.[heroId] : undefined;
-  const phoneStyle = own && hero?.[1] ? `<style id="hero-phone">@media (max-width: 767px){.elementor-element-${heroId}[style]{background-image:url(${hero[1]})!important}}</style>\n` : "";
   const preload = hero
     ? hero[1]
       ? `<link rel="preload" as="image" href="${hero[1]}" media="(max-width: 767px)" fetchpriority="high">\n<link rel="preload" as="image" href="${hero[0]}" media="(min-width: 768px)" fetchpriority="high">\n`
@@ -120,7 +119,7 @@ function stylesheets(html: string) {
     if (!sheets.some((s) => s.tag === tag)) return tag;
     if (!first) return "";
     first = false;
-    return `${preload}<link rel="stylesheet" id="page-css" href="${bundle.file}" media="all">\n${phoneStyle}`;
+    return `${preload}<link rel="stylesheet" id="page-css" href="${bundle.file}" media="all">\n`;
   });
 }
 
@@ -187,6 +186,16 @@ function imagesPass(html: string) {
   return out;
 }
 
+/** A first section with its own photo in an inline style (location pages) shows the phone copy on phones. */
+function heroPhone(html: string) {
+  const main = html.indexOf('<main id="main"');
+  const tag = main >= 0 ? /<div class="[^"]*\be-parent\b[^"]*"[^>]*data-id="([0-9a-f]+)"[^>]*>/.exec(html.slice(main)) : null;
+  const own = tag ? /\sstyle="[^"]*background-image:\s*url\(['"]?(\/wp-content\/uploads\/[^'")]+?\.(?:png|jpe?g))(?:\.webp)?['"]?\)/i.exec(tag[0])?.[1] : undefined;
+  const phone = own ? phoneCopy(own) : null;
+  if (!tag || !phone) return html;
+  return html.replace("</head>", `<style id="hero-phone">@media (max-width: 767px){.elementor-element-${tag[1]}[style]{background-image:url(${phone})!important}}</style>\n</head>`);
+}
+
 function scripts(html: string) {
   const headEnd = html.indexOf("</head>");
   const tags: string[] = [];
@@ -223,5 +232,5 @@ function guard(html: string) {
 }
 
 export function optimizeHtml(html: string) {
-  return guard(scripts(imagesPass(fonts(stylesheets(html)))));
+  return guard(scripts(heroPhone(imagesPass(fonts(stylesheets(html))))));
 }
