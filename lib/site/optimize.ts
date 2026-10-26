@@ -18,9 +18,9 @@ import pageCssJson from "../generated/page-css.json" with { type: "json" };
  * - images: WebP copies (npm run images), a 768px copy for phones, the
  *   original width and height (no layout shift) and lazy loading below the
  *   first section
- * - scripts: jQuery moves from the head to the footer scripts (nothing above
- *   them uses it), and the footer scripts are deferred (same order), so they
- *   no longer hold up the first paint
+ * - scripts are printed exactly as WordPress printed them (jQuery in the
+ *   head, footer scripts in order). Deferring them let Elementor start before
+ *   Elementor Pro's form and carousel handlers on fast connections (#4, #7).
  */
 
 /** [width, height, WebP width or 0, phone copy width or 0] by original path. */
@@ -196,41 +196,10 @@ function heroPhone(html: string) {
   return html.replace("</head>", `<style id="hero-phone">@media (max-width: 767px){.elementor-element-${tag[1]}[style]{background-image:url(${phone})!important}}</style>\n</head>`);
 }
 
-function scripts(html: string) {
-  const headEnd = html.indexOf("</head>");
-  const tags: string[] = [];
-  let out = html.slice(0, headEnd).replace(/<script id="jquery-(?:core|migrate)-js" src="[^"]*"><\/script>\n?/g, (t) => {
-    tags.push(t.trim());
-    return "";
-  });
-  if (tags.length !== 2) return html;
-  const body = html.slice(headEnd);
-  // Before the first footer script that loads a file or uses jQuery.
-  const at = [...body.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)].find((m) => /\ssrc=/.test(m[0].slice(0, m[0].indexOf(">"))) || /jQuery|\$\(/.test(m[1]));
-  if (!at || at.index == null) return html;
-  // From there on, every script runs in order once the page has been read (defer): inline ones as
-  // deferred data: scripts, so they still run between the files they depend on.
-  const footer = body.slice(at.index).replace(/<script\b([^>]*)>([\s\S]*?)<\/script>/g, (tag, attrs: string, code: string) => {
-    if (/\stype="(?!text\/javascript)/.test(attrs) || /\s(async|defer)\b/.test(attrs)) return tag;
-    if (/\ssrc=/.test(attrs)) return `<script defer${attrs}></script>`;
-    if (!code.trim()) return tag;
-    return `<script defer${attrs} src="data:text/javascript;base64,${Buffer.from(code).toString("base64")}"></script>`;
-  });
-  // A deferred jQuery sees the page as already read and would run its ready handlers (Elementor's
-  // start-up) as soon as the browser pauses between two scripts, before Elementor Pro's handlers
-  // (carousels) are in. Hold the ready event until the last deferred script has run.
-  const inline = (code: string) => `<script defer src="data:text/javascript;base64,${Buffer.from(code).toString("base64")}"></script>`;
-  const jquery = tags.map((t) => t.replace("<script ", "<script defer ")).join("\n");
-  const lastScript = footer.lastIndexOf("</script>") + "</script>".length;
-  const release = inline("jQuery.holdReady(false);");
-  out += `${body.slice(0, at.index)}${jquery}\n${inline("jQuery.holdReady(true);")}\n${footer.slice(0, lastScript)}\n${release}${footer.slice(lastScript)}`;
-  return out;
-}
-
 function guard(html: string) {
   return html.includes('id="overflow-guard"') ? html : html.replace("</head>", `${GUARD}\n</head>`);
 }
 
 export function optimizeHtml(html: string) {
-  return guard(scripts(heroPhone(imagesPass(fonts(stylesheets(html))))));
+  return guard(heroPhone(imagesPass(fonts(stylesheets(html)))));
 }

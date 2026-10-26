@@ -6698,7 +6698,7 @@
      {
       "_type": "span",
       "_key": "a2d85def1428",
-      "text": "Dr. Adili earned his Doctor of Dental Surgery degree from Georgetown University and completed his specialty training in Prosthodontics at Virginia Commonwealth University. He cares for patients at Ideal Dental Solutions in Tysons Corner (8280 Greensboro Drive, Unit 105) and Arlington (1920 Clarendon Boulevard).",
+      "text": "Dr. Adili earned his Doctor of Dental Surgery degree from Georgetown University and completed his specialty training in Prosthodontics at Virginia Commonwealth University. He cares for patients at Ideal Dental Solutions, 8280 Greensboro Drive, Unit 105, McLean, VA 22102.",
       "marks": []
      }
     ]
@@ -6752,7 +6752,7 @@
      {
       "_type": "span",
       "_key": "7863b20ac380",
-      "text": "To book an appointment with Dr. Adili, call (703) 442-0442 (Tysons Corner) or (703) 528-0800 (Arlington).",
+      "text": "To book an appointment with Dr. Adili, call (703) 442-0442.",
       "marks": []
      }
     ]
@@ -6768,7 +6768,7 @@
   "ancestorPaths": [],
   "wpTemplate": "default",
   "published": "2026-10-04T09:56:53Z",
-  "excerpt": "Dr. Mehdi S. Adili, DDS, is a prosthodontist at Ideal Dental Solutions in Northern Virginia. Dr. Adili earned his Doctor of Dental Surgery degree from Georgetown University and completed his specialty training in Prosthodontics at Virginia Commonwealth University. He cares for patients at Ideal Dental Solutions in Tysons Corner (8280 Greensboro Drive, Unit 105) and",
+  "excerpt": "Dr. Mehdi S. Adili, DDS, is a prosthodontist at Ideal Dental Solutions in Northern Virginia. Dr. Adili earned his Doctor of Dental Surgery degree from Georgetown University and completed his specialty training in Prosthodontics at Virginia Commonwealth University. He cares for patients at Ideal Dental Solutions, 8280 Greensboro Drive, Unit 105, McLean, VA 22102.",
   "authorName": "ryan",
   "authorSlug": "ryan"
  },
@@ -6869,8 +6869,8 @@
         "elId": "e804bce",
         "_type": "elCta",
         "widget": "call-to-action",
-        "bgImage": "/wp-content/uploads/2026/05/8dc0a8ce-a9b3-4e4a-bd09-18ca643740b6-scaled.png",
-        "bgLabel": "Modern dental office",
+        "bgImage": "/wp-content/uploads/2026/07/Edited385-web-1.jpg",
+        "bgLabel": "The Ideal Dental Solutions team at the McLean office",
         "title": "Built to Last",
         "description": "We use the best materials available because your smile should still look great years from now, not just on the day you leave.",
         "tpl": "<div class=\"elementor-element elementor-element-e804bce elementor-cta--skin-classic elementor-animated-content elementor-widget elementor-widget-call-to-action\" data-id=\"e804bce\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"call-to-action.default\">\n\t\t\t\t\t\t\t<div class=\"elementor-cta\">\n\t\t\t\t\t<div class=\"elementor-cta__bg-wrapper\">\n\t\t\t\t<div class=\"elementor-cta__bg elementor-bg\" style=\"background-image: url([[@attr:bgImage]]);\" role=\"img\" aria-label=\"[[@attr:bgLabel]]\"></div>\n\t\t\t\t<div class=\"elementor-cta__bg-overlay\"></div>\n\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"elementor-cta__content\">\n\t\t\t\t\n\t\t\t\t\t\t\t\t\t<h3 class=\"elementor-cta__title elementor-cta__content-item elementor-content-item\">\n\t\t\t\t\t\t[[@text:title]]\t\t\t\t\t</h3>\n\t\t\t\t\n\t\t\t\t\t\t\t\t\t<div class=\"elementor-cta__description elementor-cta__content-item elementor-content-item\">\n\t\t\t\t\t\t[[@text:description]]\t\t\t\t\t</div>\n\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>"
@@ -18320,7 +18320,7 @@
         "elId": "9d03fcb",
         "_type": "elHeading",
         "widget": "heading",
-        "title": "Our Proven Expertise in Periodontics",
+        "title": "Our Care for Your Gums",
         "tpl": "<div class=\"elementor-element elementor-element-9d03fcb elementor-widget elementor-widget-heading\" data-id=\"9d03fcb\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
        },
        {
@@ -18332,7 +18332,7 @@
          {
           "_type": "htmlBlock",
           "_key": "4fa3a1eead92",
-          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our team of experienced periodontists uses advanced technology and a comprehensive approach to deliver effective, minimally invasive treatments tailored to each patient’s unique needs.</p>"
+          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our dental team uses advanced technology and a comprehensive approach to deliver effective, minimally invasive treatments tailored to each patient’s unique needs.</p>"
          }
         ],
         "tpl": "<div class=\"elementor-element elementor-element-c43e0a5 elementor-widget elementor-widget-text-editor\" data-id=\"c43e0a5\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -18382,8 +18382,8 @@
              "alt": "",
              "attrs": "loading=\"lazy\" decoding=\"async\" class=\"attachment-full size-full wp-image-323\""
             },
-            "title": "Experienced Periodontists",
-            "description": "Our team includes some of the most experienced and qualified periodontists, adept at diagnosing and treating all forms of gum disease.",
+            "title": "Experienced Care for Your Gums",
+            "description": "Our dental team diagnoses and treats gum disease at every stage.",
             "tpl": "<div class=\"elementor-element elementor-element-2d35904 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"2d35904\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n\t\t\t\t\t<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\">[[@img:image]]</figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\">[[@text:title]]</h3><p class=\"elementor-image-box-description\">[[@text:description]]</p></div></div>\t\t\t\t</div>"
            }
           ],
@@ -18485,7 +18485,7 @@
         "elId": "84b016f",
         "_type": "elHeading",
         "widget": "heading",
-        "title": "Our Proven Expertise in Periodontics",
+        "title": "Our Care for Your Gums",
         "tpl": "<div class=\"elementor-element elementor-element-84b016f elementor-widget elementor-widget-heading\" data-id=\"84b016f\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
        },
        {
@@ -18497,7 +18497,7 @@
          {
           "_type": "htmlBlock",
           "_key": "bbb99cf21e62",
-          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our team of experienced periodontists uses advanced technology and a comprehensive approach to deliver effective, minimally invasive treatments tailored to each patient’s unique needs.</p>"
+          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our dental team uses advanced technology and a comprehensive approach to deliver effective, minimally invasive treatments tailored to each patient’s unique needs.</p>"
          }
         ],
         "tpl": "<div class=\"elementor-element elementor-element-aef1825 elementor-widget elementor-widget-text-editor\" data-id=\"aef1825\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -18537,8 +18537,8 @@
          "alt": "",
          "attrs": "loading=\"lazy\" decoding=\"async\" class=\"attachment-full size-full wp-image-323\""
         },
-        "title": "Experienced Periodontists",
-        "description": "Our team includes some of the most experienced and qualified periodontists, adept at diagnosing and treating all forms of gum disease.",
+        "title": "Experienced Care for Your Gums",
+        "description": "Our dental team diagnoses and treats gum disease at every stage.",
         "tpl": "<div class=\"elementor-element elementor-element-fe774cb elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"fe774cb\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n\t\t\t\t\t<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\">[[@img:image]]</figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\">[[@text:title]]</h3><p class=\"elementor-image-box-description\">[[@text:description]]</p></div></div>\t\t\t\t</div>"
        },
        {
@@ -18620,7 +18620,7 @@
        {
         "_type": "htmlBlock",
         "_key": "1c5a84a94f31",
-        "html": "<p style=\"font-size: 18px; line-height: 26px; letter-spacing: 0.9px; max-width: 728px;\">Book your appointment with our periodontists today and be on your way to achieving the smile of your dreams. Contact Ideal Dental Solutions in McLean, VA to get started.</p>"
+        "html": "<p style=\"font-size: 18px; line-height: 26px; letter-spacing: 0.9px; max-width: 728px;\">Book your appointment with our dental team today and be on your way to achieving the smile of your dreams. Contact Ideal Dental Solutions in McLean, VA to get started.</p>"
        }
       ],
       "tpl": "<div class=\"elementor-element elementor-element-9d58add elementor-widget elementor-widget-text-editor\" data-id=\"9d58add\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -40983,7 +40983,7 @@
         "elId": "07a4e15",
         "_type": "elHeading",
         "widget": "heading",
-        "title": "Our Proven Expertise in Periodontics",
+        "title": "Our Care for Your Gums",
         "tpl": "<div class=\"elementor-element elementor-element-07a4e15 elementor-widget elementor-widget-heading\" data-id=\"07a4e15\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
        },
        {
@@ -40995,7 +40995,7 @@
          {
           "_type": "htmlBlock",
           "_key": "1d50c9c9b054",
-          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our patients trust us for specialized periodontal care backed by decades of combined experience, advanced technology, and genuine commitment to comfort.</p>"
+          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our patients trust us for specialized periodontal care backed by years of experience, advanced technology, and genuine commitment to comfort.</p>"
          }
         ],
         "tpl": "<div class=\"elementor-element elementor-element-a445321 elementor-widget elementor-widget-text-editor\" data-id=\"a445321\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -41031,8 +41031,8 @@
              "alt": "",
              "attrs": "loading=\"lazy\" decoding=\"async\" class=\"attachment-full size-full wp-image-323\""
             },
-            "title": "Experienced Periodontists",
-            "description": "Our highly qualified periodontists bring years of specialized training and hands-on experience to every patient case.",
+            "title": "Experienced Care for Your Gums",
+            "description": "Our dental team brings years of hands-on experience to caring for your gums.",
             "tpl": "<div class=\"elementor-element elementor-element-47a4518 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"47a4518\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n\t\t\t\t\t<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\">[[@img:image]]</figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\">[[@text:title]]</h3><p class=\"elementor-image-box-description\">[[@text:description]]</p></div></div>\t\t\t\t</div>"
            }
           ],
@@ -41134,7 +41134,7 @@
         "elId": "011df00",
         "_type": "elHeading",
         "widget": "heading",
-        "title": "Our Proven Expertise in Periodontics",
+        "title": "Our Care for Your Gums",
         "tpl": "<div class=\"elementor-element elementor-element-011df00 elementor-widget elementor-widget-heading\" data-id=\"011df00\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
        },
        {
@@ -41146,7 +41146,7 @@
          {
           "_type": "htmlBlock",
           "_key": "a3254ff991ec",
-          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our patients trust us for specialized periodontal care backed by decades of combined experience, advanced technology, and genuine commitment to comfort.</p>"
+          "html": "<p style=\"color: #ffffff; font-size: 18px; line-height: 26px; letter-spacing: 0.9px;\">Our patients trust us for specialized periodontal care backed by years of experience, advanced technology, and genuine commitment to comfort.</p>"
          }
         ],
         "tpl": "<div class=\"elementor-element elementor-element-42392eb elementor-widget elementor-widget-text-editor\" data-id=\"42392eb\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -41172,8 +41172,8 @@
          "alt": "",
          "attrs": "loading=\"lazy\" decoding=\"async\" class=\"attachment-full size-full wp-image-323\""
         },
-        "title": "Experienced Periodontists",
-        "description": "Our highly qualified periodontists bring years of specialized training and hands-on experience to every patient case.",
+        "title": "Experienced Care for Your Gums",
+        "description": "Our dental team brings years of hands-on experience to caring for your gums.",
         "tpl": "<div class=\"elementor-element elementor-element-35ff551 elementor-position-top elementor-widget elementor-widget-image-box\" data-id=\"35ff551\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image-box.default\">\n\t\t\t\t\t<div class=\"elementor-image-box-wrapper\"><figure class=\"elementor-image-box-img\">[[@img:image]]</figure><div class=\"elementor-image-box-content\"><h3 class=\"elementor-image-box-title\">[[@text:title]]</h3><p class=\"elementor-image-box-description\">[[@text:description]]</p></div></div>\t\t\t\t</div>"
        },
        {
@@ -55055,6 +55055,6 @@
     "redirect": "/thank-you/"
    }
   ],
-  "businessSchema": "{\n  \"@type\": [\n    \"Dentist\",\n    \"LocalBusiness\",\n    \"Organization\"\n  ],\n  \"name\": \"Ideal Dental Solutions\",\n  \"url\": \"https://idealdentalsolutions.com/\",\n  \"logo\": {\n    \"@type\": \"ImageObject\",\n    \"url\": \"https://idealdentalsolutions.com/wp-content/uploads/2026/07/image__4_-removebg-preview.png\",\n    \"contentUrl\": \"https://idealdentalsolutions.com/wp-content/uploads/2026/07/image__4_-removebg-preview.png\",\n    \"width\": 831,\n    \"height\": 300,\n    \"caption\": \"Ideal Dental Solutions\"\n  },\n  \"image\": \"https://idealdentalsolutions.com/og/home.jpg\",\n  \"telephone\": \"+1-703-442-0442\",\n  \"description\": \"Dental practice in McLean, VA offering cosmetic, implant, periodontal, preventive and restorative dentistry for Northern Virginia.\",\n  \"address\": {\n    \"@type\": \"PostalAddress\",\n    \"streetAddress\": \"8280 Greensboro Drive, Unit 105\",\n    \"addressLocality\": \"McLean\",\n    \"addressRegion\": \"VA\",\n    \"postalCode\": \"22102\",\n    \"addressCountry\": \"US\"\n  },\n  \"geo\": {\n    \"@type\": \"GeoCoordinates\",\n    \"latitude\": 38.9239,\n    \"longitude\": -77.2311\n  },\n  \"hasMap\": \"https://www.google.com/maps/search/?api=1&query=8280+Greensboro+Drive+Unit+105+McLean+VA+22102\",\n  \"openingHoursSpecification\": [\n    {\n      \"@type\": \"OpeningHoursSpecification\",\n      \"dayOfWeek\": [\n        \"Monday\",\n        \"Tuesday\",\n        \"Wednesday\",\n        \"Thursday\"\n      ],\n      \"opens\": \"09:00\",\n      \"closes\": \"17:00\"\n    },\n    {\n      \"@type\": \"OpeningHoursSpecification\",\n      \"dayOfWeek\": \"Friday\",\n      \"opens\": \"08:30\",\n      \"closes\": \"15:00\"\n    },\n    {\n      \"@type\": \"OpeningHoursSpecification\",\n      \"dayOfWeek\": \"Saturday\",\n      \"opens\": \"08:00\",\n      \"closes\": \"14:00\",\n      \"description\": \"Every other Saturday\"\n    }\n  ],\n  \"areaServed\": [\n    {\n      \"@type\": \"AdministrativeArea\",\n      \"name\": \"Northern Virginia\"\n    },\n    {\n      \"@type\": \"City\",\n      \"name\": \"McLean, VA\"\n    },\n    {\n      \"@type\": \"City\",\n      \"name\": \"Tysons Corner, VA\"\n    },\n    {\n      \"@type\": \"City\",\n      \"name\": \"Vienna, VA\"\n    },\n    {\n      \"@type\": \"City\",\n      \"name\": \"Falls Church, VA\"\n    },\n    {\n      \"@type\": \"City\",\n      \"name\": \"Arlington, VA\"\n    },\n    {\n      \"@type\": \"City\",\n      \"name\": \"Fairfax, VA\"\n    },\n    {\n      \"@type\": \"City\",\n      \"name\": \"Alexandria, VA\"\n    }\n  ],\n  \"sameAs\": [\n    \"https://www.facebook.com/IdealDentalSolutions/\",\n    \"https://www.instagram.com/idealdentalsmiles/\"\n  ],\n  \"medicalSpecialty\": [\n    \"Dentistry\",\n    \"Periodontics\",\n    \"Prosthodontics\"\n  ],\n  \"hasOfferCatalog\": {\n    \"@type\": \"OfferCatalog\",\n    \"name\": \"Dental Services\",\n    \"itemListElement\": [\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Restorative Dentistry\",\n          \"url\": \"https://idealdentalsolutions.com/services/restorative-dentistry/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Tooth Extractions\",\n          \"url\": \"https://idealdentalsolutions.com/services/restorative-dentistry/tooth-extractions/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"TMJ/TMD Treatments\",\n          \"url\": \"https://idealdentalsolutions.com/services/restorative-dentistry/tmj-tmd-treatments/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Root Canal Therapy\",\n          \"url\": \"https://idealdentalsolutions.com/services/restorative-dentistry/root-canal-therapy/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Dentures\",\n          \"url\": \"https://idealdentalsolutions.com/services/restorative-dentistry/dentures/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Dental Fillings\",\n          \"url\": \"https://idealdentalsolutions.com/services/restorative-dentistry/dental-fillings/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Dental Bridges\",\n          \"url\": \"https://idealdentalsolutions.com/services/restorative-dentistry/dental-bridges/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Preventive Dentistry\",\n          \"url\": \"https://idealdentalsolutions.com/services/preventive-dentistry/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Teeth Cleaning\",\n          \"url\": \"https://idealdentalsolutions.com/services/preventive-dentistry/teeth-cleaning/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Dental Sealants\",\n          \"url\": \"https://idealdentalsolutions.com/services/preventive-dentistry/dental-sealants/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Dental Checkups & Exams\",\n          \"url\": \"https://idealdentalsolutions.com/services/preventive-dentistry/checkups-exams/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Periodontic Dentistry\",\n          \"url\": \"https://idealdentalsolutions.com/services/periodontic-dentistry/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Gum Graft Surgery\",\n          \"url\": \"https://idealdentalsolutions.com/services/periodontic-dentistry/gum-graft-surgery/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Gum Disease Treatment\",\n          \"url\": \"https://idealdentalsolutions.com/services/periodontic-dentistry/gum-disease-treatment/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Crown Lengthening\",\n          \"url\": \"https://idealdentalsolutions.com/services/periodontic-dentistry/crown-lengthening/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Dental Implants\",\n          \"url\": \"https://idealdentalsolutions.com/services/dental-implants-dentistry/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Single Tooth Implants\",\n          \"url\": \"https://idealdentalsolutions.com/services/dental-implants-dentistry/single-tooth-implants/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Full Arch Implants\",\n          \"url\": \"https://idealdentalsolutions.com/services/dental-implants-dentistry/full-arch-implants/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Cosmetic Dentistry\",\n          \"url\": \"https://idealdentalsolutions.com/services/cosmetic-dentistry/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Teeth Whitening\",\n          \"url\": \"https://idealdentalsolutions.com/services/cosmetic-dentistry/teeth-whitening/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Porcelain Veneers\",\n          \"url\": \"https://idealdentalsolutions.com/services/cosmetic-dentistry/porcelain-veneers/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Invisalign\",\n          \"url\": \"https://idealdentalsolutions.com/services/cosmetic-dentistry/invisalign/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Dental Bonding\",\n          \"url\": \"https://idealdentalsolutions.com/services/cosmetic-dentistry/dental-bonding/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Night Guards\",\n          \"url\": \"https://idealdentalsolutions.com/locations/night-guards/\"\n        }\n      }\n    ]\n  }\n}"
+  "businessSchema": "{\n  \"@type\": [\n    \"Dentist\",\n    \"LocalBusiness\",\n    \"Organization\"\n  ],\n  \"name\": \"Ideal Dental Solutions\",\n  \"url\": \"https://idealdentalsolutions.com/\",\n  \"logo\": {\n    \"@type\": \"ImageObject\",\n    \"url\": \"https://idealdentalsolutions.com/wp-content/uploads/2026/07/image__4_-removebg-preview.png\",\n    \"contentUrl\": \"https://idealdentalsolutions.com/wp-content/uploads/2026/07/image__4_-removebg-preview.png\",\n    \"width\": 831,\n    \"height\": 300,\n    \"caption\": \"Ideal Dental Solutions\"\n  },\n  \"image\": \"https://idealdentalsolutions.com/og/home.jpg\",\n  \"telephone\": \"+1-703-442-0442\",\n  \"description\": \"Dental practice in McLean, VA offering cosmetic, implant, periodontal, preventive and restorative dentistry for Northern Virginia.\",\n  \"address\": {\n    \"@type\": \"PostalAddress\",\n    \"streetAddress\": \"8280 Greensboro Drive, Unit 105\",\n    \"addressLocality\": \"McLean\",\n    \"addressRegion\": \"VA\",\n    \"postalCode\": \"22102\",\n    \"addressCountry\": \"US\"\n  },\n  \"geo\": {\n    \"@type\": \"GeoCoordinates\",\n    \"latitude\": 38.9239,\n    \"longitude\": -77.2311\n  },\n  \"hasMap\": \"https://www.google.com/maps/search/?api=1&query=8280+Greensboro+Drive+Unit+105+McLean+VA+22102\",\n  \"openingHoursSpecification\": [\n    {\n      \"@type\": \"OpeningHoursSpecification\",\n      \"dayOfWeek\": [\n        \"Monday\",\n        \"Tuesday\",\n        \"Wednesday\",\n        \"Thursday\"\n      ],\n      \"opens\": \"09:00\",\n      \"closes\": \"17:00\"\n    },\n    {\n      \"@type\": \"OpeningHoursSpecification\",\n      \"dayOfWeek\": \"Friday\",\n      \"opens\": \"08:30\",\n      \"closes\": \"15:00\"\n    },\n    {\n      \"@type\": \"OpeningHoursSpecification\",\n      \"dayOfWeek\": \"Saturday\",\n      \"opens\": \"08:00\",\n      \"closes\": \"14:00\",\n      \"description\": \"Every other Saturday\"\n    }\n  ],\n  \"areaServed\": [\n    {\n      \"@type\": \"AdministrativeArea\",\n      \"name\": \"Northern Virginia\"\n    },\n    {\n      \"@type\": \"City\",\n      \"name\": \"McLean, VA\"\n    },\n    {\n      \"@type\": \"City\",\n      \"name\": \"Tysons Corner, VA\"\n    },\n    {\n      \"@type\": \"City\",\n      \"name\": \"Vienna, VA\"\n    },\n    {\n      \"@type\": \"City\",\n      \"name\": \"Falls Church, VA\"\n    },\n    {\n      \"@type\": \"City\",\n      \"name\": \"Fairfax, VA\"\n    },\n    {\n      \"@type\": \"City\",\n      \"name\": \"Alexandria, VA\"\n    }\n  ],\n  \"sameAs\": [\n    \"https://www.facebook.com/IdealDentalSolutions/\",\n    \"https://www.instagram.com/idealdentalsmiles/\"\n  ],\n  \"medicalSpecialty\": [\n    \"Dentistry\",\n    \"Periodontics\",\n    \"Prosthodontics\"\n  ],\n  \"hasOfferCatalog\": {\n    \"@type\": \"OfferCatalog\",\n    \"name\": \"Dental Services\",\n    \"itemListElement\": [\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Restorative Dentistry\",\n          \"url\": \"https://idealdentalsolutions.com/services/restorative-dentistry/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Tooth Extractions\",\n          \"url\": \"https://idealdentalsolutions.com/services/restorative-dentistry/tooth-extractions/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"TMJ/TMD Treatments\",\n          \"url\": \"https://idealdentalsolutions.com/services/restorative-dentistry/tmj-tmd-treatments/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Root Canal Therapy\",\n          \"url\": \"https://idealdentalsolutions.com/services/restorative-dentistry/root-canal-therapy/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Dentures\",\n          \"url\": \"https://idealdentalsolutions.com/services/restorative-dentistry/dentures/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Dental Fillings\",\n          \"url\": \"https://idealdentalsolutions.com/services/restorative-dentistry/dental-fillings/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Dental Bridges\",\n          \"url\": \"https://idealdentalsolutions.com/services/restorative-dentistry/dental-bridges/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Preventive Dentistry\",\n          \"url\": \"https://idealdentalsolutions.com/services/preventive-dentistry/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Teeth Cleaning\",\n          \"url\": \"https://idealdentalsolutions.com/services/preventive-dentistry/teeth-cleaning/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Dental Sealants\",\n          \"url\": \"https://idealdentalsolutions.com/services/preventive-dentistry/dental-sealants/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Dental Checkups & Exams\",\n          \"url\": \"https://idealdentalsolutions.com/services/preventive-dentistry/checkups-exams/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Periodontic Dentistry\",\n          \"url\": \"https://idealdentalsolutions.com/services/periodontic-dentistry/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Gum Graft Surgery\",\n          \"url\": \"https://idealdentalsolutions.com/services/periodontic-dentistry/gum-graft-surgery/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Gum Disease Treatment\",\n          \"url\": \"https://idealdentalsolutions.com/services/periodontic-dentistry/gum-disease-treatment/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Crown Lengthening\",\n          \"url\": \"https://idealdentalsolutions.com/services/periodontic-dentistry/crown-lengthening/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Dental Implants\",\n          \"url\": \"https://idealdentalsolutions.com/services/dental-implants-dentistry/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Single Tooth Implants\",\n          \"url\": \"https://idealdentalsolutions.com/services/dental-implants-dentistry/single-tooth-implants/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Full Arch Implants\",\n          \"url\": \"https://idealdentalsolutions.com/services/dental-implants-dentistry/full-arch-implants/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Cosmetic Dentistry\",\n          \"url\": \"https://idealdentalsolutions.com/services/cosmetic-dentistry/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Teeth Whitening\",\n          \"url\": \"https://idealdentalsolutions.com/services/cosmetic-dentistry/teeth-whitening/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Porcelain Veneers\",\n          \"url\": \"https://idealdentalsolutions.com/services/cosmetic-dentistry/porcelain-veneers/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Invisalign\",\n          \"url\": \"https://idealdentalsolutions.com/services/cosmetic-dentistry/invisalign/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Dental Bonding\",\n          \"url\": \"https://idealdentalsolutions.com/services/cosmetic-dentistry/dental-bonding/\"\n        }\n      },\n      {\n        \"@type\": \"Offer\",\n        \"itemOffered\": {\n          \"@type\": \"Service\",\n          \"name\": \"Night Guards\",\n          \"url\": \"https://idealdentalsolutions.com/locations/night-guards/\"\n        }\n      }\n    ]\n  }\n}"
  }
 ]

@@ -9,6 +9,8 @@
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";
+import { fixText } from "../lib/site/arlington.ts";
+import { NEW_IMAGE, REPLACED } from "../lib/site/replaced-images.ts";
 
 type Doc = Record<string, unknown> & { _id: string; _type: string; path?: string; title?: string; seo?: Record<string, unknown> };
 type Node = Record<string, unknown>;
@@ -460,6 +462,33 @@ walk(page("/about-us/").content, (n) => {
   log.push("link /about-us/ > /dr-mehdi-adili/");
 });
 
+/* 8c. The Arlington office was sold and is closed (Kia, Oct 26): McLean is the only office (lib/site/arlington.ts). */
+{
+  const adili = page("/dr-mehdi-adili/");
+  const fix = fixText;
+  walk(adili, (n) => {
+    if (n._type === "span" && typeof n.text === "string") n.text = fix(n.text as string);
+  });
+  if (typeof adili.excerpt === "string") adili.excerpt = fix(adili.excerpt as string);
+}
+
+/* 8d. A photo of a dentist who is not at the practice (coat: "Mahesh Patel, D.D.S.") is replaced by the team photo (lib/site/replaced-images.ts). */
+for (const d of docs) {
+  walk(d, (n) => {
+    if (n._type === "elCta" && REPLACED.includes(String(n.bgImage))) {
+      n.bgImage = NEW_IMAGE;
+      n.bgLabel = "The Ideal Dental Solutions team at the McLean office";
+    }
+  });
+}
+
+/* 8e. Fact check (Mara, Oct 26): no periodontist is named on the site, so the gum care pages speak of the dental team. */
+{
+  const deep = (n: unknown): unknown =>
+    typeof n === "string" ? fixText(n) : Array.isArray(n) ? n.map(deep) : n && typeof n === "object" ? Object.fromEntries(Object.entries(n).map(([k, v]) => [k, deep(v)])) : n;
+  for (const path of ["/services/periodontic-dentistry/", "/locations/mclean/periodontal-dentistry/"]) Object.assign(page(path), deep(page(path)));
+}
+
 /* 9. Structured data: Yoast's graph kept; Organization -> Dentist (Site settings > Business schema); no site search action. */
 const SERVICES: [string, string][] = [
   ["Restorative Dentistry", "/services/restorative-dentistry/"],
@@ -505,7 +534,7 @@ const business = {
   ],
   areaServed: [
     { "@type": "AdministrativeArea", name: "Northern Virginia" },
-    ...["McLean", "Tysons Corner", "Vienna", "Falls Church", "Arlington", "Fairfax", "Alexandria"].map((name) => ({ "@type": "City", name: `${name}, VA` })),
+    ...["McLean", "Tysons Corner", "Vienna", "Falls Church", "Fairfax", "Alexandria"].map((name) => ({ "@type": "City", name: `${name}, VA` })),
   ],
   sameAs: ["https://www.facebook.com/IdealDentalSolutions/", "https://www.instagram.com/idealdentalsmiles/"],
   medicalSpecialty: ["Dentistry", "Periodontics", "Prosthodontics"],
@@ -583,6 +612,14 @@ for (const d of docs.filter((x) => ["page", "archivePage"].includes(x._type) && 
     }
     seo.schema = JSON.stringify(g);
   }
+}
+
+// No Arlington office any more, and no photo of a dentist who is not at the practice.
+{
+  const left = docs.filter((d) => /arlington|clarendon|528-0800|Tysons Corner \(8280|f27652e6-1b34|8dc0a8ce-a9b3/i.test(JSON.stringify(d)));
+  if (left.length) throw new Error(`Arlington or a replaced photo still in ${left.map((d) => d._id).join(", ")}`);
+  const perio = docs.filter((d) => /periodontists|proven expertise in periodontics|decades of combined/i.test(JSON.stringify(d)));
+  if (perio.length) throw new Error(`Unverified gum care claims still in ${perio.map((d) => d._id).join(", ")}`);
 }
 
 writeFileSync(file, JSON.stringify(docs, null, 1));
