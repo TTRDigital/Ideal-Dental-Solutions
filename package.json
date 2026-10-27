@@ -15,7 +15,8 @@
     "audit": "node --experimental-strip-types --no-warnings scripts/audit.ts",
     "favicons": "node --experimental-strip-types --no-warnings scripts/favicons.ts",
     "images": "node --experimental-strip-types --no-warnings scripts/images.ts",
-    "optimize": "node --experimental-strip-types --no-warnings scripts/optimize.ts"
+    "optimize": "node --experimental-strip-types --no-warnings scripts/optimize.ts",
+    "seed-base": "node --experimental-strip-types --no-warnings scripts/seed-base.ts"
   },
   "dependencies": {
     "@sanity/vision": "^6.18.0",
