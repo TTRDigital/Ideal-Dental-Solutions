@@ -478,10 +478,13 @@ walk(page("/about-us/").content, (n) => {
   for (const path of ["/services/periodontic-dentistry/", "/locations/mclean/periodontal-dentistry/"]) Object.assign(page(path), deep(page(path)));
 }
 
-/* 8f. Kia's decision of Jul 29, 2026 (confirmed Oct 28): no "Dental Insurance & Payment Options", "Accepted Insurance Plans" or
-   "Flexible Payment Options" section on any page. Whole sections go; the FAQ answers about coverage stay. No image file is touched. */
+/* 8f. Kia's decision of Jul 29, 2026 (option B, Oct 28): the insurance and payment blocks come off the service pages and live on one page,
+   /insurance-and-payment/ (scripts/insurance.ts). Gone from every other page: the sections headed "Dental Insurance & Payment Options",
+   "Accepted Insurance Plans" and "Flexible Payment Options", the plan lists, and the plan logo rows. FAQ answers about coverage stay.
+   Whole blocks go; no image file is touched or changed. */
 {
   const SECTION = /^(dental insurance (&|&amp;) payment options|accepted insurance plans|flexible payment options)$/i;
+  const PLANS = /aetna|ameritas|anthem|carefirst|cigna|delta dental|geha|guardian|humana|lincoln|metlife|principal|united concordia|united ?healthcare/i;
   const firstTitle = (n: unknown): string => {
     let found = "";
     walk(n, (x) => {
@@ -489,15 +492,32 @@ walk(page("/about-us/").content, (n) => {
     });
     return found;
   };
+  const planList = (n: Node) => n._type === "elIconList" && PLANS.test(JSON.stringify(n));
+  const planLogo = (n: Node) => n._type === "elImage" && PLANS.test(String((n.image as Node | undefined)?.alt || "")) && /insurance|healthcare|dental/i.test(String((n.image as Node | undefined)?.alt || ""));
   let removed = 0;
   const prune = (list: Node[]): Node[] => {
-    const keep = list.filter((n) => !SECTION.test(firstTitle(n)));
-    removed += list.length - keep.length;
-    for (const n of keep) if (Array.isArray(n.children)) n.children = prune(n.children as Node[]);
+    const keep: Node[] = [];
+    for (const n of list) {
+      if (SECTION.test(firstTitle(n)) || planList(n) || planLogo(n)) {
+        removed++;
+        continue;
+      }
+      if (Array.isArray(n.children)) {
+        const kids = n.children as Node[];
+        const before = kids.length;
+        n.children = prune(kids);
+        // A container that only held plan lists or logos goes with them.
+        if (before > 0 && (n.children as Node[]).length === 0 && n._type === "elContainer") {
+          removed++;
+          continue;
+        }
+      }
+      keep.push(n);
+    }
     return keep;
   };
   for (const d of docs) if (Array.isArray(d.content)) d.content = prune(d.content as Node[]);
-  log.push(`${removed} insurance and payment sections removed`);
+  log.push(`${removed} insurance and payment blocks removed`);
 }
 
 /* 9. Structured data: Yoast's graph kept; Organization -> Dentist (Site settings > Business schema); no site search action. */

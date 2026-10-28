@@ -16,6 +16,7 @@ import { createHash } from "node:crypto";
 import { join } from "node:path";
 import sharp from "sharp";
 import { HUB, MCLEAN, MCLEAN_PAGE, TOWNS, type Faq, type Page, type Town } from "./locations-content.ts";
+import { STYLE, careChips, directions, facts, glance, serviceCards, townCards } from "./location-design.ts";
 
 type Node = Record<string, unknown> & { _key?: string; elId?: string; children?: Node[]; items?: Node[]; content?: Node[] };
 type Doc = Record<string, unknown> & { _id: string; _type: string; path?: string };
@@ -28,8 +29,6 @@ const source = docs.find((d) => d.path === "/locations/mclean/gum-graft-surgery/
 if (!source) throw new Error("No /locations/mclean/gum-graft-surgery/ in content/seed.json");
 const SOURCE_ID = source.wpId as number;
 
-/** The hero photo: Kaveh Sanatjou, RDH, at the reception sign of the McLean office. */
-const HERO_PHOTO = "/wp-content/uploads/2026/07/IMG_6255-2048x1602.jpeg";
 
 /* ---------------- blocks ---------------- */
 
@@ -110,35 +109,96 @@ function breadcrumb(trail: [string, string?][]) {
 
 /* ---------------- page ---------------- */
 
-function sections(pg: Page, crumbs: [string, string?][]) {
+/** Which of the practice's own photos each page uses (office, team, rooms). No stock, no AI, no patients. */
+const PHOTOS = {
+  exterior: { url: "/wp-content/uploads/2026/07/untitled-9687-3.jpg", w: 2048, h: 1472, alt: "Dr. Adili and a colleague in white coats outside the building that houses Ideal Dental Solutions", pos: "center 18%" },
+  lobby: { url: "/wp-content/uploads/2026/07/office-lobby-web.jpg", w: 2000, h: 1508, alt: "The reception and waiting area at Ideal Dental Solutions", pos: "center 55%" },
+  interior: { url: "/wp-content/uploads/2026/07/office-interior-web.jpg", w: 2000, h: 1451, alt: "The front office at Ideal Dental Solutions", pos: "center" },
+  room: { url: "/wp-content/uploads/2026/07/A7402212-web.jpg", w: 2000, h: 1333, alt: "A treatment room at Ideal Dental Solutions", pos: "center" },
+  room2: { url: "/wp-content/uploads/2026/07/treatment-room-web.jpg", w: 2000, h: 1725, alt: "A treatment room with a view over Tysons at Ideal Dental Solutions", pos: "center 40%" },
+  team: { url: "/wp-content/uploads/2026/07/Edited385-web.jpg", w: 2000, h: 1333, alt: "The Ideal Dental Solutions team in the reception area", pos: "center 35%" },
+  hall: { url: "/wp-content/uploads/2026/07/Edited325-web.jpg", w: 2000, h: 1790, alt: "Two Ideal Dental Solutions team members in the office hallway", pos: "center 45%" },
+  hall2: { url: "/wp-content/uploads/2026/07/Edited284-web.jpg", w: 2000, h: 1748, alt: "Two Ideal Dental Solutions team members walking down the hallway", pos: "center 45%" },
+  hall3: { url: "/wp-content/uploads/2026/07/Edited374-web.jpg", w: 2000, h: 1959, alt: "Three Ideal Dental Solutions team members in the office hallway", pos: "center 45%" },
+  lab: { url: "/wp-content/uploads/2026/07/Edited93-web.jpg", w: 1920, h: 1280, alt: "Shaping a dental restoration at Ideal Dental Solutions", pos: "center" },
+  scanner: { url: "/wp-content/uploads/2026/06/intraoral-camera-image-1.png", w: 958, h: 740, alt: "The digital scanner and screen used at Ideal Dental Solutions", pos: "center" },
+} as const;
+type Look = { hero: keyof typeof PHOTOS; panel: keyof typeof PHOTOS; cta: keyof typeof PHOTOS };
+/** Hero, the photo beside the accordion, and the call to action band: each page gets its own mix. */
+const LOOK: Record<string, Look> = {
+  hub: { hero: "team", panel: "lobby", cta: "room" },
+  mclean: { hero: "lobby", panel: "team", cta: "exterior" },
+  tysons: { hero: "exterior", panel: "lobby", cta: "room" },
+  vienna: { hero: "hall", panel: "room2", cta: "lobby" },
+  "falls-church": { hero: "interior", panel: "scanner", cta: "team" },
+  "great-falls": { hero: "hall2", panel: "room", cta: "hall3" },
+  potomac: { hero: "room2", panel: "lab", cta: "hall" },
+};
+const OVERLAY = "box-shadow:inset 0 0 0 2000px rgba(17,21,24,0.55)";
+const heroStyle = (k: keyof typeof PHOTOS) => `background-image:url(${PHOTOS[k].url});background-size:cover;background-position:${PHOTOS[k].pos};${OVERLAY}`;
+/** The call to action band already has a dark layer from the site's stylesheet, so it needs only the photo. */
+const ctaStyle = (k: keyof typeof PHOTOS) => `background-image:url(${PHOTOS[k].url});background-size:cover;background-position:${PHOTOS[k].pos}`;
+
+/** A full-width band of plain HTML (the card sections), built from the elRaw widget the site's own thank-you page uses. */
+let rawCount = 0;
+function raw(html: string): Node {
+  const id = createHash("sha1").update(`${keySeed}:raw:${rawCount++}`).digest("hex").slice(0, 7);
+  const w: Node = {
+    _key: newKey(),
+    elId: `${id}w`.slice(0, 7),
+    _type: "elRaw",
+    widget: "shortcode",
+    tpl: `<div class="elementor-element elementor-element-${`${id}w`.slice(0, 7)} elementor-widget elementor-widget-shortcode" data-id="${`${id}w`.slice(0, 7)}" data-element_type="widget" data-e-type="widget" data-widget_type="shortcode.default">\n\t\t\t\t\t\t\t<div class="elementor-shortcode">${html}</div>\n\t\t\t\t\t\t</div>`,
+  };
+  return { _key: newKey(), elId: id, _type: "elContainer", children: [w], tpl: `<div class="elementor-element elementor-element-${id} e-con-full e-flex e-con e-parent" data-id="${id}" data-element_type="container" data-e-type="container">\n\t\t\t\t[[@nodes:children]]</div>` };
+}
+
+function sections(pg: Page, crumbs: [string, string?][], key: string, town: string) {
+  const look = LOOK[key];
   const out: Node[] = [];
   out.push(
     container(
       "bc61501",
       [text("f716402", breadcrumb(crumbs)), heading("4d1056f", pg.h1), heading("65bba16", pg.subtitle), text("f716402", prose(pg.answer, P_HERO).replace(/<a href/g, `<a ${LINK_HERO} href`))],
-      `background-image:url(${HERO_PHOTO})`,
+      heroStyle(look.hero),
     ),
   );
+  let first = true;
+  // The page's card stylesheet rides with its first card band.
+  const add = (html: string) => {
+    out.push(raw((first ? STYLE : "") + html));
+    first = false;
+  };
+  // The McLean page's own "Getting to our office" cards already carry the address, phone, hours and Metro.
+  if (key !== "mclean") add(glance());
   for (const s of pg.sections) {
-    if (s.kind === "text") out.push(container("a5658b6", [heading("c826dbe", s.heading), text("2bb8729", prose(s.html))]));
-    else
+    if (s.kind === "text") {
+      if (/^Getting Here|^Visit Our Office/.test(s.heading)) add(directions(s.heading.replace(/^Visit Our Office$/, "Getting to our office"), s.html));
+      else if (/^Our Office and the Towns/.test(s.heading)) add(townCards("Towns we serve", s.html, "One office, a short drive from each of these towns. Drive times are approximate."));
+      else if (/^Our Office$/.test(s.heading)) continue; // the glance band above carries the address, phone, hours and Metro
+      else if (/^Local Dental Health Facts/.test(s.heading)) add(facts(s.heading, s.html, town));
+      else if (/^Dental Care at Our McLean Office/.test(s.heading)) add(careChips(s.heading, s.html));
+      else add(serviceCards(s.heading, s.html));
+    } else {
+      const photo = PHOTOS[look.panel];
       out.push(
         container("8a23a75", [
           heading("31c37ae", s.heading),
           text("f36453c", prose(`<p>${s.intro}</p>`, P_DARK)),
           container("0e416a2", [
-            container("d54f03a", [{ ...copy(block("088e71c")), image: { ...(block("088e71c").image as Node), ...s.photo, srcset: undefined, sizes: undefined, attrs: 'decoding="async" class="attachment-full size-full"' } }]),
+            container("d54f03a", [{ ...copy(block("088e71c")), image: { ...(block("088e71c").image as Node), src: photo.url, width: String(photo.w), height: String(photo.h), alt: photo.alt, srcset: undefined, sizes: undefined, attrs: 'decoding="async" class="attachment-full size-full"' } }]),
             container("07aad87", [accordion("954b86a", s.items.map((i) => ({ title: i.title, html: i.text }))), text("ec83923", s.link)]),
           ]),
         ]),
       );
+    }
   }
   out.push(
     container("e68da39", [
       container("8183bb8", [heading("a484b10", pg.faqHeading), text("0fcfee9", `<p>${pg.faqIntro}</p>`), accordion("5f18e52", pg.faqs.map((f: Faq) => ({ title: f.q, html: `<p>${f.a}</p>` })))]),
     ]),
   );
-  out.push(container("da7b818", [heading("9fad9d2", pg.cta.heading), text("cff12d7", prose(pg.cta.html, 'style="font-size:18px;line-height:26px;letter-spacing:0.9px;max-width:728px;"'))], `background-image:url(${pg.cta.photo})`));
+  out.push(container("da7b818", [heading("9fad9d2", pg.cta.heading), text("cff12d7", prose(pg.cta.html, 'style="font-size:18px;line-height:26px;letter-spacing:0.9px;max-width:728px;"'))], ctaStyle(look.cta)));
   return out;
 }
 
@@ -205,14 +265,15 @@ function bodyClass(id: number, child: boolean) {
   return `wp-singular page-template-default page page-id-${id}${child ? " page-child parent-pageid-868" : " page-parent"} wp-custom-logo wp-embed-responsive wp-theme-blocksy elementor-default elementor-kit-5 elementor-page elementor-page-${id} ct-elementor-default-template`;
 }
 
-async function build(pg: Page, opts: { id: string; wpId: number; path: string; title: string; crumbs: [string, string?][]; ancestors: string[]; parent?: string; areaServed?: Node[] }) {
+async function build(pg: Page, opts: { key: string; town: string; id: string; wpId: number; path: string; title: string; crumbs: [string, string?][]; ancestors: string[]; parent?: string; areaServed?: Node[] }) {
   keySeed = opts.path;
   keyCount = 0;
   const existing = docs.find((d) => d._id === opts.id);
   const published = (existing?.published as string) || pg.date;
   const modified = pg.date;
   const url = `${SITE}${opts.path}`;
-  await ogImage(opts.path, pg.ogPhoto);
+  // The hub and the McLean page keep their existing social images; each town gets one from its own hero photo.
+  if (!["hub", "mclean"].includes(opts.key)) await ogImage(opts.path, PHOTOS[LOOK[opts.key].hero].url);
   const doc: Doc = {
     seo: {
       title: pg.title,
@@ -234,7 +295,7 @@ async function build(pg: Page, opts: { id: string; wpId: number; path: string; t
       schema: schema(pg, opts.path, `${published.slice(0, 10)}T12:00:00+00:00`, `${modified}T12:00:00+00:00`, opts.crumbs, opts.areaServed),
     },
     bodyClass: bodyClass(opts.wpId, Boolean(opts.parent)),
-    content: sections(pg, opts.crumbs),
+    content: sections(pg, opts.crumbs, opts.key, opts.town),
     frameTpl: frame(opts.wpId),
     shell: source!.shell,
     _id: opts.id,
@@ -255,8 +316,10 @@ async function build(pg: Page, opts: { id: string; wpId: number; path: string; t
   else docs.splice(docs.findIndex((d) => d.path === "/locations/mclean/") + 1 + TOWNS.findIndex((t) => opts.path.includes(`/${t.slug}/`)), 0, doc);
 }
 
-await build(HUB, { id: "page-868", wpId: 868, path: "/locations/", title: "Areas We Serve", crumbs: [["Home", "/"], ["Areas We Serve"]], ancestors: [], areaServed: [MCLEAN, ...TOWNS.map((t) => t.place)] });
+await build(HUB, { key: "hub", town: "the area", id: "page-868", wpId: 868, path: "/locations/", title: "Areas We Serve", crumbs: [["Home", "/"], ["Areas We Serve"]], ancestors: [], areaServed: [MCLEAN, ...TOWNS.map((t) => t.place)] });
 await build(MCLEAN_PAGE, {
+  key: "mclean",
+  town: "McLean",
   id: "page-931",
   wpId: 931,
   path: "/locations/mclean/",
@@ -268,6 +331,8 @@ await build(MCLEAN_PAGE, {
 });
 for (const [i, t] of TOWNS.entries()) {
   await build(t, {
+    key: t.slug,
+    town: t.name,
     id: `page-location-${t.slug}`,
     wpId: 9101 + i,
     path: `/locations/${t.slug}/`,

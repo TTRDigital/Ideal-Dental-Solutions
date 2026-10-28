@@ -38,11 +38,11 @@ const DATE = "2026-10-26";
 
 /* ---------------- shared facts (the practice) ---------------- */
 
-const ADDRESS = "8280 Greensboro Drive, Unit 105, McLean, VA 22102";
-const PHONE = '<a href="tel:+17034420442">(703) 442-0442</a>';
+export const ADDRESS = "8280 Greensboro Drive, Unit 105, McLean, VA 22102";
+export const PHONE = '<a href="tel:+17034420442">(703) 442-0442</a>';
 const BOOK = '<a href="/appointment/">request an appointment online</a>';
-const HOURS = "Monday to Thursday 9am to 5pm, Friday 8:30am to 3pm, every other Saturday 8am to 2pm, closed Sunday";
-const METRO = "Greensboro station on the Metro Silver Line is about an 8 minute walk from the office";
+export const HOURS = "Monday to Thursday 9am to 5pm, Friday 8:30am to 3pm, every other Saturday 8am to 2pm, closed Sunday";
+export const METRO = "Greensboro station on the Metro Silver Line is about an 8 minute walk from the office";
 const DRIVE_NOTE = "Drive times are approximate and assume light traffic; allow more time at rush hour.";
 
 const FAIRFAX_COUNTY = { "@type": "AdministrativeArea", name: "Fairfax County, VA" };
@@ -177,7 +177,7 @@ const MCLEAN_SERVICES = [
   ["/locations/mclean/tmj-tmd-treatments/", "TMJ/TMD treatment"],
 ];
 
-const MAP = "https://www.google.com/maps/search/?api=1&query=8280+Greensboro+Drive+Unit+105+McLean+VA+22102";
+export const MAP = "https://www.google.com/maps/search/?api=1&query=8280+Greensboro+Drive+Unit+105+McLean+VA+22102";
 
 export const MCLEAN_PAGE: Page = {
   title: "Dentist in McLean, VA | Ideal Dental Solutions",
@@ -236,7 +236,7 @@ ${FAIRFAX_RESOURCES}
     { q: "Where is Ideal Dental Solutions?", a: `At ${ADDRESS}, in Tysons. It is our only office.` },
     { q: "What are your hours?", a: `${HOURS}.` },
     { q: "Can I get there by Metro?", a: `Yes. ${METRO}.` },
-    { q: "Which insurance plans do you work with?", a: `Plans we work with include Aetna, Ameritas, Anthem, CareFirst, Cigna, Delta Dental, GEHA, Guardian, Humana, Lincoln, MetLife, Principal, United Concordia and UnitedHealthcare. Call ${PHONE} to confirm your plan before your visit.` },
+    { q: "Which insurance plans do you work with?", a: `Plans we work with include Aetna, Ameritas, Anthem, CareFirst, Cigna, Delta Dental, GEHA, Guardian, Humana, Lincoln, MetLife, Principal, United Concordia and UnitedHealthcare. Call ${PHONE} to confirm your plan before your visit. See also ${link("/insurance-and-payment/", "Insurance and Payment")}.` },
     { q: "How do I book an appointment?", a: `Call ${PHONE} or ${BOOK}.` },
   ],
   cta: cta("McLean", wide.tiana),

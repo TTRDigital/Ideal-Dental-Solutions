@@ -12,6 +12,8 @@
     "verify": "node --experimental-strip-types --no-warnings scripts/verify.ts",
     "seed": "node --experimental-strip-types --no-warnings scripts/seed.ts",
     "fixes": "node --experimental-strip-types --no-warnings scripts/fixes.ts",
+    "bundle": "npm run fixes && npm run locations && npm run privacy && npm run insurance",
+    "insurance": "node --experimental-strip-types --no-warnings scripts/insurance.ts",
     "privacy": "node --experimental-strip-types --no-warnings scripts/privacy.ts",
     "audit": "node --experimental-strip-types --no-warnings scripts/audit.ts",
     "favicons": "node --experimental-strip-types --no-warnings scripts/favicons.ts",
