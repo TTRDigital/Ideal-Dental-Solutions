@@ -50,6 +50,15 @@ Every page is rendered as WordPress printed it, then sped up on the way out (the
 - **Scripts:** the theme and Elementor scripts load exactly as WordPress printed them (deferring them broke the form handler on fast connections). Google's GA4 script loads on the first scroll, tap or key press, or 10 seconds after the page has loaded.
 - `html{overflow-x:clip}`: nothing can make the page scroll sideways.
 
+## Location pages (scripts/locations.ts)
+
+`/locations/` (areas served), `/locations/mclean/` (the office: address, map, hours, Metro, team, services, insurance, FAQ) and one page per nearby town: `/locations/tysons/`, `/locations/vienna/`, `/locations/falls-church/`, `/locations/great-falls/` and `/locations/potomac/`. The practice has one office (McLean, 8280 Greensboro Drive, in Tysons); every page says so and none claims an office in its town.
+
+- **Content:** the text is in `scripts/locations-content.ts`, with the source of every local fact in `docs/locations/sources.md`. `npm run locations` builds the pages into `content/seed.json` from the blocks of the McLean gum graft page (same layout, stylesheet and accordions) and writes their social images to `public/og/`. Photos are the practice's own (team and office).
+- **Each page:** title and description, one H1, a short answer at the top, directions with approximate drive times, local landmarks, the county or city, the water supplier and its fluoride, public dental resources, links to the service pages and /appointment/, an FAQ (FAQPage schema from `lib/site/seo-pass.ts`), breadcrumbs (visible and BreadcrumbList), and the Dentist schema with the page's own `areaServed`. They are in the sitemap and `/llms.txt`.
+- **Publishing:** until the CMS has them, the site serves these pages from the built-in copy (`lib/site/data.ts`: a page the CMS lacks, or has only as an empty page like `/locations/` and `/locations/mclean/` were, comes from `content/seed.json`). To make them editable in /cms: `npm run seed -- --only=page-868,page-931,page-location-tysons,page-location-vienna,page-location-falls-church,page-location-great-falls,page-location-potomac` (plain `npm run seed` would not replace the empty `/locations/` and `/locations/mclean/` pages already in the CMS). After that, edit them in /cms; re-running `npm run locations` only changes `content/seed.json`.
+- **Not done here (CMS edits):** a "Locations" item in the header menu or footer linking to `/locations/`.
+
 ## Redirects
 
 - `content/redirects.json` (loaded by `next.config.ts`, all 301): every redirect the live WordPress site answered when probed with ~3,400 old and alternative URLs (dental service slugs under 15 possible parents, existing slugs under other parents, common practice pages, feeds, `/sitemap.xml`, `/index.php`). 483 path rules, each pointing straight at the final page, all tested on a production build.
@@ -123,6 +132,7 @@ npm run audit -- https://<site>  # launch checks on a running site
 npm run favicons   # re-render the favicon set from the logo
 npm run images     # WebP copies of new uploads (lib/generated/images.json)
 npm run optimize   # one stylesheet per page (public/assets/page-css, lib/generated/page-css.json)
+npm run locations  # build the location pages into content/seed.json (text in scripts/locations-content.ts)
 ```
 
 ### Migration tools
@@ -136,4 +146,4 @@ Order: `extract` → `verify` (must be identical) → `fixes` → `verify --fixe
 ## Notes from the review
 
 - The site has no blog posts (WordPress had none published), so there is no blog index; the category and author archives are kept at their URLs.
-- `/locations/` and `/locations/mclean/` are blank pages on the live site; they are kept (they are parents in the URL structure) but not indexed. Add content or a location landing page before indexing them.
+- `/locations/` and `/locations/mclean/` were blank on the WordPress site; they are now the areas-served page and the McLean office page (see Location pages).

@@ -17,6 +17,7 @@
     "favicons": "node --experimental-strip-types --no-warnings scripts/favicons.ts",
     "images": "node --experimental-strip-types --no-warnings scripts/images.ts",
     "optimize": "node --experimental-strip-types --no-warnings scripts/optimize.ts",
+    "locations": "node --experimental-strip-types --no-warnings scripts/locations.ts",
     "seed-base": "node --experimental-strip-types --no-warnings scripts/seed-base.ts"
   },
   "dependencies": {
