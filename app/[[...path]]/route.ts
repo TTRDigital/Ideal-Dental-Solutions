@@ -6,7 +6,6 @@ import { withTracking } from "@/lib/site/tracking";
 import { optimizeHtml } from "@/lib/site/optimize";
 import { seoPass } from "@/lib/site/seo-pass";
 import { withoutArlington } from "@/lib/site/arlington";
-import { replaceImages } from "@/lib/site/replaced-images";
 import { dataset, projectId } from "@/sanity/env";
 
 /**
@@ -55,7 +54,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ path?: string[
     const target = guessRedirect(path, await allPaths(site.fromCms));
     if (target) return new Response(null, { status: 301, headers: { Location: target } });
   }
-  const html = withTracking(withoutArlington(seoPass(optimizeHtml(replaceImages(renderDocument(resolved, site.data, path, { projectId, dataset, origin, recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY?.trim() || "" }))))));
+  const html = withTracking(withoutArlington(seoPass(optimizeHtml(renderDocument(resolved, site.data, path, { projectId, dataset, origin, recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY?.trim() || "" })))));
   return new Response(html, {
     status: resolved.kind === "notFound" ? 404 : 200,
     headers: {
