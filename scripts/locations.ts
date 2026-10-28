@@ -130,8 +130,8 @@ const LOOK: Record<string, Look> = {
   mclean: { hero: "lobby", panel: "team", cta: "exterior" },
   tysons: { hero: "exterior", panel: "lobby", cta: "room" },
   vienna: { hero: "hall", panel: "room2", cta: "lobby" },
-  "falls-church": { hero: "interior", panel: "scanner", cta: "team" },
-  "great-falls": { hero: "hall2", panel: "room", cta: "hall3" },
+  "falls-church": { hero: "room", panel: "scanner", cta: "team" },
+  "great-falls": { hero: "interior", panel: "room", cta: "hall3" },
   potomac: { hero: "room2", panel: "lab", cta: "hall" },
 };
 const OVERLAY = "box-shadow:inset 0 0 0 2000px rgba(17,21,24,0.55)";

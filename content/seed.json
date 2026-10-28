@@ -8783,7 +8783,7 @@
       "tpl": "<div class=\"elementor-element elementor-element-f716402 elementor-widget elementor-widget-text-editor\" data-id=\"f716402\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
      }
     ],
-    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/07/office-interior-web.jpg);background-size:cover;background-position:center;box-shadow:inset 0 0 0 2000px rgba(17,21,24,0.55)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/07/A7402212-web.jpg);background-size:cover;background-position:center;box-shadow:inset 0 0 0 2000px rgba(17,21,24,0.55)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
    },
    {
     "_key": "f63b8fcc72c0",
@@ -9314,7 +9314,7 @@
       "tpl": "<div class=\"elementor-element elementor-element-f716402 elementor-widget elementor-widget-text-editor\" data-id=\"f716402\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
      }
     ],
-    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/07/Edited284-web.jpg);background-size:cover;background-position:center 45%;box-shadow:inset 0 0 0 2000px rgba(17,21,24,0.55)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/07/office-interior-web.jpg);background-size:cover;background-position:center;box-shadow:inset 0 0 0 2000px rgba(17,21,24,0.55)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
    },
    {
     "_key": "fcb83223bde7",
