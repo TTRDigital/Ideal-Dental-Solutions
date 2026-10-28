@@ -388,6 +388,17 @@
       "label": "Notice of Privacy Practices Form",
       "tpl": "<li id=\"menu-item-1219\" class=\"[[@navli:x]]\"><a href=\"[[@attr:link]]\" [[@nava:x]]>[[@text:label]]</a></li>",
       "tplDropdown": "<li class=\"[[@navli:x]]\"><a href=\"[[@attr:link]]\" [[@nava:x]]>[[@text:label]]</a></li>"
+     },
+     {
+      "_type": "navItem",
+      "_key": "c74a7733dfa4",
+      "wpId": 9202,
+      "classes": "menu-item menu-item-type-custom menu-item-object-custom menu-item-9202",
+      "linkClasses": "ct-menu-link",
+      "link": "/privacy-policy/",
+      "label": "Privacy Policy",
+      "tpl": "<li id=\"menu-item-9202\" class=\"[[@navli:x]]\"><a href=\"[[@attr:link]]\" [[@nava:x]]>[[@text:label]]</a></li>",
+      "tplDropdown": "<li class=\"[[@navli:x]]\"><a href=\"[[@attr:link]]\" [[@nava:x]]>[[@text:label]]</a></li>"
      }
     ],
     "classes": "menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-673",
@@ -47864,6 +47875,395 @@
   "excerpt": "Thank you for your submission Someone on our team will reach out to you. Before and After Photos Dr. Adili and the team at Ideal Dental Solutions are here to give you a smile you’re genuinely proud of, done right the first time. View Transformation View Transformation View Transformation View Transformation View Transformation View Transformation",
   "authorName": "Subhan M",
   "authorSlug": "subhan"
+ },
+ {
+  "seo": {
+   "title": "Privacy Policy | Ideal Dental Solutions",
+   "description": "How Ideal Dental Solutions in McLean, VA handles the information you give us on this website, and where to read our Notice of Privacy Practices.",
+   "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+   "canonical": "https://idealdentalsolutions.com/privacy-policy/",
+   "ogLocale": "en_US",
+   "ogType": "article",
+   "ogTitle": "Privacy Policy | Ideal Dental Solutions",
+   "ogDescription": "How Ideal Dental Solutions in McLean, VA handles the information you give us on this website, and where to read our Notice of Privacy Practices.",
+   "ogUrl": "https://idealdentalsolutions.com/privacy-policy/",
+   "ogSiteName": "Ideal Dental Solutions",
+   "modifiedTime": "2026-10-28T12:00:00+00:00",
+   "ogImage": "https://idealdentalsolutions.com/og/home.jpg",
+   "ogImageWidth": "1200",
+   "ogImageHeight": "630",
+   "ogImageType": "image/jpeg",
+   "twitterCard": "summary_large_image",
+   "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://idealdentalsolutions.com/privacy-policy/\",\"url\":\"https://idealdentalsolutions.com/privacy-policy/\",\"name\":\"Privacy Policy | Ideal Dental Solutions\",\"isPartOf\":{\"@id\":\"https://idealdentalsolutions.com/#website\"},\"about\":{\"@id\":\"https://idealdentalsolutions.com/#organization\"},\"datePublished\":\"2026-10-28T12:00:00+00:00\",\"dateModified\":\"2026-10-28T12:00:00+00:00\",\"description\":\"How Ideal Dental Solutions in McLean, VA handles the information you give us on this website, and where to read our Notice of Privacy Practices.\",\"breadcrumb\":{\"@id\":\"https://idealdentalsolutions.com/privacy-policy/#breadcrumb\"},\"inLanguage\":\"en-US\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://idealdentalsolutions.com/privacy-policy/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://idealdentalsolutions.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Privacy Policy\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://idealdentalsolutions.com/#website\",\"url\":\"https://idealdentalsolutions.com/\",\"name\":\"Ideal Dental Solutions\",\"description\":\"\",\"publisher\":{\"@id\":\"https://idealdentalsolutions.com/#organization\"},\"inLanguage\":\"en-US\",\"alternateName\":\"idealdental\"},{\"@type\":\"Organization\",\"@id\":\"https://idealdentalsolutions.com/#organization\",\"name\":\"Ideal Dental Solutions\",\"url\":\"https://idealdentalsolutions.com/\"}]}"
+  },
+  "bodyClass": "wp-singular page-template-default page page-id-9201 page-child parent-pageid-931 wp-custom-logo wp-embed-responsive wp-theme-blocksy elementor-default elementor-kit-5 elementor-page elementor-page-9201 ct-elementor-default-template",
+  "content": [
+   {
+    "_key": "321003a1e1c1",
+    "elId": "bc61501",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "e70eddbe814d",
+      "elId": "f716402",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "dd53dc288e68",
+        "html": "<nav aria-label=\"Breadcrumb\"><p style=\"color:#ffffff;font-size:14px;letter-spacing:0.6px;margin-bottom:8px;\"><a href=\"/\" style=\"color:#ffffff;text-decoration:underline;\">Home</a> / <span aria-current=\"page\">Privacy Policy</span></p></nav>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-f716402 elementor-widget elementor-widget-text-editor\" data-id=\"f716402\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     },
+     {
+      "_key": "a212fc61242b",
+      "elId": "4d1056f",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "Privacy Policy",
+      "tpl": "<div class=\"elementor-element elementor-element-4d1056f elementor-widget__width-initial elementor-widget-tablet__width-inherit elementor-widget elementor-widget-heading\" data-id=\"4d1056f\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h1 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h1>\t\t\t\t</div>"
+     },
+     {
+      "_key": "17b7a4d53370",
+      "elId": "65bba16",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "How we handle your information on this website",
+      "tpl": "<div class=\"elementor-element elementor-element-65bba16 elementor-widget elementor-widget-heading\" data-id=\"65bba16\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+     },
+     {
+      "_key": "e3987fc2dc43",
+      "elId": "f716402",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "ae0a4ab15697",
+        "html": "<p style=\"color:#ffffff;font-size:18px;line-height:26px;letter-spacing:0.9px;max-width:720px;\">Plain answers about what we collect, why, and who sees it. For your health information, see our <a style=\"color:#ffffff;text-decoration:underline;\" href=\"/wp-content/uploads/2026/01/NPP-2026-1.pdf\">Notice of Privacy Practices</a>.</p>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-f716402 elementor-widget elementor-widget-text-editor\" data-id=\"f716402\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:none;background-color:#111518\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+   },
+   {
+    "_key": "1883ef2cbd9d",
+    "elId": "a5658b6",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "254e2a51c6ca",
+      "elId": "c826dbe",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "Who we are",
+      "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+     },
+     {
+      "_key": "427185bb7179",
+      "elId": "2bb8729",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "6023682530c8",
+        "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Ideal Dental Solutions is a dental practice with one office at 8280 Greensboro Drive, Unit 105, McLean, VA 22102. You can reach us at <a href=\"tel:+17034420442\">(703) 442-0442</a>. This page explains how we handle the information you give us on this website, idealdentalsolutions.com.</p>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-a5658b6 e-flex e-con-boxed e-con e-parent\" data-id=\"a5658b6\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+   },
+   {
+    "_key": "cc1450fa1b2c",
+    "elId": "a5658b6",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "96d193d39b33",
+      "elId": "c826dbe",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "What we collect on this website",
+      "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+     },
+     {
+      "_key": "12085885a43d",
+      "elId": "2bb8729",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "4eb417b7040c",
+        "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">When you send us a form, such as an appointment request, we receive what you type in: your name, phone number, email address, your message, and the page you sent it from. Please do not put medical details or emergency information in a form. If it is urgent, call us at <a href=\"tel:+17034420442\">(703) 442-0442</a>.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">When you visit, standard tools also record simple visit information: which pages were read, the kind of device and browser, and roughly where in the world the visit came from. This does not include your name.</p>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-a5658b6 e-flex e-con-boxed e-con e-parent\" data-id=\"a5658b6\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+   },
+   {
+    "_key": "b0bd8f96820c",
+    "elId": "a5658b6",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "850637e210f5",
+      "elId": "c826dbe",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "How we use it",
+      "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+     },
+     {
+      "_key": "8bfef0e7fef8",
+      "elId": "2bb8729",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "5483f9f5a9bf",
+        "html": "<ul style=\"font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;\"><li style=\"margin-bottom:6px;\">To answer your message and book or confirm your visit.</li><li style=\"margin-bottom:6px;\">To follow up on your request.</li><li style=\"margin-bottom:6px;\">To understand which pages help patients, so we can improve the site.</li></ul><p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">We do not sell your information.</p>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-a5658b6 e-flex e-con-boxed e-con e-parent\" data-id=\"a5658b6\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+   },
+   {
+    "_key": "bb5eca8f2b73",
+    "elId": "a5658b6",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "ba506116d5ec",
+      "elId": "c826dbe",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "Cookies and visit counters",
+      "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+     },
+     {
+      "_key": "762aad085eee",
+      "elId": "2bb8729",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "5d12a1a75828",
+        "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">This site uses Google Analytics and a visit counter run by our marketing agency, TTR Digital Marketing, to count visits and see which pages are read. These tools can set cookies in your browser. You can block or delete cookies in your browser settings, and the site will still work.</p>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-a5658b6 e-flex e-con-boxed e-con e-parent\" data-id=\"a5658b6\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+   },
+   {
+    "_key": "36b55afd5293",
+    "elId": "a5658b6",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "0d70e8f85f62",
+      "elId": "c826dbe",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "Who helps us run the site",
+      "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+     },
+     {
+      "_key": "01c70e656211",
+      "elId": "2bb8729",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "9c8c20d0686b",
+        "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">We use outside services to run this website and handle forms: web hosting, the system where our pages are written, the tool that delivers form messages to our team, and the analytics tools above. They get only what they need to do that job. We do not give your information to anyone to market to you.</p>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-a5658b6 e-flex e-con-boxed e-con e-parent\" data-id=\"a5658b6\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+   },
+   {
+    "_key": "3336d57ef263",
+    "elId": "a5658b6",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "d2691d8b937b",
+      "elId": "c826dbe",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "Your health information",
+      "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+     },
+     {
+      "_key": "cc45bd64cb44",
+      "elId": "2bb8729",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "d4092616d6e9",
+        "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Information about your care as a patient is protected by the federal privacy rule known as HIPAA. How we use and share that information is described in our <a href=\"/wp-content/uploads/2026/01/NPP-2026-1.pdf\">Notice of Privacy Practices (PDF)</a>. This website is not the place to send medical records. Please bring them to your visit or ask our team how to send them securely.</p>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-a5658b6 e-flex e-con-boxed e-con e-parent\" data-id=\"a5658b6\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+   },
+   {
+    "_key": "440522a67619",
+    "elId": "a5658b6",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "4242aefb40cf",
+      "elId": "c826dbe",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "Children",
+      "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+     },
+     {
+      "_key": "3e8692a423be",
+      "elId": "2bb8729",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "2255097f41bd",
+        "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">This website is meant for adults. If you are a parent or guardian and think a child sent us information through a form, call us at <a href=\"tel:+17034420442\">(703) 442-0442</a> and we will remove it.</p>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-a5658b6 e-flex e-con-boxed e-con e-parent\" data-id=\"a5658b6\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+   },
+   {
+    "_key": "ee160120717e",
+    "elId": "a5658b6",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "eab0a9200c02",
+      "elId": "c826dbe",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "Your choices",
+      "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+     },
+     {
+      "_key": "9fae453d6ba4",
+      "elId": "2bb8729",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "778101c7c127",
+        "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">You can ask us to show you, correct or delete the information you sent us through a form by calling (703) 442-0442 or visiting the office. If you no longer want messages from us, tell us and we will stop.</p>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-a5658b6 e-flex e-con-boxed e-con e-parent\" data-id=\"a5658b6\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+   },
+   {
+    "_key": "63e6ee71d428",
+    "elId": "a5658b6",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "585ab5cbef62",
+      "elId": "c826dbe",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "Changes to this page",
+      "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+     },
+     {
+      "_key": "5e0d72eeb490",
+      "elId": "2bb8729",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "e2c658d975cc",
+        "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">If we change how this website handles information, we will update this page. It was last updated on October 28, 2026.</p>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-a5658b6 e-flex e-con-boxed e-con e-parent\" data-id=\"a5658b6\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+   },
+   {
+    "_key": "80d04f5067af",
+    "elId": "a5658b6",
+    "_type": "elContainer",
+    "children": [
+     {
+      "_key": "bba41d0a1120",
+      "elId": "c826dbe",
+      "_type": "elHeading",
+      "widget": "heading",
+      "title": "Contact us",
+      "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+     },
+     {
+      "_key": "a5b91eaaf341",
+      "elId": "2bb8729",
+      "_type": "elText",
+      "widget": "text-editor",
+      "body": [
+       {
+        "_type": "htmlBlock",
+        "_key": "8e759c9338b2",
+        "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Questions about this page? Call <a href=\"tel:+17034420442\">(703) 442-0442</a> or visit us at 8280 Greensboro Drive, Unit 105, McLean, VA 22102.</p>"
+       }
+      ],
+      "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+     }
+    ],
+    "tpl": "<div class=\"elementor-element elementor-element-a5658b6 e-flex e-con-boxed e-con e-parent\" data-id=\"a5658b6\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+   }
+  ],
+  "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-9201\" class=\"post-9201 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"913\" class=\"elementor elementor-913\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
+  "shell": "3aca04dd54",
+  "_id": "page-privacy-policy",
+  "_type": "page",
+  "title": "Privacy Policy",
+  "path": "/privacy-policy/",
+  "wpId": 9201,
+  "ancestorPaths": [],
+  "wpTemplate": "default",
+  "published": "2026-10-28T12:00:00Z",
+  "excerpt": "How Ideal Dental Solutions in McLean, VA handles the information you give us on this website, and where to read our Notice of Privacy Practices.",
+  "authorName": "admin",
+  "authorSlug": "admin"
  },
  {
   "seo": {

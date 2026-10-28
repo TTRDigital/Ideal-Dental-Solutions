@@ -12,6 +12,7 @@
     "verify": "node --experimental-strip-types --no-warnings scripts/verify.ts",
     "seed": "node --experimental-strip-types --no-warnings scripts/seed.ts",
     "fixes": "node --experimental-strip-types --no-warnings scripts/fixes.ts",
+    "privacy": "node --experimental-strip-types --no-warnings scripts/privacy.ts",
     "audit": "node --experimental-strip-types --no-warnings scripts/audit.ts",
     "favicons": "node --experimental-strip-types --no-warnings scripts/favicons.ts",
     "images": "node --experimental-strip-types --no-warnings scripts/images.ts",
