@@ -478,6 +478,28 @@ walk(page("/about-us/").content, (n) => {
   for (const path of ["/services/periodontic-dentistry/", "/locations/mclean/periodontal-dentistry/"]) Object.assign(page(path), deep(page(path)));
 }
 
+/* 8f. Kia's decision of Jul 29, 2026 (confirmed Oct 28): no "Dental Insurance & Payment Options", "Accepted Insurance Plans" or
+   "Flexible Payment Options" section on any page. Whole sections go; the FAQ answers about coverage stay. No image file is touched. */
+{
+  const SECTION = /^(dental insurance (&|&amp;) payment options|accepted insurance plans|flexible payment options)$/i;
+  const firstTitle = (n: unknown): string => {
+    let found = "";
+    walk(n, (x) => {
+      if (!found && typeof x.title === "string" && x.title.trim()) found = x.title.trim();
+    });
+    return found;
+  };
+  let removed = 0;
+  const prune = (list: Node[]): Node[] => {
+    const keep = list.filter((n) => !SECTION.test(firstTitle(n)));
+    removed += list.length - keep.length;
+    for (const n of keep) if (Array.isArray(n.children)) n.children = prune(n.children as Node[]);
+    return keep;
+  };
+  for (const d of docs) if (Array.isArray(d.content)) d.content = prune(d.content as Node[]);
+  log.push(`${removed} insurance and payment sections removed`);
+}
+
 /* 9. Structured data: Yoast's graph kept; Organization -> Dentist (Site settings > Business schema); no site search action. */
 const SERVICES: [string, string][] = [
   ["Restorative Dentistry", "/services/restorative-dentistry/"],
