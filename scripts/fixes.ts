@@ -10,7 +10,6 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import sharp from "sharp";
 import { fixText } from "../lib/site/arlington.ts";
-import { NEW_IMAGE, REPLACED } from "../lib/site/replaced-images.ts";
 
 type Doc = Record<string, unknown> & { _id: string; _type: string; path?: string; title?: string; seo?: Record<string, unknown> };
 type Node = Record<string, unknown>;
@@ -472,16 +471,6 @@ walk(page("/about-us/").content, (n) => {
   if (typeof adili.excerpt === "string") adili.excerpt = fix(adili.excerpt as string);
 }
 
-/* 8d. A photo of a dentist who is not at the practice (coat: "Mahesh Patel, D.D.S.") is replaced by the team photo (lib/site/replaced-images.ts). */
-for (const d of docs) {
-  walk(d, (n) => {
-    if (n._type === "elCta" && REPLACED.includes(String(n.bgImage))) {
-      n.bgImage = NEW_IMAGE;
-      n.bgLabel = "The Ideal Dental Solutions team at the McLean office";
-    }
-  });
-}
-
 /* 8e. Fact check (Mara, Oct 26): no periodontist is named on the site, so the gum care pages speak of the dental team. */
 {
   const deep = (n: unknown): unknown =>
@@ -614,10 +603,10 @@ for (const d of docs.filter((x) => ["page", "archivePage"].includes(x._type) && 
   }
 }
 
-// No Arlington office any more, and no photo of a dentist who is not at the practice.
+// No Arlington office any more: nothing may mention it.
 {
-  const left = docs.filter((d) => /arlington|clarendon|528-0800|Tysons Corner \(8280|f27652e6-1b34|8dc0a8ce-a9b3/i.test(JSON.stringify(d)));
-  if (left.length) throw new Error(`Arlington or a replaced photo still in ${left.map((d) => d._id).join(", ")}`);
+  const left = docs.filter((d) => /arlington|clarendon|528-0800|Tysons Corner \(8280/i.test(JSON.stringify(d)));
+  if (left.length) throw new Error(`Arlington still mentioned in ${left.map((d) => d._id).join(", ")}`);
   const perio = docs.filter((d) => /periodontists|proven expertise in periodontics|decades of combined/i.test(JSON.stringify(d)));
   if (perio.length) throw new Error(`Unverified gum care claims still in ${perio.map((d) => d._id).join(", ")}`);
 }

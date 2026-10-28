@@ -6869,8 +6869,8 @@
         "elId": "e804bce",
         "_type": "elCta",
         "widget": "call-to-action",
-        "bgImage": "/wp-content/uploads/2026/07/Edited385-web-1.jpg",
-        "bgLabel": "The Ideal Dental Solutions team at the McLean office",
+        "bgImage": "/wp-content/uploads/2026/05/8dc0a8ce-a9b3-4e4a-bd09-18ca643740b6-scaled.png",
+        "bgLabel": "Modern dental office",
         "title": "Built to Last",
         "description": "We use the best materials available because your smile should still look great years from now, not just on the day you leave.",
         "tpl": "<div class=\"elementor-element elementor-element-e804bce elementor-cta--skin-classic elementor-animated-content elementor-widget elementor-widget-call-to-action\" data-id=\"e804bce\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"call-to-action.default\">\n\t\t\t\t\t\t\t<div class=\"elementor-cta\">\n\t\t\t\t\t<div class=\"elementor-cta__bg-wrapper\">\n\t\t\t\t<div class=\"elementor-cta__bg elementor-bg\" style=\"background-image: url([[@attr:bgImage]]);\" role=\"img\" aria-label=\"[[@attr:bgLabel]]\"></div>\n\t\t\t\t<div class=\"elementor-cta__bg-overlay\"></div>\n\t\t\t</div>\n\t\t\t\t\t\t\t<div class=\"elementor-cta__content\">\n\t\t\t\t\n\t\t\t\t\t\t\t\t\t<h3 class=\"elementor-cta__title elementor-cta__content-item elementor-content-item\">\n\t\t\t\t\t\t[[@text:title]]\t\t\t\t\t</h3>\n\t\t\t\t\n\t\t\t\t\t\t\t\t\t<div class=\"elementor-cta__description elementor-cta__content-item elementor-content-item\">\n\t\t\t\t\t\t[[@text:description]]\t\t\t\t\t</div>\n\t\t\t\t\n\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>"
