@@ -12,10 +12,6 @@
     "destination": "/"
   },
   {
-    "source": "/privacy-policy/",
-    "destination": "/"
-  },
-  {
     "source": "/sitemap/",
     "destination": "/"
   },
