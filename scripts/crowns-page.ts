@@ -131,7 +131,7 @@ const PAGE = {
   ] as Faq[],
   cta: {
     heading: "Schedule a Crown Consultation in McLean",
-    html: '<p>Have a cracked, worn or weak tooth? Call <a href="tel:+17034420442" style="color:#ffffff;text-decoration:underline;">(703) 442-0442</a> or <a href="/appointment/" style="color:#ffffff;text-decoration:underline;">request an appointment</a>, and we will look at the tooth and explain your options.</p>',
+    html: '<p>Have a cracked, worn or weak tooth? Call <a href="tel:+17034420442">(703) 442-0442</a> or <a href="/appointment/">request an appointment</a>, and we will look at the tooth and explain your options.</p>',
   },
 };
 
@@ -203,7 +203,10 @@ const P_DARK = 'style="color:#ffffff;font-size:18px;line-height:26px;letter-spac
 const LINK_HERO = 'style="color:#ffffff;text-decoration:underline;"';
 
 /** Paragraphs and lists of a section, with the site's text style. */
-const prose = (html: string, p = P) => html.replace(/<p>/g, `<p ${p}>`).replace(/<ul>/g, '<ul style="font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;">').replace(/<li>/g, '<li style="margin-bottom:6px;">');
+/** Links in text on light sections: the theme's orange (#ff6310) is about 3:1 on cream, so a darker orange that passes WCAG AA. */
+const LINK = 'style="color:#c2410c;text-decoration:underline;"';
+
+const prose = (html: string, p = P, link = LINK) => html.replace(/<a href=/g, `<a ${link} href=`).replace(/<p>/g, `<p ${p}>`).replace(/<ul>/g, '<ul style="font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;">').replace(/<li>/g, '<li style="margin-bottom:6px;">');
 
 function breadcrumb(trail: [string, string?][]) {
   const parts = trail.map(([label, href]) => (href ? `<a href="${href}" ${LINK_HERO}>${label}</a>` : `<span aria-current="page">${label}</span>`));
@@ -217,7 +220,7 @@ function sections() {
   out.push(
     container(
       "bc61501",
-      [text("f716402", breadcrumb(CRUMBS)), heading("4d1056f", PAGE.h1), heading("65bba16", PAGE.subtitle), text("f716402", prose(PAGE.answer, P_HERO).replace(/<a href/g, `<a ${LINK_HERO} href`))],
+      [text("f716402", breadcrumb(CRUMBS)), heading("4d1056f", PAGE.h1), heading("65bba16", PAGE.subtitle), text("f716402", prose(PAGE.answer, P_HERO, LINK_HERO))],
       `background-image:url(${HERO_PHOTO})`,
     ),
   );
@@ -240,7 +243,7 @@ function sections() {
       container("8183bb8", [heading("a484b10", PAGE.faqHeading), text("0fcfee9", `<p>${PAGE.faqIntro}</p>`), accordion("5f18e52", PAGE.faqs.map((f) => ({ title: f.q, html: `<p>${f.a}</p>` })))]),
     ]),
   );
-  out.push(container("da7b818", [heading("9fad9d2", PAGE.cta.heading), text("cff12d7", prose(PAGE.cta.html, 'style="font-size:18px;line-height:26px;letter-spacing:0.9px;max-width:728px;"'))], `background-image:url(${CTA_PHOTO})`));
+  out.push(container("da7b818", [heading("9fad9d2", PAGE.cta.heading), text("cff12d7", prose(PAGE.cta.html, 'style="font-size:18px;line-height:26px;letter-spacing:0.9px;max-width:728px;"', LINK_HERO))], `background-image:url(${CTA_PHOTO})`));
   return out;
 }
 
