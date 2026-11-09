@@ -17,7 +17,10 @@ import searchConsole from "./content/redirects-search-console.json" with { type:
  */
 type Row = { source: string; destination: string; query?: Record<string, string> };
 
+// WordPress' "Patient Guides" category is now the blog (lib/site/blog.ts).
+const blog: Row[] = [{ source: "/category/patient-guides/", destination: "/blog/" }];
+
 // Shortlinks (/?p=, /?page_id=, /?author=, /?cat=) are handled in proxy.ts.
-export const redirects = [...(wordpress as Row[]), ...(searchConsole as Row[])]
+export const redirects = [...(wordpress as Row[]), ...(searchConsole as Row[]), ...blog]
   .filter((r) => !r.query)
   .map((r) => ({ source: r.source, destination: r.destination, statusCode: 301 as const }));

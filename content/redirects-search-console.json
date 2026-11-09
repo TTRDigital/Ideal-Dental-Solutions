@@ -64,10 +64,6 @@
     "destination": "/services/cosmetic-dentistry/porcelain-veneers/"
   },
   {
-    "source": "/blog/",
-    "destination": "/services/"
-  },
-  {
     "source": "/blog/arlington-cosmetic-dentistry-near-me/",
     "destination": "/services/cosmetic-dentistry/"
   },
@@ -80,19 +76,11 @@
     "destination": "/services/cosmetic-dentistry/"
   },
   {
-    "source": "/blog/benefits-of-cosmetic-dentistry/",
-    "destination": "/services/cosmetic-dentistry/"
-  },
-  {
     "source": "/blog/cosmetic-dental-surgery/",
     "destination": "/services/cosmetic-dentistry/"
   },
   {
     "source": "/blog/cosmetic-dental-treatments/",
-    "destination": "/services/cosmetic-dentistry/"
-  },
-  {
-    "source": "/blog/cosmetic-dentistry-questions-answered/",
     "destination": "/services/cosmetic-dentistry/"
   },
   {
@@ -128,15 +116,7 @@
     "destination": "/services/dental-implants-dentistry/"
   },
   {
-    "source": "/blog/care-for-your-dental-implants/",
-    "destination": "/services/dental-implants-dentistry/"
-  },
-  {
     "source": "/blog/care-for-your-teeth-implants/",
-    "destination": "/services/dental-implants-dentistry/"
-  },
-  {
-    "source": "/blog/cost-of-dental-implants/",
     "destination": "/services/dental-implants-dentistry/"
   },
   {
