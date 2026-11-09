@@ -1,0 +1,12 @@
+{
+  "name": "ids-ad-landing-pages",
+  "private": true,
+  "type": "module",
+  "description": "Static ad landing pages for Ideal Dental Solutions (replaces the GoHighLevel page at start.idealdentalsolutions.com). Separate from the main Next.js site.",
+  "scripts": {
+    "build": "node build.mjs",
+    "seed": "node scripts/seed-sanity.mjs",
+    "preview": "node build.mjs && node scripts/serve.mjs"
+  },
+  "engines": { "node": ">=20" }
+}

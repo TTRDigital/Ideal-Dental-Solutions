@@ -1,0 +1,91 @@
+{
+  "slug": "start",
+  "title": "Ideal Dental Solutions",
+  "phone": "5715685848",
+  "phoneDisplay": "(571) 568-5848",
+  "callLabel": "CALL",
+  "headline": "Custom **Porcelain Veneers** for a Radiant Smile—50+ Years of Trusted Care in **Northern VA**",
+  "gallery": { "eyebrow": "Before & After Gallery", "title": "See the Smiles We've Transformed" },
+  "process": {
+    "eyebrow": "Process",
+    "title": "How it Works",
+    "subtitle": "3 Easy Steps to a More Beautiful Smile",
+    "steps": [
+      { "title": "Book Your Consultation", "text": "We'll provide a thorough evaluation to make sure that veneers are a right fit for you and then we'll take digital images of your teeth to develop your ideal veneers profile." },
+      { "title": "Get Fitted", "text": "We'll prepare your teeth and take digital impressions to send off to the lab. We'll also get you fitted with some temporary veneers so you won't have to wait for your gorgeous smile." },
+      { "title": "Smile!", "text": "3 weeks later your veneers will arrive and we'll bond them to your teeth so you can finally have the beautiful smile you've always dreamed of." }
+    ]
+  },
+  "craft": {
+    "title": "How We Craft Your Veneers",
+    "items": [
+      { "title": "Digital smile design", "text": "A digital scan of your teeth allows us to build a 3D model of your new smile." },
+      { "title": "High-tech artistry", "text": "We mill porcelain veneers just for you, and hand glaze them for exquisite natural detail." },
+      { "title": "Beauty that lasts", "text": "Procelain is as strong as it is gorgeous. When well cared for, veneers can last for decades." }
+    ]
+  },
+  "why": {
+    "eyebrow": "Why Choose Us",
+    "title": "Your #1 Choice in Cosmetic Dentistry & Veneers",
+    "subtitle": "30+ Years of Practice & Thousands of Smiles Served",
+    "cards": [
+      { "icon": "ic-specialists.png", "title": "Specialists in Cosmetic Dentistry:", "text": "Our expertise in cosmetic procedures, including dental implants and porcelain veneers, ensures transformative results that not only improve your smile but also enhance your overall confidence and quality of life." },
+      { "icon": "ic-tech.png", "title": "Cutting-Edge Technology:", "text": "We invest in the latest dental technology to enhance the accuracy and efficiency of our treatments. From digital imaging to advanced dental software, our state of-the-art tools help us deliver precise and effective care." },
+      { "icon": "ic-office.png", "title": "Modern, Comfortable Facilities:", "text": "Our office in McLean is designed with your comfort in mind. They are not only equipped with modern dental facilities but are also welcoming spaces that make you feel relaxed and cared for." },
+      { "icon": "ic-office.png", "title": "Convenient Location:", "text": "With location in the heart of Northern Virginia, accessing top-quality dental care has never been easier. Choose the office nearest to you and enjoy the ease of getting the dental care you deserve." },
+      { "icon": "ic-tech.png", "title": "Friendly, Knowledgeable Staff:", "text": "Our team is not just highly trained; they are passionate about what they do. They're dedicated to making your visit as informative and comfortable as possible, ensuring all your questions are answered and your needs are met." },
+      { "icon": "ic-specialists.png", "title": "Unmatched Patient Care:", "text": "We believe that everyone deserves to have a healthy, beautiful smile. Our commitment to the highest standard of patient care means you'll receive personalized attention and tailor-made solutions designed to suit your unique dental needs." }
+    ]
+  },
+  "veneers": {
+    "eyebrow": "Why Veneers",
+    "title": "Why Choose Procelain Veneers",
+    "intro": "Porcelain veneers are not just a dental procedure; they're a transformative experience for anyone looking to enhance their smile and boost their confidence.",
+    "lead": "Here are several reasons why porcelain veneers might be the perfect choice for you:",
+    "items": [
+      { "title": "Instant Cosmetic Improvement:", "text": "Porcelain veneers provide an immediate upgrade to your smile by correcting imperfections such as chips, gaps, stains, or misshapen teeth." },
+      { "title": "Natural-Looking Results:", "text": "The translucent properties of porcelain allow veneers to mimic the light-reflecting qualities of natural teeth, giving you a smile that looks both beautiful and completely natural." },
+      { "title": "Minimal Tooth Alteration:", "text": "Porcelain veneers require a minimal amount of tooth enamel to be removed, preserving more of your natural tooth structure compared to other cosmetic treatments." },
+      { "title": "Stain Resistance:", "text": "Unlike natural teeth, porcelain veneers resist staining from coffee, tea, red wine, and tobacco products. This means your new smile will stay brighter and whiter for longer." },
+      { "title": "Customization:", "text": "Every set of porcelain veneers is tailor-made to suit the individual's facial symmetry, mouth structure, and personal preferences, ensuring that your new smile complements your unique features perfectly." }
+    ]
+  },
+  "reviews": { "title": "See Why Northern Virginia Loves Us", "elfsightId": "9ef0dd00-8288-48da-a78c-3fdb1dc2a61b" },
+  "location": {
+    "title": "Convenient Location",
+    "text": "At Ideal Dental Solutions, our team of dental experts works together on every patient case, leveraging our collective knowledge and experience to create a customized treatment plan specifically for you. Experience a higher standard of dental care in a friendly environment with state-of-the-art technology at Ideal Dental Solutions.",
+    "name": "Tysons Corner VA",
+    "address": "8280 Greensboro Drive, Unit 105, Tysons Corner, VA 22102",
+    "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Ideal+Dental+Solutions+8280+Greensboro+Drive+Unit+105+Tysons+Corner+VA+22102",
+    "hours": ["Monday: 9:00 – 5:00", "Tuesday: 9:00 – 5:00", "Wednesday: 9:00 – 5:00", "Thursday: 9:00 – 5:00", "Friday: 8:30 – 3:00", "Every Other Sat: 8:00 – 2:00", "Sunday: Closed"]
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "title": "Frequently Asked Question",
+    "items": [
+      { "q": "What are porcelain veneers?", "a": "Porcelain veneers are thin shells of ceramic material that are bonded to the front surfaces of teeth. They are custom-made to fit your smile and are designed to improve the appearance of your teeth by correcting issues like discoloration, chips, gaps, or misalignment." },
+      { "q": "How long do porcelain veneers last?", "a": "With proper care and maintenance, porcelain veneers can last between 10 to 15 years. To extend the lifespan of your veneers, maintain good oral hygiene, avoid biting on hard objects, and visit your dentist regularly for check-ups." },
+      { "q": "Are porcelain veneers right for me?", "a": "Porcelain veneers are suitable for most individuals looking to enhance their smile. They are particularly beneficial for those who have healthy teeth but are unhappy with their appearance. A consultation with our specialists can help determine if veneers are the best option for you." },
+      { "q": "How do I care for my veneers after they are placed?", "a": "Caring for veneers is similar to caring for your natural teeth. Regular brushing and flossing, along with routine dental visits, are essential. Avoid using your teeth as tools or biting into extremely hard foods to protect your veneers from chipping." },
+      { "q": "How can I take advantage of this special offer?", "a": "To take advantage of our special offer, simply contact us to schedule a consultation. Our friendly staff will guide you through the process, from the initial assessment to the application of your new veneers. Hurry, as this offer is available for a limited time!" },
+      { "q": "Do you offer financing options for veneers?", "a": "We understand that dental treatments are an investment in your health and confidence. To make it easier for you to access our services, we offer a variety of financing options, including flexible payment plans and third-party financing through services like CareCredit. During your consultation, our staff can provide detailed information about these options and help you choose a plan that best suits your budget." }
+    ]
+  },
+  "form": { "title": "Request an Appointment", "button": "Request an Appointment", "success": "Thank you. We received your request and will contact you shortly.", "error": "Something went wrong. Please call us instead." },
+  "footer": {
+    "linksTitle": "Get Started",
+    "links": [
+      { "label": "About Our Practice", "href": "https://idealdentalsolutions.com/about/" },
+      { "label": "Services", "href": "https://idealdentalsolutions.com/our-dental-services/" },
+      { "label": "Dental Implants", "href": "https://idealdentalsolutions.com/dental-implants/" },
+      { "label": "Cosmetic Dentistry", "href": "https://idealdentalsolutions.com/cosmetic-dentistry/" },
+      { "label": "Technology", "href": "https://idealdentalsolutions.com/technology/" },
+      { "label": "Smile Gallery", "href": "https://idealdentalsolutions.com/smile-gallery/" },
+      { "label": "Covid Protocols", "href": "https://idealdentalsolutions.com/covid-protocols/" },
+      { "label": "Resources", "href": "https://idealdentalsolutions.com/resources/" }
+    ],
+    "connectTitle": "Connect With Us:",
+    "copyright": "Copyright © 2024 Ideal Dental Solutions."
+  },
+  "tracking": { "gtm": "GTM-58QWDSS9", "siteKey": "H1QeRbEKxfQo2axph4VByw" }
+}
