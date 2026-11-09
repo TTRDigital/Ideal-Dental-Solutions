@@ -18,6 +18,8 @@ function rowsFor(name: string, rows: Row[]) {
   switch (name) {
     case "page-sitemap.xml":
       return indexable.filter((r) => r.type === "page").sort((a, b) => (a.path === "/" ? -1 : b.path === "/" ? 1 : 0));
+    case "post-sitemap.xml":
+      return indexable.filter((r) => r.type === "post").sort((a, b) => (b.modified || "").localeCompare(a.modified || ""));
     default:
       return [];
   }
@@ -28,7 +30,7 @@ export function sitemapXml(name: string, origin: string, rows: Row[]) {
 }
 
 export function sitemapIndex(origin: string, rows: Row[]) {
-  const maps = ["page-sitemap.xml"].filter((n) => rowsFor(n, rows).length);
+  const maps = ["page-sitemap.xml", "post-sitemap.xml"].filter((n) => rowsFor(n, rows).length);
   const last = (n: string) =>
     rowsFor(n, rows)
       .map((r) => r.modified || "")
