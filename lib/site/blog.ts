@@ -37,6 +37,7 @@ const PHOTOS = {
   scan: { alt: "Ideal Dental Solutions team member reviewing a 3D scan of a patient's teeth" },
   "team-kaveh": { alt: "Kaveh Sanatjou, RDH, dental hygienist at Ideal Dental Solutions" },
   "team-fozia": { alt: "Fozia Mohamed, RDH, dental hygienist at Ideal Dental Solutions" },
+  room: { alt: "Treatment room at Ideal Dental Solutions in McLean, VA" },
 } as const;
 export type PhotoKey = keyof typeof PHOTOS;
 

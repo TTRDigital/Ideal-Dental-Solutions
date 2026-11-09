@@ -14,6 +14,7 @@
     "fixes": "node --experimental-strip-types --no-warnings scripts/fixes.ts",
     "audit": "node --experimental-strip-types --no-warnings scripts/audit.ts",
     "favicons": "node --experimental-strip-types --no-warnings scripts/favicons.ts",
+    "crowns": "node --experimental-strip-types --no-warnings scripts/crowns-page.ts",
     "images": "node --experimental-strip-types --no-warnings scripts/images.ts",
     "optimize": "node --experimental-strip-types --no-warnings scripts/optimize.ts",
     "seed-base": "node --experimental-strip-types --no-warnings scripts/seed-base.ts"

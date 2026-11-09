@@ -21,7 +21,7 @@ export type BlogPost = {
   /** Blog category (list grouping and pill), see lib/site/blog.ts */
   category: "implants" | "cosmetic" | "gums" | "restorative";
   /** Hero photo: one of the practice's own photos in public/images/blog/ (no stock photos of patients) */
-  photo: "model" | "scan" | "team-kaveh" | "team-fozia";
+  photo: "model" | "scan" | "team-kaveh" | "team-fozia" | "room";
   /** "At a glance" card under the short answer (icons: clock, calendar, shield, scan, layers, tooth, implant, smile) */
   facts?: { icon: string; label: string; value: string }[];
   /** Short answer at the top (HTML) */
@@ -475,6 +475,120 @@ export const posts: BlogPost[] = [
       { title: "Cleveland Clinic: Dental Bridges", url: "https://my.clevelandclinic.org/health/treatments/10921-dental-bridges" },
       { title: "Cleveland Clinic: Dentures", url: "https://my.clevelandclinic.org/health/treatments/10900-dentures" },
       { title: "American Dental Association (MouthHealthy): Choosing the Right Dental Plan", url: "https://www.mouthhealthy.org/dental-care/choosing-the-right-dental-plan-for-you" },
+    ],
+  },
+
+  /* ------------------------------------------------------------------ */
+  {
+    slug: "teeth-grinding-night-guard",
+    title: "Teeth Grinding at Night: Signs, Causes and When a Night Guard Helps",
+    seoTitle: "Teeth Grinding at Night and Night Guards | Ideal Dental Solutions",
+    description: "Grinding your teeth at night? The signs, common causes, what a custom night guard does and does not do, and when to see a dentist in McLean, VA.",
+    published: "2026-11-09",
+    service: { path: "/locations/night-guards/", label: "Custom night guards" },
+    category: "restorative",
+    photo: "room",
+    facts: [
+      { icon: "clock", label: "When it usually happens", value: "During sleep" },
+      { icon: "tooth", label: "Common signs", value: "Worn or chipped teeth, sore jaw, morning headaches" },
+      { icon: "layers", label: "Linked with", value: "Stress, sleep apnea, smoking, alcohol and caffeine" },
+      { icon: "shield", label: "Custom night guard", value: "Can last several years with care" },
+    ],
+    answer: `<p>Grinding or clenching your teeth, called bruxism, usually happens during sleep, so many people do not know they do it. Common signs are worn, chipped or cracked teeth, a sore jaw and dull morning headaches. A custom night guard from your dentist does not cure grinding, but it protects your teeth from the wear and damage it causes. If you notice these signs, or a partner hears you grinding, have a dentist take a look.</p>`,
+    sections: [
+      {
+        heading: "What teeth grinding is",
+        html: `<p>Bruxism means clenching, grinding or gnashing your teeth. It happens in two ways:</p>
+<ul>
+<li><strong>Sleep bruxism</strong> happens at night. The American Dental Association notes that most people who grind do it while they sleep, which is why many do not realize it.</li>
+<li><strong>Awake bruxism</strong> happens during the day, often when you are tense, worried or concentrating.</li>
+</ul>
+<p>Cleveland Clinic notes that grinding in your sleep can cause more harm than clenching during the day, and that people who only clench while awake may not need treatment beyond becoming aware of the habit.</p>`,
+      },
+      {
+        heading: "Signs you might be grinding",
+        html: `<p>Because sleep grinding happens unnoticed, a dentist often spots it first. Signs to watch for include:</p>
+<ul>
+<li>Teeth that look worn, flattened, chipped or cracked, especially along the edges</li>
+<li>A sore or tired jaw, especially in the morning</li>
+<li>Dull headaches or facial pain when you wake up</li>
+<li>Earaches or neck pain</li>
+<li>Pain when eating, or trouble opening and closing your mouth</li>
+<li>A partner or family member hearing grinding at night</li>
+</ul>`,
+      },
+      {
+        heading: "What causes it",
+        html: `<p>Cleveland Clinic says there is no single known cause; several factors play a part. The most common ones are:</p>
+<ul>
+<li><strong>Stress and anxiety.</strong> Grinding is often linked to feeling tense or overwhelmed.</li>
+<li><strong>Sleep problems.</strong> Research shows a link between sleep apnea and grinding, though it is not clear which causes which.</li>
+<li><strong>Smoking, alcohol and caffeine.</strong> According to the ADA, people who smoke or drink alcohol or coffee are twice as likely to grind their teeth.</li>
+<li><strong>Some medications</strong>, including certain antidepressants (SSRIs).</li>
+<li><strong>Teeth that do not line up</strong>, or missing or crooked teeth, which the ADA lists among possible causes.</li>
+</ul>
+<p>If you snore, stop breathing for moments at night or wake up tired, mention it. A sleep study may help find the cause.</p>`,
+      },
+      {
+        heading: "Why grinding is worth treating",
+        html: `<p>Over time, grinding can wear down enamel, chip or crack teeth and damage fillings, crowns and other dental work. Cleveland Clinic also lists TMJ disorders, facial pain and sleep problems among the possible effects of untreated grinding. Protecting your teeth early can help you avoid bigger repairs, like crowns, later on.</p>`,
+      },
+      {
+        heading: "How a night guard helps",
+        html: `<p>A night guard is a thin, removable appliance worn over your teeth while you sleep. It takes much of the force of grinding, which helps protect your teeth. It does not make the habit go away.</p>
+<p><strong>Custom or store-bought?</strong> The ADA says a custom guard made from a mold of your teeth gives the closest, most comfortable fit, and that store-bought guards may not give the same protection. Cleveland Clinic adds that a guard that does not fit well can make your teeth, gums or jaw sore. A sports mouthguard is a different kind of guard, made to protect your teeth during sports.</p>
+<p><strong>At Ideal Dental Solutions</strong>, we make custom night guards from hard acrylic, designed from a digital scan of your teeth. Bring it to your regular visits so we can check the fit and condition.</p>`,
+      },
+      {
+        heading: "Other ways to reduce grinding",
+        html: `<ul>
+<li><strong>Manage stress.</strong> The ADA mentions meditation, counseling, exercise, massage and deep breathing.</li>
+<li><strong>Cut back on caffeine and alcohol</strong>, and if you smoke, quitting helps.</li>
+<li><strong>Notice daytime clenching.</strong> Mayo Clinic suggests resting your tongue up, with your teeth apart and your lips closed.</li>
+<li><strong>Ask about other treatments.</strong> For some people, a doctor may suggest a muscle relaxant at bedtime for a short time, or, when other treatments have not helped, injections that relax the jaw muscles.</li>
+</ul>`,
+      },
+      {
+        heading: "Caring for your night guard",
+        html: `<p>Cleveland Clinic recommends rinsing your guard in cool water after each use, cleaning it with a brush and soapy water, letting it air dry and keeping it away from heat, which can warp it. Store it in its case, and bring it to your dental checkups so we can check it for cracks and wear. With care, a custom night guard can last several years.</p>`,
+      },
+      {
+        heading: "Grinding, jaw pain and TMJ",
+        html: `<p>Grinding and clenching can strain the jaw muscles and joints. If you have jaw pain, clicking with pain, or trouble opening your mouth, see us for an exam. The NIH's National Institute of Dental and Craniofacial Research recommends starting with conservative, reversible care for jaw joint and muscle problems, and advises against a splint or guard designed to change your bite for good. Learn more about our <a href="/services/restorative-dentistry/tmj-tmd-treatments/">TMJ and TMD treatment</a>.</p>`,
+      },
+    ],
+    cta: {
+      heading: "Think you might be grinding?",
+      text: "Book an exam at our McLean office. We will check your teeth and jaw for signs of grinding and, if it helps, fit you for a custom night guard.",
+    },
+    faq: [
+      {
+        q: "Do I need a night guard if I only clench my teeth?",
+        a: `<p>Possibly. Clenching during sleep can wear and stress teeth just like grinding. If you only clench while awake, becoming aware of the habit may be enough. An exam shows whether your teeth are being damaged.</p>`,
+      },
+      {
+        q: "Will a night guard stop me from grinding?",
+        a: `<p>Not usually. A night guard protects your teeth from the force of grinding. Managing stress, sleep problems and habits like caffeine, alcohol and smoking can help reduce the grinding itself.</p>`,
+      },
+      {
+        q: "Are store-bought night guards good enough?",
+        a: `<p>They cost less, but the ADA and Cleveland Clinic both say they may not protect as well as a custom guard, and a poor fit can make your teeth, gums or jaw sore.</p>`,
+      },
+      {
+        q: "How long does a custom night guard last?",
+        a: `<p>With proper care, a custom night guard can last several years. Bring it to your checkups so we can look for cracks, wear or changes in fit.</p>`,
+      },
+      {
+        q: "My child grinds their teeth. Should I worry?",
+        a: `<p>Children often grind their teeth, and the ADA notes that many outgrow it by adolescence. Mention it at your child's next dental visit so the dentist can check for wear.</p>`,
+      },
+    ],
+    sources: [
+      { title: "American Dental Association (MouthHealthy): Teeth Grinding", url: "https://www.mouthhealthy.org/all-topics-a-z/teeth-grinding" },
+      { title: "Cleveland Clinic: Bruxism (Teeth Grinding)", url: "https://my.clevelandclinic.org/health/diseases/10955-teeth-grinding-bruxism" },
+      { title: "Cleveland Clinic: Mouth Guards", url: "https://my.clevelandclinic.org/health/treatments/10910-mouthguards" },
+      { title: "NIH National Institute of Dental and Craniofacial Research: TMD", url: "https://www.nidcr.nih.gov/health-info/tmd" },
+      { title: "Mayo Clinic: Bruxism, diagnosis and treatment", url: "https://www.mayoclinic.org/diseases-conditions/bruxism/diagnosis-treatment/drc-20356100" },
     ],
   },
 ];

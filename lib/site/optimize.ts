@@ -105,8 +105,12 @@ function stylesheets(html: string) {
   for (const t of markupTokens(html)) if (dropped.has(t)) return html; // fail-safe: keep the original stylesheets
   let first = true;
   const main = html.indexOf('<main id="main"');
-  const heroId = main >= 0 ? /class="[^"]*\be-parent\b[^"]*"[^>]*data-id="([0-9a-f]+)"/.exec(html.slice(main))?.[1] : undefined;
-  const hero = heroId ? bundle.heroes?.[heroId] : undefined;
+  const heroTag = main >= 0 ? /class="[^"]*\be-parent\b[^"]*"[^>]*data-id="([0-9a-f]+)"[^>]*>/.exec(html.slice(main)) : null;
+  const heroId = heroTag?.[1];
+  // A page built from another page's blocks (scripts/locations.ts, scripts/crowns-page.ts) sets its own first-section
+  // photo inline; preload that one rather than the photo of the page whose blocks it reuses.
+  const inline = heroTag && /background-image:\s*url\((?:&quot;|['"])?(\/wp-content\/uploads\/[^"')&]+)/.exec(heroTag[0])?.[1];
+  const hero: [string, string | null] | undefined = inline ? [webp(inline), phoneCopy(inline)] : heroId ? bundle.heroes?.[heroId] : undefined;
   const preload = hero
     ? hero[1]
       ? `<link rel="preload" as="image" href="${hero[1]}" media="(max-width: 767px)" fetchpriority="high">\n<link rel="preload" as="image" href="${hero[0]}" media="(min-width: 768px)" fetchpriority="high">\n`
