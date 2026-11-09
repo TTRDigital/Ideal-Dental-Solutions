@@ -1,5 +1,5 @@
 // Vercel Function: POST /api/lead
-// Sends each lead to TTR OS (/api/site/form) and to the GoHighLevel inbound webhook.
+// Sends each lead to TTR OS (/api/site/form, form-encoded) and to the GoHighLevel inbound webhook.
 // Env (set in Vercel, never in code):
 //   GHL_WEBHOOK_URL   GoHighLevel inbound webhook URL (secret)
 //   TTR_SITE_KEY      optional override; the public tracker key is the default
@@ -8,9 +8,18 @@ const TTR_FORM_URL = process.env.TTR_FORM_URL || 'https://ttr-portal.vercel.app/
 const SITE_KEY = process.env.TTR_SITE_KEY || 'H1QeRbEKxfQo2axph4VByw'; // public key for ideal-dental-solutions
 
 const clip = (v, n) => String(v ?? '').trim().slice(0, n);
-const post = async (url, body) => {
-  const r = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body), signal: AbortSignal.timeout(8000) });
+const send = async (url, body, type) => {
+  const r = await fetch(url, { method: 'POST', headers: { 'content-type': type }, body, signal: AbortSignal.timeout(8000) });
   if (!r.ok) throw new Error(`${new URL(url).host} ${r.status}`);
+};
+// TTR OS siteForm contract: form-encoded; k=site key, p=page path, r=referrer, u=full landing URL
+// (with gclid/utm_*/campaign_id/ad_group_id), every form field as f_<name>. Answers 204 always.
+const ttrBody = (lead) => {
+  let p = '/';
+  try { p = new URL(lead.page).pathname; } catch {}
+  const f = new URLSearchParams({ k: SITE_KEY, p, r: lead.referrer, u: lead.page });
+  for (const k of ['name', 'phone', 'email', 'message']) if (lead[k]) f.set('f_' + k, lead[k]);
+  return f.toString();
 };
 
 export default async function handler(req, res) {
@@ -26,8 +35,8 @@ export default async function handler(req, res) {
   };
   if (!lead.name || lead.phone.replace(/\D/g, '').length < 7) return res.status(400).json({ ok: false, error: 'invalid' });
 
-  const jobs = [post(TTR_FORM_URL, { k: SITE_KEY, ...lead, source: 'ideal-dental-solutions/start' })];
-  if (process.env.GHL_WEBHOOK_URL) jobs.push(post(process.env.GHL_WEBHOOK_URL, { ...lead, source: 'start.idealdentalsolutions.com' }));
+  const jobs = [send(TTR_FORM_URL, ttrBody(lead), 'application/x-www-form-urlencoded')];
+  if (process.env.GHL_WEBHOOK_URL) jobs.push(send(process.env.GHL_WEBHOOK_URL, JSON.stringify({ ...lead, source: 'start.idealdentalsolutions.com' }), 'application/json'));
   const results = await Promise.allSettled(jobs);
   results.forEach((r) => r.status === 'rejected' && console.error('lead delivery failed:', r.reason?.message));
   // Succeed if at least one destination accepted the lead, so a visitor is never told "error" for a lead we kept.

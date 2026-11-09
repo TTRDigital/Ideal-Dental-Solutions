@@ -18,14 +18,15 @@
   var gclid = q.get('gclid'); try { if (gclid) store.setItem('ttr_gclid', gclid); else gclid = store.getItem('ttr_gclid'); } catch (e) {}
   if (!gclid) return;
   var fmt = function (n) { var d = digits(n); return '(' + d.slice(0, 3) + ') ' + d.slice(3, 6) + '-' + d.slice(6); };
-  var swap = function (n) {
+  var swap = function (n, shown) {
     var d = digits(n); if (d.length !== 10) return;
+    var txt = shown || fmt(d);
     document.querySelectorAll('a[href^="tel:"]').forEach(function (a) {
       if (digits(a.getAttribute('href')) !== DEFAULT) return;
       a.setAttribute('href', 'tel:+1' + d);
-      a.querySelectorAll('[data-call-number]').forEach(function (e) { e.textContent = fmt(d); });
+      a.querySelectorAll('[data-call-number]').forEach(function (e) { e.textContent = txt; });
     });
-    document.querySelectorAll('[data-call-number]').forEach(function (e) { e.textContent = fmt(d); });
+    document.querySelectorAll('[data-call-number]').forEach(function (e) { e.textContent = txt; });
     try { window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'tracking_number_swapped', tracking_number: d }); } catch (e) {}
   };
   var body = { k: KEY, gclid: gclid, campaign: q.get('utm_campaign') || '', adgroup: q.get('utm_adgroup') || q.get('adgroup') || '', page: location.href, referrer: document.referrer };
@@ -33,8 +34,8 @@
     var ctl = window.AbortController ? new AbortController() : null;
     var timer = setTimeout(function () { ctl && ctl.abort(); }, 3000);
     fetch(ENDPOINT, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body), signal: ctl && ctl.signal })
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (j) { if (j) swap(j.number || j.phone || j.tracking_number); })
+      .then(function (r) { return r.status === 200 ? r.json() : null; }) // 204 = keep default
+      .then(function (j) { if (j && j.number) swap(j.number, j.display); })
       .catch(function () {})
       .then(function () { clearTimeout(timer); });
   };
