@@ -1676,10 +1676,6 @@
   "destination": "/services/dental-implants-dentistry/single-tooth-implants/"
  },
  {
-  "source": "/sitemap.xml",
-  "destination": "/sitemap_index.xml"
- },
- {
   "source": "/teeth-cleaning/",
   "destination": "/services/preventive-dentistry/teeth-cleaning/"
  },

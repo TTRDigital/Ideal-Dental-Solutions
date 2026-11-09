@@ -13,11 +13,14 @@
     "seed": "node --experimental-strip-types --no-warnings scripts/seed.ts",
     "fixes": "node --experimental-strip-types --no-warnings scripts/fixes.ts",
     "audit": "node --experimental-strip-types --no-warnings scripts/audit.ts",
-    "favicons": "node --experimental-strip-types --no-warnings scripts/favicons.ts"
+    "favicons": "node --experimental-strip-types --no-warnings scripts/favicons.ts",
+    "images": "node --experimental-strip-types --no-warnings scripts/images.ts",
+    "optimize": "node --experimental-strip-types --no-warnings scripts/optimize.ts",
+    "seed-base": "node --experimental-strip-types --no-warnings scripts/seed-base.ts"
   },
   "dependencies": {
     "@sanity/vision": "^6.18.0",
-    "next": "^16.4.0",
+    "next": "^16.4.3",
     "next-sanity": "^13.3.4",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
@@ -31,7 +34,9 @@
     "@types/react-dom": "^19.3.0",
     "cheerio": "^1.2.0",
     "eslint": "^9.39.5",
-    "eslint-config-next": "^16.4.0",
+    "eslint-config-next": "^16.4.3",
+    "lightningcss": "^1.33.0",
+    "purgecss": "^8.0.0",
     "sharp": "^0.35.5",
     "typescript": "^5.9.3"
   }

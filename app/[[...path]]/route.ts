@@ -3,6 +3,10 @@ import { resolveBlog } from "@/lib/site/blog";
 import { feedXml, sitemapIndex, sitemapXml } from "@/lib/site/sitemaps";
 import { guessRedirect } from "@/lib/site/guess";
 import { renderDocument } from "@/lib/site/render";
+import { withTracking } from "@/lib/site/tracking";
+import { optimizeHtml } from "@/lib/site/optimize";
+import { seoPass } from "@/lib/site/seo-pass";
+import { withoutArlington } from "@/lib/site/arlington";
 import { dataset, projectId } from "@/sanity/env";
 
 /**
@@ -29,6 +33,8 @@ export async function GET(_req: Request, ctx: { params: Promise<{ path?: string[
 
   if (segments.length === 1 && segments[0] === "sitemap_index.xml") return xml(sitemapIndex(origin, await allPaths(site.fromCms)));
   if (segments.length === 1 && SITEMAPS.has(segments[0])) return xml(sitemapXml(segments[0], origin, await allPaths(site.fromCms)));
+  // /sitemap.xml (the address most tools try first) lists the pages itself.
+  if (segments.length === 1 && segments[0] === "sitemap.xml") return xml(sitemapXml("page-sitemap.xml", origin, await allPaths(site.fromCms)));
   // Site feed and WordPress' per-page comment feeds (/about-us/feed/): valid, empty RSS.
   if (segments[segments.length - 1] === "feed" && (segments.length === 1 || (await resolve(`/${segments.slice(0, -1).join("/")}/`, site.fromCms))?.kind === "page")) {
     return xml(feedXml(origin), "application/rss+xml; charset=UTF-8");
@@ -43,10 +49,13 @@ export async function GET(_req: Request, ctx: { params: Promise<{ path?: string[
   const resolved = resolveBlog(path) ?? (await resolve(path, site.fromCms));
   if (!resolved) return new Response("Not found", { status: 404 });
   if (resolved.kind === "notFound") {
+    // Old WordPress blog posts (the blog was removed): any address under /blog/ that is not a page goes to the services page.
+    // Real pages under /blog/ are answered above, so new posts are never redirected.
+    if (path.startsWith("/blog/")) return new Response(null, { status: 301, headers: { Location: "/services/" } });
     const target = guessRedirect(path, await allPaths(site.fromCms));
     if (target) return new Response(null, { status: 301, headers: { Location: target } });
   }
-  const html = renderDocument(resolved, site.data, path, { projectId, dataset, origin, recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY?.trim() || "" });
+  const html = withTracking(withoutArlington(seoPass(optimizeHtml(renderDocument(resolved, site.data, path, { projectId, dataset, origin, recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY?.trim() || "" })))));
   return new Response(html, {
     status: resolved.kind === "notFound" ? 404 : 200,
     headers: {
