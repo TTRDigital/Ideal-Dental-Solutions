@@ -6,7 +6,7 @@ const digits = (p) => String(p).replace(/\D/g, '');
 export function renderPage(d) {
   const tel = `tel:+1${digits(d.phone)}`;
   const call = (cls = '', label = d.callLabel) =>
-    `<a class="btn ${cls}" href="${tel}">${esc(label)} <span data-call-number>${esc(d.phoneDisplay)}</span>${cls.includes('lg') ? '<span class="ph" aria-hidden="true">&#9742;</span>' : ''}</a>`;
+    `<a class="btn ${cls}" href="${tel}">${esc(label)} <span data-call-number>${esc(d.phoneDisplay)}</span>${cls.includes('lg') ? '<span class="ph" aria-hidden="true"><img src="/assets/phone.svg" alt="" width="20" height="20"></span>' : ''}</a>`;
   const ba = (n, label, ext = 'webp') => `<div class="ba" role="group" aria-label="${esc(label)}"><img src="/assets/ba${n}-after.${ext}" alt="After porcelain veneers" loading="lazy" width="780" height="585"><img class="b" src="/assets/ba${n}-before.${ext}" alt="Before porcelain veneers" loading="lazy" width="780" height="585"><input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after"></div>`;
   const t = d.tracking || {};
   const gtmHead = t.gtm ? `<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','${esc(t.gtm)}');</script>` : '';
@@ -23,7 +23,7 @@ ${gtmHead}
 </head><body>
 ${gtmBody}
 <header class="hero">
- <div class="wrap top"><img class="logo" src="/assets/logo.svg" alt="Ideal Dental Solutions" width="130" height="40">${call('sm')}</div>
+ <div class="wrap top"><img class="logo" src="/assets/logo-footer.png" alt="Ideal Dental Solutions" width="268" height="88">${call('sm')}</div>
  <div class="wrap"><h1>${accent(d.headline)}</h1>${call('lg')}</div>
 </header>
 
