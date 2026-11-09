@@ -531,12 +531,12 @@ export const posts: BlogPost[] = [
       },
       {
         heading: "Why grinding is worth treating",
-        html: `<p>Over time, grinding can wear down enamel, chip or crack teeth and damage fillings, crowns and other dental work. Cleveland Clinic also lists jaw problems (TMJ disorders), facial pain and poor sleep among the possible effects of untreated grinding. Treating it early is simpler than repairing worn or broken teeth later.</p>`,
+        html: `<p>Over time, grinding can wear down enamel, chip or crack teeth and damage fillings, crowns and other dental work. Cleveland Clinic also lists TMJ disorders, facial pain and sleep problems among the possible effects of untreated grinding. Protecting your teeth early can help you avoid bigger repairs, like crowns, later on.</p>`,
       },
       {
         heading: "How a night guard helps",
-        html: `<p>A night guard is a thin, removable appliance worn over your teeth while you sleep. It takes the force of grinding so your teeth do not. It protects your teeth; it does not make the habit go away.</p>
-<p><strong>Custom or store-bought?</strong> The ADA says a custom guard made from a mold of your teeth gives the closest, most comfortable fit, and that store-bought guards may not give the same protection. Cleveland Clinic adds that a guard that does not fit well can make your teeth, gums or jaw sore. A sports mouthguard is not meant for sleeping.</p>
+        html: `<p>A night guard is a thin, removable appliance worn over your teeth while you sleep. It takes much of the force of grinding, which helps protect your teeth. It does not make the habit go away.</p>
+<p><strong>Custom or store-bought?</strong> The ADA says a custom guard made from a mold of your teeth gives the closest, most comfortable fit, and that store-bought guards may not give the same protection. Cleveland Clinic adds that a guard that does not fit well can make your teeth, gums or jaw sore. A sports mouthguard is a different kind of guard, made to protect your teeth during sports.</p>
 <p><strong>At Ideal Dental Solutions</strong>, we make custom night guards from hard acrylic, designed from a digital scan of your teeth. Bring it to your regular visits so we can check the fit and condition.</p>`,
       },
       {
@@ -544,8 +544,8 @@ export const posts: BlogPost[] = [
         html: `<ul>
 <li><strong>Manage stress.</strong> The ADA mentions meditation, counseling, exercise, massage and deep breathing.</li>
 <li><strong>Cut back on caffeine and alcohol</strong>, and if you smoke, quitting helps.</li>
-<li><strong>Notice daytime clenching.</strong> Keeping your lips together and teeth slightly apart can help you catch the habit.</li>
-<li><strong>Ask about other treatments.</strong> For some people, a doctor may suggest a muscle relaxant for a short time, or, in severe cases, injections that relax the jaw muscles.</li>
+<li><strong>Notice daytime clenching.</strong> Mayo Clinic suggests resting your tongue up, with your teeth apart and your lips closed.</li>
+<li><strong>Ask about other treatments.</strong> For some people, a doctor may suggest a muscle relaxant at bedtime for a short time, or, when other treatments have not helped, injections that relax the jaw muscles.</li>
 </ul>`,
       },
       {
@@ -588,6 +588,7 @@ export const posts: BlogPost[] = [
       { title: "Cleveland Clinic: Bruxism (Teeth Grinding)", url: "https://my.clevelandclinic.org/health/diseases/10955-teeth-grinding-bruxism" },
       { title: "Cleveland Clinic: Mouth Guards", url: "https://my.clevelandclinic.org/health/treatments/10910-mouthguards" },
       { title: "NIH National Institute of Dental and Craniofacial Research: TMD", url: "https://www.nidcr.nih.gov/health-info/tmd" },
+      { title: "Mayo Clinic: Bruxism, diagnosis and treatment", url: "https://www.mayoclinic.org/diseases-conditions/bruxism/diagnosis-treatment/drc-20356100" },
     ],
   },
 ];

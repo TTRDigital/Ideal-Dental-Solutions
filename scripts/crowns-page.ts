@@ -54,13 +54,13 @@ const PAGE = {
   description: "Dental crowns in McLean, VA from prosthodontist Dr. Mehdi Adili: when you need one, crown materials, what to expect over two visits, and how long crowns last.",
   h1: "Dental Crowns in McLean, VA",
   subtitle: "Protect and restore a weak, cracked or worn tooth",
-  answer: `<p>A dental crown is a tooth-shaped cap that covers a damaged tooth to protect it and restore its shape and strength. Crowns are used for cracked, weak or worn teeth, after a root canal, and on top of dental implants. Placing one usually takes two visits a few weeks apart, and crowns last five to 15 years on average with good care. At our McLean office, crowns are one of the main areas of focus for <a href="/dr-mehdi-adili/">Dr. Mehdi S. Adili, DDS</a>, a prosthodontist.</p>`,
+  answer: `<p>A dental crown is a tooth-shaped cap that covers a damaged tooth to protect it and restore its shape and strength. Crowns are used for cracked, weak or worn teeth, after a root canal, and on top of dental implants. Placing one usually takes two visits a few weeks apart, and crowns last five to 15 years on average with good care. At our McLean office, crowns are one of the areas of focus for <a href="/dr-mehdi-adili/">Dr. Mehdi S. Adili, DDS</a>, a prosthodontist.</p>`,
   sections: [
     {
       kind: "text",
       heading: "What a Dental Crown Does",
       html: `<p>A crown covers the whole visible part of a tooth, down to the gumline. It holds a weakened tooth together, protects it from breaking further, and gives it back a normal shape so you can chew comfortably.</p>
-<p>Crowns are a restorative treatment first, but they also change how a tooth looks: a tooth-colored crown can cover a badly stained or misshapen tooth. When a tooth is too damaged for a filling but can still be saved, a crown is often the next step.</p>`,
+<p>Crowns are a restorative treatment first, but they also change how a tooth looks: a tooth-colored crown can cover a badly stained or misshapen tooth. When a tooth is too damaged for a filling but can still be saved, it may need an inlay, an onlay or a crown, depending on how much healthy tooth is left.</p>`,
     },
     {
       kind: "accordion",
@@ -87,7 +87,7 @@ const PAGE = {
         { title: "Zirconia", text: "<p>A very strong ceramic that can withstand heavier biting forces than other ceramic crowns.</p>" },
         { title: "Porcelain-Fused-to-Metal", text: "<p>Combines the strength of metal with a tooth-colored porcelain surface. Over time the porcelain can chip and show the metal underneath.</p>" },
         { title: "Metal (Gold or Alloy)", text: "<p>Rarely chips or breaks and needs only a small amount of enamel removed. The metal color is the main drawback, so it is mostly used for back teeth.</p>" },
-        { title: "Resin", text: "<p>Usually less expensive, but more fragile and more likely to break than other types. Temporary crowns are often made of resin.</p>" },
+        { title: "Resin", text: "<p>Usually less expensive, but more fragile and more likely to break than porcelain-fused-to-metal crowns. Temporary crowns are often made of resin.</p>" },
       ],
       link: '<p style="color:#ffffff;font-size:18px;line-height:26px;letter-spacing:0.9px;">We will recommend a material for your tooth and explain why, based on where it is, how you bite and how it should look.</p>',
     },
@@ -115,7 +115,7 @@ const PAGE = {
     {
       kind: "text",
       heading: "Your Crown Dentist in McLean",
-      html: `<p><a href="/dr-mehdi-adili/">Dr. Mehdi S. Adili, DDS</a>, is a prosthodontist: a dentist with three to four additional years of specialty training in restoring and replacing teeth with crowns, bridges, dentures and implants. He earned his Doctor of Dental Surgery degree from Georgetown University and completed his prosthodontics training at Virginia Commonwealth University. Crowns are one of his main areas of focus, along with bridges, dentures, dental implants and full-mouth restoration.</p>
+      html: `<p><a href="/dr-mehdi-adili/">Dr. Mehdi S. Adili, DDS</a>, is a prosthodontist: a dentist with three to four additional years of specialty training in restoring and replacing teeth with crowns, bridges, dentures and implants. He earned his Doctor of Dental Surgery degree from Georgetown University and completed his prosthodontics training at Virginia Commonwealth University. His areas of focus include crowns, bridges, complete dentures, dental implants and full-mouth restoration.</p>
 <p>Our office is at 8280 Greensboro Drive, Unit 105, in McLean, close to Tysons.</p>`,
     },
   ] as Section[],

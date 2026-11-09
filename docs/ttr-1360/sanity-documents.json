@@ -1,0 +1,917 @@
+{
+ "task": "TTR-1360",
+ "note": "Sanity documents for the two pieces. The page is the same document as in content/seed.json (_type page), loaded by npm run seed or POST /api/admin/seed/. The blog has no Sanity type yet: the post renders from content/blog/posts.ts, and this is the same content as a post document for when one is added. Nothing here has been written to Sanity.",
+ "documents": [
+  {
+   "seo": {
+    "title": "Dental Crowns in McLean, VA | Ideal Dental Solutions",
+    "description": "Dental crowns in McLean, VA from prosthodontist Dr. Mehdi Adili: when you need one, crown materials, what to expect over two visits, and how long crowns last.",
+    "robots": "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    "canonical": "https://idealdentalsolutions.com/services/restorative-dentistry/dental-crowns/",
+    "ogLocale": "en_US",
+    "ogType": "article",
+    "ogTitle": "Dental Crowns in McLean, VA | Ideal Dental Solutions",
+    "ogDescription": "Dental crowns in McLean, VA from prosthodontist Dr. Mehdi Adili: when you need one, crown materials, what to expect over two visits, and how long crowns last.",
+    "ogUrl": "https://idealdentalsolutions.com/services/restorative-dentistry/dental-crowns/",
+    "ogSiteName": "Ideal Dental Solutions",
+    "modifiedTime": "2026-11-09T12:00:00+00:00",
+    "ogImage": "https://idealdentalsolutions.com/og/services-restorative-dentistry-dental-crowns.jpg",
+    "ogImageWidth": "1200",
+    "ogImageHeight": "630",
+    "ogImageType": "image/jpeg",
+    "twitterCard": "summary_large_image",
+    "schema": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://idealdentalsolutions.com/services/restorative-dentistry/dental-crowns/\",\"url\":\"https://idealdentalsolutions.com/services/restorative-dentistry/dental-crowns/\",\"name\":\"Dental Crowns in McLean, VA | Ideal Dental Solutions\",\"isPartOf\":{\"@id\":\"https://idealdentalsolutions.com/#website\"},\"about\":{\"@id\":\"https://idealdentalsolutions.com/services/restorative-dentistry/dental-crowns/#service\"},\"primaryImageOfPage\":{\"@id\":\"https://idealdentalsolutions.com/services/restorative-dentistry/dental-crowns/#primaryimage\"},\"image\":{\"@id\":\"https://idealdentalsolutions.com/services/restorative-dentistry/dental-crowns/#primaryimage\"},\"thumbnailUrl\":\"https://idealdentalsolutions.com/og/services-restorative-dentistry-dental-crowns.jpg\",\"datePublished\":\"2026-11-09T12:00:00+00:00\",\"dateModified\":\"2026-11-09T12:00:00+00:00\",\"description\":\"Dental crowns in McLean, VA from prosthodontist Dr. Mehdi Adili: when you need one, crown materials, what to expect over two visits, and how long crowns last.\",\"author\":{\"@type\":\"Person\",\"@id\":\"https://idealdentalsolutions.com/dr-mehdi-adili/#person\",\"name\":\"Dr. Mehdi S. Adili, DDS\",\"jobTitle\":\"Prosthodontist\",\"url\":\"https://idealdentalsolutions.com/dr-mehdi-adili/\"},\"breadcrumb\":{\"@id\":\"https://idealdentalsolutions.com/services/restorative-dentistry/dental-crowns/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://idealdentalsolutions.com/services/restorative-dentistry/dental-crowns/\"]}]},{\"@type\":\"Service\",\"@id\":\"https://idealdentalsolutions.com/services/restorative-dentistry/dental-crowns/#service\",\"name\":\"Dental crowns\",\"serviceType\":\"Dental crown\",\"description\":\"Crowns for cracked, weak or worn teeth, after root canal treatment and on dental implants.\",\"provider\":{\"@id\":\"https://idealdentalsolutions.com/#organization\"},\"areaServed\":[{\"@type\":\"City\",\"name\":\"McLean, VA\"},{\"@type\":\"City\",\"name\":\"Tysons, VA\"}],\"url\":\"https://idealdentalsolutions.com/services/restorative-dentistry/dental-crowns/\"},{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https://idealdentalsolutions.com/services/restorative-dentistry/dental-crowns/#primaryimage\",\"url\":\"https://idealdentalsolutions.com/og/services-restorative-dentistry-dental-crowns.jpg\",\"contentUrl\":\"https://idealdentalsolutions.com/og/services-restorative-dentistry-dental-crowns.jpg\",\"width\":1200,\"height\":630},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://idealdentalsolutions.com/services/restorative-dentistry/dental-crowns/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://idealdentalsolutions.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Services\",\"item\":\"https://idealdentalsolutions.com/services/\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Restorative Dentistry\",\"item\":\"https://idealdentalsolutions.com/services/restorative-dentistry/\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"Dental Crowns\"}]},{\"@type\":\"WebSite\",\"@id\":\"https://idealdentalsolutions.com/#website\",\"url\":\"https://idealdentalsolutions.com/\",\"name\":\"Ideal Dental Solutions\",\"description\":\"\",\"publisher\":{\"@id\":\"https://idealdentalsolutions.com/#organization\"},\"inLanguage\":\"en-US\",\"alternateName\":\"idealdental\"},{\"@type\":\"Organization\",\"@id\":\"https://idealdentalsolutions.com/#organization\",\"name\":\"Ideal Dental Solutions\",\"url\":\"https://idealdentalsolutions.com/\"}]}"
+   },
+   "bodyClass": "wp-singular page-template-default page page-id-9201 page-child parent-pageid-413 wp-custom-logo wp-embed-responsive wp-theme-blocksy elementor-default elementor-kit-5 elementor-page elementor-page-9201 ct-elementor-default-template",
+   "content": [
+    {
+     "_key": "5863604f1d64",
+     "elId": "bc61501",
+     "_type": "elContainer",
+     "children": [
+      {
+       "_key": "66ee34c9a2ad",
+       "elId": "f716402",
+       "_type": "elText",
+       "widget": "text-editor",
+       "body": [
+        {
+         "_type": "htmlBlock",
+         "_key": "f89792fa2d54",
+         "html": "<nav aria-label=\"Breadcrumb\"><p style=\"color:#ffffff;font-size:14px;letter-spacing:0.6px;margin-bottom:8px;\"><a href=\"/\" style=\"color:#ffffff;text-decoration:underline;\">Home</a> / <a href=\"/services/\" style=\"color:#ffffff;text-decoration:underline;\">Services</a> / <a href=\"/services/restorative-dentistry/\" style=\"color:#ffffff;text-decoration:underline;\">Restorative Dentistry</a> / <span aria-current=\"page\">Dental Crowns</span></p></nav>"
+        }
+       ],
+       "tpl": "<div class=\"elementor-element elementor-element-f716402 elementor-widget elementor-widget-text-editor\" data-id=\"f716402\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+      },
+      {
+       "_key": "f7ee0d3c97ad",
+       "elId": "4d1056f",
+       "_type": "elHeading",
+       "widget": "heading",
+       "title": "Dental Crowns in McLean, VA",
+       "tpl": "<div class=\"elementor-element elementor-element-4d1056f elementor-widget__width-initial elementor-widget-tablet__width-inherit elementor-widget elementor-widget-heading\" data-id=\"4d1056f\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h1 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h1>\t\t\t\t</div>"
+      },
+      {
+       "_key": "50663c58f864",
+       "elId": "65bba16",
+       "_type": "elHeading",
+       "widget": "heading",
+       "title": "Protect and restore a weak, cracked or worn tooth",
+       "tpl": "<div class=\"elementor-element elementor-element-65bba16 elementor-widget elementor-widget-heading\" data-id=\"65bba16\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+      },
+      {
+       "_key": "75b183b8076d",
+       "elId": "f716402",
+       "_type": "elText",
+       "widget": "text-editor",
+       "body": [
+        {
+         "_type": "htmlBlock",
+         "_key": "0b1621f0e9d1",
+         "html": "<p style=\"color:#ffffff;font-size:18px;line-height:26px;letter-spacing:0.9px;max-width:720px;\">A dental crown is a tooth-shaped cap that covers a damaged tooth to protect it and restore its shape and strength. Crowns are used for cracked, weak or worn teeth, after a root canal, and on top of dental implants. Placing one usually takes two visits a few weeks apart, and crowns last five to 15 years on average with good care. At our McLean office, crowns are one of the areas of focus for <a style=\"color:#ffffff;text-decoration:underline;\" href=\"/dr-mehdi-adili/\">Dr. Mehdi S. Adili, DDS</a>, a prosthodontist.</p>"
+        }
+       ],
+       "tpl": "<div class=\"elementor-element elementor-element-f716402 elementor-widget elementor-widget-text-editor\" data-id=\"f716402\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+      }
+     ],
+     "tpl": "<div class=\"elementor-element elementor-element-bc61501 e-flex e-con-boxed e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/07/treatment-room-web.jpg)\" data-id=\"bc61501\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+    },
+    {
+     "_key": "8a13a861764b",
+     "elId": "a5658b6",
+     "_type": "elContainer",
+     "children": [
+      {
+       "_key": "fc79efe1c3bf",
+       "elId": "c826dbe",
+       "_type": "elHeading",
+       "widget": "heading",
+       "title": "What a Dental Crown Does",
+       "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+      },
+      {
+       "_key": "e5057503904e",
+       "elId": "2bb8729",
+       "_type": "elText",
+       "widget": "text-editor",
+       "body": [
+        {
+         "_type": "htmlBlock",
+         "_key": "d322ff69da5a",
+         "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">A crown covers the whole visible part of a tooth, down to the gumline. It holds a weakened tooth together, protects it from breaking further, and gives it back a normal shape so you can chew comfortably.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Crowns are a restorative treatment first, but they also change how a tooth looks: a tooth-colored crown can cover a badly stained or misshapen tooth. When a tooth is too damaged for a filling but can still be saved, it may need an inlay, an onlay or a crown, depending on how much healthy tooth is left.</p>"
+        }
+       ],
+       "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+      }
+     ],
+     "tpl": "<div class=\"elementor-element elementor-element-a5658b6 e-flex e-con-boxed e-con e-parent\" data-id=\"a5658b6\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+    },
+    {
+     "_key": "8d61f33955be",
+     "elId": "8a23a75",
+     "_type": "elContainer",
+     "children": [
+      {
+       "_key": "fe9556c008b7",
+       "elId": "31c37ae",
+       "_type": "elHeading",
+       "widget": "heading",
+       "title": "When You Might Need a Crown",
+       "tpl": "<div class=\"elementor-element elementor-element-31c37ae elementor-widget elementor-widget-heading\" data-id=\"31c37ae\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+      },
+      {
+       "_key": "650939361db1",
+       "elId": "f36453c",
+       "_type": "elText",
+       "widget": "text-editor",
+       "body": [
+        {
+         "_type": "htmlBlock",
+         "_key": "b4ac2e556d69",
+         "html": "<p style=\"color:#ffffff;font-size:18px;line-height:26px;letter-spacing:0.9px;max-width:814px;\">Cleveland Clinic lists these common reasons for a crown. Your exam and X-rays show which applies to your tooth.</p>"
+        }
+       ],
+       "tpl": "<div class=\"elementor-element elementor-element-f36453c elementor-widget elementor-widget-text-editor\" data-id=\"f36453c\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+      },
+      {
+       "_key": "c513079ac93c",
+       "elId": "0e416a2",
+       "_type": "elContainer",
+       "children": [
+        {
+         "_key": "c69b467a8ecf",
+         "elId": "d54f03a",
+         "_type": "elContainer",
+         "children": [
+          {
+           "_key": "6b02c819e17c",
+           "elId": "088e71c",
+           "_type": "elImage",
+           "widget": "image",
+           "image": {
+            "_type": "wpImage",
+            "src": "/wp-content/uploads/2026/08/IMG_1980-1-1024x768.jpeg",
+            "width": "1024",
+            "height": "768",
+            "alt": "Ideal Dental Solutions team member at the McLean office",
+            "attrs": "decoding=\"async\" class=\"attachment-full size-full\""
+           },
+           "tpl": "<div class=\"elementor-element elementor-element-088e71c elementor-widget elementor-widget-image\" data-id=\"088e71c\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image.default\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t[[@img:image]]\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>"
+          }
+         ],
+         "tpl": "<div class=\"elementor-element elementor-element-d54f03a e-con-full e-flex e-con e-child\" data-id=\"d54f03a\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:children]]</div>"
+        },
+        {
+         "_key": "c7f1ce3bf269",
+         "elId": "07aad87",
+         "_type": "elContainer",
+         "children": [
+          {
+           "_key": "92ccdf7b54de",
+           "elId": "954b86a",
+           "_type": "elAccordion",
+           "widget": "nested-accordion",
+           "items": [
+            {
+             "_type": "accordionItem",
+             "_key": "9239d20c856d",
+             "title": "A Weak or Heavily Filled Tooth",
+             "content": [
+              {
+               "_key": "ff6f8a93e83e",
+               "elId": "07ad478",
+               "_type": "elHeading",
+               "widget": "heading",
+               "title": "When decay or an old filling has left too little healthy tooth, a crown can strengthen what remains so it does not break.",
+               "tpl": "<div class=\"elementor-element elementor-element-07ad478 elementor-widget elementor-widget-heading\" data-id=\"07ad478\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<div class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</div>\t\t\t\t</div>"
+              }
+             ],
+             "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-1560\" class=\"e-n-accordion-item\" open=\"\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"1\" tabindex=\"0\" aria-expanded=\"true\" aria-controls=\"e-n-accordion-item-1560\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-1560\" class=\"elementor-element elementor-element-bad694c e-con-full e-flex e-con e-child\" data-id=\"bad694c\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+            },
+            {
+             "_type": "accordionItem",
+             "_key": "0487c3a48033",
+             "title": "A Cracked Tooth",
+             "content": [
+              {
+               "_key": "db23d9d4ea68",
+               "elId": "2690ce2",
+               "_type": "elHeading",
+               "widget": "heading",
+               "title": "A crown holds the pieces of a cracked tooth together and protects it from cracking further.",
+               "tpl": "<div class=\"elementor-element elementor-element-2690ce2 elementor-widget elementor-widget-heading\" data-id=\"2690ce2\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<div class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</div>\t\t\t\t</div>"
+              }
+             ],
+             "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-1561\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"2\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-1561\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-1561\" class=\"elementor-element elementor-element-c69026b e-con-full e-flex e-con e-child\" data-id=\"c69026b\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+            },
+            {
+             "_type": "accordionItem",
+             "_key": "16ca1429fe8b",
+             "title": "After a Root Canal",
+             "content": [
+              {
+               "_key": "9f4f5119fc99",
+               "elId": "8647942",
+               "_type": "elHeading",
+               "widget": "heading",
+               "title": "Back teeth treated with a root canal usually need a crown to protect them. We handle the root canal and the final restoration in the same office.",
+               "tpl": "<div class=\"elementor-element elementor-element-8647942 elementor-widget elementor-widget-heading\" data-id=\"8647942\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<div class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</div>\t\t\t\t</div>"
+              }
+             ],
+             "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-1562\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"3\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-1562\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-1562\" class=\"elementor-element elementor-element-a4f54c2 e-con-full e-flex e-con e-child\" data-id=\"a4f54c2\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+            },
+            {
+             "_type": "accordionItem",
+             "_key": "3e835bcb7e28",
+             "title": "A Worn-Down Tooth",
+             "content": [
+              {
+               "_key": "7f159a5597bc",
+               "elId": "306d78a",
+               "_type": "elHeading",
+               "widget": "heading",
+               "title": "Teeth worn down by grinding or wear can be rebuilt to their normal height and shape with crowns.",
+               "tpl": "<div class=\"elementor-element elementor-element-306d78a elementor-widget elementor-widget-heading\" data-id=\"306d78a\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<div class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</div>\t\t\t\t</div>"
+              }
+             ],
+             "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-1563\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"4\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-1563\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-1563\" class=\"elementor-element elementor-element-26011ab e-con-full e-flex e-con e-child\" data-id=\"26011ab\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+            },
+            {
+             "_type": "accordionItem",
+             "_key": "8c56c50a36ba",
+             "title": "On Top of a Dental Implant",
+             "content": [
+              {
+               "_key": "f6991a33057b",
+               "elId": "15a2662",
+               "_type": "elHeading",
+               "widget": "heading",
+               "title": "A single tooth implant is finished with a custom crown that sits on the implant.",
+               "tpl": "<div class=\"elementor-element elementor-element-15a2662 elementor-widget elementor-widget-heading\" data-id=\"15a2662\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<div class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</div>\t\t\t\t</div>"
+              }
+             ],
+             "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-1564\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"5\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-1564\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-1564\" class=\"elementor-element elementor-element-605f894 e-con-full e-flex e-con e-child\" data-id=\"605f894\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+            },
+            {
+             "_type": "accordionItem",
+             "_key": "8373e90402fd",
+             "title": "To Hold a Bridge",
+             "content": [
+              {
+               "_key": "a9902e586979",
+               "elId": "08aa683",
+               "_type": "elHeading",
+               "widget": "heading",
+               "title": "A traditional dental bridge is held by crowns on the teeth on either side of a gap.",
+               "tpl": "<div class=\"elementor-element elementor-element-08aa683 elementor-widget elementor-widget-heading\" data-id=\"08aa683\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<div class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</div>\t\t\t\t</div>"
+              }
+             ],
+             "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-1565\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"6\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-1565\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-1565\" class=\"elementor-element elementor-element-2ceb362 e-con-full e-flex e-con e-child\" data-id=\"2ceb362\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+            }
+           ],
+           "tpl": "<div class=\"elementor-element elementor-element-954b86a elementor-widget elementor-widget-n-accordion\" data-id=\"954b86a\" data-element_type=\"widget\" data-e-type=\"widget\" data-settings=\"{&quot;default_state&quot;:&quot;expanded&quot;,&quot;max_items_expended&quot;:&quot;one&quot;,&quot;n_accordion_animation_duration&quot;:{&quot;unit&quot;:&quot;ms&quot;,&quot;size&quot;:400,&quot;sizes&quot;:[]}}\" data-widget_type=\"nested-accordion.default\">\n\t\t\t\t\t\t\t<div class=\"e-n-accordion\" aria-label=\"Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys\">[[@items:items]]\n\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>"
+          },
+          {
+           "_key": "93811a841cc2",
+           "elId": "ec83923",
+           "_type": "elText",
+           "widget": "text-editor",
+           "body": [
+            {
+             "_type": "htmlBlock",
+             "_key": "fd7fa84968cf",
+             "html": "<p style=\"color:#ffffff;font-size:18px;line-height:26px;letter-spacing:0.9px;\"><a href=\"/appointment/\" style=\"color:#ffffff;text-decoration:underline;\">Request an appointment</a> to find out whether a crown is right for your tooth.</p>"
+            }
+           ],
+           "tpl": "<div class=\"elementor-element elementor-element-ec83923 elementor-widget elementor-widget-text-editor\" data-id=\"ec83923\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+          }
+         ],
+         "tpl": "<div class=\"elementor-element elementor-element-07aad87 e-con-full e-flex e-con e-child\" data-id=\"07aad87\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:children]]</div>"
+        }
+       ],
+       "tpl": "<div class=\"elementor-element elementor-element-0e416a2 e-flex e-con-boxed e-con e-child\" data-id=\"0e416a2\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+      }
+     ],
+     "tpl": "<div class=\"elementor-element elementor-element-8a23a75 e-flex e-con-boxed e-con e-parent\" data-id=\"8a23a75\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+    },
+    {
+     "_key": "36fbb3d11287",
+     "elId": "8a23a75",
+     "_type": "elContainer",
+     "children": [
+      {
+       "_key": "4614ad82990b",
+       "elId": "31c37ae",
+       "_type": "elHeading",
+       "widget": "heading",
+       "title": "Crown Materials Compared",
+       "tpl": "<div class=\"elementor-element elementor-element-31c37ae elementor-widget elementor-widget-heading\" data-id=\"31c37ae\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+      },
+      {
+       "_key": "da52f5ada9b8",
+       "elId": "f36453c",
+       "_type": "elText",
+       "widget": "text-editor",
+       "body": [
+        {
+         "_type": "htmlBlock",
+         "_key": "9579c92525e1",
+         "html": "<p style=\"color:#ffffff;font-size:18px;line-height:26px;letter-spacing:0.9px;max-width:814px;\">Crowns come in several materials. Each balances looks, strength and how much tooth has to be reshaped.</p>"
+        }
+       ],
+       "tpl": "<div class=\"elementor-element elementor-element-f36453c elementor-widget elementor-widget-text-editor\" data-id=\"f36453c\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+      },
+      {
+       "_key": "8895e1f2a10c",
+       "elId": "0e416a2",
+       "_type": "elContainer",
+       "children": [
+        {
+         "_key": "a3e85992d92f",
+         "elId": "d54f03a",
+         "_type": "elContainer",
+         "children": [
+          {
+           "_key": "58e28220aad1",
+           "elId": "088e71c",
+           "_type": "elImage",
+           "widget": "image",
+           "image": {
+            "_type": "wpImage",
+            "src": "/wp-content/uploads/2026/06/img-8982346.webp",
+            "width": "1024",
+            "height": "1024",
+            "alt": "Dental model of the upper and lower teeth",
+            "attrs": "decoding=\"async\" class=\"attachment-full size-full\""
+           },
+           "tpl": "<div class=\"elementor-element elementor-element-088e71c elementor-widget elementor-widget-image\" data-id=\"088e71c\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"image.default\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t[[@img:image]]\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t</div>"
+          }
+         ],
+         "tpl": "<div class=\"elementor-element elementor-element-d54f03a e-con-full e-flex e-con e-child\" data-id=\"d54f03a\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:children]]</div>"
+        },
+        {
+         "_key": "867b706d4c20",
+         "elId": "07aad87",
+         "_type": "elContainer",
+         "children": [
+          {
+           "_key": "6a25fc42658f",
+           "elId": "954b86a",
+           "_type": "elAccordion",
+           "widget": "nested-accordion",
+           "items": [
+            {
+             "_type": "accordionItem",
+             "_key": "50d48371f96a",
+             "title": "All-Ceramic or Porcelain",
+             "content": [
+              {
+               "_key": "42821aff2fba",
+               "elId": "07ad478",
+               "_type": "elHeading",
+               "widget": "heading",
+               "title": "Looks the most like natural enamel, so it is a common choice for front teeth. It is also an option for people with metal allergies.",
+               "tpl": "<div class=\"elementor-element elementor-element-07ad478 elementor-widget elementor-widget-heading\" data-id=\"07ad478\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<div class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</div>\t\t\t\t</div>"
+              }
+             ],
+             "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-1560\" class=\"e-n-accordion-item\" open=\"\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"1\" tabindex=\"0\" aria-expanded=\"true\" aria-controls=\"e-n-accordion-item-1560\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-1560\" class=\"elementor-element elementor-element-bad694c e-con-full e-flex e-con e-child\" data-id=\"bad694c\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+            },
+            {
+             "_type": "accordionItem",
+             "_key": "faadb93a30e0",
+             "title": "Zirconia",
+             "content": [
+              {
+               "_key": "e1931b799ad7",
+               "elId": "2690ce2",
+               "_type": "elHeading",
+               "widget": "heading",
+               "title": "A very strong ceramic that can withstand heavier biting forces than other ceramic crowns.",
+               "tpl": "<div class=\"elementor-element elementor-element-2690ce2 elementor-widget elementor-widget-heading\" data-id=\"2690ce2\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<div class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</div>\t\t\t\t</div>"
+              }
+             ],
+             "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-1561\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"2\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-1561\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-1561\" class=\"elementor-element elementor-element-c69026b e-con-full e-flex e-con e-child\" data-id=\"c69026b\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+            },
+            {
+             "_type": "accordionItem",
+             "_key": "4c9edc4dee12",
+             "title": "Porcelain-Fused-to-Metal",
+             "content": [
+              {
+               "_key": "412bab3bf277",
+               "elId": "8647942",
+               "_type": "elHeading",
+               "widget": "heading",
+               "title": "Combines the strength of metal with a tooth-colored porcelain surface. Over time the porcelain can chip and show the metal underneath.",
+               "tpl": "<div class=\"elementor-element elementor-element-8647942 elementor-widget elementor-widget-heading\" data-id=\"8647942\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<div class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</div>\t\t\t\t</div>"
+              }
+             ],
+             "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-1562\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"3\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-1562\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-1562\" class=\"elementor-element elementor-element-a4f54c2 e-con-full e-flex e-con e-child\" data-id=\"a4f54c2\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+            },
+            {
+             "_type": "accordionItem",
+             "_key": "15b862cb8889",
+             "title": "Metal (Gold or Alloy)",
+             "content": [
+              {
+               "_key": "2ce404386db4",
+               "elId": "306d78a",
+               "_type": "elHeading",
+               "widget": "heading",
+               "title": "Rarely chips or breaks and needs only a small amount of enamel removed. The metal color is the main drawback, so it is mostly used for back teeth.",
+               "tpl": "<div class=\"elementor-element elementor-element-306d78a elementor-widget elementor-widget-heading\" data-id=\"306d78a\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<div class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</div>\t\t\t\t</div>"
+              }
+             ],
+             "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-1563\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"4\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-1563\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-1563\" class=\"elementor-element elementor-element-26011ab e-con-full e-flex e-con e-child\" data-id=\"26011ab\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+            },
+            {
+             "_type": "accordionItem",
+             "_key": "a1a86dc2ada1",
+             "title": "Resin",
+             "content": [
+              {
+               "_key": "6499b21874e1",
+               "elId": "15a2662",
+               "_type": "elHeading",
+               "widget": "heading",
+               "title": "Usually less expensive, but more fragile and more likely to break than porcelain-fused-to-metal crowns. Temporary crowns are often made of resin.",
+               "tpl": "<div class=\"elementor-element elementor-element-15a2662 elementor-widget elementor-widget-heading\" data-id=\"15a2662\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<div class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</div>\t\t\t\t</div>"
+              }
+             ],
+             "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-1564\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"5\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-1564\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-1564\" class=\"elementor-element elementor-element-605f894 e-con-full e-flex e-con e-child\" data-id=\"605f894\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+            }
+           ],
+           "tpl": "<div class=\"elementor-element elementor-element-954b86a elementor-widget elementor-widget-n-accordion\" data-id=\"954b86a\" data-element_type=\"widget\" data-e-type=\"widget\" data-settings=\"{&quot;default_state&quot;:&quot;expanded&quot;,&quot;max_items_expended&quot;:&quot;one&quot;,&quot;n_accordion_animation_duration&quot;:{&quot;unit&quot;:&quot;ms&quot;,&quot;size&quot;:400,&quot;sizes&quot;:[]}}\" data-widget_type=\"nested-accordion.default\">\n\t\t\t\t\t\t\t<div class=\"e-n-accordion\" aria-label=\"Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys\">[[@items:items]]\n\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>"
+          },
+          {
+           "_key": "c07ada7cff67",
+           "elId": "ec83923",
+           "_type": "elText",
+           "widget": "text-editor",
+           "body": [
+            {
+             "_type": "htmlBlock",
+             "_key": "e508aa95b5a1",
+             "html": "<p style=\"color:#ffffff;font-size:18px;line-height:26px;letter-spacing:0.9px;\">We will recommend a material for your tooth and explain why, based on where it is, how you bite and how it should look.</p>"
+            }
+           ],
+           "tpl": "<div class=\"elementor-element elementor-element-ec83923 elementor-widget elementor-widget-text-editor\" data-id=\"ec83923\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+          }
+         ],
+         "tpl": "<div class=\"elementor-element elementor-element-07aad87 e-con-full e-flex e-con e-child\" data-id=\"07aad87\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:children]]</div>"
+        }
+       ],
+       "tpl": "<div class=\"elementor-element elementor-element-0e416a2 e-flex e-con-boxed e-con e-child\" data-id=\"0e416a2\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+      }
+     ],
+     "tpl": "<div class=\"elementor-element elementor-element-8a23a75 e-flex e-con-boxed e-con e-parent\" data-id=\"8a23a75\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+    },
+    {
+     "_key": "51857a406d91",
+     "elId": "a5658b6",
+     "_type": "elContainer",
+     "children": [
+      {
+       "_key": "690a8b4fe32b",
+       "elId": "c826dbe",
+       "_type": "elHeading",
+       "widget": "heading",
+       "title": "What to Expect: Usually Two Visits",
+       "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+      },
+      {
+       "_key": "d2249b713537",
+       "elId": "2bb8729",
+       "_type": "elText",
+       "widget": "text-editor",
+       "body": [
+        {
+         "_type": "htmlBlock",
+         "_key": "2058fde3be6f",
+         "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\"><strong>First visit.</strong> We examine the tooth and take X-rays. The area is numbed, and some enamel is removed so the crown can fit over the tooth. Then we take an impression, either with a putty-like material or with a handheld digital scanner, and place a temporary crown.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\"><strong>While the crown is made.</strong> A dental lab usually takes two to three weeks to make the final crown. The temporary crown protects your tooth in the meantime; avoid sticky and hard foods on that side.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\"><strong>Second visit.</strong> We check the shape, color and fit of the new crown, then bond it to your tooth with dental cement and adjust your bite.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Most people go back to work or school right after. Some sensitivity for a couple of weeks and gum soreness for a few days are normal.</p>"
+        }
+       ],
+       "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+      }
+     ],
+     "tpl": "<div class=\"elementor-element elementor-element-a5658b6 e-flex e-con-boxed e-con e-parent\" data-id=\"a5658b6\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+    },
+    {
+     "_key": "2b41a4cd9625",
+     "elId": "a5658b6",
+     "_type": "elContainer",
+     "children": [
+      {
+       "_key": "94a5e0062d50",
+       "elId": "c826dbe",
+       "_type": "elHeading",
+       "widget": "heading",
+       "title": "How Long Crowns Last and How to Care for Them",
+       "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+      },
+      {
+       "_key": "6219f9e297ce",
+       "elId": "2bb8729",
+       "_type": "elText",
+       "widget": "text-editor",
+       "body": [
+        {
+         "_type": "htmlBlock",
+         "_key": "a7cbf5da17be",
+         "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">According to Cleveland Clinic, the average dental crown lasts five to 15 years, and some last much longer with good care. To help yours last:</p>\n<ul style=\"font-size:18px;line-height:28px;margin:0 0 14px 1.2em;padding:0;\">\n<li style=\"margin-bottom:6px;\">Brush at least twice a day with a fluoride toothpaste and a soft-bristled toothbrush.</li>\n<li style=\"margin-bottom:6px;\">Floss between your teeth once a day.</li>\n<li style=\"margin-bottom:6px;\">Avoid chewing ice and very hard, crunchy or sticky foods.</li>\n<li style=\"margin-bottom:6px;\">If you grind your teeth, ask about a <a href=\"/locations/night-guards/\">custom night guard</a>.</li>\n<li style=\"margin-bottom:6px;\">Keep up with regular cleanings and exams.</li>\n</ul>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Call us if a crown feels loose, chips or cracks, or if your bite feels off after it is placed.</p>"
+        }
+       ],
+       "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+      }
+     ],
+     "tpl": "<div class=\"elementor-element elementor-element-a5658b6 e-flex e-con-boxed e-con e-parent\" data-id=\"a5658b6\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+    },
+    {
+     "_key": "79ca632bf6a5",
+     "elId": "a5658b6",
+     "_type": "elContainer",
+     "children": [
+      {
+       "_key": "1efb6ca5929a",
+       "elId": "c826dbe",
+       "_type": "elHeading",
+       "widget": "heading",
+       "title": "Your Crown Dentist in McLean",
+       "tpl": "<div class=\"elementor-element elementor-element-c826dbe elementor-widget elementor-widget-heading\" data-id=\"c826dbe\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+      },
+      {
+       "_key": "9689f34e158c",
+       "elId": "2bb8729",
+       "_type": "elText",
+       "widget": "text-editor",
+       "body": [
+        {
+         "_type": "htmlBlock",
+         "_key": "f1c46af28f52",
+         "html": "<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\"><a href=\"/dr-mehdi-adili/\">Dr. Mehdi S. Adili, DDS</a>, is a prosthodontist: a dentist with three to four additional years of specialty training in restoring and replacing teeth with crowns, bridges, dentures and implants. He earned his Doctor of Dental Surgery degree from Georgetown University and completed his prosthodontics training at Virginia Commonwealth University. His areas of focus include crowns, bridges, complete dentures, dental implants and full-mouth restoration.</p>\n<p style=\"font-size:18px;line-height:28px;letter-spacing:0.4px;margin-bottom:14px;\">Our office is at 8280 Greensboro Drive, Unit 105, in McLean, close to Tysons.</p>"
+        }
+       ],
+       "tpl": "<div class=\"elementor-element elementor-element-2bb8729 elementor-widget__width-initial elementor-widget-mobile__width-inherit elementor-widget elementor-widget-text-editor\" data-id=\"2bb8729\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+      }
+     ],
+     "tpl": "<div class=\"elementor-element elementor-element-a5658b6 e-flex e-con-boxed e-con e-parent\" data-id=\"a5658b6\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+    },
+    {
+     "_key": "0f258c51fc21",
+     "elId": "e68da39",
+     "_type": "elContainer",
+     "children": [
+      {
+       "_key": "5a92fbee7c6f",
+       "elId": "8183bb8",
+       "_type": "elContainer",
+       "children": [
+        {
+         "_key": "d49559492601",
+         "elId": "a484b10",
+         "_type": "elHeading",
+         "widget": "heading",
+         "title": "Frequently Asked Questions About Dental Crowns",
+         "tpl": "<div class=\"elementor-element elementor-element-a484b10 elementor-widget elementor-widget-heading\" data-id=\"a484b10\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+        },
+        {
+         "_key": "8743edc2af15",
+         "elId": "0fcfee9",
+         "_type": "elText",
+         "widget": "text-editor",
+         "body": [
+          {
+           "_type": "htmlBlock",
+           "_key": "aee91df66bcc",
+           "html": "<p>Answers to the questions we hear most about crowns. For advice about your own tooth, start with an exam.</p>"
+          }
+         ],
+         "tpl": "<div class=\"elementor-element elementor-element-0fcfee9 elementor-widget elementor-widget-text-editor\" data-id=\"0fcfee9\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+        },
+        {
+         "_key": "abcf4209c82a",
+         "elId": "5f18e52",
+         "_type": "elAccordion",
+         "widget": "nested-accordion",
+         "items": [
+          {
+           "_type": "accordionItem",
+           "_key": "914ad55c238c",
+           "title": "How long does a dental crown last?",
+           "content": [
+            {
+             "_key": "efb258b2801d",
+             "elId": "78763b7",
+             "_type": "elText",
+             "widget": "text-editor",
+             "body": [
+              {
+               "_type": "htmlBlock",
+               "_key": "3ff348390d44",
+               "html": "<p>Five to 15 years on average, according to Cleveland Clinic, and some last much longer with good care. Brushing, flossing, avoiding very hard foods and regular checkups all help.</p>"
+              }
+             ],
+             "tpl": "<div class=\"elementor-element elementor-element-78763b7 elementor-widget elementor-widget-text-editor\" data-id=\"78763b7\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+            }
+           ],
+           "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-9970\" class=\"e-n-accordion-item\" open=\"\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"1\" tabindex=\"0\" aria-expanded=\"true\" aria-controls=\"e-n-accordion-item-9970\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-9970\" class=\"elementor-element elementor-element-9053043 e-con-full e-flex e-con e-child\" data-id=\"9053043\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+          },
+          {
+           "_type": "accordionItem",
+           "_key": "e79b1588a818",
+           "title": "Does getting a crown hurt?",
+           "content": [
+            {
+             "_key": "0e5424cee876",
+             "elId": "4cdffbd",
+             "_type": "elText",
+             "widget": "text-editor",
+             "body": [
+              {
+               "_type": "htmlBlock",
+               "_key": "28348e2abbee",
+               "html": "<p>The tooth is numbed before it is shaped, and you can ask for more anesthetic if you feel anything. Some sensitivity for a couple of weeks and gum soreness for a few days afterward are normal.</p>"
+              }
+             ],
+             "tpl": "<div class=\"elementor-element elementor-element-4cdffbd elementor-widget elementor-widget-text-editor\" data-id=\"4cdffbd\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+            }
+           ],
+           "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-9971\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"2\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-9971\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-9971\" class=\"elementor-element elementor-element-dc6895d e-con-full e-flex e-con e-child\" data-id=\"dc6895d\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+          },
+          {
+           "_type": "accordionItem",
+           "_key": "b588c390a1d9",
+           "title": "How many visits does a crown take?",
+           "content": [
+            {
+             "_key": "959f3c235a80",
+             "elId": "6122755",
+             "_type": "elText",
+             "widget": "text-editor",
+             "body": [
+              {
+               "_type": "htmlBlock",
+               "_key": "c8e65d6c9236",
+               "html": "<p>Usually two. At the first visit we shape the tooth, take an impression and place a temporary crown. The final crown is bonded at the second visit, typically two to three weeks later.</p>"
+              }
+             ],
+             "tpl": "<div class=\"elementor-element elementor-element-6122755 elementor-widget elementor-widget-text-editor\" data-id=\"6122755\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+            }
+           ],
+           "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-9972\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"3\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-9972\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-9972\" class=\"elementor-element elementor-element-03693a2 e-con-full e-flex e-con e-child\" data-id=\"03693a2\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t[[@nodes:content]]</div></details>"
+          },
+          {
+           "_type": "accordionItem",
+           "_key": "ed1d862edb43",
+           "title": "Do I need a crown or a filling?",
+           "content": [
+            {
+             "_key": "a1cf6cfe3860",
+             "elId": "675708f",
+             "_type": "elText",
+             "widget": "text-editor",
+             "body": [
+              {
+               "_type": "htmlBlock",
+               "_key": "22fc5e54a756",
+               "html": "<p>A filling repairs a smaller area of decay. A crown is used when too little healthy tooth is left for a filling to hold, when the tooth is cracked, or after a root canal on a back tooth. Your exam and X-rays decide.</p>"
+              }
+             ],
+             "tpl": "<div class=\"elementor-element elementor-element-675708f elementor-widget elementor-widget-text-editor\" data-id=\"675708f\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+            }
+           ],
+           "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-9973\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"4\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-9973\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-9973\" class=\"elementor-element elementor-element-bdefb73 e-flex e-con-boxed e-con e-child\" data-id=\"bdefb73\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div></details>"
+          },
+          {
+           "_type": "accordionItem",
+           "_key": "eeca59139281",
+           "title": "What should I do if my crown feels loose or comes off?",
+           "content": [
+            {
+             "_key": "a6a13888f6f4",
+             "elId": "d31f3a3",
+             "_type": "elText",
+             "widget": "text-editor",
+             "body": [
+              {
+               "_type": "htmlBlock",
+               "_key": "b80a6ffd6164",
+               "html": "<p>Call our office. Keep the crown if it came off, avoid chewing on that side, and we will see whether it can be cemented back or needs to be replaced.</p>"
+              }
+             ],
+             "tpl": "<div class=\"elementor-element elementor-element-d31f3a3 elementor-widget elementor-widget-text-editor\" data-id=\"d31f3a3\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+            }
+           ],
+           "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-9974\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"5\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-9974\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\">  [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-9974\" class=\"elementor-element elementor-element-67a5668 e-flex e-con-boxed e-con e-child\" data-id=\"67a5668\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div></details>"
+          },
+          {
+           "_type": "accordionItem",
+           "_key": "21c5f175eb3e",
+           "title": "Can a crown go on a dental implant?",
+           "content": [
+            {
+             "_key": "339a1c8dc695",
+             "elId": "503fa77",
+             "_type": "elText",
+             "widget": "text-editor",
+             "body": [
+              {
+               "_type": "htmlBlock",
+               "_key": "9e8a907f7c84",
+               "html": "<p>Yes. A single tooth implant is finished with a custom crown that attaches to the implant. Implant crowns are cared for much like natural teeth.</p>"
+              }
+             ],
+             "tpl": "<div class=\"elementor-element elementor-element-503fa77 elementor-widget elementor-widget-text-editor\" data-id=\"503fa77\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+            }
+           ],
+           "tpl": "\n\t\t\t\t\t\t<details id=\"e-n-accordion-item-9975\" class=\"e-n-accordion-item\">\n\t\t\t\t<summary class=\"e-n-accordion-item-title\" data-accordion-index=\"6\" tabindex=\"-1\" aria-expanded=\"false\" aria-controls=\"e-n-accordion-item-9975\">\n\t\t\t\t\t<span class=\"e-n-accordion-item-title-header\"><div class=\"e-n-accordion-item-title-text\"> [[@text:title]] </div></span>\n\t\t\t\t\t\t\t<span class=\"e-n-accordion-item-title-icon\">\n\t\t\t<span class=\"e-opened\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-minus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t\t<span class=\"e-closed\"><svg aria-hidden=\"true\" class=\"e-font-icon-svg e-fas-plus\" viewBox=\"0 0 448 512\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z\"></path></svg></span>\n\t\t</span>\n\n\t\t\t\t\t\t</summary>\n\t\t\t\t<div role=\"region\" aria-labelledby=\"e-n-accordion-item-9975\" class=\"elementor-element elementor-element-9c05d0a e-flex e-con-boxed e-con e-child\" data-id=\"9c05d0a\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div></details>"
+          }
+         ],
+         "tpl": "<div class=\"elementor-element elementor-element-5f18e52 elementor-widget elementor-widget-n-accordion\" data-id=\"5f18e52\" data-element_type=\"widget\" data-e-type=\"widget\" data-settings=\"{&quot;default_state&quot;:&quot;expanded&quot;,&quot;max_items_expended&quot;:&quot;one&quot;,&quot;n_accordion_animation_duration&quot;:{&quot;unit&quot;:&quot;ms&quot;,&quot;size&quot;:400,&quot;sizes&quot;:[]}}\" data-widget_type=\"nested-accordion.default\">\n\t\t\t\t\t\t\t<div class=\"e-n-accordion\" aria-label=\"Accordion. Open links with Enter or Space, close with Escape, and navigate with Arrow Keys\">[[@items:items]]\n\t\t\t\t\t</div>\n\t\t\t\t\t\t</div>"
+        }
+       ],
+       "tpl": "<div class=\"elementor-element elementor-element-8183bb8 e-flex e-con-boxed e-con e-child\" data-id=\"8183bb8\" data-element_type=\"container\" data-e-type=\"container\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+      }
+     ],
+     "tpl": "<div class=\"elementor-element elementor-element-e68da39 e-flex e-con-boxed e-con e-parent\" data-id=\"e68da39\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t\t<div class=\"e-con-inner\">\n\t\t[[@nodes:children]]</div>\n\t\t\t\t</div>"
+    },
+    {
+     "_key": "5196624547dc",
+     "elId": "da7b818",
+     "_type": "elContainer",
+     "children": [
+      {
+       "_key": "4aae30363395",
+       "elId": "9fad9d2",
+       "_type": "elHeading",
+       "widget": "heading",
+       "title": "Schedule a Crown Consultation in McLean",
+       "tpl": "<div class=\"elementor-element elementor-element-9fad9d2 elementor-widget elementor-widget-heading\" data-id=\"9fad9d2\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"heading.default\">\n\t\t\t\t\t<h2 class=\"elementor-heading-title elementor-size-default\">[[@text:title]]</h2>\t\t\t\t</div>"
+      },
+      {
+       "_key": "252868ec0e68",
+       "elId": "cff12d7",
+       "_type": "elText",
+       "widget": "text-editor",
+       "body": [
+        {
+         "_type": "htmlBlock",
+         "_key": "76b709934a32",
+         "html": "<p style=\"font-size:18px;line-height:26px;letter-spacing:0.9px;max-width:728px;\">Have a cracked, worn or weak tooth? Call <a href=\"tel:+17034420442\" style=\"color:#ffffff;text-decoration:underline;\">(703) 442-0442</a> or <a href=\"/appointment/\" style=\"color:#ffffff;text-decoration:underline;\">request an appointment</a>, and we will look at the tooth and explain your options.</p>"
+        }
+       ],
+       "tpl": "<div class=\"elementor-element elementor-element-cff12d7 elementor-widget elementor-widget-text-editor\" data-id=\"cff12d7\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
+      }
+     ],
+     "tpl": "<div class=\"elementor-element elementor-element-da7b818 e-con-full e-flex e-con e-parent\" style=\"background-image:url(/wp-content/uploads/2026/07/IMG_6255-2048x1602.jpeg)\" data-id=\"da7b818\" data-element_type=\"container\" data-e-type=\"container\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">\n\t\t\t\t[[@nodes:children]]</div>"
+    }
+   ],
+   "frameTpl": "<main id=\"main\" class=\"site-main hfeed\" tabindex=\"-1\">\n\n\t\t\n\t<div class=\"ct-container-full\" data-content=\"normal\">\n\n\t\t\n\t\t\n\t<article id=\"post-9201\" class=\"post-9201 page type-page status-publish hentry\">\n\n\t\t\n\t\t\n\t\t\n\t\t<div class=\"entry-content is-layout-constrained\">\n\t\t\t\t\t<div data-elementor-type=\"wp-page\" data-elementor-id=\"913\" class=\"elementor elementor-913\" data-elementor-post-type=\"page\">\n\t\t\t\t[[@nodes:content]]</div>\n\t\t\t\t</div>\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t</article>\n\n\t\n\t\t\n\t\t\t</div>\n\n\t</main>",
+   "shell": "3aca04dd54",
+   "_id": "page-service-dental-crowns",
+   "_type": "page",
+   "title": "Dental Crowns",
+   "path": "/services/restorative-dentistry/dental-crowns/",
+   "wpId": 9201,
+   "parent": {
+    "_type": "reference",
+    "_ref": "page-413",
+    "_weak": true
+   },
+   "ancestorPaths": [
+    "/services/restorative-dentistry/",
+    "/services/"
+   ],
+   "wpTemplate": "default",
+   "published": "2026-11-09T12:00:00Z",
+   "excerpt": "Dental crowns in McLean, VA from prosthodontist Dr. Mehdi Adili: when you need one, crown materials, what to expect over two visits, and how long crowns last.",
+   "authorName": "admin",
+   "authorSlug": "admin"
+  },
+  {
+   "_id": "post-teeth-grinding-night-guard",
+   "_type": "post",
+   "path": "/blog/teeth-grinding-night-guard/",
+   "slug": "teeth-grinding-night-guard",
+   "title": "Teeth Grinding at Night: Signs, Causes and When a Night Guard Helps",
+   "seoTitle": "Teeth Grinding at Night and Night Guards | Ideal Dental Solutions",
+   "description": "Grinding your teeth at night? The signs, common causes, what a custom night guard does and does not do, and when to see a dentist in McLean, VA.",
+   "published": "2026-11-09",
+   "service": {
+    "path": "/locations/night-guards/",
+    "label": "Custom night guards"
+   },
+   "category": "restorative",
+   "photo": "room",
+   "facts": [
+    {
+     "icon": "clock",
+     "label": "When it usually happens",
+     "value": "During sleep"
+    },
+    {
+     "icon": "tooth",
+     "label": "Common signs",
+     "value": "Worn or chipped teeth, sore jaw, morning headaches"
+    },
+    {
+     "icon": "layers",
+     "label": "Linked with",
+     "value": "Stress, sleep apnea, smoking, alcohol and caffeine"
+    },
+    {
+     "icon": "shield",
+     "label": "Custom night guard",
+     "value": "Can last several years with care"
+    }
+   ],
+   "answer": "<p>Grinding or clenching your teeth, called bruxism, usually happens during sleep, so many people do not know they do it. Common signs are worn, chipped or cracked teeth, a sore jaw and dull morning headaches. A custom night guard from your dentist does not cure grinding, but it protects your teeth from the wear and damage it causes. If you notice these signs, or a partner hears you grinding, have a dentist take a look.</p>",
+   "sections": [
+    {
+     "heading": "What teeth grinding is",
+     "html": "<p>Bruxism means clenching, grinding or gnashing your teeth. It happens in two ways:</p>\n<ul>\n<li><strong>Sleep bruxism</strong> happens at night. The American Dental Association notes that most people who grind do it while they sleep, which is why many do not realize it.</li>\n<li><strong>Awake bruxism</strong> happens during the day, often when you are tense, worried or concentrating.</li>\n</ul>\n<p>Cleveland Clinic notes that grinding in your sleep can cause more harm than clenching during the day, and that people who only clench while awake may not need treatment beyond becoming aware of the habit.</p>"
+    },
+    {
+     "heading": "Signs you might be grinding",
+     "html": "<p>Because sleep grinding happens unnoticed, a dentist often spots it first. Signs to watch for include:</p>\n<ul>\n<li>Teeth that look worn, flattened, chipped or cracked, especially along the edges</li>\n<li>A sore or tired jaw, especially in the morning</li>\n<li>Dull headaches or facial pain when you wake up</li>\n<li>Earaches or neck pain</li>\n<li>Pain when eating, or trouble opening and closing your mouth</li>\n<li>A partner or family member hearing grinding at night</li>\n</ul>"
+    },
+    {
+     "heading": "What causes it",
+     "html": "<p>Cleveland Clinic says there is no single known cause; several factors play a part. The most common ones are:</p>\n<ul>\n<li><strong>Stress and anxiety.</strong> Grinding is often linked to feeling tense or overwhelmed.</li>\n<li><strong>Sleep problems.</strong> Research shows a link between sleep apnea and grinding, though it is not clear which causes which.</li>\n<li><strong>Smoking, alcohol and caffeine.</strong> According to the ADA, people who smoke or drink alcohol or coffee are twice as likely to grind their teeth.</li>\n<li><strong>Some medications</strong>, including certain antidepressants (SSRIs).</li>\n<li><strong>Teeth that do not line up</strong>, or missing or crooked teeth, which the ADA lists among possible causes.</li>\n</ul>\n<p>If you snore, stop breathing for moments at night or wake up tired, mention it. A sleep study may help find the cause.</p>"
+    },
+    {
+     "heading": "Why grinding is worth treating",
+     "html": "<p>Over time, grinding can wear down enamel, chip or crack teeth and damage fillings, crowns and other dental work. Cleveland Clinic also lists TMJ disorders, facial pain and sleep problems among the possible effects of untreated grinding. Protecting your teeth early can help you avoid bigger repairs, like crowns, later on.</p>"
+    },
+    {
+     "heading": "How a night guard helps",
+     "html": "<p>A night guard is a thin, removable appliance worn over your teeth while you sleep. It takes much of the force of grinding, which helps protect your teeth. It does not make the habit go away.</p>\n<p><strong>Custom or store-bought?</strong> The ADA says a custom guard made from a mold of your teeth gives the closest, most comfortable fit, and that store-bought guards may not give the same protection. Cleveland Clinic adds that a guard that does not fit well can make your teeth, gums or jaw sore. A sports mouthguard is a different kind of guard, made to protect your teeth during sports.</p>\n<p><strong>At Ideal Dental Solutions</strong>, we make custom night guards from hard acrylic, designed from a digital scan of your teeth. Bring it to your regular visits so we can check the fit and condition.</p>"
+    },
+    {
+     "heading": "Other ways to reduce grinding",
+     "html": "<ul>\n<li><strong>Manage stress.</strong> The ADA mentions meditation, counseling, exercise, massage and deep breathing.</li>\n<li><strong>Cut back on caffeine and alcohol</strong>, and if you smoke, quitting helps.</li>\n<li><strong>Notice daytime clenching.</strong> Mayo Clinic suggests resting your tongue up, with your teeth apart and your lips closed.</li>\n<li><strong>Ask about other treatments.</strong> For some people, a doctor may suggest a muscle relaxant at bedtime for a short time, or, when other treatments have not helped, injections that relax the jaw muscles.</li>\n</ul>"
+    },
+    {
+     "heading": "Caring for your night guard",
+     "html": "<p>Cleveland Clinic recommends rinsing your guard in cool water after each use, cleaning it with a brush and soapy water, letting it air dry and keeping it away from heat, which can warp it. Store it in its case, and bring it to your dental checkups so we can check it for cracks and wear. With care, a custom night guard can last several years.</p>"
+    },
+    {
+     "heading": "Grinding, jaw pain and TMJ",
+     "html": "<p>Grinding and clenching can strain the jaw muscles and joints. If you have jaw pain, clicking with pain, or trouble opening your mouth, see us for an exam. The NIH's National Institute of Dental and Craniofacial Research recommends starting with conservative, reversible care for jaw joint and muscle problems, and advises against a splint or guard designed to change your bite for good. Learn more about our <a href=\"/services/restorative-dentistry/tmj-tmd-treatments/\">TMJ and TMD treatment</a>.</p>"
+    }
+   ],
+   "cta": {
+    "heading": "Think you might be grinding?",
+    "text": "Book an exam at our McLean office. We will check your teeth and jaw for signs of grinding and, if it helps, fit you for a custom night guard."
+   },
+   "faq": [
+    {
+     "q": "Do I need a night guard if I only clench my teeth?",
+     "a": "<p>Possibly. Clenching during sleep can wear and stress teeth just like grinding. If you only clench while awake, becoming aware of the habit may be enough. An exam shows whether your teeth are being damaged.</p>"
+    },
+    {
+     "q": "Will a night guard stop me from grinding?",
+     "a": "<p>Not usually. A night guard protects your teeth from the force of grinding. Managing stress, sleep problems and habits like caffeine, alcohol and smoking can help reduce the grinding itself.</p>"
+    },
+    {
+     "q": "Are store-bought night guards good enough?",
+     "a": "<p>They cost less, but the ADA and Cleveland Clinic both say they may not protect as well as a custom guard, and a poor fit can make your teeth, gums or jaw sore.</p>"
+    },
+    {
+     "q": "How long does a custom night guard last?",
+     "a": "<p>With proper care, a custom night guard can last several years. Bring it to your checkups so we can look for cracks, wear or changes in fit.</p>"
+    },
+    {
+     "q": "My child grinds their teeth. Should I worry?",
+     "a": "<p>Children often grind their teeth, and the ADA notes that many outgrow it by adolescence. Mention it at your child's next dental visit so the dentist can check for wear.</p>"
+    }
+   ],
+   "sources": [
+    {
+     "title": "American Dental Association (MouthHealthy): Teeth Grinding",
+     "url": "https://www.mouthhealthy.org/all-topics-a-z/teeth-grinding"
+    },
+    {
+     "title": "Cleveland Clinic: Bruxism (Teeth Grinding)",
+     "url": "https://my.clevelandclinic.org/health/diseases/10955-teeth-grinding-bruxism"
+    },
+    {
+     "title": "Cleveland Clinic: Mouth Guards",
+     "url": "https://my.clevelandclinic.org/health/treatments/10910-mouthguards"
+    },
+    {
+     "title": "NIH National Institute of Dental and Craniofacial Research: TMD",
+     "url": "https://www.nidcr.nih.gov/health-info/tmd"
+    },
+    {
+     "title": "Mayo Clinic: Bruxism, diagnosis and treatment",
+     "url": "https://www.mayoclinic.org/diseases-conditions/bruxism/diagnosis-treatment/drc-20356100"
+    }
+   ],
+   "author": {
+    "name": "Dr. Mehdi S. Adili, DDS",
+    "path": "/dr-mehdi-adili/"
+   }
+  }
+ ]
+}
