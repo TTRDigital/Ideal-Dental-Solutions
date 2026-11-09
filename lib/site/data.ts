@@ -2,10 +2,14 @@ import "server-only";
 
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
+import { redirects } from "@/redirects";
 import { apiVersion, dataset, projectId } from "@/sanity/env";
 import { blogPaths } from "./blog";
 import { buildSiteData, normalizePath, resolvePath, resolveSearch, resolveSearchFrom, type SeedDoc } from "./local";
 import type { ArchiveDoc, PageDoc, Resolved, SearchPageDoc, SiteData } from "./render";
+
+/** Pages that answer a 301 (redirects.ts) stay out of the sitemap and /llms.txt. */
+const redirected = new Set(redirects.map((r) => r.source));
 
 /** ISR window for CMS content, in seconds. Publishing also refreshes via /api/revalidate. */
 export const REVALIDATE_SECONDS = 300;
@@ -71,14 +75,20 @@ export async function resolve(rawPath: string, fromCms: boolean): Promise<Resolv
 
 /** Every routed path, for static generation and the sitemaps. */
 export async function allPaths(fromCms: boolean): Promise<{ path: string; type: string; modified?: string; noindex?: boolean }[]> {
-  const q = `*[_type in ["page", "archivePage"] && defined(path)]{path, _type, "modified": coalesce(modified, seo.modifiedTime, _updatedAt), "robots": seo.robots}`;
+  const q = `*[_type in ["page", "archivePage"] && defined(path)]{path, _type, "modified": coalesce(modified, seo.modifiedTime, _updatedAt), "robots": seo.robots, "canonical": seo.canonical}`;
+  type Row = { path: string; _type: string; modified?: string; robots?: string; canonical?: string };
   const rows = fromCms
-    ? (await sanity<{ path: string; _type: string; modified?: string; robots?: string }[]>(q)) || []
+    ? (await sanity<Row[]>(q)) || []
     : seed()
         .filter((d) => ["page", "archivePage"].includes(d._type) && d.path)
-        .map((d) => ({ path: d.path as string, _type: d._type, modified: (d.modified as string) || (d.seo as { modifiedTime?: string })?.modifiedTime, robots: (d.seo as { robots?: string })?.robots }));
+        .map((d) => {
+          const seo = (d.seo || {}) as { modifiedTime?: string; robots?: string; canonical?: string };
+          return { path: d.path as string, _type: d._type, modified: (d.modified as string) || seo.modifiedTime, robots: seo.robots, canonical: seo.canonical };
+        });
+  // Pages whose canonical is another page stay out of the sitemap too.
+  const elsewhere = (r: Row) => Boolean(r.canonical) && new URL(r.canonical!, "https://idealdentalsolutions.com").pathname !== r.path;
   // The Patient Guides blog lives in the repo (lib/site/blog.ts), not in the CMS.
-  return [...rows.map((r) => ({ path: r.path, type: r._type, modified: r.modified, noindex: /noindex/.test(r.robots || "") })), ...blogPaths()];
+  return [...rows.map((r) => ({ path: r.path, type: r._type, modified: r.modified, noindex: /noindex/.test(r.robots || "") || elsewhere(r) || redirected.has(r.path) })), ...blogPaths()];
 }
 
 /** Site search (?s=): the results page, or null when `page` is past the last one. */
@@ -113,7 +123,7 @@ export async function pageSummaries(fromCms: boolean): Promise<PageSummary[]> {
           return { path: d.path as string, title: seo.title || (d.title as string), description: seo.description, robots: seo.robots, canonical: seo.canonical };
         });
   return rows
-    .filter((r) => !/noindex/.test(r.robots || "") && (!r.canonical || new URL(r.canonical, "https://idealdentalsolutions.com").pathname === r.path))
+    .filter((r) => !redirected.has(r.path) && !/noindex/.test(r.robots || "") && (!r.canonical || new URL(r.canonical, "https://idealdentalsolutions.com").pathname === r.path))
     .map((r) => ({ path: r.path, title: r.title || r.path, description: r.description || "" }))
     .sort((a, b) => a.path.localeCompare(b.path));
 }

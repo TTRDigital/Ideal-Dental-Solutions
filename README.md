@@ -21,12 +21,34 @@ Applied to the migrated content (idempotent; re-run after every extract):
 - **Alt text** on all 90 content photos: doctors and hygienists by name and credential, before/after cases, and a description of each stock photo. Logos say "Ideal Dental Solutions". Icons next to their own title and divider graphics keep `alt=""` on purpose. The call-to-action background images have a description instead of the file name.
 - **Menus** already pointed at the final URLs (every header, footer and in-page link answers 200 directly; `npm run audit` checks this).
 - **Copyright year:** the live footer has no copyright line, so there was nothing to fix. If one is added, `{year}` in any text field prints the current year.
-- **Structured data:** Yoast's graph is kept (WebPage, BreadcrumbList, WebSite) and its Organization is replaced with a **Dentist** (LocalBusiness): name, phone, address, map coordinates, opening hours, areas served (Northern Virginia, McLean, Tysons Corner, Vienna, Falls Church, Arlington, Fairfax, Alexandria), logo, Facebook and Instagram, medical specialties and the 24 services. It is editable in **Site settings > Business schema**. The site search action was removed from the WebSite node. Every page's JSON-LD is validated by `npm run audit`.
+- **Structured data:** Yoast's graph is kept (WebPage, BreadcrumbList, WebSite) and its Organization is replaced with a **Dentist** (LocalBusiness): name, phone, address, map coordinates, opening hours, areas served (Northern Virginia, McLean, Tysons Corner, Vienna, Falls Church, Fairfax, Alexandria), logo, Facebook and Instagram, medical specialties and the 24 services. It is editable in **Site settings > Business schema**. The site search action was removed from the WebSite node. Every page's JSON-LD is validated by `npm run audit`.
   - Saturday hours are listed as 8:00–14:00 with the note "Every other Saturday" (schema.org has no alternate-week rule). The coordinates are approximate for 8280 Greensboro Drive; adjust them in Site settings if needed.
 - **Favicons** at the site root (favicon.ico with 16/32/48 px, 32/192/512 px PNGs, apple-touch-icon, web manifest), rendered from the orange logo mark of the 831px header logo (`npm run favicons`). The site has no vector logo, and WordPress' site icon was an upscaled low-resolution image.
 - **Social images:** a 1200x630 photo per page in `public/og/` (most pages had none).
 - `<html lang="en-US">` and `<meta charset="UTF-8">` (first in the head) on every page, checked by the audit.
 - **Root-relative URLs everywhere:** HTML widgets (e.g. the homepage technology section) and other HTML fields kept absolute `https://idealdentalsolutions.com/wp-content/...` image URLs; they are now root-relative like the rest of the site, so images load from this deployment before and after the domain moves. No absolute site URL is left in any content field (only canonical/Open Graph/schema URLs, which are absolute on purpose).
+
+### TTR-900 (Oct 2026): on-page fixes
+
+In scripts/fixes.ts (content):
+- **Titles** are 60 characters or less and unique (26 were longer; two pages shared one).
+- **Internal links:** 20 pages had no link from any other page. Each Northern Virginia service page and its McLean page now link to each other under the intro at the top ("In McLean? See …" / "Serving all of Northern Virginia: …"), with the location in the link text. The two McLean implant pages also link to the McLean dental implants page. The **Services** menu item opens /services/ (it was "#"), Root Canal Therapy and Night Guards are in the menu, and Dr. Adili's name on About Us links to his profile.
+- **Competing pages:** /preventive-dentistry-in-northern-virginia/ (same title and H1 as /services/preventive-dentistry/, about half the same text) has a canonical to /services/preventive-dentistry/. Pages whose canonical is another page are left out of the sitemap. Merging or removing pages is the client's decision. The Search Console list is in `docs/ttr-900/competing-searches.md`.
+- These content changes are in `content/seed.json`; the live CMS gets them with `npm run seed -- --force` (Editor token; done together with the team, after checking nobody has edited in /cms since).
+
+In lib/site/seo-pass.ts (computed from each page, so it follows CMS edits):
+- **FAQ structured data:** accordion items whose title is a question and that have an answer become a FAQPage in the page's JSON-LD (40 pages).
+- **Default alt text** for images printed with an empty alt: the title next to the icon, or the page's H1.
+
+## Speed (lib/site/optimize.ts)
+
+Every page is rendered as WordPress printed it, then sped up on the way out (the CMS content and `npm run verify` are not affected):
+
+- **One stylesheet per page:** the 20 or so theme and Elementor stylesheets of a page are replaced by one file with only the rules the page uses (`public/assets/page-css/`, built by `npm run optimize` from the content). Fail-safe: if the page uses a class or id whose rules were left out (for example a new kind of block added in /cms), it gets its original stylesheets back. Re-run `npm run optimize` after layout changes in the CMS.
+- **Images:** WebP copies of every uploaded PNG/JPEG next to the original (`<file>.webp`, plus `<file>-768w.webp` for phones; `npm run images`): 112 MB of uploads became 6.3 MB. Every image gets its width and height and loads lazily below the first section. The first section's background (or the first slide of a slideshow) is preloaded, with the phone copy on phones.
+- **Fonts:** Urbanist is served from this site (`public/assets/fonts`, OFL) and preloaded, instead of two Google Fonts stylesheets.
+- **Scripts:** the theme and Elementor scripts load exactly as WordPress printed them (deferring them broke the form handler on fast connections). Google's GA4 script loads on the first scroll, tap or key press, or 10 seconds after the page has loaded.
+- `html{overflow-x:clip}`: nothing can make the page scroll sideways.
 
 ## Redirects
 
@@ -73,6 +95,7 @@ The WordPress site did not combine its stylesheets, so every theme and plugin st
 3. **CORS (done):** `http://localhost:3000`, `https://ideal-dental-solutions.vercel.app`, `https://idealdentalsolutions.com` and `https://www.idealdentalsolutions.com` are allowed with credentials (plus Sanity's default `http://localhost:3333`). Add any new preview or hosting domain in sanity.io/manage > API > CORS origins.
 4. **Run locally:** `npm install`, `npm run dev`, open http://localhost:3000 and http://localhost:3000/cms.
 5. **Hosting: Vercel** (production host; the SiteGround FTPS deploy was retired in TTR-900). Vercel builds every push; production builds come from the default branch. Add the variables from `.env.example` in Vercel (not `SANITY_WRITE_TOKEN`). The domain's web records point at Vercel; mail stays at SiteGround. Set `RECAPTCHA_SITE_KEY`/`RECAPTCHA_SECRET_KEY` if the form should get its checkbox back. Every page carries the TTR tracker and GA4 (`lib/site/tracking.ts`); `/llms.txt` lists the pages for AI assistants.
+5b. **Seeding from Vercel (no token on anyone's machine):** with `SANITY_WRITE_TOKEN` (Editor) set in Vercel, `POST /api/admin/seed/` with `Authorization: Bearer ttr_ak_...` (a TTR portal key of an owner or build lead, checked with the portal's `/api/v1/me`) compares `content/seed.json` with the CMS and answers with what would be created and updated (dry run). `?apply=1` writes those documents and refreshes the site. It refuses (409) if a document was edited in /cms since the last seed or has an unpublished draft (`content/seed-base.json` holds the fingerprints of the last seeded content). After applying, run `npm run seed-base` and commit `content/seed-base.json`.
 6. **Publish webhook:** in Sanity, API > Webhooks: URL `https://idealdentalsolutions.com/api/revalidate`, triggers create/update/delete, secret = `SANITY_REVALIDATE_SECRET`. Changes then go live within seconds (otherwise within 5 minutes).
 7. **Form leads:** every submission is sent to the practice's GoHighLevel webhook, which is built into `lib/lead.ts` (`DEFAULT_GHL_WEBHOOK_URL`); set `GHL_WEBHOOK_URL` only to send leads elsewhere. Email notifications are optional (`RESEND_API_KEY` + `LEAD_EMAIL_TO`). If delivery fails, the visitor is asked to call (703) 442-0442 instead of seeing a thank-you page. Note: this also applies to the preview, so test submissions there become leads in GoHighLevel.
 
@@ -98,6 +121,8 @@ npm run fixes      # apply the review fixes to content/seed.json (after extract)
 npm run seed -- --force  # publish content/seed.json to Sanity
 npm run audit -- https://<site>  # launch checks on a running site
 npm run favicons   # re-render the favicon set from the logo
+npm run images     # WebP copies of new uploads (lib/generated/images.json)
+npm run optimize   # one stylesheet per page (public/assets/page-css, lib/generated/page-css.json)
 ```
 
 ### Migration tools
