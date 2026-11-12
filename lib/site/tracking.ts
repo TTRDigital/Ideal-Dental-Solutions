@@ -14,7 +14,12 @@ const TAGS = [
     `["pointerdown","keydown","scroll","touchstart"].forEach(function(e){addEventListener(e,l,{once:true,passive:true})});addEventListener("load",function(){setTimeout(l,10000)})})();</script>`,
 ].join("\n");
 
+// TTR OS's "Suggest a change" bar (TTR-585): on Vercel previews only, never on the live site, so it is never in a production page. It does
+// nothing unless the page was opened from the client's private review link (a review token after #).
+const REVIEW_BAR = "https://ttr-portal.vercel.app/api/site/notes/bar";
+
 export function withTracking(html: string) {
-  if (html.includes(TTR_SITE_ID)) return html;
-  return html.replace("</head>", `${TAGS}\n</head>`);
+  const bar = process.env.VERCEL_ENV === "preview" && !html.includes(REVIEW_BAR) ? `<script defer src="${REVIEW_BAR}"></script>\n` : "";
+  if (html.includes(TTR_SITE_ID)) return bar ? html.replace("</head>", `${bar}</head>`) : html;
+  return html.replace("</head>", `${TAGS}\n${bar}</head>`);
 }
