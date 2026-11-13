@@ -1,6 +1,7 @@
 import "server-only";
 
 import { readFileSync } from "node:fs";
+import { draftMode } from "next/headers";
 import { join } from "node:path";
 import { redirects } from "@/redirects";
 import { apiVersion, dataset, projectId } from "@/sanity/env";
@@ -13,12 +14,32 @@ const redirected = new Set(redirects.map((r) => r.source));
 /** ISR window for CMS content, in seconds. Publishing also refreshes via /api/revalidate. */
 export const REVALIDATE_SECONDS = 300;
 
-async function sanity<T>(query: string, params: Record<string, unknown> = {}): Promise<T | null> {
-  const search = new URLSearchParams({ query, perspective: "published" });
-  for (const [k, v] of Object.entries(params)) search.set(`$${k}`, JSON.stringify(v));
-  const url = `https://${projectId}.apicdn.sanity.io/v${apiVersion}/data/query/${dataset}?${search}`;
+/**
+ * Draft preview: only when Next draft mode is on (a cookie that only a correctly
+ * signed /api/preview link can set) and SANITY_READ_TOKEN exists. Never true
+ * during builds, ISR refreshes or for ordinary visitors.
+ */
+async function draftEnabled(): Promise<boolean> {
+  if (!process.env.SANITY_READ_TOKEN?.trim()) return false;
   try {
-    const res = await fetch(url, { next: { revalidate: REVALIDATE_SECONDS, tags: ["sanity"] } });
+    return (await draftMode()).isEnabled;
+  } catch {
+    return false; // outside a request (build, static generation)
+  }
+}
+
+async function sanity<T>(query: string, params: Record<string, unknown> = {}): Promise<T | null> {
+  const draft = await draftEnabled();
+  const search = new URLSearchParams({ query, perspective: draft ? "drafts" : "published" });
+  for (const [k, v] of Object.entries(params)) search.set(`$${k}`, JSON.stringify(v));
+  const url = `https://${projectId}.${draft ? "api" : "apicdn"}.sanity.io/v${apiVersion}/data/query/${dataset}?${search}`;
+  try {
+    const res = await fetch(
+      url,
+      draft
+        ? { cache: "no-store", headers: { Authorization: `Bearer ${process.env.SANITY_READ_TOKEN!.trim()}` } }
+        : { next: { revalidate: REVALIDATE_SECONDS, tags: ["sanity"] } },
+    );
     if (!res.ok) {
       console.warn(`[sanity] ${res.status} for ${query.slice(0, 60)}`);
       return null;

@@ -7,6 +7,7 @@ import { optimizeHtml } from "@/lib/site/optimize";
 import { seoPass } from "@/lib/site/seo-pass";
 import { withoutArlington } from "@/lib/site/arlington";
 import { dataset, projectId } from "@/sanity/env";
+import { draftMode } from "next/headers";
 
 /**
  * The whole public site: every URL is rendered from the CMS into the same
@@ -55,12 +56,20 @@ export async function GET(_req: Request, ctx: { params: Promise<{ path?: string[
     if (target) return new Response(null, { status: 301, headers: { Location: target } });
   }
   const html = withTracking(withoutArlington(seoPass(optimizeHtml(renderDocument(resolved, site.data, path, { projectId, dataset, origin, recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY?.trim() || "" })))));
+  // A draft preview (signed /api/preview link) is private and never indexed or cached.
+  let draft = false;
+  try {
+    draft = !!process.env.SANITY_READ_TOKEN && (await draftMode()).isEnabled;
+  } catch {
+    // static generation: no request, so no draft
+  }
   return new Response(html, {
     status: resolved.kind === "notFound" ? 404 : 200,
     headers: {
       "Content-Type": "text/html; charset=UTF-8",
-      "X-Content-Source": site.fromCms ? "cms" : "built-in",
-      "Cache-Control": `public, s-maxage=${REVALIDATE_SECONDS}, stale-while-revalidate=86400`,
+      "X-Content-Source": draft ? "cms-draft" : site.fromCms ? "cms" : "built-in",
+      "Cache-Control": draft ? "private, no-store" : `public, s-maxage=${REVALIDATE_SECONDS}, stale-while-revalidate=86400`,
+      ...(draft ? { "X-Robots-Tag": "noindex, nofollow" } : {}),
     },
   });
 }
