@@ -10,7 +10,10 @@ const nextConfig: NextConfig = {
   async headers() {
     const immutable = [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }];
     const week = [{ key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=86400" }];
+    // Previews only (never the live site): keep staging copies out of search results.
+    const previewOnly = process.env.VERCEL_ENV === "preview" ? [{ source: "/:path*", headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow" }] }] : [];
     return [
+      ...previewOnly,
       { source: "/assets/:path*", headers: immutable },
       { source: "/wp-content/:path*", headers: week },
       { source: "/wp-includes/:path*", headers: week },
