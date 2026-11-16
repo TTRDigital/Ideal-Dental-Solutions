@@ -30,18 +30,43 @@ function signedOk(secret: string, path: string, exp: string, sig: string) {
   return got.length === want.length && timingSafeEqual(got, want);
 }
 
-async function draftDoc<T>(token: string, path: string): Promise<T | null> {
+type Found<T> = { doc: T | null; tokenStatus: number | null };
+
+/** One query against Sanity. perspective "raw" returns the draft (id drafts.<id>) and the published copy side by side, so the
+ *  draft is picked here with order(); this does not depend on how a perspective hides drafts. Without a token it reads the
+ *  published copy from the public CDN, exactly as the live site does. */
+async function lookup<T>(path: string, token: string | null): Promise<{ doc: T | null; status: number }> {
   const query = `*[_type in ["page", "archivePage"] && path == $path] | order(_id in path("drafts.**") desc)[0]`;
-  const search = new URLSearchParams({ query, perspective: "drafts", $path: JSON.stringify(path) });
-  const res = await fetch(`https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}?${search}`, {
-    headers: { Authorization: `Bearer ${token}` },
+  const search = new URLSearchParams({ query, perspective: token ? "raw" : "published", $path: JSON.stringify(path) });
+  const host = token ? "api.sanity.io" : "apicdn.sanity.io";
+  const res = await fetch(`https://${projectId}.${host}/v${apiVersion}/data/query/${dataset}?${search}`, {
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
     cache: "no-store",
   });
   if (!res.ok) {
-    console.warn(`[preview] sanity answered ${res.status}`);
-    return null;
+    console.warn(`[preview] sanity answered ${res.status} (${token ? "with token" : "published"})`);
+    return { doc: null, status: res.status };
   }
-  return ((await res.json()) as { result?: T }).result ?? null;
+  return { doc: ((await res.json()) as { result?: T }).result ?? null, status: res.status };
+}
+
+/** The draft if there is one, else the published page. A refused token is reported, never shown as "not found". */
+async function findDoc<T>(token: string, path: string): Promise<Found<T>> {
+  let tokenStatus: number | null = null;
+  try {
+    const r = await lookup<T>(path, token);
+    if (r.doc) return { doc: r.doc, tokenStatus: null };
+    if (r.status !== 200) tokenStatus = r.status;
+  } catch (err) {
+    console.warn("[preview] sanity fetch failed", err);
+    tokenStatus = 0;
+  }
+  try {
+    const r = await lookup<T>(path, null);
+    return { doc: r.doc, tokenStatus };
+  } catch {
+    return { doc: null, tokenStatus };
+  }
 }
 
 export async function GET(req: Request) {
@@ -61,7 +86,8 @@ export async function GET(req: Request) {
   if (left > MAX_SECONDS + 3600) return text(403, "This preview link is not valid.");
 
   const clean = normalizePath(path);
-  const doc = await draftDoc<PageDoc | ArchiveDoc>(token, clean);
+  const { doc, tokenStatus } = await findDoc<PageDoc | ArchiveDoc>(token, clean);
+  if (!doc && tokenStatus !== null) return text(502, `Sanity did not accept the preview token (answer ${tokenStatus}). Check SANITY_PREVIEW_TOKEN on this project.`);
   if (!doc) return text(404, "No draft or page was found at this address.");
   const site = await getSite();
   const origin = (process.env.NEXT_PUBLIC_SITE_URL || site.settings.siteUrl || "https://idealdentalsolutions.com").replace(/\/$/, "");
