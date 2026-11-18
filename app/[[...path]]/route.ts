@@ -3,6 +3,7 @@ import { feedXml, sitemapIndex, sitemapXml } from "@/lib/site/sitemaps";
 import { guessRedirect } from "@/lib/site/guess";
 import { renderDocument } from "@/lib/site/render";
 import { withTracking } from "@/lib/site/tracking";
+import { withFormGuard } from "@/lib/site/form-guard-html";
 import { optimizeHtml } from "@/lib/site/optimize";
 import { seoPass } from "@/lib/site/seo-pass";
 import { withoutArlington } from "@/lib/site/arlington";
@@ -54,7 +55,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ path?: string[
     const target = guessRedirect(path, await allPaths(site.fromCms));
     if (target) return new Response(null, { status: 301, headers: { Location: target } });
   }
-  const html = withTracking(withoutArlington(seoPass(optimizeHtml(renderDocument(resolved, site.data, path, { projectId, dataset, origin, recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY?.trim() || "" })))));
+  const html = withFormGuard(withTracking(withoutArlington(seoPass(optimizeHtml(renderDocument(resolved, site.data, path, { projectId, dataset, origin, recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY?.trim() || "" }))))));
   return new Response(html, {
     status: resolved.kind === "notFound" ? 404 : 200,
     headers: {
