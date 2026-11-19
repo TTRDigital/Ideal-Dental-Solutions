@@ -105,8 +105,11 @@ function stylesheets(html: string) {
   for (const t of markupTokens(html)) if (dropped.has(t)) return html; // fail-safe: keep the original stylesheets
   let first = true;
   const main = html.indexOf('<main id="main"');
-  const heroId = main >= 0 ? /class="[^"]*\be-parent\b[^"]*"[^>]*data-id="([0-9a-f]+)"/.exec(html.slice(main))?.[1] : undefined;
-  const hero = heroId ? bundle.heroes?.[heroId] : undefined;
+  const heroTag = main >= 0 ? /<div class="[^"]*\be-parent\b[^"]*"[^>]*data-id="([0-9a-f]+)"[^>]*>/.exec(html.slice(main)) : null;
+  const heroId = heroTag?.[1];
+  // A first section with its own photo in an inline style (location pages) preloads that photo instead.
+  const own = heroTag ? /\sstyle="[^"]*background-image:\s*url\(['"]?(\/wp-content\/uploads\/[^'")]+?\.(?:png|jpe?g))/i.exec(heroTag[0])?.[1] : undefined;
+  const hero: [string, string | null] | undefined = own ? [webp(own), phoneCopy(own)] : heroId ? bundle.heroes?.[heroId] : undefined;
   const preload = hero
     ? hero[1]
       ? `<link rel="preload" as="image" href="${hero[1]}" media="(max-width: 767px)" fetchpriority="high">\n<link rel="preload" as="image" href="${hero[0]}" media="(min-width: 768px)" fetchpriority="high">\n`
@@ -199,10 +202,20 @@ function imagesPass(html: string) {
   return out;
 }
 
+/** A first section with its own photo in an inline style (location pages) shows the phone copy on phones. */
+function heroPhone(html: string) {
+  const main = html.indexOf('<main id="main"');
+  const tag = main >= 0 ? /<div class="[^"]*\be-parent\b[^"]*"[^>]*data-id="([0-9a-f]+)"[^>]*>/.exec(html.slice(main)) : null;
+  const own = tag ? /\sstyle="[^"]*background-image:\s*url\(['"]?(\/wp-content\/uploads\/[^'")]+?\.(?:png|jpe?g))(?:\.webp)?['"]?\)/i.exec(tag[0])?.[1] : undefined;
+  const phone = own ? phoneCopy(own) : null;
+  if (!tag || !phone) return html;
+  return html.replace("</head>", `<style id="hero-phone">@media (max-width: 767px){.elementor-element-${tag[1]}[style]{background-image:url(${phone})!important}}</style>\n</head>`);
+}
+
 function guard(html: string) {
   return html.includes('id="overflow-guard"') ? html : html.replace("</head>", `${GUARD}\n</head>`);
 }
 
 export function optimizeHtml(html: string) {
-  return guard(imagesPass(fonts(stylesheets(html))));
+  return guard(heroPhone(imagesPass(fonts(stylesheets(html)))));
 }

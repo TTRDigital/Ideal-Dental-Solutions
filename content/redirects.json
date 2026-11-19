@@ -1943,7 +1943,7 @@
  },
  {
   "source": "/",
-  "destination": "/category/patient-guides/",
+  "destination": "/blog/",
   "query": {
    "cat": "14"
   }

@@ -43,7 +43,11 @@ export function upgradeSchema(schema: string | undefined, business?: string): st
   try {
     const json = JSON.parse(schema) as { "@graph"?: Node[] };
     const biz = JSON.parse(business) as Node;
-    const graph = (json["@graph"] || []).map((node) => (node["@type"] === "Organization" ? { ...node, ...biz, "@id": node["@id"] } : node));
+    const graph = (json["@graph"] || []).map((node) => {
+      if (node["@type"] !== "Organization") return node;
+      // A page may name the areas it is about (location pages): its own list replaces the practice's.
+      return { ...node, ...biz, "@id": node["@id"], ...(Array.isArray(node.areaServed) ? { areaServed: node.areaServed } : {}) };
+    });
     return JSON.stringify({ ...json, "@graph": graph });
   } catch {
     return schema;
