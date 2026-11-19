@@ -143,7 +143,7 @@ Order: `extract` → `verify` (must be identical) → `fixes` → `verify --fixe
 
 ## Notes from the review
 
-- The site has no blog posts (WordPress had none published), so there is no blog index; the category and author archives are kept at their URLs.
+- WordPress had no published blog posts. The Patient Guides blog (`/blog/` and nine posts, published Nov 2026, TTR-2470) lives in the repo: posts in `content/blog/posts.ts`, rendered by `lib/site/blog.ts`, listed in `post-sitemap.xml`, under the practice's name as author. The category and author archives are kept at their URLs.
 - `/locations/mclean/` is a blank page on the live site; it is kept (it is a parent in the URL structure) but not indexed. `/locations/` is the Areas We Serve page (see Location pages).
 
 ## Form spam protection (TTR-2337)
