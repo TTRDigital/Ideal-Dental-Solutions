@@ -24,6 +24,16 @@ test("a patient with no comments and a plain number goes through", () =>
 test("accented and Spanish text goes through", () =>
   assert.equal(submit({ fields: { ...patient, "Full Name": "José Peña", Comments: "Necesito una cita para limpieza dental, gracias." } }), null));
 
+test("patients writing in Persian, Arabic, Korean and Chinese go through", () => {
+  const msgs: [string, string][] = [
+    ["سارا احمدی", "سلام، برای تمیز کردن دندان و معاینه وقت می‌خواهم. ممنون"],
+    ["محمد العلي", "مرحبا، أريد حجز موعد لفحص الأسنان وتنظيفها. شكرا"],
+    ["김민준", "안녕하세요, 치아 검진과 스케일링 예약을 하고 싶습니다. 감사합니다"],
+    ["李伟", "您好，我想预约洗牙和牙齿检查，谢谢。"],
+  ];
+  msgs.forEach(([name, text], n) => assert.equal(submit({ ip: `192.0.2.${n + 1}`, fields: { ...patient, "Full Name": name, Comments: text } }), null, name));
+});
+
 test("honeypot filled is blocked", () => assert.equal(submit({ honeypot: "http://x" }), "honeypot"));
 test("missing token is blocked", () => assert.equal(submit({ token: "" }), "no_token"));
 test("forged token is blocked", () => assert.equal(submit({ token: "1800000000.abc.forged" }), "bad_token"));
@@ -45,7 +55,8 @@ test("links in the message are blocked", () => {
 });
 test("spam words and non-English bot text are blocked", () => {
   assert.equal(checkContent({ ...patient, Comments: "We offer SEO and backlinks to rank higher" }), "spam_words");
-  assert.equal(checkContent({ ...patient, Comments: "Привет, хотим предложить вам сотрудничество" }), "bot_pattern");
+  assert.equal(checkContent({ ...patient, Comments: "Привет, предлагаем SEO продвижение сайта" }), "spam_words");
+  assert.equal(checkContent({ ...patient, Comments: "Привет, смотрите https://spam.example" }), "link_in_text");
   assert.equal(checkContent({ ...patient, Comments: "a".repeat(30) }), "bot_pattern");
 });
 test("bad name, email, phone and long messages are blocked", () => {

@@ -76,13 +76,6 @@ const SPAM_WORDS =
   /\b(?:seo|backlinks?|crypto(?:currency)?|bitcoin|btc|usdt|forex|casino|viagra|cialis|porn|escort|loans?\s+(?:offer|approved)|guest\s+post|web\s?(?:site)?\s?(?:design|development)|digital\s+marketing|increase\s+(?:your\s+)?(?:traffic|sales|rankings?)|rank(?:ing)?\s+(?:higher|#?1)|google\s+(?:rankings?|first\s+page)|lead\s+generation|link\s+building|whats\s?app|telegram|click\s+here|earn\s+\$?\d+|investment\s+opportunit\w*|make\s+money|work\s+from\s+home|free\s+(?:gift|money|trial)|adult\s+dating|payday|replica|pills|weight\s+loss\s+(?:pill|supplement)|business\s+proposal|cash\s+app|dear\s+(?:sir|madam|owner)|i\s+(?:can|will)\s+(?:help|offer)\s+you\s+(?:rank|grow|promote))\b/i;
 const EMAIL = /^[^\s@<>()[\]\\,;:"]+@[^\s@<>()[\]\\,;:"]+\.[A-Za-z]{2,}$/;
 
-/** Share of letters that are not Latin (Cyrillic, CJK, Arabic ...): the practice's patients write in Latin script. */
-function nonLatinShare(s: string) {
-  const letters = s.match(/\p{L}/gu) || [];
-  if (letters.length < 6) return 0;
-  return letters.filter((c) => !/\p{Script=Latin}/u.test(c)).length / letters.length;
-}
-
 function botPattern(s: string) {
   return /(.)\1{9,}/.test(s) || /<\s*\/?\s*(?:a|script|iframe|img|html|body)\b/i.test(s) || /\[\s*\/?\s*(?:url|link)\b/i.test(s) || /\b(?:select\s.+\sfrom|union\s+select|\$\{|{{)/i.test(s);
 }
@@ -118,7 +111,7 @@ export function checkContent(f: Fields): BlockReason | null {
   if (free.length > 2000) return "message_too_long";
   if (LINK.test(free) || DOMAIN.test(free) || LINK.test(name ?? "")) return "link_in_text";
   if (SPAM_WORDS.test(free) || SPAM_WORDS.test(name ?? "")) return "spam_words";
-  if (botPattern(text) || nonLatinShare(text) > 0.3) return "bot_pattern";
+  if (botPattern(text)) return "bot_pattern";
   if (name && email && name.toLowerCase() === email.toLowerCase()) return "bot_pattern";
   return null;
 }
