@@ -137,3 +137,7 @@ Order: `extract` → `verify` (must be identical) → `fixes` → `verify --fixe
 
 - The site has no blog posts (WordPress had none published), so there is no blog index; the category and author archives are kept at their URLs.
 - `/locations/` and `/locations/mclean/` are blank pages on the live site; they are kept (they are parents in the URL structure) but not indexed. Add content or a location landing page before indexing them.
+
+## Form spam protection (TTR-2337)
+
+Invisible, server-side (`lib/form-guard.ts`, used by `app/wp-admin/admin-ajax.php/route.ts`): hidden honeypot (`website_url`), signed form token from `/api/form-token/` (3 s minimum, 3 h life), content checks (name, email, phone, message length, links, spam words; any language or script is accepted), 3 submissions per IP per day (per server instance). A blocked submission gets the normal success answer, is not delivered, and is logged as `[form-guard] blocked reason=... form=... ip=<hash>` (no message text or contact details). Count them in the Vercel logs by searching `[form-guard] blocked`. `FORM_TOKEN_SECRET` is optional: the signing key is derived from `PREVIEW_SECRET` or `SANITY_REVALIDATE_SECRET` (or `RECAPTCHA_SECRET_KEY`) when the site has one. With none of them, the token and 3-second checks are off; honeypot, content checks and the IP limit still run. Tests: `npm test`.

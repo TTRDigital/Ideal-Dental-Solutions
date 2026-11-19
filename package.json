@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "test": "node --test --experimental-strip-types --no-warnings tests/*.test.ts",
     "typecheck": "tsc --noEmit",
     "extract": "node --experimental-strip-types --no-warnings scripts/extract.ts",
     "verify": "node --experimental-strip-types --no-warnings scripts/verify.ts",

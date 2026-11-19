@@ -1,5 +1,6 @@
 import { getSite } from "@/lib/site/data";
 import { deliverLead, verifyRecaptcha } from "@/lib/lead";
+import { clientIp, guardSubmission } from "@/lib/form-guard";
 import formFields from "@/content/form-fields.json";
 
 /**
@@ -35,21 +36,32 @@ export async function POST(req: Request) {
   }
   const page = String(form.get("referrer") || req.headers.get("referer") || "");
 
+  const { settings } = await getSite();
+  const setting = (settings.forms || []).find((f) => f.formKey === `${postId}:${formId}`) || (settings.forms || []).find((f) => f.formKey?.endsWith(`:${formId}`) && f.formKey.startsWith(`${postId}:`));
+  const origin = new URL(req.url).origin;
+  const success = () => {
+    const data: Json = setting?.redirect ? { redirect_url: new URL(setting.redirect, origin).toString() } : {};
+    return reply({ success: true, data: { message: setting?.message ?? "Your submission was successful.", data } });
+  };
+
+  // Invisible spam protection (lib/form-guard.ts). A blocked submission gets the normal success answer,
+  // is not delivered and is logged, so a bot learns nothing.
+  const str = (k: string) => (typeof form.get(k) === "string" ? (form.get(k) as string) : "");
+  const ip = clientIp(req.headers);
+  const blocked = guardSubmission({ fields, honeypot: str("website_url"), token: str("ttr_ft"), ip, form: setting?.name || `${postId}:${formId}` });
+  if (blocked) return success();
+
   // Honeypot fields (Elementor "honeypot" type) must stay empty.
   const honeypot = Object.entries(fields).some(([k, v]) => /honeypot/i.test(k) && v);
   const captcha = form.get("g-recaptcha-response");
-  const human = !honeypot && (await verifyRecaptcha(typeof captcha === "string" ? captcha : null, req.headers.get("x-forwarded-for")?.split(",")[0]));
+  const human = !honeypot && (await verifyRecaptcha(typeof captcha === "string" ? captcha : null, ip));
   if (!human) {
     return reply({ success: false, data: { message: "Please confirm you are not a robot and try again.", errors: [], data: [] } });
   }
 
-  const { settings } = await getSite();
-  const setting = (settings.forms || []).find((f) => f.formKey === `${postId}:${formId}`) || (settings.forms || []).find((f) => f.formKey?.endsWith(`:${formId}`) && f.formKey.startsWith(`${postId}:`));
   const delivered = await deliverLead({ form: setting?.name || `${postId}:${formId}`, fields, page, tag: setting?.tag });
   if (!delivered) {
     return reply({ success: false, data: { message: "Something went wrong. Please call us at (703) 442-0442.", errors: [], data: [] } });
   }
-  const origin = new URL(req.url).origin;
-  const data: Json = setting?.redirect ? { redirect_url: new URL(setting.redirect, origin).toString() } : {};
-  return reply({ success: true, data: { message: setting?.message ?? "Your submission was successful.", data } });
+  return success();
 }
