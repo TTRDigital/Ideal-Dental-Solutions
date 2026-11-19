@@ -6,6 +6,7 @@ const ok = { success: true, score: 0.9, action: RECAPTCHA_ACTION, hostname: "ide
 
 test("a ticked checkbox on the live site goes through", () =>
   assert.equal(judgeRecaptcha({ success: true, hostname: "idealdentalsolutions.com", challenge_ts: "2026-11-19T18:00:00Z" } as never), null));
+test("a checkbox ticked on the Vercel preview goes through", () => assert.equal(judgeRecaptcha({ success: true, hostname: "ideal-dental-solutions.vercel.app" }), null));
 test("a checkbox ticked on another site is refused", () => assert.equal(judgeRecaptcha({ success: true, hostname: "evil.example" }), "wrong_host:evil.example"));
 test("a human score on the live site goes through", () => assert.equal(judgeRecaptcha(ok), null));
 test("www goes through", () => assert.equal(judgeRecaptcha({ ...ok, hostname: "www.idealdentalsolutions.com" }), null));

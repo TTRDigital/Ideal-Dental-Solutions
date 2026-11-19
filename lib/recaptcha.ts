@@ -5,9 +5,9 @@
  * Google confirms it for this site (see judgeRecaptcha).
  *
  * Keys: Ideal Dental Solutions' checkbox site key is built in (it is public by design); the secret is
- * never in the code: the server check runs once RECAPTCHA_SECRET_KEY is set in Vercel. The key is
- * registered for idealdentalsolutions.com and www.idealdentalsolutions.com only (on the Vercel preview or
- * localhost Google shows "Invalid domain"). RECAPTCHA_SITE_KEY overrides the site key; "off" removes
+ * never in the code: the server check runs once RECAPTCHA_SECRET_KEY is set in Vercel. Ticks are accepted
+ * from the hosts in RECAPTCHA_HOSTNAMES; each must also be listed under the key's domains in the reCAPTCHA
+ * admin console, or Google shows "Invalid domain" there. RECAPTCHA_SITE_KEY overrides the site key; "off" removes
  * reCAPTCHA from the page and turns the server check off.
  */
 
@@ -18,7 +18,7 @@ export const RECAPTCHA_ACTION = "appointment";
 /** Score threshold for score-based (v3) tokens; checkbox tokens carry no score. */
 export const RECAPTCHA_MIN_SCORE = 0.5;
 /** Hosts the key is registered for. A token issued on any other host is refused. */
-export const RECAPTCHA_HOSTNAMES = ["idealdentalsolutions.com", "www.idealdentalsolutions.com"];
+export const RECAPTCHA_HOSTNAMES = ["idealdentalsolutions.com", "www.idealdentalsolutions.com", "ideal-dental-solutions.vercel.app"];
 
 type Env = Record<string, string | undefined>;
 
