@@ -11,6 +11,7 @@ const GROUPS: [string, (p: string) => boolean][] = [
   ["Practice", (p) => ["/", "/about-us/", "/dr-mehdi-adili/", "/appointment/", "/before-after/", "/services/"].includes(p)],
   ["Dental services in Northern Virginia", (p) => p.startsWith("/services/") || p.startsWith("/locations/night-guards/")],
   ["Dental services in McLean, VA", (p) => p.startsWith("/locations/mclean/") || /-in-mclean-va\/$/.test(p)],
+  ["Areas served from the McLean office", (p) => p === "/locations/" || /^\/locations\/[^/]+\/$/.test(p)],
 ];
 
 export async function GET() {

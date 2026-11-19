@@ -50,6 +50,14 @@ Every page is rendered as WordPress printed it, then sped up on the way out (the
 - **Scripts:** the theme and Elementor scripts load exactly as WordPress printed them (deferring them broke the form handler on fast connections). Google's GA4 script loads on the first scroll, tap or key press, or 10 seconds after the page has loaded.
 - `html{overflow-x:clip}`: nothing can make the page scroll sideways.
 
+## Location pages (scripts/locations.ts)
+
+`/locations/` (Areas We Serve) and one page per nearby town: `/locations/tysons/`, `/locations/vienna/`, `/locations/falls-church/`, `/locations/great-falls/` and `/locations/potomac/` (published Nov 2026, TTR-2470). The practice has one office (McLean, 8280 Greensboro Drive, in Tysons); every page says so and none claims an office in its town.
+
+- **Content:** the text is in `scripts/locations-content.ts`, with the source of every local fact in `docs/locations/sources.md`. `npm run locations` builds the pages into `content/seed.json` from the blocks of the McLean gum graft page and writes the town social images to `public/og/`. Photos are the practice's own.
+- **Serving:** until the CMS has them, the site serves these six pages from the built-in copy (`lib/site/data.ts`, `BUILT_IN_PATHS`: only those paths, and only while the CMS page is missing or empty). They are indexable and in the sitemap and `/llms.txt`. To make them editable in /cms: `npm run seed -- --only=page-868,page-location-tysons,page-location-vienna,page-location-falls-church,page-location-great-falls,page-location-potomac`.
+- **Not published:** `/locations/mclean/` stays the blank, noindexed WordPress page in the CMS (`npm run locations` leaves it alone; `npm run locations -- --mclean` builds it as the McLean office page, text in `MCLEAN_PAGE`). "Our office" links on these pages go to `/appointment/` (`OFFICE_PATH` in `scripts/locations-content.ts`) until the McLean page is published.
+
 ## Redirects
 
 - `content/redirects.json` (loaded by `next.config.ts`, all 301): every redirect the live WordPress site answered when probed with ~3,400 old and alternative URLs (dental service slugs under 15 possible parents, existing slugs under other parents, common practice pages, feeds, `/sitemap.xml`, `/index.php`). 483 path rules, each pointing straight at the final page, all tested on a production build.
@@ -136,7 +144,7 @@ Order: `extract` → `verify` (must be identical) → `fixes` → `verify --fixe
 ## Notes from the review
 
 - The site has no blog posts (WordPress had none published), so there is no blog index; the category and author archives are kept at their URLs.
-- `/locations/` and `/locations/mclean/` are blank pages on the live site; they are kept (they are parents in the URL structure) but not indexed. Add content or a location landing page before indexing them.
+- `/locations/mclean/` is a blank page on the live site; it is kept (it is a parent in the URL structure) but not indexed. `/locations/` is the Areas We Serve page (see Location pages).
 
 ## Form spam protection (TTR-2337)
 
