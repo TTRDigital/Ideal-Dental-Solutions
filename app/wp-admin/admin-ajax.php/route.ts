@@ -55,12 +55,11 @@ export async function POST(req: Request) {
   // Honeypot fields (Elementor "honeypot" type) must stay empty.
   if (Object.entries(fields).some(([k, v]) => /honeypot/i.test(k) && v)) return success();
 
-  // reCAPTCHA v3 (lib/recaptcha.ts): Google must confirm the token (this site, this form, score >= 0.5).
-  // A refused submission is not delivered; the visitor is asked to call instead, in case it was a person.
+  // reCAPTCHA checkbox (lib/recaptcha.ts): Google must confirm the ticked box for this site.
   const refused = await checkRecaptcha(str("g-recaptcha-response") || null, ip);
   if (refused) {
     console.warn(`[recaptcha] refused reason=${refused} form=${setting?.name || `${postId}:${formId}`}`);
-    return reply({ success: false, data: { message: "We couldn't send your request. Please call us at (703) 442-0442 and we'll book your appointment.", errors: [], data: [] } });
+    return reply({ success: false, data: { message: "Please tick “I'm not a robot” and try again. If it keeps failing, call us at (703) 442-0442.", errors: [], data: [] } });
   }
 
   const delivered = await deliverLead({ form: setting?.name || `${postId}:${formId}`, fields, page, tag: setting?.tag });
