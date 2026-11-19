@@ -6,6 +6,7 @@ import { optimizeHtml } from "@/lib/site/optimize";
 import { seoPass } from "@/lib/site/seo-pass";
 import { withoutArlington } from "@/lib/site/arlington";
 import { apiVersion, dataset, projectId } from "@/sanity/env";
+import { recaptchaSiteKey } from "@/lib/recaptcha";
 
 /**
  * Private preview of a draft (TTR OS staging, TTR-2053).
@@ -69,7 +70,7 @@ export async function GET(req: Request) {
     doc._type === "archivePage"
       ? { kind: "archive", doc: doc as ArchiveDoc }
       : { kind: "page", doc: doc as PageDoc, ancestors: ((doc as PageDoc & { ancestorPaths?: string[] }).ancestorPaths as string[]) || [] };
-  let html = withoutArlington(seoPass(optimizeHtml(renderDocument(resolved, site.data, clean, { projectId, dataset, origin, recaptchaSiteKey: process.env.RECAPTCHA_SITE_KEY?.trim() || "" }))));
+  let html = withoutArlington(seoPass(optimizeHtml(renderDocument(resolved, site.data, clean, { projectId, dataset, origin, recaptchaSiteKey: recaptchaSiteKey() }))));
   html = html.replace("</head>", `<meta name="robots" content="noindex, nofollow"></head>`);
   return new Response(html, { status: 200, headers: { ...HEADERS, "Content-Type": "text/html; charset=UTF-8" } });
 }

@@ -1,5 +1,6 @@
 import { getSite } from "@/lib/site/data";
-import { deliverLead, verifyRecaptcha } from "@/lib/lead";
+import { deliverLead } from "@/lib/lead";
+import { checkRecaptcha } from "@/lib/recaptcha";
 import { clientIp, guardSubmission } from "@/lib/form-guard";
 import formFields from "@/content/form-fields.json";
 
@@ -52,11 +53,14 @@ export async function POST(req: Request) {
   if (blocked) return success();
 
   // Honeypot fields (Elementor "honeypot" type) must stay empty.
-  const honeypot = Object.entries(fields).some(([k, v]) => /honeypot/i.test(k) && v);
-  const captcha = form.get("g-recaptcha-response");
-  const human = !honeypot && (await verifyRecaptcha(typeof captcha === "string" ? captcha : null, ip));
-  if (!human) {
-    return reply({ success: false, data: { message: "Please confirm you are not a robot and try again.", errors: [], data: [] } });
+  if (Object.entries(fields).some(([k, v]) => /honeypot/i.test(k) && v)) return success();
+
+  // reCAPTCHA v3 (lib/recaptcha.ts): Google must confirm the token (this site, this form, score >= 0.5).
+  // A refused submission is not delivered; the visitor is asked to call instead, in case it was a person.
+  const refused = await checkRecaptcha(str("g-recaptcha-response") || null, ip);
+  if (refused) {
+    console.warn(`[recaptcha] refused reason=${refused} form=${setting?.name || `${postId}:${formId}`}`);
+    return reply({ success: false, data: { message: "We couldn't send your request. Please call us at (703) 442-0442 and we'll book your appointment.", errors: [], data: [] } });
   }
 
   const delivered = await deliverLead({ form: setting?.name || `${postId}:${formId}`, fields, page, tag: setting?.tag });

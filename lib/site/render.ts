@@ -3,6 +3,7 @@ import { searchCard, searchPagination } from "../render/blocksy.ts";
 import { escapeHtml } from "../render/html.ts";
 import { renderSeo, type Seo } from "../render/seo.ts";
 import { renderTpl, type Fields, type RenderContext } from "../render/template.ts";
+import { RECAPTCHA_ACTION } from "../recaptcha.ts";
 
 /**
  * Turns CMS documents into the full HTML document for a URL. Used by the
@@ -58,9 +59,9 @@ export type RenderOptions = {
   /** Public origin, e.g. https://idealdentalsolutions.com. Absolute SEO URLs use it. */
   origin?: string;
   /**
-   * reCAPTCHA in the appointment form: a site key shows the checkbox with that key,
-   * "" removes the checkbox and Google's script (the old key only works on the
-   * WordPress domain), undefined keeps the markup exactly as WordPress printed it.
+   * reCAPTCHA v3 in the appointment form (lib/recaptcha.ts): a site key turns WordPress' checkbox field
+   * into Elementor's invisible v3 field with that key, "" removes the field and Google's script,
+   * undefined keeps the markup exactly as WordPress printed it (migration check).
    */
   recaptchaSiteKey?: string;
 };
@@ -68,10 +69,30 @@ export type RenderOptions = {
 const RECAPTCHA_FIELD = /<div class="elementor-field-type-recaptcha[^"]*">\s*<div class="elementor-field"[^>]*><div class="elementor-g-recaptcha"[^>]*><\/div><\/div>\s*<\/div>/g;
 const RECAPTCHA_SCRIPT = /<script id="elementor-recaptcha-api-js"[^>]*><\/script>\s*/g;
 
+/**
+ * Google's notice, shown in the form instead of the floating reCAPTCHA badge (which covered the form on
+ * phones). Google allows hiding the badge when this text is shown next to the form.
+ */
+const RECAPTCHA_NOTICE =
+  '<p class="ids-recaptcha-notice" style="margin:4px 0 0;font-size:12px;line-height:1.5;color:#fff;opacity:.75">This site is protected by reCAPTCHA and the Google ' +
+  '<a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Privacy Policy</a> and ' +
+  '<a href="https://policies.google.com/terms" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline">Terms of Service</a> apply.</p>' +
+  "<style>.grecaptcha-badge{visibility:hidden}</style>";
+
 function applyRecaptcha(html: string, siteKey: string | undefined) {
   if (siteKey === undefined) return html;
   if (!siteKey) return html.replace(RECAPTCHA_FIELD, "").replace(RECAPTCHA_SCRIPT, "");
-  return html.replace(/(class="elementor-g-recaptcha" data-sitekey=")[^"]*"/g, `$1${siteKey.replace(/[^\w-]/g, "")}"`);
+  // Elementor Pro's form script runs v3 itself: on Submit it asks Google for a token for this action
+  // and sends it as g-recaptcha-response.
+  const key = siteKey.replace(/[^\w-]/g, "");
+  return html.replace(RECAPTCHA_FIELD, (group) =>
+    group
+      .replace(
+        /<div class="elementor-g-recaptcha"[^>]*>/,
+        `<div class="elementor-g-recaptcha" data-sitekey="${key}" data-type="v3" data-action="${RECAPTCHA_ACTION}" data-badge="bottomleft" data-size="invisible">`,
+      )
+      .replace(/<\/div>\s*$/, `${RECAPTCHA_NOTICE}</div>`),
+  );
 }
 
 /** Elementor's frontend config describes the current document. */
