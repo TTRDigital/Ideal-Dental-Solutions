@@ -21,16 +21,14 @@ const BLOG_PATH = "/blog/";
 const PHONE = "(703) 442-0442";
 const PHONE_HREF = "tel:+17034420442";
 
-// The posts are published under the practice's name (TTR-2470, Kia Nov 19):
-// Dr. Adili has not confirmed the clinical text under his own name.
 const AUTHOR = {
-  name: "Ideal Dental Solutions",
-  short: "Ideal Dental Solutions",
-  path: "/about-us/",
-  jobTitle: "Dental practice in McLean, VA",
-  photo: "/icon-192.png",
-  photoLarge: "/icon-192.png",
-  bio: "Ideal Dental Solutions is a general, cosmetic and implant dental practice at 8280 Greensboro Drive in McLean, Virginia, in Tysons. Our team provides dental implants, crowns, bridges, dentures, veneers, Invisalign, gum care and everyday dentistry for patients across Northern Virginia.",
+  name: "Dr. Mehdi S. Adili, DDS",
+  short: "Dr. Mehdi Adili",
+  path: "/dr-mehdi-adili/",
+  jobTitle: "Prosthodontist",
+  photo: "/images/blog/dr-adili-112.webp",
+  photoLarge: "/images/blog/dr-adili-240.webp",
+  bio: "Dr. Mehdi S. Adili, DDS, is a prosthodontist at Ideal Dental Solutions in McLean. He earned his Doctor of Dental Surgery degree from Georgetown University and completed specialty training in prosthodontics at Virginia Commonwealth University. His work focuses on dental implants, crowns, bridges, dentures and full-mouth restoration.",
 };
 
 /** The practice's own photos, resized to WebP at 640 and 1040 px wide (4:3). */
@@ -329,7 +327,7 @@ ${sections}
 \t\t\t\t\t\t<h3>${escapeHtml(AUTHOR.name)}</h3>
 \t\t\t\t\t\t<div class="ib-muted">${AUTHOR.jobTitle}</div>
 \t\t\t\t\t\t<p>${escapeHtml(AUTHOR.bio)}</p>
-\t\t\t\t\t\t<a class="ib-btn ib-btn-outline" href="${AUTHOR.path}">More about our practice</a>
+\t\t\t\t\t\t<a class="ib-btn ib-btn-outline" href="${AUTHOR.path}">More about ${AUTHOR.short}</a>
 \t\t\t\t\t</div>
 \t\t\t\t</div>
 \t\t\t</footer>
@@ -374,7 +372,7 @@ ${sections}
       description: p.description,
       datePublished: iso(p.published),
       dateModified: iso(modified),
-      author: { "@type": "Organization", "@id": `${SITE}/#organization`, name: AUTHOR.name, url: `${SITE}/` },
+      author: { "@type": "Person", "@id": `${SITE}${AUTHOR.path}#person`, name: AUTHOR.name, jobTitle: AUTHOR.jobTitle, url: SITE + AUTHOR.path },
       publisher: { "@id": `${SITE}/#organization` },
       mainEntityOfPage: { "@id": url },
       image: SITE + imagePath,
@@ -437,8 +435,8 @@ function listDoc(): PageDoc {
 <section class="ib-hero">
 \t<div class="ib-box ib-hero-list">
 \t\t<p class="ib-eyebrow ib-rise">Blog</p>
-\t\t<h1 class="ib-title ib-rise" style="--i:1">Dental health, explained by Ideal Dental Solutions</h1>
-\t\t<p class="ib-lede ib-rise" style="--i:2">Plain answers to the questions patients ask us in McLean, from the dental team that treats them.</p>
+\t\t<h1 class="ib-title ib-rise" style="--i:1">Dental health, explained by Dr. Mehdi Adili</h1>
+\t\t<p class="ib-lede ib-rise" style="--i:2">Plain answers to the questions patients ask us in McLean, from a prosthodontist who treats them.</p>
 \t\t<div class="ib-rise" style="--i:3">${authorCard()}</div>
 \t</div>
 </section>
