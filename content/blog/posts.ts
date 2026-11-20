@@ -37,7 +37,7 @@ export const posts: BlogPost[] = [
   {
     slug: "dental-implant-vs-bridge",
     title: "Dental Implant or Bridge? How to Choose for a Missing Tooth",
-    seoTitle: "Dental Implant vs. Bridge for a Missing Tooth | Ideal Dental Solutions",
+    seoTitle: "Dental Implant vs. Bridge for a Missing Tooth | Ideal Dental",
     description: "Implant or bridge? How each replaces a missing tooth, how long they last, what they do to neighboring teeth and bone, and how to decide. McLean, VA.",
     published: "2026-10-26",
     service: { path: "/services/dental-implants-dentistry/single-tooth-implants/", label: "Single tooth implants" },
@@ -147,7 +147,7 @@ export const posts: BlogPost[] = [
   {
     slug: "full-arch-implants-vs-dentures",
     title: "Full-Arch Implants vs. Dentures: What's the Difference?",
-    seoTitle: "Full-Arch Implants vs. Dentures: Key Differences | Ideal Dental Solutions",
+    seoTitle: "Full-Arch Implants vs. Dentures | Ideal Dental Solutions",
     description: "Full-arch implants or dentures? How each works, how they feel, how long they last, cleaning, and who is a candidate. From a McLean, VA prosthodontist.",
     published: "2026-10-26",
     service: { path: "/services/dental-implants-dentistry/full-arch-implants/", label: "Full arch implants" },
@@ -245,7 +245,7 @@ export const posts: BlogPost[] = [
   {
     slug: "how-long-does-invisalign-take",
     title: "How Long Does Invisalign Take? A Realistic Timeline",
-    seoTitle: "How Long Does Invisalign Take? Realistic Timeline | Ideal Dental Solutions",
+    seoTitle: "How Long Does Invisalign Take? | Ideal Dental Solutions",
     description: "How long Invisalign takes, what speeds it up or slows it down, how often aligners change, and what happens after. Plain answers from McLean, VA.",
     published: "2026-10-26",
     service: { path: "/services/cosmetic-dentistry/invisalign/", label: "Invisalign treatment" },
@@ -348,7 +348,7 @@ export const posts: BlogPost[] = [
   {
     slug: "early-signs-of-gum-disease",
     title: "Early Signs of Gum Disease and When to See a Dentist",
-    seoTitle: "Early Signs of Gum Disease and When to See a Dentist | Ideal Dental Solutions",
+    seoTitle: "Early Signs of Gum Disease | Ideal Dental Solutions",
     description: "Bleeding gums, bad breath, receding gums: the early signs of gum disease, who is at risk, how it is treated, and when to see a dentist in McLean, VA.",
     published: "2026-10-26",
     service: { path: "/services/periodontic-dentistry/gum-disease-treatment/", label: "Gum disease treatment" },
@@ -474,7 +474,7 @@ export const posts: BlogPost[] = [
   {
     slug: "what-to-expect-root-canal",
     title: "What to Expect During a Root Canal, Step by Step",
-    seoTitle: "What to Expect During a Root Canal, Step by Step | Ideal Dental Solutions",
+    seoTitle: "What to Expect During a Root Canal | Ideal Dental Solutions",
     description: "What happens during a root canal, how long it takes, whether it hurts, recovery tips and why you may need a crown. Plain answers from McLean, VA.",
     published: "2026-10-26",
     service: { path: "/services/restorative-dentistry/root-canal-therapy/", label: "Root canal therapy" },
@@ -578,7 +578,7 @@ export const posts: BlogPost[] = [
   {
     slug: "cosmetic-dentistry-questions-answered",
     title: "Cosmetic Dentistry Questions, Answered",
-    seoTitle: "Cosmetic Dentistry Questions Answered | Ideal Dental Solutions",
+    seoTitle: "Cosmetic Dentistry Questions Answered | Ideal Dental",
     description: "Common cosmetic dentistry questions answered: treatments, how long results last, insurance, whitening, bonding vs. veneers and what to expect. McLean, VA.",
     published: "2026-10-26",
     service: { path: "/services/cosmetic-dentistry/", label: "Cosmetic dentistry" },
@@ -690,7 +690,7 @@ export const posts: BlogPost[] = [
   {
     slug: "benefits-of-cosmetic-dentistry",
     title: "The Benefits of Cosmetic Dentistry, and What to Know First",
-    seoTitle: "Benefits of Cosmetic Dentistry: What to Know First | Ideal Dental Solutions",
+    seoTitle: "Benefits of Cosmetic Dentistry | Ideal Dental Solutions",
     description: "The real benefits of cosmetic dentistry, treatment by treatment, plus the trade-offs to weigh first: upkeep, reversibility and insurance. McLean, VA.",
     published: "2026-10-26",
     service: { path: "/services/cosmetic-dentistry/", label: "Cosmetic dentistry" },
@@ -800,7 +800,7 @@ export const posts: BlogPost[] = [
   {
     slug: "care-for-your-dental-implants",
     title: "How to Care for Your Dental Implants",
-    seoTitle: "How to Care for Your Dental Implants | Ideal Dental Solutions",
+    seoTitle: "How to Care for Your Dental Implants | Ideal Dental",
     description: "How to care for dental implants: healing after surgery, daily cleaning, checkups, warning signs of implant gum problems and when to call. McLean, VA.",
     published: "2026-10-26",
     service: { path: "/services/dental-implants-dentistry/", label: "Dental implants" },
@@ -910,7 +910,7 @@ export const posts: BlogPost[] = [
   {
     slug: "cost-of-dental-implants",
     title: "What Affects the Cost of Dental Implants?",
-    seoTitle: "Cost of Dental Implants: What Affects the Price | Ideal Dental Solutions",
+    seoTitle: "Cost of Dental Implants and What Affects It | Ideal Dental",
     description: "What drives the cost of dental implants: number of teeth, bone grafts, extractions, the type of restoration, insurance and financing. McLean, VA.",
     published: "2026-10-26",
     service: { path: "/services/dental-implants-dentistry/", label: "Dental implants" },

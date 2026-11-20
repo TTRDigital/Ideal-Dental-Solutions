@@ -68,13 +68,24 @@ export type RenderOptions = {
 const RECAPTCHA_FIELD = /<div class="elementor-field-type-recaptcha[^"]*">\s*<div class="elementor-field"[^>]*><div class="elementor-g-recaptcha"[^>]*><\/div><\/div>\s*<\/div>/g;
 const RECAPTCHA_SCRIPT = /<script id="elementor-recaptcha-api-js"[^>]*><\/script>\s*/g;
 
+/**
+ * Google's reCAPTCHA script loads when the visitor first focuses, taps or clicks inside a form that has
+ * the checkbox, not on page open: it sets Google cookies and costs load time on every visit. Elementor
+ * Pro's form handler checks for window.grecaptcha every 350 ms and draws the checkbox once it is there.
+ */
+const RECAPTCHA_ON_FOCUS =
+  `<script id="recaptcha-on-focus">(function(){var d=0;function l(e){var f=e.target&&e.target.closest&&e.target.closest("form");` +
+  `if(d||!f||!f.querySelector(".elementor-g-recaptcha"))return;d=1;var s=document.createElement("script");s.id="elementor-recaptcha-api-js";` +
+  `s.async=true;s.src="https://www.google.com/recaptcha/api.js?render=explicit&ver=4.3.0";document.head.appendChild(s)}` +
+  `["focusin","pointerdown","touchstart"].forEach(function(t){document.addEventListener(t,l,{passive:true})})})();</script>\n`;
+
 function applyRecaptcha(html: string, siteKey: string | undefined) {
   if (siteKey === undefined) return html;
   if (!siteKey) return html.replace(RECAPTCHA_FIELD, "").replace(RECAPTCHA_SCRIPT, "");
   // The visible "I'm not a robot" checkbox (reCAPTCHA v2), drawn by Elementor Pro's form script; the
   // ticked box's token is sent with the form as g-recaptcha-response.
   const key = siteKey.replace(/[^\w-]/g, "");
-  return html.replace(
+  return html.replace(RECAPTCHA_SCRIPT, RECAPTCHA_ON_FOCUS).replace(
     /<div class="elementor-g-recaptcha"[^>]*>/g,
     `<div class="elementor-g-recaptcha" data-sitekey="${key}" data-type="v2_checkbox" data-theme="light" data-size="normal">`,
   );

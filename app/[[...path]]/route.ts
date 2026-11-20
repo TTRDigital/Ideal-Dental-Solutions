@@ -1,4 +1,5 @@
-import { allPaths, getSite, resolve, REVALIDATE_SECONDS } from "@/lib/site/data";
+import { allPaths, getSite, resolve, reviewedSeoFor, REVALIDATE_SECONDS } from "@/lib/site/data";
+import { reviewedSeo } from "@/lib/site/seo-lengths";
 import { resolveBlog } from "@/lib/site/blog";
 import { feedXml, sitemapIndex, sitemapXml } from "@/lib/site/sitemaps";
 import { guessRedirect } from "@/lib/site/guess";
@@ -48,8 +49,10 @@ export async function GET(_req: Request, ctx: { params: Promise<{ path?: string[
   }
 
   const path = `/${segments.map((s) => decodeURIComponent(s)).join("/")}${segments.length ? "/" : ""}`;
-  const resolved = resolveBlog(path) ?? (await resolve(path, site.fromCms));
-  if (!resolved) return new Response("Not found", { status: 404 });
+  const found = resolveBlog(path) ?? (await resolve(path, site.fromCms));
+  if (!found) return new Response("Not found", { status: 404 });
+  // CMS titles and descriptions out of range get the reviewed ones until the CMS is seeded (lib/site/seo-lengths.ts).
+  const resolved = found.kind === "page" ? { ...found, doc: { ...found.doc, seo: reviewedSeo(found.doc.seo, reviewedSeoFor(path)) } } : found;
   if (resolved.kind === "notFound") {
     // Old WordPress blog posts (the blog was removed): any address under /blog/ that is not a page goes to the services page.
     // Real pages under /blog/ are answered above, so new posts are never redirected.
