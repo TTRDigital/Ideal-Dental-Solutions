@@ -258,10 +258,22 @@ function inlineImages(html: string) {
   return html.replace(INLINE_IMAGE, (uri, _ext: string, data: string) => inlineFiles[inlineHash(data)] || uri);
 }
 
+/**
+ * YouTube background videos (the home page hero) play from youtube-nocookie.com: Elementor's own
+ * "privacy mode" setting, switched on here. The standard player set Google ad cookies
+ * (googleads.g.doubleclick.net test_cookie) on page open, which costs the best-practices score (TTR-2515).
+ */
+function youtubePrivacy(html: string) {
+  if (!html.includes("background_video_link")) return html;
+  return html.replace(/data-settings="\{([^"]*?background_video_link&quot;:&quot;[^"&]*youtu[^"]*)"/g, (attr, inner: string) =>
+    inner.includes("background_privacy_mode") ? attr : `data-settings="{&quot;background_privacy_mode&quot;:&quot;yes&quot;,${inner}"`,
+  );
+}
+
 function guard(html: string) {
   return html.includes('id="overflow-guard"') ? html : html.replace("</head>", `${GUARD}\n</head>`);
 }
 
 export function optimizeHtml(html: string) {
-  return guard(jqueryToFooter(inlineImages(heroPhone(imagesPass(fonts(stylesheets(html)))))));
+  return guard(jqueryToFooter(youtubePrivacy(inlineImages(heroPhone(imagesPass(fonts(stylesheets(html))))))));
 }
