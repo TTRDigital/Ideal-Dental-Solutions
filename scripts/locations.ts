@@ -17,6 +17,7 @@ import { join } from "node:path";
 import sharp from "sharp";
 import { HUB, MCLEAN, MCLEAN_PAGE, TOWNS, type Faq, type Page, type Town } from "./locations-content.ts";
 import { STYLE, careChips, directions, facts, glance, serviceCards, townCards } from "./location-design.ts";
+import { SERVICE_PAGES } from "./service-pages-content.ts";
 
 type Node = Record<string, unknown> & { _key?: string; elId?: string; children?: Node[]; items?: Node[]; content?: Node[] };
 type Doc = Record<string, unknown> & { _id: string; _type: string; path?: string };
@@ -153,8 +154,7 @@ function raw(html: string): Node {
   return { _key: newKey(), elId: id, _type: "elContainer", children: [w], tpl: `<div class="elementor-element elementor-element-${id} e-con-full e-flex e-con e-parent" data-id="${id}" data-element_type="container" data-e-type="container">\n\t\t\t\t[[@nodes:children]]</div>` };
 }
 
-function sections(pg: Page, crumbs: [string, string?][], key: string, town: string) {
-  const look = LOOK[key];
+function sections(pg: Page, crumbs: [string, string?][], key: string, town: string, look: Look = LOOK[key]) {
   const out: Node[] = [];
   out.push(
     container(
@@ -173,7 +173,8 @@ function sections(pg: Page, crumbs: [string, string?][], key: string, town: stri
   if (key !== "mclean") add(glance());
   for (const s of pg.sections) {
     if (s.kind === "text") {
-      if (/^Getting Here|^Visit Our Office/.test(s.heading)) add(directions(s.heading.replace(/^Visit Our Office$/, "Getting to our office"), s.html));
+      if (s.look === "cards") add(directions(s.heading, s.html));
+      else if (/^Getting Here|^Visit Our Office/.test(s.heading)) add(directions(s.heading.replace(/^Visit Our Office$/, "Getting to our office"), s.html));
       else if (/^Our Office and the Towns/.test(s.heading)) add(townCards("Towns we serve", s.html, "One office, a short drive from each of these towns. Drive times are approximate."));
       else if (/^Our Office$/.test(s.heading)) continue; // the glance band above carries the address, phone, hours and Metro
       else if (/^Local Dental Health Facts/.test(s.heading)) add(facts(s.heading, s.html, town));
@@ -261,11 +262,11 @@ function frame(id: number) {
   return String(source!.frameTpl).replace(new RegExp(`<article id="post-${SOURCE_ID}" class="post-${SOURCE_ID} `), `<article id="post-${id}" class="post-${id} `);
 }
 
-function bodyClass(id: number, child: boolean) {
-  return `wp-singular page-template-default page page-id-${id}${child ? " page-child parent-pageid-868" : " page-parent"} wp-custom-logo wp-embed-responsive wp-theme-blocksy elementor-default elementor-kit-5 elementor-page elementor-page-${id} ct-elementor-default-template`;
+function bodyClass(id: number, child: boolean, parentId = 868) {
+  return `wp-singular page-template-default page page-id-${id}${child ? ` page-child parent-pageid-${parentId}` : " page-parent"} wp-custom-logo wp-embed-responsive wp-theme-blocksy elementor-default elementor-kit-5 elementor-page elementor-page-${id} ct-elementor-default-template`;
 }
 
-async function build(pg: Page, opts: { key: string; town: string; id: string; wpId: number; path: string; title: string; crumbs: [string, string?][]; ancestors: string[]; parent?: string; areaServed?: Node[] }) {
+async function build(pg: Page, opts: { key: string; town: string; id: string; wpId: number; path: string; title: string; crumbs: [string, string?][]; ancestors: string[]; parent?: string; parentWpId?: number; areaServed?: Node[]; look?: Look; after?: string }) {
   keySeed = opts.path;
   keyCount = 0;
   const existing = docs.find((d) => d._id === opts.id);
@@ -273,7 +274,8 @@ async function build(pg: Page, opts: { key: string; town: string; id: string; wp
   const modified = pg.date;
   const url = `${SITE}${opts.path}`;
   // The hub and the McLean page keep their existing social images; each town gets one from its own hero photo.
-  if (!["hub", "mclean"].includes(opts.key)) await ogImage(opts.path, PHOTOS[LOOK[opts.key].hero].url);
+  const look = opts.look || LOOK[opts.key];
+  if (!["hub", "mclean"].includes(opts.key)) await ogImage(opts.path, PHOTOS[look.hero].url);
   const doc: Doc = {
     seo: {
       title: pg.title,
@@ -294,8 +296,8 @@ async function build(pg: Page, opts: { key: string; town: string; id: string; wp
       twitterCard: "summary_large_image",
       schema: schema(pg, opts.path, `${published.slice(0, 10)}T12:00:00+00:00`, `${modified}T12:00:00+00:00`, opts.crumbs, opts.areaServed),
     },
-    bodyClass: bodyClass(opts.wpId, Boolean(opts.parent)),
-    content: sections(pg, opts.crumbs, opts.key, opts.town),
+    bodyClass: bodyClass(opts.wpId, Boolean(opts.parent), opts.parentWpId),
+    content: sections(pg, opts.crumbs, opts.key, opts.town, look),
     frameTpl: frame(opts.wpId),
     shell: source!.shell,
     _id: opts.id,
@@ -313,6 +315,7 @@ async function build(pg: Page, opts: { key: string; town: string; id: string; wp
   };
   const at = docs.findIndex((d) => d._id === opts.id);
   if (at >= 0) docs[at] = doc;
+  else if (opts.after) docs.splice(docs.findIndex((d) => d._id === opts.after) + 1, 0, doc);
   else docs.splice(docs.findIndex((d) => d.path === "/locations/mclean/") + 1 + TOWNS.findIndex((t) => opts.path.includes(`/${t.slug}/`)), 0, doc);
 }
 
@@ -348,7 +351,35 @@ for (const [i, t] of TOWNS.entries()) {
   });
 }
 
+// Service pages for McLean and Tysons (TTR-2492), text in scripts/service-pages-content.ts.
+// McLean ones sit under /locations/mclean/ (the blank WordPress page stays as it is), Tysons ones under /locations/tysons/.
+let after = `page-location-${TOWNS[TOWNS.length - 1].slug}`;
+for (const [i, sp] of SERVICE_PAGES.entries()) {
+  const slug = sp.path.split("/").filter(Boolean).pop()!;
+  const mclean = sp.area === "mclean";
+  const areaName = mclean ? "McLean" : TOWNS.find((t) => t.slug === sp.area)!.name;
+  const id = `page-service-${sp.area}-${slug}`;
+  await build(sp, {
+    key: id,
+    town: areaName,
+    id,
+    wpId: 9201 + i,
+    path: sp.path,
+    title: `${sp.name} in ${areaName}`,
+    // The McLean page is blank and not indexed, so McLean service pages link straight to Areas We Serve.
+    crumbs: mclean ? [["Home", "/"], ["Areas We Serve", "/locations/"], [`${sp.name} in McLean`]] : [["Home", "/"], ["Areas We Serve", "/locations/"], [areaName, `/locations/${sp.area}/`], [sp.name]],
+    ancestors: mclean ? ["/locations/mclean/", "/locations/"] : [`/locations/${sp.area}/`, "/locations/"],
+    parent: mclean ? "page-931" : `page-location-${sp.area}`,
+    parentWpId: mclean ? 931 : 9101 + TOWNS.findIndex((t) => t.slug === sp.area),
+    areaServed: [mclean ? MCLEAN : TOWNS.find((t) => t.slug === sp.area)!.place],
+    look: sp.look as Look,
+    after,
+  });
+  after = id;
+}
+
 if (!withMclean && mcleanBefore) docs[docs.findIndex((d) => d._id === "page-931")] = mcleanBefore;
 
 writeFileSync(file, JSON.stringify(docs, null, 1));
 console.log(`Location pages: /locations/, ${withMclean ? "/locations/mclean/, " : ""}${TOWNS.map((t: Town) => `/locations/${t.slug}/`).join(", ")}`);
+console.log(`Service pages: ${SERVICE_PAGES.map((p) => p.path).join(", ")}`);

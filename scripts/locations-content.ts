@@ -11,7 +11,7 @@ type Photo = { src: string; width: string; height: string; alt: string };
 
 /** A light section with a heading and text, or a dark one with a team photo and an accordion. */
 export type Section =
-  | { kind: "text"; heading: string; html: string }
+  | { kind: "text"; heading: string; html: string; look?: "cards" }
   | { kind: "accordion"; heading: string; intro: string; photo: Photo; items: { title: string; text: string }[]; link: string };
 
 export type Page = {

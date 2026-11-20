@@ -44,7 +44,8 @@ function seed(): SeedDoc[] {
  * empty page (/locations/ was blank on WordPress): served from
  * content/seed.json until `npm run seed` publishes them. As soon as the CMS
  * page has content, the CMS wins. Only the paths listed here are ever served
- * this way (TTR-2470: the Areas We Serve page and the five town pages), so a
+ * this way (TTR-2470: the Areas We Serve page and the five town pages;
+ * TTR-2492: the McLean and Tysons service pages), so a
  * page the CMS lacks for any other reason never comes back from the built-in
  * copy.
  */
@@ -55,6 +56,11 @@ const BUILT_IN_PATHS = new Set([
   "/locations/falls-church/",
   "/locations/great-falls/",
   "/locations/potomac/",
+  // TTR-2492: service pages for McLean and Tysons (scripts/service-pages-content.ts).
+  "/locations/tysons/invisalign/",
+  "/locations/mclean/cosmetic-dentistry/",
+  "/locations/tysons/cosmetic-dentistry/",
+  "/locations/mclean/dental-bonding/",
 ]);
 
 const hasContent = (d: Record<string, unknown> | null | undefined) => Boolean(d && (d.content || d.body));

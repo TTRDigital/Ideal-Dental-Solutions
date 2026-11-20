@@ -32,16 +32,8 @@
     "destination": "/about-us/"
   },
   {
-    "source": "/locations/mclean/cosmetic-dentistry/",
-    "destination": "/services/cosmetic-dentistry/"
-  },
-  {
     "source": "/locations/mclean/crown-lengthening/",
     "destination": "/services/periodontic-dentistry/crown-lengthening/"
-  },
-  {
-    "source": "/locations/mclean/dental-bonding/",
-    "destination": "/services/cosmetic-dentistry/dental-bonding/"
   },
   {
     "source": "/locations/mclean/dental-fillings/",
