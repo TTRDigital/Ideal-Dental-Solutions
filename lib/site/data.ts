@@ -61,6 +61,10 @@ const BUILT_IN_PATHS = new Set([
   "/locations/mclean/cosmetic-dentistry/",
   "/locations/tysons/cosmetic-dentistry/",
   "/locations/mclean/dental-bonding/",
+  "/locations/mclean/prosthodontist/",
+  "/locations/tysons/porcelain-veneers/",
+  "/locations/tysons/single-tooth-implants/",
+  "/locations/mclean/dental-crowns/",
 ]);
 
 const hasContent = (d: Record<string, unknown> | null | undefined) => Boolean(d && (d.content || d.body));
