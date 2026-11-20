@@ -314,7 +314,7 @@ const BONDING_MCLEAN: ServicePage = {
   faqHeading: "Dental Bonding Questions From McLean Patients",
   faqIntro: "Quick answers before your visit.",
   faqs: [
-    { q: "How long does dental bonding last?", a: `With good care, bonding typically lasts several years before it needs a touch-up. Brushing, flossing, not biting hard objects and regular checkups help.` },
+    { q: "How do I look after dental bonding?", a: `Brushing, flossing, not biting hard objects and regular checkups help your bonding last.` },
     { q: "Does dental bonding hurt?", a: `Most patients feel little or nothing. Bonding removes little to no enamel and usually needs no anesthesia.` },
     { q: "How long does the appointment take?", a: `Bonding is often completed in a single visit. We tell you what to expect for your tooth at your exam.` },
     { q: "Can bonding close a gap between my teeth?", a: `Often, if the gap is small. For larger gaps or crowding, we can talk about ${S.veneers} or ${S.invisalign}.` },
@@ -511,7 +511,7 @@ const IMPLANTS_TYSONS: ServicePage = {
     { q: "Where can I get a single tooth implant in Tysons?", a: `At Ideal Dental Solutions, ${ADDRESS}, in Tysons. It is our only office. ${METRO}.` },
     { q: "Who plans and restores the implant?", a: `${ADILI}, a prosthodontist. He earned his DDS at Georgetown University and trained in prosthodontics at Virginia Commonwealth University.` },
     { q: "Am I a candidate for an implant?", a: `You need healthy gums and enough bone to hold the post. A bone graft can often build bone back up. Your exam and 3D imaging answer the question for you.` },
-    { q: "Does getting an implant hurt?", a: `The area is numbed with local anesthesia. Some mild soreness afterward is normal and usually fades within a few days.` },
+    { q: "Does getting an implant hurt?", a: `The area is numbed with local anesthesia. Your dentist will explain what to expect after the visit.` },
     { q: "How long does the process take?", a: `Usually a few months, mostly so the bone can heal around the post. A bone graft adds time. We give you a plan for your case after your consultation.` },
   ],
   cta: cta("Book an Implant Consultation in Tysons", "an implant consultation"),

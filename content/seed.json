@@ -12103,7 +12103,7 @@
          {
           "_type": "accordionItem",
           "_key": "b1e5e8f00e33",
-          "title": "How long does dental bonding last?",
+          "title": "How do I look after dental bonding?",
           "content": [
            {
             "_key": "40ff986c29e7",
@@ -12114,7 +12114,7 @@
              {
               "_type": "htmlBlock",
               "_key": "946801503efa",
-              "html": "<p>With good care, bonding typically lasts several years before it needs a touch-up. Brushing, flossing, not biting hard objects and regular checkups help.</p>"
+              "html": "<p>Brushing, flossing, not biting hard objects and regular checkups help your bonding last.</p>"
              }
             ],
             "tpl": "<div class=\"elementor-element elementor-element-78763b7 elementor-widget elementor-widget-text-editor\" data-id=\"78763b7\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
@@ -13683,7 +13683,7 @@
              {
               "_type": "htmlBlock",
               "_key": "6d6dc7fb3d39",
-              "html": "<p>The area is numbed with local anesthesia. Some mild soreness afterward is normal and usually fades within a few days.</p>"
+              "html": "<p>The area is numbed with local anesthesia. Your dentist will explain what to expect after the visit.</p>"
              }
             ],
             "tpl": "<div class=\"elementor-element elementor-element-675708f elementor-widget elementor-widget-text-editor\" data-id=\"675708f\" data-element_type=\"widget\" data-e-type=\"widget\" data-widget_type=\"text-editor.default\">[[@rich:body]]</div>"
