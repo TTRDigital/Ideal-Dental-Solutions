@@ -125,7 +125,7 @@ const cta = (town: string, photo: string) => ({
 export const MCLEAN = { "@type": "City", name: "McLean, VA", containedInPlace: FAIRFAX_COUNTY };
 
 export const HUB: Page = {
-  title: "Areas We Serve | Ideal Dental Solutions",
+  title: "Areas We Serve Near McLean, VA | Ideal Dental Solutions",
   description: "Ideal Dental Solutions has one office, in McLean at 8280 Greensboro Drive, and sees patients from Tysons, Vienna, Falls Church, Great Falls and Potomac, MD.",
   h1: "Areas We Serve From Our McLean Office",
   subtitle: "One office in Tysons, a short drive from nearby towns",
@@ -259,7 +259,7 @@ export const TOWNS: Town[] = [
     slug: "tysons",
     name: "Tysons",
     place: { "@type": "City", name: "Tysons, VA", containedInPlace: FAIRFAX_COUNTY },
-    title: "Dentist in Tysons, VA | Ideal Dental Solutions",
+    title: "Your Dentist in Tysons, VA | Ideal Dental Solutions",
     description: "Ideal Dental Solutions is in Tysons at 8280 Greensboro Drive, about 8 minutes on foot from Greensboro Metro: checkups, gum care, fillings, whitening and more.",
     h1: "Your Dentist in Tysons, VA",
     subtitle: "Our McLean office is in Tysons, near Greensboro Metro",

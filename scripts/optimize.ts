@@ -160,7 +160,8 @@ for (const [key, group] of groups) {
       if (rule.parent?.type !== "root" || !rule.selector.includes(`.elementor-element-${id}`) || /::?(before|after)/.test(rule.selector)) return;
       rule.walkDecls(/^background(-image)?$/, (decl) => {
         const url = /url\((['"]?)(\/wp-content\/uploads\/[^'")]+)\1\)/.exec(decl.value)?.[2];
-        if (url && !heroes[id]) heroes[id] = [url, phoneCopy(url.replace(/\.webp$/, ""))];
+        // "x.png.webp" is the copy of an uploaded PNG; "x.webp" was uploaded as WebP.
+        if (url && !heroes[id]) heroes[id] = [url, phoneCopy(url) || phoneCopy(url.replace(/\.webp$/, ""))];
       });
     });
   }

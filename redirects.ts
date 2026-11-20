@@ -20,7 +20,14 @@ type Row = { source: string; destination: string; query?: Record<string, string>
 // WordPress' "Patient Guides" category is now the blog (lib/site/blog.ts).
 const blog: Row[] = [{ source: "/category/patient-guides/", destination: "/blog/" }];
 
+/**
+ * Each source is written without its trailing slash: Next.js then matches the address with or
+ * without it, so an old address typed either way (/contact-us, /contact-us/) reaches its page in one
+ * 301. proxy.ts adds the slash to every other address after these rules (TTR-2515).
+ */
+const anySlash = (source: string) => (source.length > 1 ? source.replace(/\/+$/, "") : source);
+
 // Shortlinks (/?p=, /?page_id=, /?author=, /?cat=) are handled in proxy.ts.
 export const redirects = [...(wordpress as Row[]), ...(searchConsole as Row[]), ...blog]
   .filter((r) => !r.query)
-  .map((r) => ({ source: r.source, destination: r.destination, statusCode: 301 as const }));
+  .map((r) => ({ source: anySlash(r.source), destination: r.destination, statusCode: 301 as const }));

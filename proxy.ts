@@ -36,7 +36,30 @@ function searchRewrite(req: NextRequest) {
   return NextResponse.rewrite(url);
 }
 
+/** A last segment with a dot is a file (/wp-admin/admin-ajax.php, /sitemap.xml), except under /.well-known/. */
+const FILE = /^\/(?!\.well-known(?:\/|$))(?:[^/]+\/)*[^/]+\.\w+\/?$/;
+
+/**
+ * Trailing slashes (next.config.ts sets skipTrailingSlashRedirect): Next.js' own slash redirect ran
+ * before the redirect rules, so an old address typed without the slash (/contact-us, which Google
+ * still sends visitors to) took two hops. The rules in redirects.ts match with or without the slash
+ * and now answer first, in one hop; every other address gets the same 308 Next.js gave: a slash
+ * added to pages, removed from files, query string kept.
+ */
+function trailingSlash(req: NextRequest) {
+  // The raw URL: req.nextUrl formats paths without the slash when Next.js' own slash handling is off.
+  const url = new URL(req.url);
+  const { pathname } = url;
+  if (pathname === "/" || pathname.startsWith("/.well-known/")) return null;
+  const file = FILE.test(pathname);
+  if (file ? !pathname.endsWith("/") : pathname.endsWith("/")) return null;
+  url.pathname = file ? pathname.replace(/\/+$/, "") : `${pathname}/`;
+  return NextResponse.redirect(url.toString(), 308);
+}
+
 export function proxy(req: NextRequest) {
+  const slash = trailingSlash(req);
+  if (slash) return slash;
   const { searchParams, pathname } = req.nextUrl;
   if (pathname === "/") {
     for (const key of ["p", "page_id", "author", "cat"]) {
@@ -48,4 +71,5 @@ export function proxy(req: NextRequest) {
   return searchRewrite(req) || NextResponse.next();
 }
 
-export const config = { matcher: ["/", "/page/:path*", "/search/:path*"] };
+// Every address except Next.js' own files and the static folders (their files keep their names).
+export const config = { matcher: ["/((?!_next/|wp-content/|wp-includes/|assets/|images/|og/).*)"] };

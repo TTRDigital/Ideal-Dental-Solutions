@@ -1,5 +1,7 @@
 import imagesJson from "../generated/images.json" with { type: "json" };
+import inlineJson from "../generated/inline-images.json" with { type: "json" };
 import pageCssJson from "../generated/page-css.json" with { type: "json" };
+import { INLINE_IMAGE, inlineHash } from "./inline-images.ts";
 
 /**
  * Speed pass over a rendered page (the HTML WordPress printed,
@@ -18,9 +20,12 @@ import pageCssJson from "../generated/page-css.json" with { type: "json" };
  * - images: WebP copies (npm run images), a 768px copy for phones, the
  *   original width and height (no layout shift) and lazy loading below the
  *   first section
- * - scripts are printed exactly as WordPress printed them (jQuery in the
- *   head, footer scripts in order). Deferring them let Elementor start before
- *   Elementor Pro's form and carousel handlers on fast connections (#4, #7).
+ * - scripts run exactly in WordPress' order, never deferred (deferring them let
+ *   Elementor start before Elementor Pro's form and carousel handlers on fast
+ *   connections, #4, #7); only jQuery moves from the head to the footer
+ *   scripts (jqueryToFooter)
+ * - images uploaded as WebP get a 768px phone copy too (npm run images)
+ * - base64 images pasted into the content are served as files (inlineImages)
  */
 
 /** [width, height, WebP width or 0, phone copy width or 0] by original path. */
@@ -30,8 +35,12 @@ const images = imagesJson as unknown as Record<string, [number, number, number, 
 type CssBundle = { file: string; dropped: string; heroes?: Record<string, [string, string | null]> };
 const pageCss = pageCssJson as unknown as { dictionary: string[]; bundles: Record<string, CssBundle> };
 
-/** Nothing may widen the page sideways (the hero's video frame is wider than a phone). `clip` keeps the sticky header working. */
-const GUARD = "<style id=\"overflow-guard\">html{overflow-x:clip}</style>";
+/**
+ * Nothing may widen the page sideways (the hero's video frame is wider than a phone). `clip` keeps the sticky header working.
+ * The footer logo (666x375) is drawn in a 144x75 box: `contain` shows it at its own proportions in that same box instead of squeezed.
+ */
+const GUARD =
+  "<style id=\"overflow-guard\">html{overflow-x:clip}img[src*=\"/ChatGPT_Image_Jul_30__2026__01_30_28_AM-removebg-preview\"]{object-fit:contain}</style>";
 
 /** Urbanist (variable, latin and latin-ext) from this site instead of Google Fonts: no extra connections before the first paint. */
 const LATIN = "U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD";
@@ -108,7 +117,7 @@ function stylesheets(html: string) {
   const heroTag = main >= 0 ? /<div class="[^"]*\be-parent\b[^"]*"[^>]*data-id="([0-9a-f]+)"[^>]*>/.exec(html.slice(main)) : null;
   const heroId = heroTag?.[1];
   // A first section with its own photo in an inline style (location pages) preloads that photo instead.
-  const own = heroTag ? /\sstyle="[^"]*background-image:\s*url\(['"]?(\/wp-content\/uploads\/[^'")]+?\.(?:png|jpe?g))/i.exec(heroTag[0])?.[1] : undefined;
+  const own = heroTag ? /\sstyle="[^"]*background-image:\s*url\(['"]?(\/wp-content\/uploads\/[^'")]+?\.(?:png|jpe?g|webp))/i.exec(heroTag[0])?.[1] : undefined;
   const hero: [string, string | null] | undefined = own ? [webp(own), phoneCopy(own)] : heroId ? bundle.heroes?.[heroId] : undefined;
   const preload = hero
     ? hero[1]
@@ -206,10 +215,47 @@ function imagesPass(html: string) {
 function heroPhone(html: string) {
   const main = html.indexOf('<main id="main"');
   const tag = main >= 0 ? /<div class="[^"]*\be-parent\b[^"]*"[^>]*data-id="([0-9a-f]+)"[^>]*>/.exec(html.slice(main)) : null;
-  const own = tag ? /\sstyle="[^"]*background-image:\s*url\(['"]?(\/wp-content\/uploads\/[^'")]+?\.(?:png|jpe?g))(?:\.webp)?['"]?\)/i.exec(tag[0])?.[1] : undefined;
+  const own = tag ? /\sstyle="[^"]*background-image:\s*url\(['"]?(\/wp-content\/uploads\/[^'")]+?\.(?:png|jpe?g|webp))(?:\.webp)?['"]?\)/i.exec(tag[0])?.[1] : undefined;
   const phone = own ? phoneCopy(own) : null;
   if (!tag || !phone) return html;
   return html.replace("</head>", `<style id="hero-phone">@media (max-width: 767px){.elementor-element-${tag[1]}[style]{background-image:url(${phone})!important}}</style>\n</head>`);
+}
+
+/**
+ * jQuery and jQuery Migrate move from the head to just before the first footer
+ * script that loads a file or uses jQuery (nothing above that point needs them),
+ * so they no longer hold up the first paint. They and every other script still
+ * load and run in the original order, without defer or async: deferring them
+ * let Elementor start before Elementor Pro's form handler (#4, #9). Same change
+ * as #17, which was reverted after Vercel answered 502 for two static files
+ * during the production check (TTR-2515 brings it back).
+ */
+function jqueryToFooter(html: string) {
+  const headEnd = html.indexOf("</head>");
+  if (headEnd < 0) return html;
+  const tags: string[] = [];
+  const head = html.slice(0, headEnd).replace(/<script id="jquery-(?:core|migrate)-js" src="[^"]*"><\/script>\n?/g, (t) => {
+    tags.push(t.trim());
+    return "";
+  });
+  if (tags.length !== 2) return html;
+  const body = html.slice(headEnd);
+  const at = [...body.matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)].find((m) => /\ssrc=/.test(m[0].slice(0, m[0].indexOf(">"))) || /jQuery|\$\(/.test(m[1]));
+  if (!at || at.index == null) return html;
+  return `${head}${body.slice(0, at.index)}${tags.join("\n")}\n${body.slice(at.index)}`;
+}
+
+/** Files of the base64 images pasted into the content, by hash (npm run images). */
+const inlineFiles = inlineJson as Record<string, string>;
+
+/**
+ * Base64 images in the content (PNG photos inside inline SVG icons) point at the same bytes saved as a
+ * file in public/assets/inline: about 94 KB less HTML on each service page, and the file is cached.
+ * One the file list does not know (new content in the CMS) stays inline.
+ */
+function inlineImages(html: string) {
+  if (!html.includes(";base64,")) return html;
+  return html.replace(INLINE_IMAGE, (uri, _ext: string, data: string) => inlineFiles[inlineHash(data)] || uri);
 }
 
 function guard(html: string) {
@@ -217,5 +263,5 @@ function guard(html: string) {
 }
 
 export function optimizeHtml(html: string) {
-  return guard(heroPhone(imagesPass(fonts(stylesheets(html)))));
+  return guard(jqueryToFooter(inlineImages(heroPhone(imagesPass(fonts(stylesheets(html)))))));
 }

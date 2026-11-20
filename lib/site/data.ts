@@ -7,9 +7,10 @@ import { apiVersion, dataset, projectId } from "@/sanity/env";
 import { blogPaths } from "./blog";
 import { buildSiteData, normalizePath, resolvePath, resolveSearch, resolveSearchFrom, type SeedDoc } from "./local";
 import type { ArchiveDoc, PageDoc, Resolved, SearchPageDoc, SiteData } from "./render";
+import type { Seo } from "../render/seo";
 
 /** Pages that answer a 301 (redirects.ts) stay out of the sitemap and /llms.txt. */
-const redirected = new Set(redirects.map((r) => r.source));
+const redirected = new Set(redirects.flatMap((r) => [r.source, `${r.source}/`]));
 
 /** ISR window for CMS content, in seconds. Publishing also refreshes via /api/revalidate. */
 export const REVALIDATE_SECONDS = 300;
@@ -37,6 +38,11 @@ let seedCache: SeedDoc[] | null = null;
 function seed(): SeedDoc[] {
   if (!seedCache) seedCache = JSON.parse(readFileSync(join(process.cwd(), "content/seed.json"), "utf8")) as SeedDoc[];
   return seedCache;
+}
+
+/** The reviewed SEO fields of a page in the built-in copy (lib/site/seo-lengths.ts). */
+export function reviewedSeoFor(path: string): Seo | undefined {
+  return seed().find((d) => d._type === "page" && d.path === path)?.seo as Seo | undefined;
 }
 
 /**
