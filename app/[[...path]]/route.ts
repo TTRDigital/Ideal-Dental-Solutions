@@ -1,4 +1,4 @@
-import { allPaths, getSite, resolve, reviewedSeoFor, REVALIDATE_SECONDS } from "@/lib/site/data";
+import { allPaths, getSite, publishedPosts, resolve, reviewedSeoFor, REVALIDATE_SECONDS } from "@/lib/site/data";
 import { reviewedSeo } from "@/lib/site/seo-lengths";
 import { resolveBlog } from "@/lib/site/blog";
 import { feedXml, sitemapIndex, sitemapXml } from "@/lib/site/sitemaps";
@@ -49,7 +49,8 @@ export async function GET(_req: Request, ctx: { params: Promise<{ path?: string[
   }
 
   const path = `/${segments.map((s) => decodeURIComponent(s)).join("/")}${segments.length ? "/" : ""}`;
-  const found = resolveBlog(path) ?? (await resolve(path, site.fromCms));
+  // Blog: repo posts plus published Sanity posts (only fetched for /blog/ addresses).
+  const found = resolveBlog(path, path.startsWith("/blog/") ? await publishedPosts() : []) ?? (await resolve(path, site.fromCms));
   if (!found) return new Response("Not found", { status: 404 });
   // CMS titles and descriptions out of range get the reviewed ones until the CMS is seeded (lib/site/seo-lengths.ts).
   const resolved = found.kind === "page" ? { ...found, doc: { ...found.doc, seo: reviewedSeo(found.doc.seo, reviewedSeoFor(path)) } } : found;

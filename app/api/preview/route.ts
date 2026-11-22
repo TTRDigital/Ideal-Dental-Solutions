@@ -5,7 +5,7 @@ import { renderDocument, type ArchiveDoc, type PageDoc, type Resolved } from "@/
 import { optimizeHtml } from "@/lib/site/optimize";
 import { seoPass } from "@/lib/site/seo-pass";
 import { withoutArlington } from "@/lib/site/arlington";
-import { resolvePostDraft, type PostDraft } from "@/lib/site/blog";
+import { POST_FIELDS, resolvePostDraft, type PostDraft } from "@/lib/site/blog";
 import { apiVersion, dataset, projectId } from "@/sanity/env";
 import { recaptchaSiteKey } from "@/lib/recaptcha";
 
@@ -34,7 +34,7 @@ function signedOk(secret: string, path: string, exp: string, sig: string) {
 }
 
 const PAGE_QUERY = `*[_type in ["page", "archivePage"] && path == $path] | order(_id in path("drafts.**") desc)[0]`;
-const POST_QUERY = `*[_type == "post" && slug.current == $slug] | order(_id in path("drafts.**") desc)[0]{title, "slug": slug.current, body, excerpt, description, publishedAt, _updatedAt, category}`;
+const POST_QUERY = `*[_type == "post" && slug.current == $slug] | order(_id in path("drafts.**") desc)[0]${POST_FIELDS}`;
 
 async function draftDoc<T>(token: string, query: string, params: Record<string, string>): Promise<T | null> {
   const search = new URLSearchParams({ query, perspective: "drafts" });

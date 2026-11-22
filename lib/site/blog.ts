@@ -57,46 +57,72 @@ const LIST_BODY_CLASS = "blog wp-custom-logo wp-embed-responsive wp-theme-blocks
 
 export const postPath = (p: BlogPost) => `${BLOG_PATH}${p.slug}/`;
 
-const sorted = () => [...posts].sort((a, b) => b.published.localeCompare(a.published));
+const byDate = (list: BlogPost[]) => [...list].sort((a, b) => b.published.localeCompare(a.published));
+const sorted = () => byDate(posts);
 const categoryOf = (p: BlogPost) => CATEGORIES.find((c) => c.key === p.category) || CATEGORIES[0];
 
+/**
+ * Repo posts plus published Sanity posts (TTR OS v2). A Sanity post never replaces a repo post with the same slug,
+ * so the repo posts stay exactly as they are.
+ */
+const withCms = (cms: BlogPost[]) => [...posts, ...cms.filter((c) => !posts.some((p) => p.slug === c.slug))];
+
 /** Blog URLs for allPaths(): the list is a page, each post a post (post-sitemap.xml). */
-export function blogPaths(): { path: string; type: string; modified?: string }[] {
-  const list = sorted();
+export function blogPaths(cms: BlogPost[] = []): { path: string; type: string; modified?: string }[] {
+  const list = byDate(withCms(cms));
   return [
     { path: BLOG_PATH, type: "page", modified: list[0]?.modified || list[0]?.published },
     ...list.map((p) => ({ path: postPath(p), type: "post", modified: p.modified || p.published })),
   ];
 }
 
-/** The blog page for a path, or null when the path is not part of the blog. */
-export function resolveBlog(path: string): Resolved | null {
-  if (path === BLOG_PATH) return { kind: "page", doc: listDoc(), ancestors: [] };
-  const post = posts.find((p) => postPath(p) === path);
+/** The blog page for a path, or null when the path is not part of the blog. `cms` are the published Sanity posts. */
+export function resolveBlog(path: string, cms: BlogPost[] = []): Resolved | null {
+  if (path === BLOG_PATH) return { kind: "page", doc: listDoc(byDate(withCms(cms))), ancestors: [] };
+  const post = withCms(cms).find((p) => postPath(p) === path);
   return post ? { kind: "page", doc: postDoc(post), ancestors: [BLOG_PATH] } : null;
 }
 
-/** A Sanity "post" draft as TTR OS saves it (title, slug, body; the rest is optional). */
-export type PostDraft = { title?: string; slug?: string; body?: unknown; excerpt?: string; description?: string; publishedAt?: string; _updatedAt?: string; category?: string };
+/** A Sanity "post" as TTR OS saves it (title, slug, body; the rest is optional). */
+export type PostDraft = {
+  title?: string;
+  slug?: string;
+  body?: unknown;
+  excerpt?: string;
+  description?: string;
+  seoTitle?: string;
+  publishedAt?: string;
+  _createdAt?: string;
+  _updatedAt?: string;
+  category?: string;
+};
 
-/**
- * Preview only (app/api/preview): a Sanity post draft in the blog post layout. The live blog still comes from
- * content/blog/posts.ts; nothing here is listed, linked or cached. Missing fields fall back to plain defaults
- * so a minimal draft (title, slug, one paragraph) renders.
- */
-export function resolvePostDraft(d: PostDraft): Resolved | null {
+/** GROQ projection that fills PostDraft. */
+export const POST_FIELDS = `{title, "slug": slug.current, body, excerpt, description, seoTitle, publishedAt, _createdAt, _updatedAt, category}`;
+
+/** Only text and HTML blocks are printed; anything else in the body (images, embeds) is left out. */
+const bodyHtml = (body: unknown) =>
+  Array.isArray(body)
+    ? renderPortableText((body as { _type?: string }[]).filter((b) => b && (b._type === "block" || b._type === "htmlBlock")) as PtBlock[])
+    : typeof body === "string" && body.trim()
+      ? `<p>${escapeHtml(body.trim())}</p>`
+      : "";
+
+/** A Sanity post in the blog post shape, or null without a usable slug. Missing fields fall back to plain defaults. */
+export function postFromSanity(d: PostDraft): BlogPost | null {
   if (!d.slug || !/^[a-z0-9-]+$/.test(d.slug)) return null;
   const title = (d.title || "").trim() || "Untitled draft";
-  const body = Array.isArray(d.body) ? renderPortableText(d.body as PtBlock[]) : typeof d.body === "string" && d.body.trim() ? `<p>${escapeHtml(d.body.trim())}</p>` : "";
-  const date = (d.publishedAt || d._updatedAt || new Date().toISOString()).slice(0, 10);
+  const body = bodyHtml(d.body);
+  const published = (d.publishedAt || d._createdAt || d._updatedAt || new Date().toISOString()).slice(0, 10);
+  const modified = d._updatedAt?.slice(0, 10);
   const c = CATEGORIES.find((x) => x.key === d.category) || CATEGORIES[0];
-  const description = (d.description || d.excerpt || strip(body).slice(0, 155)).trim();
-  const post: BlogPost = {
+  return {
     slug: d.slug,
     title,
-    seoTitle: title,
-    description,
-    published: date,
+    seoTitle: (d.seoTitle || "").trim() || title,
+    description: (d.description || d.excerpt || strip(body).slice(0, 155)).trim(),
+    published,
+    ...(modified && modified > published ? { modified } : {}),
     service: { path: c.path, label: c.name },
     category: c.key,
     photo: c.photo,
@@ -106,7 +132,12 @@ export function resolvePostDraft(d: PostDraft): Resolved | null {
     faq: [],
     sources: [],
   };
-  return { kind: "page", doc: postDoc(post), ancestors: [BLOG_PATH] };
+}
+
+/** Preview only (app/api/preview): a Sanity post draft in the blog post layout. */
+export function resolvePostDraft(d: PostDraft): Resolved | null {
+  const post = postFromSanity(d);
+  return post ? { kind: "page", doc: postDoc(post), ancestors: [BLOG_PATH] } : null;
 }
 
 /* ---------------- helpers ---------------- */
@@ -461,10 +492,9 @@ ${sources ? `\t\t\t\t<h2 class="ib-eyebrow">Sources</h2>\n\t\t\t\t<ul>${sources}
 
 /* ---------------- list page ---------------- */
 
-function listDoc(): PageDoc {
+function listDoc(list: BlogPost[] = sorted()): PageDoc {
   const url = SITE + BLOG_PATH;
   const crumbs = [{ name: "Home", path: "/" }, { name: "Blog" }];
-  const list = sorted();
   const groups = CATEGORIES.map((c) => ({ ...c, posts: list.filter((p) => categoryOf(p).key === c.key) })).filter((g) => g.posts.length);
   const chips = `<nav class="ib-chips" aria-label="Categories">
 \t<a href="#articles" class="ib-chip ib-chip-active">All articles <span>${list.length}</span></a>
