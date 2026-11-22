@@ -1,5 +1,6 @@
 import { posts, type BlogPost } from "../../content/blog/posts.ts";
 import { escapeAttr, escapeHtml } from "../render/html.ts";
+import { renderPortableText, type PtBlock } from "../render/portableText.ts";
 import type { Seo } from "../render/seo.ts";
 import type { PageDoc, Resolved } from "./render.ts";
 
@@ -73,6 +74,39 @@ export function resolveBlog(path: string): Resolved | null {
   if (path === BLOG_PATH) return { kind: "page", doc: listDoc(), ancestors: [] };
   const post = posts.find((p) => postPath(p) === path);
   return post ? { kind: "page", doc: postDoc(post), ancestors: [BLOG_PATH] } : null;
+}
+
+/** A Sanity "post" draft as TTR OS saves it (title, slug, body; the rest is optional). */
+export type PostDraft = { title?: string; slug?: string; body?: unknown; excerpt?: string; description?: string; publishedAt?: string; _updatedAt?: string; category?: string };
+
+/**
+ * Preview only (app/api/preview): a Sanity post draft in the blog post layout. The live blog still comes from
+ * content/blog/posts.ts; nothing here is listed, linked or cached. Missing fields fall back to plain defaults
+ * so a minimal draft (title, slug, one paragraph) renders.
+ */
+export function resolvePostDraft(d: PostDraft): Resolved | null {
+  if (!d.slug || !/^[a-z0-9-]+$/.test(d.slug)) return null;
+  const title = (d.title || "").trim() || "Untitled draft";
+  const body = Array.isArray(d.body) ? renderPortableText(d.body as PtBlock[]) : typeof d.body === "string" && d.body.trim() ? `<p>${escapeHtml(d.body.trim())}</p>` : "";
+  const date = (d.publishedAt || d._updatedAt || new Date().toISOString()).slice(0, 10);
+  const c = CATEGORIES.find((x) => x.key === d.category) || CATEGORIES[0];
+  const description = (d.description || d.excerpt || strip(body).slice(0, 155)).trim();
+  const post: BlogPost = {
+    slug: d.slug,
+    title,
+    seoTitle: title,
+    description,
+    published: date,
+    service: { path: c.path, label: c.name },
+    category: c.key,
+    photo: c.photo,
+    answer: d.excerpt ? `<p>${escapeHtml(d.excerpt)}</p>` : "",
+    sections: body ? [{ heading: "", html: body }] : [],
+    cta: { heading: "Questions? Talk with our team.", text: c.blurb },
+    faq: [],
+    sources: [],
+  };
+  return { kind: "page", doc: postDoc(post), ancestors: [BLOG_PATH] };
 }
 
 /* ---------------- helpers ---------------- */
@@ -240,17 +274,23 @@ function postDoc(p: BlogPost): PageDoc {
   const modified = p.modified || p.published;
   const mins = minutes(p);
 
-  const toc = [...p.sections.map((s) => ({ id: slugId(s.heading), label: s.heading })), { id: "faq", label: "Frequently asked questions" }];
+  const toc = [...p.sections.filter((s) => s.heading).map((s) => ({ id: slugId(s.heading), label: s.heading })), ...(p.faq.length ? [{ id: "faq", label: "Frequently asked questions" }] : [])];
   const tocList = `<ol class="ib-toc-list">${toc.map((t, i) => `<li><a href="#${t.id}"><span aria-hidden="true">${String(i + 1).padStart(2, "0")}</span>${escapeHtml(t.label)}</a></li>`).join("")}</ol>`;
 
   // The call-to-action band sits after the third section (the fourth in long posts), as in the TTR design.
   const ctaAfter = Math.min(p.sections.length, p.sections.length >= 6 ? 4 : 3) - 1;
   const sections = p.sections
     .map(
-      (s, i) => `<section aria-labelledby="${slugId(s.heading)}">
+      (s, i) => `${
+        s.heading
+          ? `<section aria-labelledby="${slugId(s.heading)}">
 \t<h2 id="${slugId(s.heading)}" class="ib-h2">${escapeHtml(s.heading)}</h2>
 \t${s.html}
-</section>${
+</section>`
+          : `<section>
+\t${s.html}
+</section>`
+      }${
         i === ctaAfter
           ? `\n<aside class="ib-band" aria-label="Request an appointment">
 \t<p>${escapeHtml(p.cta.heading)}</p>
@@ -300,15 +340,19 @@ function postDoc(p: BlogPost): PageDoc {
 <div class="ib-paper">
 \t<div class="ib-box ib-layout">
 \t\t<div class="ib-main">
-\t\t\t<div class="ib-inshort ib-cardbox"><div class="ib-eyebrow">In short</div>${p.answer}</div>
+\t\t\t${p.answer ? `<div class="ib-inshort ib-cardbox"><div class="ib-eyebrow">In short</div>${p.answer}</div>` : ""}
 \t\t\t<details class="ib-toc ib-toc-mobile ib-cardbox"><summary><span class="ib-eyebrow">In this article</span><span class="ib-toggle" aria-hidden="true"></span></summary><nav aria-label="In this article">${tocList}</nav></details>
 \t\t\t${facts}
 \t\t\t<div class="ib-body">
 ${sections}
-\t\t\t\t<section aria-labelledby="faq">
+${
+  faq
+    ? `\t\t\t\t<section aria-labelledby="faq">
 \t\t\t\t\t<h2 id="faq" class="ib-h2">Frequently asked questions</h2>
 \t\t\t\t\t<div class="ib-faqs">${faq}</div>
-\t\t\t\t</section>
+\t\t\t\t</section>`
+    : ""
+}
 \t\t\t</div>
 \t\t\t<aside class="ib-related" aria-labelledby="related-title">
 \t\t\t\t<h2 id="related-title" class="ib-eyebrow">Related service</h2>
@@ -335,8 +379,7 @@ ${sections}
 \t\t\t</footer>
 \t\t\t<div class="ib-sources">
 \t\t\t\t<p class="ib-muted">This guide is general information, not a diagnosis or treatment plan. Every mouth is different, so the right option for you depends on an exam with your dentist.</p>
-\t\t\t\t<h2 class="ib-eyebrow">Sources</h2>
-\t\t\t\t<ul>${sources}</ul>
+${sources ? `\t\t\t\t<h2 class="ib-eyebrow">Sources</h2>\n\t\t\t\t<ul>${sources}</ul>` : ""}
 \t\t\t</div>
 \t\t</div>
 \t\t<aside class="ib-side" aria-label="In this article">
@@ -395,12 +438,16 @@ ${sections}
       inLanguage: "en-US",
       potentialAction: [{ "@type": "ReadAction", target: [url] }],
     },
-    {
-      "@type": "FAQPage",
-      "@id": `${url}#faq`,
-      isPartOf: { "@id": url },
-      mainEntity: p.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: strip(f.a) } })),
-    },
+    ...(p.faq.length
+      ? [
+          {
+            "@type": "FAQPage",
+            "@id": `${url}#faq`,
+            isPartOf: { "@id": url },
+            mainEntity: p.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: strip(f.a) } })),
+          },
+        ]
+      : []),
     breadcrumbSchema(url, crumbs),
   ];
 
