@@ -14,7 +14,7 @@ import { recaptchaSiteKey } from "@/lib/recaptcha";
  * GET /api/preview?path=/some-page/&exp=<unix seconds>&sig=<hex>
  * sig = HMAC-SHA256(PREVIEW_SECRET, "<path>\n<exp>"), exp at most 30 days away. TTR OS makes the link
  * (lib/connectors/sanity.ts previewUrl). A good link shows the page with its unpublished draft, read with
- * SANITY_PREVIEW_TOKEN (a Viewer token; SANITY_WRITE_TOKEN or SANITY_READ_TOKEN also work). Nothing is saved, nothing is cached,
+ * SANITY_PREVIEW_TOKEN (a Viewer token; SANITY_WRITE_TOKEN and SANITY_READ_TOKEN are tried next if it is refused). Nothing is saved, nothing is cached,
  * search engines are told not to index it, and the TTR tracker is not added.
  * /blog/<slug>/ also finds a Sanity "post" draft by slug (TTR OS staging check), shown in the blog post layout.
  */
@@ -34,27 +34,61 @@ function signedOk(secret: string, path: string, exp: string, sig: string) {
 }
 
 const PAGE_QUERY = `*[_type in ["page", "archivePage"] && path == $path] | order(_id in path("drafts.**") desc)[0]`;
-const POST_QUERY = `*[_type == "post" && slug.current == $slug] | order(_id in path("drafts.**") desc)[0]${POST_FIELDS}`;
+// TTR OS saves blog drafts as Sanity "post" documents; they carry a slug and may also carry a path.
+const POST_QUERY = `*[_type == "post" && (path == $path || slug.current == $slug)] | order(_id in path("drafts.**") desc)[0]${POST_FIELDS}`;
 
-async function draftDoc<T>(token: string, query: string, params: Record<string, string>): Promise<T | null> {
+type Lookup<T> = { doc: T | null; status: number };
+
+/** One query with the drafts perspective, straight from the API (not the CDN), never cached. status 0: network error. */
+async function draftDoc<T>(token: string, query: string, params: Record<string, string>): Promise<Lookup<T>> {
   const search = new URLSearchParams({ query, perspective: "drafts" });
   for (const [k, v] of Object.entries(params)) search.set(`$${k}`, JSON.stringify(v));
-  const res = await fetch(`https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}?${search}`, {
-    headers: { Authorization: `Bearer ${token}` },
-    cache: "no-store",
-  });
-  if (!res.ok) {
-    console.warn(`[preview] sanity answered ${res.status}`);
-    return null;
+  try {
+    const res = await fetch(`https://${projectId}.api.sanity.io/v${apiVersion}/data/query/${dataset}?${search}`, {
+      headers: { Authorization: `Bearer ${token}` },
+      cache: "no-store",
+    });
+    if (!res.ok) return { doc: null, status: res.status };
+    return { doc: ((await res.json()) as { result?: T }).result ?? null, status: res.status };
+  } catch (err) {
+    console.warn("[preview] sanity fetch failed", err);
+    return { doc: null, status: 0 };
   }
-  return ((await res.json()) as { result?: T }).result ?? null;
+}
+
+/** The page, archive or post draft at this path, read with one token. */
+async function findDraft(token: string, path: string): Promise<{ resolved: Resolved | null; status: number }> {
+  const page = await draftDoc<PageDoc | ArchiveDoc>(token, PAGE_QUERY, { path });
+  if (page.status !== 200) return { resolved: null, status: page.status };
+  const doc = page.doc;
+  if (doc) {
+    const resolved: Resolved =
+      doc._type === "archivePage"
+        ? { kind: "archive", doc: doc as ArchiveDoc }
+        : { kind: "page", doc: doc as PageDoc, ancestors: ((doc as PageDoc & { ancestorPaths?: string[] }).ancestorPaths as string[]) || [] };
+    return { resolved, status: 200 };
+  }
+  const slug = /^\/blog\/([a-z0-9-]+)\/$/.exec(path)?.[1] ?? "";
+  const post = await draftDoc<PostDraft>(token, POST_QUERY, { path, slug });
+  return { resolved: post.doc ? resolvePostDraft(post.doc) : null, status: post.status };
+}
+
+/** Every configured read token, preview token first. A refused or blind token falls through to the next one. */
+function tokens() {
+  const names = ["SANITY_PREVIEW_TOKEN", "SANITY_WRITE_TOKEN", "SANITY_READ_TOKEN"] as const;
+  const out: { name: string; value: string }[] = [];
+  for (const name of names) {
+    const value = (process.env[name] || "").trim();
+    if (value && !out.some((t) => t.value === value)) out.push({ name, value });
+  }
+  return out;
 }
 
 export async function GET(req: Request) {
   const secret = process.env.PREVIEW_SECRET?.trim();
   if (!secret) return text(503, "Preview is not set up on this site (PREVIEW_SECRET is missing).");
-  const token = (process.env.SANITY_PREVIEW_TOKEN || process.env.SANITY_WRITE_TOKEN || process.env.SANITY_READ_TOKEN || "").trim();
-  if (!token) return text(503, "Preview is not set up on this site (SANITY_PREVIEW_TOKEN is missing).");
+  const keys = tokens();
+  if (!keys.length) return text(503, "Preview is not set up on this site (SANITY_PREVIEW_TOKEN is missing).");
 
   const q = new URL(req.url).searchParams;
   const path = q.get("path") || "";
@@ -67,20 +101,24 @@ export async function GET(req: Request) {
   if (left > MAX_SECONDS + 3600) return text(401, "This preview link is not valid.");
 
   const clean = normalizePath(path);
-  const doc = await draftDoc<PageDoc | ArchiveDoc>(token, PAGE_QUERY, { path: clean });
   let resolved: Resolved | null = null;
-  if (doc) {
-    resolved =
-      doc._type === "archivePage"
-        ? { kind: "archive", doc: doc as ArchiveDoc }
-        : { kind: "page", doc: doc as PageDoc, ancestors: ((doc as PageDoc & { ancestorPaths?: string[] }).ancestorPaths as string[]) || [] };
-  } else {
-    // TTR OS saves blog drafts as Sanity "post" documents with a slug, not as pages with a path.
-    const slug = /^\/blog\/([a-z0-9-]+)\/$/.exec(clean)?.[1];
-    const post = slug ? await draftDoc<PostDraft>(token, POST_QUERY, { slug }) : null;
-    if (post) resolved = resolvePostDraft(post);
+  const tried: string[] = [];
+  for (const key of keys) {
+    const found = await findDraft(key.value, clean);
+    tried.push(`${key.name} ${found.status || "network error"}`);
+    if (found.resolved) {
+      resolved = found.resolved;
+      break;
+    }
   }
-  if (!resolved) return text(404, "No draft or page was found at this address.");
+  if (!resolved) {
+    // Names and HTTP answers only, never token values. Shown only to holders of a valid signed link.
+    const where = `Sanity project ${projectId}, dataset ${dataset}; tried ${tried.join(", ")}`;
+    console.warn(`[preview] nothing at ${clean} (${where})`);
+    const refused = tried.every((t) => !t.endsWith(" 200"));
+    if (refused) return text(502, `Sanity did not accept the preview token (${where}). Check SANITY_PREVIEW_TOKEN on this project.`);
+    return text(404, `No draft or page was found at this address (${where}).`);
+  }
   const site = await getSite();
   const origin = (process.env.NEXT_PUBLIC_SITE_URL || site.settings.siteUrl || "https://idealdentalsolutions.com").replace(/\/$/, "");
   let html = withoutArlington(seoPass(optimizeHtml(renderDocument(resolved, site.data, clean, { projectId, dataset, origin, recaptchaSiteKey: recaptchaSiteKey() }))));
