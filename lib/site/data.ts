@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { redirects } from "@/redirects";
 import { apiVersion, dataset, projectId } from "@/sanity/env";
-import { blogPaths } from "./blog";
+import { blogPaths, POST_FIELDS, postFromSanity, type BlogPost, type PostDraft } from "./blog";
 import { buildSiteData, normalizePath, resolvePath, resolveSearch, resolveSearchFrom, type SeedDoc } from "./local";
 import type { ArchiveDoc, PageDoc, Resolved, SearchPageDoc, SiteData } from "./render";
 import type { Seo } from "../render/seo";
@@ -114,6 +114,17 @@ export async function resolve(rawPath: string, fromCms: boolean): Promise<Resolv
   return nf ? { kind: "notFound", doc: nf as never } : null;
 }
 
+/**
+ * Published Sanity "post" documents (TTR OS v2 posts), for the blog list, post pages and post-sitemap.xml. Read
+ * like every other CMS query: published perspective only, so drafts never appear; cached and refreshed by the
+ * publish webhook. Repo posts (content/blog/posts.ts) win over a Sanity post with the same slug (lib/site/blog.ts).
+ */
+export async function publishedPosts(): Promise<BlogPost[]> {
+  if (process.env.SITE_CONTENT === "local") return [];
+  const rows = (await sanity<PostDraft[]>(`*[_type == "post" && defined(slug.current)]${POST_FIELDS}`)) || [];
+  return rows.map(postFromSanity).filter((p): p is BlogPost => p !== null);
+}
+
 /** Every routed path, for static generation and the sitemaps. */
 export async function allPaths(fromCms: boolean): Promise<{ path: string; type: string; modified?: string; noindex?: boolean }[]> {
   const q = `*[_type in ["page", "archivePage"] && defined(path)]{path, _type, "modified": coalesce(modified, seo.modifiedTime, _updatedAt), "robots": seo.robots, "canonical": seo.canonical, "empty": _type == "page" && !defined(content) && !defined(body)}`;
@@ -130,8 +141,8 @@ export async function allPaths(fromCms: boolean): Promise<{ path: string; type: 
   } else rows = seed().filter((d) => ["page", "archivePage"].includes(d._type) && d.path).map(local);
   // Pages whose canonical is another page stay out of the sitemap too.
   const elsewhere = (r: Row) => Boolean(r.canonical) && new URL(r.canonical!, "https://idealdentalsolutions.com").pathname !== r.path;
-  // The Patient Guides blog lives in the repo (lib/site/blog.ts), not in the CMS.
-  return [...rows.map((r) => ({ path: r.path, type: r._type, modified: r.modified, noindex: /noindex/.test(r.robots || "") || elsewhere(r) || redirected.has(r.path) })), ...blogPaths()];
+  // The Patient Guides blog: repo posts (lib/site/blog.ts) plus published Sanity posts.
+  return [...rows.map((r) => ({ path: r.path, type: r._type, modified: r.modified, noindex: /noindex/.test(r.robots || "") || elsewhere(r) || redirected.has(r.path) })), ...blogPaths(await publishedPosts())];
 }
 
 /** Site search (?s=): the results page, or null when `page` is past the last one. */
