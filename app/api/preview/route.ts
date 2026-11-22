@@ -14,7 +14,7 @@ import { recaptchaSiteKey } from "@/lib/recaptcha";
  * GET /api/preview?path=/some-page/&exp=<unix seconds>&sig=<hex>
  * sig = HMAC-SHA256(PREVIEW_SECRET, "<path>\n<exp>"), exp at most 30 days away. TTR OS makes the link
  * (lib/connectors/sanity.ts previewUrl). A good link shows the page with its unpublished draft, read with
- * SANITY_PREVIEW_TOKEN (a Viewer token; SANITY_WRITE_TOKEN also works). Nothing is saved, nothing is cached,
+ * SANITY_PREVIEW_TOKEN (a Viewer token; SANITY_WRITE_TOKEN or SANITY_READ_TOKEN also work). Nothing is saved, nothing is cached,
  * search engines are told not to index it, and the TTR tracker is not added.
  * /blog/<slug>/ also finds a Sanity "post" draft by slug (TTR OS staging check), shown in the blog post layout.
  */
@@ -53,7 +53,7 @@ async function draftDoc<T>(token: string, query: string, params: Record<string, 
 export async function GET(req: Request) {
   const secret = process.env.PREVIEW_SECRET?.trim();
   if (!secret) return text(503, "Preview is not set up on this site (PREVIEW_SECRET is missing).");
-  const token = (process.env.SANITY_PREVIEW_TOKEN || process.env.SANITY_WRITE_TOKEN || "").trim();
+  const token = (process.env.SANITY_PREVIEW_TOKEN || process.env.SANITY_WRITE_TOKEN || process.env.SANITY_READ_TOKEN || "").trim();
   if (!token) return text(503, "Preview is not set up on this site (SANITY_PREVIEW_TOKEN is missing).");
 
   const q = new URL(req.url).searchParams;
