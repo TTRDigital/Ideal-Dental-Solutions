@@ -245,6 +245,70 @@ function jqueryToFooter(html: string) {
   return `${head}${body.slice(0, at.index)}${tags.join("\n")}\n${body.slice(at.index)}`;
 }
 
+/** Script types that are JavaScript (the rest, like JSON-LD and speculation rules, are left alone). */
+const JS_TYPE = /^(?:|text\/javascript|application\/javascript|module)$/i;
+/** The placeholder type: the browser neither downloads nor runs it. */
+export const AFTER_PAINT_TYPE = "text/x-after-paint";
+
+/**
+ * The loader for afterPaint. After the first paint (DOMContentLoaded, then two animation frames) it runs the
+ * placeholders one by one in the page's order, exactly as the browser would have: a file waits for the one
+ * before it, inline code runs once everything above it has run. Every file is fetched in parallel first
+ * (preload), so only the running is in order. While they run, the page says it is still loading
+ * (document.readyState), and every "DOMContentLoaded" or "load" listener they add after that event is held and
+ * called once all of them have run, DOMContentLoaded first: the same order as when the scripts ran during
+ * parsing. Without this, Elementor started on jQuery's "ready" before Elementor Pro's form and carousel
+ * handlers had loaded (the #4 and #7 breakage).
+ */
+const AFTER_PAINT_LOADER = `<script id="after-paint">(function(){
+var T=${JSON.stringify(AFTER_PAINT_TYPE)},d=document,w=window,dcl=false,loaded=false,running=false,held=[];
+function call(t,type,fn){var f=typeof fn==="function"?fn:fn&&fn.handleEvent&&function(e){fn.handleEvent(e)};if(f)f.call(t,new Event(type))}
+var add=EventTarget.prototype.addEventListener;
+EventTarget.prototype.addEventListener=function(type,fn,o){var t=this;
+if(fn&&(t===d&&type==="DOMContentLoaded"&&dcl||t===w&&type==="load"&&loaded||t===w&&type==="DOMContentLoaded"&&dcl)){
+if(running)held.push([t,type,fn]);else setTimeout(function(){call(t,type,fn)},0);return}
+return add.call(this,type,fn,o)};
+add.call(w,"load",function(){loaded=true});
+function finish(){running=false;delete d.readyState;
+var q=held.filter(function(h){return h[1]==="DOMContentLoaded"}).concat(held.filter(function(h){return h[1]==="load"}));held=[];
+q.forEach(function(h){if(h[1]==="load"&&!loaded){add.call(w,"load",h[2]);return}call(h[0],h[1],h[2])})}
+function run(){var list=[].slice.call(d.querySelectorAll('script[type="'+T+'"]'));
+list.forEach(function(s){var u=s.getAttribute("data-src");if(u){var l=d.createElement("link");l.rel="preload";l.as="script";l.href=u;d.head.appendChild(l)}});
+running=true;Object.defineProperty(d,"readyState",{configurable:true,get:function(){return "loading"}});
+var i=0;(function next(){if(i>=list.length)return finish();var o=list[i++],n=d.createElement("script");
+for(var a=0;a<o.attributes.length;a++){var at=o.attributes[a];if(at.name==="type"||at.name==="data-src"||at.name==="data-type")continue;n.setAttribute(at.name,at.value)}
+var ty=o.getAttribute("data-type");if(ty)n.type=ty;var u=o.getAttribute("data-src");
+if(u){n.async=false;n.onload=n.onerror=next;n.src=u;o.parentNode.replaceChild(n,o)}else{n.text=o.text;o.parentNode.replaceChild(n,o);next()}})()}
+add.call(d,"DOMContentLoaded",function(){dcl=true;requestAnimationFrame(function(){requestAnimationFrame(run)})});
+})();</script>`;
+
+/**
+ * Phone speed (TTR-3001). The WordPress footer scripts (jQuery, Elementor, Elementor Pro, Swiper, Blocksy: about
+ * 260 KB) ran during parsing, so PageSpeed's lab estimate counted all of them before the first paint (LCP about
+ * 2.6 to 3.1 s estimated, while the page really painted at 0.2 s). This runs the same scripts, in the same order,
+ * right after the first paint (AFTER_PAINT_LOADER). Only the trailing run of script tags before </body> is
+ * changed; a page whose end looks different is left as it was. `keep` lists script ids that stay as they were.
+ */
+export function afterPaint(html: string, keep: string[] = []) {
+  const end = html.lastIndexOf("</body>");
+  if (end < 0 || html.includes('id="after-paint"')) return html;
+  const before = html.slice(0, end);
+  // One script tag: its body never runs past its own </script> (else one match could swallow the markup between scripts).
+  const run = /(?:\s*<script\b[^>]*>(?:(?!<\/script>)[\s\S])*<\/script>)+\s*$/.exec(before);
+  if (!run) return html;
+  let changed = 0;
+  const block = run[0].replace(/<script\b([^>]*)>([\s\S]*?)<\/script>/g, (tag, attrs: string, body: string) => {
+    const type = /\stype="([^"]*)"/.exec(attrs)?.[1] ?? "";
+    const id = /\sid="([^"]*)"/.exec(attrs)?.[1] ?? "";
+    if (!JS_TYPE.test(type) || /\s(?:async|defer|nomodule)\b/.test(attrs) || (id && keep.includes(id))) return tag;
+    changed++;
+    const rest = attrs.replace(/\stype="[^"]*"/, "").replace(/\ssrc="([^"]*)"/, ' data-src="$1"');
+    return `<script type="${AFTER_PAINT_TYPE}"${type ? ` data-type="${type}"` : ""}${rest}>${body}</script>`;
+  });
+  if (!changed) return html;
+  return `${before.slice(0, run.index)}${block}\n${AFTER_PAINT_LOADER}\n${html.slice(end)}`;
+}
+
 /** Files of the base64 images pasted into the content, by hash (npm run images). */
 const inlineFiles = inlineJson as Record<string, string>;
 
@@ -263,5 +327,5 @@ function guard(html: string) {
 }
 
 export function optimizeHtml(html: string) {
-  return guard(jqueryToFooter(inlineImages(heroPhone(imagesPass(fonts(stylesheets(html)))))));
+  return guard(afterPaint(jqueryToFooter(inlineImages(heroPhone(imagesPass(fonts(stylesheets(html))))))));
 }
