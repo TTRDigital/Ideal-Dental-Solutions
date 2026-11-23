@@ -5,7 +5,8 @@ import { renderDocument, type ArchiveDoc, type PageDoc, type Resolved } from "@/
 import { optimizeHtml } from "@/lib/site/optimize";
 import { seoPass } from "@/lib/site/seo-pass";
 import { withoutArlington } from "@/lib/site/arlington";
-import { POST_FIELDS, resolvePostDraft, type PostDraft } from "@/lib/site/blog";
+import { resolvePostDraft, type PostDraft } from "@/lib/site/blog";
+import { PAGE_QUERY, POST_QUERY, previewMiss } from "@/lib/site/preview-query";
 import { apiVersion, dataset, projectId } from "@/sanity/env";
 import { recaptchaSiteKey } from "@/lib/recaptcha";
 
@@ -32,10 +33,6 @@ function signedOk(secret: string, path: string, exp: string, sig: string) {
   const got = Buffer.from(sig, "hex");
   return got.length === want.length && timingSafeEqual(got, want);
 }
-
-const PAGE_QUERY = `*[_type in ["page", "archivePage"] && path == $path] | order(_id in path("drafts.**") desc)[0]`;
-// TTR OS saves blog drafts as Sanity "post" documents; they carry a slug and may also carry a path.
-const POST_QUERY = `*[_type == "post" && (path == $path || slug.current == $slug)] | order(_id in path("drafts.**") desc)[0]${POST_FIELDS}`;
 
 type Lookup<T> = { doc: T | null; status: number };
 
@@ -103,8 +100,10 @@ export async function GET(req: Request) {
   const clean = normalizePath(path);
   let resolved: Resolved | null = null;
   const tried: string[] = [];
+  const statuses: number[] = [];
   for (const key of keys) {
     const found = await findDraft(key.value, clean);
+    statuses.push(found.status);
     tried.push(`${key.name} ${found.status || "network error"}`);
     if (found.resolved) {
       resolved = found.resolved;
@@ -115,8 +114,10 @@ export async function GET(req: Request) {
     // Names and HTTP answers only, never token values. Shown only to holders of a valid signed link.
     const where = `Sanity project ${projectId}, dataset ${dataset}; tried ${tried.join(", ")}`;
     console.warn(`[preview] nothing at ${clean} (${where})`);
-    const refused = tried.every((t) => !t.endsWith(" 200"));
-    if (refused) return text(502, `Sanity did not accept the preview token (${where}). Check SANITY_PREVIEW_TOKEN on this project.`);
+    const miss = previewMiss(statuses);
+    if (miss.reason === "bad_query") return text(500, `Sanity rejected the preview query (${where}). This is a bug in the site's preview route, not a token problem.`);
+    if (miss.reason === "token_refused") return text(502, `Sanity did not accept the preview token (${where}). Check SANITY_PREVIEW_TOKEN on this project.`);
+    if (miss.reason === "unreachable") return text(502, `Sanity could not be reached for the preview (${where}).`);
     return text(404, `No draft or page was found at this address (${where}).`);
   }
   const site = await getSite();
